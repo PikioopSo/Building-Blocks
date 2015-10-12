@@ -1,0 +1,162 @@
+/* -kip--Home page default stylesheet--  */
+
+/* -- beginning page styles -- */
+body{
+}
+memory{
+	position:absolute;visibility:hidden;
+}
+ul{
+	list-style:none;
+}
+li{
+	padding:3px;
+}
+.section_title{
+	margin:25px;
+	font-family:Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif; font-size:22px;
+}
+#page_utilbar{
+	position:fixed;top:0px;left:0px;height:10px;width:100%; 
+	background-color:rgba(120,120,255,1); 
+	border:1px solid rgba(120,120,120,.8); 
+	z-index:3;
+}
+#kip_utilbar{
+	position:absolute;top:0px;left:0px;height:10px;width:100%; 
+	background-color:rgba(120,120,255,1); 
+	border:1px solid rgba(120,120,120,.8); 
+}
+#utilbar_button_console{ 
+	position:fixed;top:0px;left:-1px;height:32px;width:850px;padding-left:25px;padding-right:25px; 
+	border-radius:0px 0px 20px 0px; 
+	background-color:rgba(250,25,25,1); 
+	z-index:3;
+}
+#utilbar_button_console button{
+	position:relative;top:0px;height:28px;left:25%; 
+	border-radius:0px 0px 5px 5px; 
+	font-family:lucida sans typewriter;font-size:12px;font-weight:bold; 
+}
+#utilbar_button_console button:hover{;
+	background-color:rgba(175,175,175,1)
+}
+#drop_button{ 
+	position:fixed;top:30px;left:80%;height:50px;width:200px;padding-left:15px;padding-bottom:5px;
+	background-color:rgba(150,255,150,1);
+	border-radius:50px 0px 50px 0px;
+	font-family:"Lucida Sans Typewriter", monospace;font-size:17px;color:rgba(64,64,64,1);font-weight:bold;
+	text-align:center; line-height:20px;
+	overflow:hidden;
+	z-index:2;
+} 
+#drop_button:hover{
+	background-color:rgba(120,255,120,.6);
+	overflow:visible;
+} 
+/* Beginning of header content */
+#kip_header{
+	position:absolute; top:0px; left:0px;
+	font-family:lucida sans typewriter; font-size:18px;
+}
+#header_nav{
+	position:absolute; top:30px; left:400px; width:500px; height:110px; padding:10px;  
+	background-color:rgba(0,0,255,.2);  border-radius:50px 0px 100px 0px;
+}
+#header_nav .message{
+	position:absolute; top:5px; left:140px;
+	font-size:14px;
+}
+#header_nav a{
+	font-size:14px;
+}
+#kip_header a:hover{
+	color:red;
+}
+.quick_links{
+	position:absolute; top:30px; left:20px; width:370px; height:130px;
+
+}
+.quick_links a{
+	font-size:14px; 
+}
+/* End of header content */
+
+/* beginning of content styles */
+#kip_content{
+	position:absolute; top:160px; left:0px;
+}
+#kip_content .offsite_links{
+	position:absolute; left:1000px; top:10px; padding:10px;
+	background-color:rgba(0,0,255,.7); 
+	font-family:lucida sans typewriter; font-size:16px;
+} 
+.welcome_message{ 
+	position:absolute; top:10px; left:0px; height:585px; width:950px; padding:15px;
+	background-color:rgba(0,80,0,.4); 
+	font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	z-index:0; 
+}
+.link_set_tours{
+	position:relative; top:0px; width:200px; height:30px;
+}
+/* end of welcome message styles */
+
+
+/* Beginning of the footer styles */
+.footer{
+	position:absolute; top:790px; left:0px; width:980px; height:175px; 
+	background-color:rgba(0,255,0,.5); border-radius:0px 0px 100px 0px;
+}
+#nav_footer a{
+	font-family:"Lucida Sans Typewriter", monospace;font-size:15px;color:rgba(64,64,64,1);
+}
+#nav_footer a:hover{
+	color:rgba(250,100,100,1); 
+}
+#communicate_nav{
+	position:absolute; top:0px; left:0px; width:400px; 
+	background-color:rgba(255,255,255,.25); border-bottom:1px rgba(0,255,0,1) solid; 
+}
+#citation{
+	position:absolute; top:10px; left:480px; width:480px; padding-top:10px; 
+	background-color:rgba(255,255,255,.25); border-bottom:1px rgba(0,255,0,1) solid;
+	 border-radius:0px 0px 100px 0px;
+	font-family:"Lucida Sans Typewriter", monospace;font-size:14px;color:rgba(24,24,24,1);
+	text-align:center;
+}
+/* end of footer */
+
+/* beginning dialogWin Style */
+.dialogWin{ 
+	position:absolute; margin:31px; padding:20px; width:1200px; height:500px; z-index:10;
+	background-color:rgba(187,187,255,.78); 
+}
+.dialogWin_title{ 
+	position:absolute;top:5px;
+	font-size:22px; font-family:Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif;
+}
+.dialogWin_paragraph{ 
+	position:absolute; top:40px; left:0px; padding-left:10px; padding-right:50px; 
+	font-size:19px; font-family:Constantia, "Lucida Bright", "DejaVu Serif", Georgia, serif; 
+	line-height:1.5; 
+	background-color:rgba(250,250,250,.55); 
+} 
+.close_dialogwin{ 
+	position:absolute; top:0px; left:1100px; width:100px; height:50px; 
+	border-radius:30px 30px 10px 10px; 
+	background-color:rgba(255,75,75,1); 
+	font-size:25px;	font-size:25px; font-family:Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif; 
+} 
+.close_dialogwin:hover{ 
+	background-color:rgba(255,75,75,.8); 
+} 
+
+/* End of dialogWin styles */
+
+/* Beginning of tour styles */
+#tour_frame{
+	position:absolute; top:70px; left:20px; width:800px; height:400px;
+	background-color:rgba(255,255,255,1);
+}
+/* End of tour styles */

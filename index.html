@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="utf-8"></meta>
+		<script type="text/javascript" async src="javascripts/ktml.js"></script> 
+		<link rel="stylesheet" href="stylesheets/home_index.css" type="text/css" /> 
+	<title>www.Kip.org</title> 
+</head>
+<body>
+	<target id="kip_utilbar"> 
+	   	<button id="drop_button" class="utilbar_ui" onClick="ev('toggle','[page_utilbar,kip_utilbar]')">Utility Button</button> 
+    </target> 
+
+<target id="kip_header"> 
+    	<nav class="quick_links">
+			<textline class="message">
+Quicklinks:
+            </textline><br>
+            <a href="projects/compsci/web_standards_index.html">Web Standards Project</a>||<a href="projects/university_of_nebraska/university_of_nebraska_index.html">University Of Nebraska Outreach</a>||<a href="projects/compsci/power_plants_index.html">Kip Engineering Project</a>||<a href="projects/compsci/kip_science_index.html">Kip Science Project</a> 
+        </nav> 
+	<header id="header_nav">
+		<section id="header_logo"> 
+			<a href="index.html" id="logo_link" title="go to home page"> 
+				<img src="img/logos/kipText_logo.png" id="logo_img" alt="Kip Logo"/>
+			</a> 
+		</section> 
+		<nav>
+<a href="blogs/index.html" id="charity_blog" title="go to Kip's Blog">Kip's Blog</a>
+<a href="projects/index.html" id="current_projects" title="go to Kip's Projects">Kip Projects</a>
+		</nav>
+        <textline class="message">
+Kip.org is an effort to bring an online tool that is useful for the creative thinkers and problem solvers.
+		</textline>
+    </header>
+</target>
+
+<target id="kip_content"> 
+    <article class="welcome_message"> 
+		<text class="message">
+Kip's Head Qaurter welcomes you to our place on the web. 
+		</text><br><br>
+		<text class="message_container">
+        	<textline>
+Based out of Omaha, NE we are pleased to present our website. We will continually be adding more to it to better serve the users of this site to the best of our ability. 
+			</textline><br><br>
+            <textline>
+Search our site by clicking our projects page link or our blogs link, we also have a quick links menu too if you know what project your interested in.
+            </textline><br><br>
+            <textline>
+This year we are looking forward to building a relationship with our local community here in Omaha, NE, by reaching out to the Nebraska University system to contribute to science and engineering education for college students and graduating high school seniors. The main focus of our outreach is to concentrate on three areas which are:
+			</textline>
+			<ol>
+                	<li>Teaching web technologies role in science and engineering.</li>
+                    <li>Teaching about alternative forms of transportation such as bicycling and electric assisted bicycling.</li>
+                    <li>Supporting university science and engineering clubs.</li>
+			</ol>
+            <textline>
+Please check out our page at <a href="projects/university_of_nebraska/university_of_nebraska_index.html">University of Nebraska Outreach Project</a> for more information.
+            </textline><br><br> 
+            <textline>
+We would also like to announce our project to support the W3C and the ECMA scripting standard. We currently have documentation regarding our efforts to help compatibility of HTML 5 standards and also are working on concepts for the future of the web and how it can be leveraged for science and engineering.
+            </textline><br><br>
+            <textline>
+Visit Kip Omaha's <a href="projects/compsci/html_standards_index.html">Web Standards Project</a> to learn more.
+            </textline>
+		</text><br><br>
+	</article>
+    <nav class="offsite_links">
+		<textline>
+Organizations we support:
+        </textline><br>
+        <a href="https://developer.mozilla.org/en-US/"><img src="img/logos/MDN_promoBanner_120x120px.png"></a> 
+        <a href="http://nebraska.edu/"><img src="img/logos/university_of_nebraska_logo.png"></a> 
+		<a href="http://www.w3schools.com/"><img src="img/logos/w3schools-logo.png"></a>
+        <a href="https://commons.wikimedia.org/wiki/Main_Page"><img src="img/logos/wikimedia_foundation.png"></a>
+    </nav>
+</target>
+
+<target id="kip_footer" class="footer">
+   	<footer id="nav_footer"> 
+       <nav id="nav_footer"> 
+	       	<ul id="communicate_nav">
+                <li id="contacts_list_item">
+<a href="contactus.html" id="contact_us" title="go to contact's page">Form Cabinet</a>
+                </li>
+				<li id="about_list_item">
+<a href="aboutus.html" id="about_us" title="go to Kip's Blog">About Us</a>
+                </li>
+            </ul>
+            <text id="citation">
+				<textline id="citation_1">
+Developed by Kip Omaha
+				</textline><br/><br/>
+				<textline id="citation_2">
+©February 2015
+				</textline><br/><br/>
+				<textline id="citation_3"> 
+On behalf of Kip™, non-profit Inc. <br/> 
+Thank you for visiting <a href="#">www.kipOmaha.org</a><br/><br/> 
+				</textline>
+            </text>
+        </nav> 
+	</footer>
+</target>
+
+	<memory id="utility_memory">
+		<block id="page_utilbar" class="utilbar_top" title="Menu Bar" toggle="hidden"> 
+			<utilbar id="utilbar_button_console"> 
+<button id="hq_tour" class="page_button" onClick="ev('dialogWin','[tour_dialogWin,kip_utilbar,dialogWin]')">HQ Tour</button> 
+<button id="log_in" class="page_button" onClick="ev('secureWin','[log_in_dialogWin,kip_utilbar],dialogWin')">Log In/Create Account</button> 
+			</utilbar>
+		</block> 
+
+		<block id="tour_dialogWin" class="dialogWin">
+        	<button id="close_tour" class="close_dialogwin" onClick="ev('close','tour_dialogWin')">close</button>
+<text>
+	<textline class="dialogWin_title">Welcome to Kip's HQ Tour.</textline>
+	<textline class="dialogWin_paragraph">On this tour you will get a quick overview of where everything is located on this website along with a few other helpful facts. </textline>
+    <display class="player_display">
+        <iframe src="tour/site_tour.html" id="tour_frame" style="overflow:hidden;"></iframe> 
+    </display>
+</text>
+        </block>
+
+        <block id="logon" class="logon">
+ 	<article>
+    	<form>
+<label><textline>User Name: </textline><input type="text" value="User Name"></label><br>
+<label><textine>Password: </textline><input type="text" value="Password"></label><br>
+			<input type="submit">
+        </form>
+        <button>Create Account</button>
+	</article>
+		</block>
+
+    </memory>
+</body>
+</html>

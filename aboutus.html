@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<script type="text/javascript" async src="javascripts/ktml.js" onLoad="kipLoad('object','4')"></script> 
+	<link rel="stylesheet" href="stylesheets/home_index.css" type="text/css" /> 
+
+<title>About Kip</title>
+</head>
+<body>
+	<target id="kip_utilbar"> 
+    <utilbar id="page_utilbar" class="utilbar_top" name="Utility menubar"> 
+		<target id="utilbar_button_console"> 
+		</target>
+    </utilbar> 
+	   	<button id="drop_button" class="utilbar_ui" onClick="kip.kipEvents('toggle','utilbar_button_console')">Utility menubar</button> 
+    </target> 
+
+	<target id="kip_header"> 
+		<header id="header_nav">
+		<section id="page_header_logo">
+        	<textline class="section_title">About Kip.org</textline>
+        </section>
+    	<section id="header_logo">
+        <a href="index.html" id="logo_link" title="go to home page">
+        	<img src="img/logos/logo.png" id="logo_img" /></a>
+        </section>   
+	    </header>
+    </target>
+
+	<target id="kip_content"
+    	type="content{[(widget),(1)]}" widget-1="blogs{[#(blog_widget)]}"> 
+    	<content>
+    		<text id="blog_msg">Blog Caste Reader</text>
+    		<widget id="blog_widget" document="{[#(recycle_me_htm)],#[kip_omaha.html]}">
+			</widget> 
+			<utilbar id="content_utilbar">    
+    		</utilbar> 
+    	</content> 
+    </target> 
+
+	<target id="kip_footer">
+    	<footer id="nav_footer"> 
+        <nav id="nav_footer"> 
+        	<ul id="communicate_nav">
+            <h2 id="com_title">Kip Site Navigation</h2>
+        		<li id="parnters_list_item">
+<a href="partner.html" id="partners_with_us" title="go to partner page">Non-Profit partnership development.</a>
+                </li>
+                <li id="contacts_list_item">
+<a href="contactus.html" id="contact_us" title="go to contact's page">Contact Us</a>
+                </li>
+				<li id="about_list_item">
+<a href="aboutus.html" id="about_us" title="go to Kip's Blog">About Us</a>
+                </li>
+				<li id="blog_list_item">
+<a href="charity_blog.html" id="charity_blog" title="go to Kip's Blog">Kip's Blog</a>
+                </li>
+				<li id="project_list_item">
+<a href="projects.html" id="current_projects" title="go to Kip's Projects">Kip's Projects</a>
+                </li>
+            </ul>
+            <text id="citation">
+            <textline id="citation_1">
+Developed by Kip
+            </textline><br/><br/>
+            <textline id="citation_2">
+©February 2015
+            </textline><br/><br/>
+            <textline id="citation_3"> 
+On behalf of Kip™, non-profit Inc. <br/> 
+Thank you for visiting <a href="#">www.kip.org</a><br/><br/> 
+            </textline><br/><br/> 
+            </text>
+        </nav> 
+        </footer>
+    </target>
+
+	<memory id="widget_blogMemory">
+
+	</memory>
+
+	<memory id="widget_advertisingMemory" >
+
+	</memory>
+<style id="memory_style" type="text/css">
+
+memory{
+	visibility:hidden;
+}
+
+</style>
+</body>
+</html>
