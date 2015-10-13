@@ -13,7 +13,7 @@ li{
 	font-family:Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif; font-size:22px;
 }
 /* Beginning of header styles */
-#kip_header{
+#header{
 	position:absolute; top:0px; left:0px; width:1000px;
 	font-family:lucida sans typewriter; font-size:18px;
 }
@@ -28,7 +28,7 @@ li{
 #header_nav a{
 	font-size:14px;
 }
-#kip_header a:hover{
+#header a:hover{
 	color:red;
 }
 .account_login{
@@ -48,17 +48,17 @@ li{
 /* End of header styles */
 
 /* Beginning of content styles */
-#kip_content{
+#content{
 	position:absolute; top:160px; left:30px; padding:30px; 
 	font-family:lucida sans typewriter;
 }
-#kip_content .section_title{
+#content .section_title{
 	position:absolute; top:10px; width:500px; 
 }
-#kip_content .projects_list{
+#content .projects_list{
 	position:relative; width:700px;
 }
-#kip_content .message{
+#content .message{
 	width:900px;
 	font-size:15px;
 }
