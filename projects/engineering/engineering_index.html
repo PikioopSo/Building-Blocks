@@ -9,8 +9,8 @@
 </head>
 
 <body>
-<target id="kip_header"> 
-
+			<!-- Navigation header  -->
+<target class="header" id="header"> 
  	<article>
 		<form class="account_login">
 			<label class="username" name="username">
@@ -26,15 +26,16 @@
         	<button class="account_creation">Create Account</button>
 	</article>
 	
-    <article class="menu_item">
-    	<textline class="message">
-Engineering Project Menu
-        </textline>
-		<section class="button_menu">
-			<button>Power Plants</button>
-            <button>Alternative Transportation</button>
-        </section>
-    </article>
+	<article class="menu_item">
+		<textline class="message">
+			Engineering Project Menu
+		</textline>
+		<section class="button_menu" id="button_menu">
+			<button id="power_plant_project">Power Plants</button>
+            		<button id="alt_tran_project">Alternative Transportation</button>
+		</section>
+	</article>
+    
 	<header id="header_nav">
 		<section id="header_logo"> 
 			<a href="../../index.html" id="logo_link" title="go to home page"> 
@@ -45,16 +46,24 @@ Engineering Project Menu
 <a href="../../blogs/index.html" id="charity_blog" title="go to Kip's Blog">Kip's Blog</a>
 <a href="../index.html" id="current_projects" title="go to Kip's Projects">Kip Projects</a>
 		</nav>
-        <textline class="message">
+        	<textline class="message">
 KipOmaha.org is an effort to bring an online tool that is useful for the creative thinkers and problem solvers.
 		</textline>
-    </header>
+	</header>
 </target>
-
-<target id="kip_content"> 
+			<!-- Content of web application:  -->
+			<!--   Six nodes next with in the content class.
+			          1. section_title class
+			          2. number_pad class
+			          3. symbol_pad 
+			          4. console class
+			          5. note_pad class 
+			          6. display class -->
+<target class="content" id="content"> 
 	<textline class="section_title">
 Welcome to Kip's Engineering Project Page.
 	</textline><br><br>
+
 	<section class="number_pad">
 		<utilbar class="decimal_numbers">
 			<button>1</button>
@@ -72,6 +81,7 @@ Welcome to Kip's Engineering Project Page.
 			<button>pi</button>
 		</utilbar>
         </section>
+
         <section class="symbol_pad">
         	<utilbar class="greek_symbols">
                 <button>alpha</button>
@@ -81,57 +91,55 @@ Welcome to Kip's Engineering Project Page.
                 <button>theta</button>
 			</utilbar>
         </section>
+
         <section class="console">
         	<utilbar class="console_utilbar">
-            	<button>Execute</button>
-            </utilbar>
-            <section class="writer"></section>
+			<button>Execute</button>
+		</utilbar>
+		<section class="writer"></section>
         </section>
-        <section class="note_pad">
-        </section>
-        <section class="display">
+
+	<section class="note_pad">
+	</section>
+
+	<section class="display">
         	<textline class="message">Engineering Project Page Still Under Construction,but please feel free to use our calculator.</textline>
         	<svg></svg>
         </section>
 </target>
 
-<target id="kip_footer" class="footer">
-   	<footer id="footer"> 
-       <nav id="nav_footer"> 
-	       	<ul id="communicate_nav">
-                <li id="contacts_list_item">
-<a href="../../contactus.html" id="contact_us" title="go to contact's page">Form Cabinet</a>
-                </li>
+<target id="footer" class="footer">
+	<footer id="footer"> 
+		<nav id="nav_footer"> 
+			<ul id="communicate_nav">
+				<li id="contacts_list_item">
+					<a href="../../contactus.html" id="contact_us" title="go to contact's page">Form Cabinet</a>
+				</li>
 				<li id="about_list_item">
-<a href="../../aboutus.html" id="about_us" title="go to Kip's Blog">About Us</a>
-                </li>
-            </ul>
-            <text id="citation">
-				<textline id="citation_1">
-Developed by Kip
-				</textline><br/><br/>
-				<textline id="citation_2">
-©February 2015
-				</textline><br/><br/>
-				<textline id="citation_3"> 
-On behalf of Kip™, non-profit Inc. <br/> 
-Thank you for visiting <a href="../../index.html">www.kip.org</a><br/><br/> 
-				</textline>
-            </text>
-        </nav> 
-        <nav class="offsite_links">
-		<textline>
-Organizations we support:
-        </textline><br>
-        <a href="https://developer.mozilla.org/en-US/"><img src="../../img/logos/MDN_promoBanner_120x120px.png"></a> 
-        <a href="http://nebraska.edu/"><img src="../../img/logos/university_of_nebraska_logo.png"></a> 
-		<a href="http://www.w3schools.com/"><img src="../../img/logos/w3schools-logo.png"></a>
-        <a href="https://commons.wikimedia.org/wiki/Main_Page"><img src="../../img/logos/wikimedia_foundation.png"></a>
-    </nav>
+					<a href="../../aboutus.html" id="about_us" title="go to Kip's Blog">About Us</a>
+                		</li>
+            		</ul>
+            			<text id="citation">
+					<textline id="citation_1">Developed by Kip</textline><br/><br/>
+					<textline id="citation_2">©February 2015</textline><br/><br/>
+					<textline id="citation_3">On behalf of Kip™, non-profit Inc. <br/>Thank you for visiting <a href="../../index.html">www.kip.org</a><br/><br/></textline>
+            			</text>
+		</nav> 
+        	
+        	<nav class="offsite_links">
+			<textline>Organizations we support:</textline><br>
+			<a href="https://developer.mozilla.org/en-US/"><img src="../../img/logos/MDN_promoBanner_120x120px.png"></a> 
+			<a href="http://nebraska.edu/"><img src="../../img/logos/university_of_nebraska_logo.png"></a> 
+			<a href="http://www.w3schools.com/"><img src="../../img/logos/w3schools-logo.png"></a>
+			<a href="https://commons.wikimedia.org/wiki/Main_Page"><img src="../../img/logos/wikimedia_foundation.png"></a>
+		</nav>
 	</footer>
 </target>
 
 	<memory id="utility_memory">
-    </memory>
+		<directory id="projects">
+			
+		</directory>
+	</memory>
 </body>
 </html>
