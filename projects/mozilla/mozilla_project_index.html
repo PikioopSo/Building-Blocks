@@ -1,0 +1,253 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"></meta>
+	<meta name="description" content=""></meta>
+		<script type="text/javascript" async src="../../javascripts/ktml.js"></script> 
+        <script type="text/javascript" async src="javascripts/mozilla_index.js"></script> 
+		<link rel="stylesheet" href="../stylesheets/mozilla_project_index.css" type="text/css"> 
+<title>Kip.org || Mozilla Project</title> 
+</head>
+
+<body>
+<target id="kip_header"> 
+ 	<article>
+    	<form class="account_login">
+<label class="username" name="username"><textline>User Name: </textline><input type="text" value="User Name"></label><br>
+<label class="pword" name="pword"><textline>Password: </textline><input type="text" value="Password"></label><br>
+			<input type="submit" value="Submit" class="submit">
+        </form>
+        <button class="account_creation">Create Account</button>
+	</article>
+	<header id="header_nav">
+		<section id="header_logo"> 
+			<a href="../../index.html" id="logo_link" title="go to home page"> 
+				<img src="../../img/logos/kipText_logo.png" id="logo_img" alt="Kip Logo"/>
+			</a> 
+		</section> 
+		<nav>
+<a href="../../blogs/index.html" id="charity_blog" title="go to Kip's Blog">Kip's Blog</a>
+<a href="../index.html" id="current_projects" title="go to Kip's Projects">Kip Projects</a>
+		</nav>
+        <textline class="message">
+KipOmaha.org is an effort to bring an online tool that is useful for the creative thinkers and problem solvers.
+		</textline>
+    </header>
+</target>
+
+<target id="kip_content"> 
+	<textline class="section_title">
+Welcome to Kip's Mozilla Project Page.
+	</textline>
+    <section class="drawing_canvas" id="drawing_canvas" onmousemove="coordinates(this,event);" onmouseup="endDraw(this,event)" onmousedown="startDraw(this,event);" target-display="coordinate" mouse-x="" mouse-y="">
+    	<svg width="1000px" height="650px"></svg> 
+    </section>
+	<section class="drawing_tools">
+		<button class="pointer" onclick="getTool(this)" target-canvas="drawing_canvas" title="pointer"> 
+        	<img src="img/selection_cursor.png" title="selection pointer" class="tool"> 
+		</button>
+        <button class="text" onclick="getTool(this)" target-canvas="drawing_canvas" title="text"> 
+        	<img src="img/text.png" title="text" class="tool"> 
+		</button>
+		<section class="text_opts_target" onclick="toggleClass(this,'text_opts','tool_toggle')">
+        </section>
+	  	<button class="paint_brush" onclick="getTool(this)" target-canvas="drawing_canvas" title="paint brush"> 
+        	<img src="img/paint_brush.png" title="paint brush" class="tool"> 
+		</button>
+		<section class="brush_opt_target" onclick="toggleClass(this,'paint_brush_opts','tool_toggle')">
+        </section>
+		<button class="polygon" onclick="getTool(this)" target-canvas="drawing_canvas" title="polygon"> 
+        	<img src="img/polygon.png" title="polygon" class="tool"> 
+         </button>
+         <section class="polygon_opt_target" onclick="toggleClass(this,'polygon_opts','tool_toggle')">
+        </section>
+         <button class="path" onclick="getTool(this)" target-canvas="drawing_canvas" title="path tool"> 
+        	<img src="img/path_symbol.png" title="path" class="tool"> 
+         </button>
+         <section class="path_opt_target" onclick="toggleClass(this,'path_opts','tool_toggle')">
+         </section>
+         <button class="dripper" onclick="getTool(this)" target-canvas="drawing_canvas"  title="dripper"> 
+        	<img src="img/dripper.png" title="dripper" class="tool"> 
+         </button>
+         <section class="dripper_opt_target" onclick="toggleClass(this,'dripper_opts','tool_toggle')">
+         </section>
+         <button class="crosshatch" onclick="getTool(this)" target-canvas="drawing_canvas" title="cross hatching"> 
+        	<img src="img/crosshatch.png" title="crass hatching" class="tool"> 
+		</button>
+        <section class="crosshatch_opt_target" onclick="toggleClass(this,'crosshatch_opts','tool_toggle')" target-toggle="point_opts" target-toggle-class="tool_toggle">
+        </section>
+        <button class="eraser" onclick="getTool(this)" target-canvas="drawing_canvas" title="eraser"> 
+        	<img src="../../img/user_interface/eraser.png" title="eraser" class="tool"> 
+		</button>
+        <section class="eraser_opt_target" onclick="toggleClass(this,'crosshatch_opts','tool_toggle')" target-toggle="eraser_opts" target-toggle-class="tool_toggle">
+        </section>
+        <utilbar class="stroke_color_opts">
+        	<text>Stroke and Fill Options</text>
+        	<text id="stroke_size_adjust" class="number"><textline>Stroke Width: </textline>
+         		<input type="number" value="1" >
+         	</text> 
+			<text id="fill_color_change" class="color"><textline>Fill Color: </textline>
+        		<input type="color" value="rgba(65,65,65,0)"> 
+			</text>
+            <text id="stroke_color_change" class="color"><textline>Stroke Color: </textline>
+        		<input type="color" value="rgba(65,65,65,1)"> 
+			</text>
+		</utilbar> 
+    </section>
+    <section class="console_writer">
+    </section>
+    <section class="svg_output">
+    	<textarea id="svg_output"></textarea>
+    </section>
+    <button class="get_svg">Write SVG</button>
+</target>
+
+<target id="kip_footer" class="footer">
+   	<footer id="footer"> 
+       <nav id="nav_footer"> 
+	       	<ul id="communicate_nav">
+                <li id="contacts_list_item">
+<a href="../../contactus.html" id="contact_us" title="go to contact's page">Form Cabinet</a>
+                </li>
+				<li id="about_list_item">
+<a href="../../aboutus.html" id="about_us" title="go to Kip's Blog">About Us</a>
+                </li>
+            </ul>
+            <text id="citation">
+				<textline id="citation_1">
+Developed by Kip
+				</textline><br/><br/>
+				<textline id="citation_2">
+©February 2015
+				</textline><br/><br/>
+				<textline id="citation_3"> 
+On behalf of KipOmaha™, non-profit Inc. <br/> 
+Thank you for visiting <a href="../../index.html">www.kipOmaha.org</a><br/><br/> 
+				</textline>
+            </text>
+        </nav> 
+        <nav class="offsite_links">
+		<textline>
+Organizations we support:
+        </textline><br>
+        <a href="https://developer.mozilla.org/en-US/"><img src="../../img/logos/MDN_promoBanner_120x120px.png"></a> 
+        <a href="http://nebraska.edu/"><img src="../../img/logos/university_of_nebraska_logo.png"></a> 
+		<a href="http://www.w3schools.com/"><img src="../../img/logos/w3schools-logo.png"></a>
+        <a href="https://commons.wikimedia.org/wiki/Main_Page"><img src="../../img/logos/wikimedia_foundation.png"></a>
+    </nav>
+	</footer>
+</target>
+	<memory id="utility_memory">
+		<svg>
+			<g id="group"></g>
+			<ellipse id="ellipse"></ellipse>
+			<path id="path"></path>
+			<polygon id="polygon"></polygon> 
+		</svg> 
+
+        <block id="paint_brush_opts" toggle="hidden" class="tool_toggle">
+			<label>
+            	<textline>Dot brush</textline><input type="radio" name="brush_type" checked>
+				<text id="dot_size_adjust" class="number">Font-Size: 
+		         	<input type="number" value="5">
+        	 	</text> 
+			</label> 
+			<label>
+            	<textline>Line brush</textline><input type="radio" name="brush_type">
+            	<text id="line_size_adjust" class="number">Font-Size: 
+		         	<input type="number" value="5">
+        	 	</text>
+            </label> 
+        </block> 
+
+		<block id="polygon_opts" toggle="hidden" class="tool_toggle">
+			<text id="poly_sides" class="number">Number of sides: 
+				<input type="number" value="3">
+			</text> 
+        </block>
+        
+        <block id="path_opts" toggle="hidden" class="tool_toggle">
+			<text id="closed_path">Close Path: 
+				<input type="checkbox">
+			</text>
+        </block>
+
+        <block id="text_opts" toggle="hidden" class="tool_toggle">
+			<text id="font_size" class="number">
+				<input type="number" value="12">
+            </text>
+			<text class="font_style">
+				<select>
+					<option value="normal"></option>
+					<option value="italic"></option>
+					<option value="bold"></option>
+					<option value="underline">Audi</option>
+				</select>
+            </text>
+        </block>
+
+		<block id="dripper_opts" toggle="hidden" class="tool_toggle">
+			<text id="dripper_size_adjust" class="number">Drip-Size: 
+		         	<input type="number" value="14">
+        	 	</text>
+			<label>
+            	<textline>Blow drip</textline><input type="radio" name="drip_type"> 
+			</label> 
+			<label><textline>Shake drip</textline><input type="radio" name="drip_type"></label> 
+        </block>  
+
+		<block id="crosshatch_opts" toggle="hidden" class="tool_toggle">
+			<text id="vertical_lines" class="number">Vert. lines: 
+		         	<input type="number" value="2">
+			</text> 
+            <text id="horizontal_lines" class="number">Horiz. lines: 
+		         	<input type="number" value="2">
+			</text> 
+        </block>
+        
+        <block id="pointer-menu" class="right_mouse_event">
+        </block>
+        
+        <block id="paint_brush-menu" class="right_mouse_event">
+        	<ul>
+            	<li>
+                	Paint Brush Menu
+                </li>
+                <li>
+                	<label>Iterate Colors: <input type="text"></label>
+                </li>
+            </ul>
+        </block>
+        
+        <block id="path-menu" class="right_mouse_event">
+        	
+        	<ul>
+            	<text>Path Menu</text>
+            	<li>
+                	<label>End Path: <input type="checkbox" id="path_end"></label>
+                    <label>Path nodes: <input type="checkbox" id="control_nodes"></label>
+                </li>
+                <li>
+                	<text>Edit data attribute : <input type="text" class="data_text"></text>
+                </li>
+                <li>
+                	<button>Generate Path Code</button> 
+                </li>
+            </ul>
+        </block>
+        
+        <block id="polygon-menu" class="right_mouse_event">
+        </block>
+        
+        <block id="dripper-menu" class="right_mouse_event">
+        </block>
+        
+        <block id="text-menu" class="right_mouse_event">
+        </block>
+        
+        <block id="crosshatch-menu" class="right_mouse_event">
+        </block>
+ 
+    </memory>
+</body>
+</html>

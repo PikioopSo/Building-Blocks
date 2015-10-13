@@ -1,0 +1,441 @@
+/* CSS Document */
+memory{
+	position:absolute;visibility:hidden; width:0px; height:0px; top:0px; left:0px; 
+}
+ul{
+	list-style:none;
+}
+li{
+	padding:3px;
+}
+.section_title{
+	margin:0px;
+	font-family:Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif; font-size:22px;
+}
+/* Beginning of header styles */
+#kip_header{
+	position:absolute; top:0px; left:0px; width:200px;
+	font-family:lucida sans typewriter; font-size:18px;
+}
+#header_nav{
+	position:absolute; top:10px; left:200px; width:385px; height:120px; padding:10px;  
+	background-color:rgba(180,180,180,.7);  border-radius:10px 0px 30px 0px; border-bottom:2px solid rgba(100,100,100,1); 
+}
+#header_nav .message{
+	position:absolute; top:10px; left:220px; width:170px; 
+	font-size:14px;
+}
+#header_nav a{
+	font-size:14px;
+}
+#kip_header a:hover{
+	color:red;
+}
+.account_login{
+	position:absolute; top:25px; left:25px; 
+	width:250px; 
+}
+.username{
+	width:150px; 
+}
+.pword{
+	width:150px; 
+}
+/* End of header styles */
+
+/* Beginning of content styles */
+#kip_content{
+	position:absolute; top:160px; left:0px;  
+	font-family:lucida sans typewriter;
+}
+#kip_content .section_title{
+	position:absolute; top:-150px; left:620px; width:500px; 
+}
+#kip_content .message{
+	width:900px;
+	font-size:15px;
+}
+.drawing_canvas{
+	position:absolute; top:0px; left:105px; width:1000px; height:650px; 
+	background-color:transparent; border:rgba(0,0,255,1) 1px solid; 
+}
+.drawing_tools{
+	position:absolute; top:30px; left:15px; width:85px; height:590px; 
+}
+.drawing_tools button{
+	height:39px;
+}
+.pointer{
+	width:50px;
+	background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);	
+}
+.pointer:hover{
+	border-style:inset;
+}
+.paint_brush{
+	position:absolute; top:45px; left:0px; width:50px;
+	background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%); 
+}
+.paint_brush:hover{
+	border-style:inset;
+}
+.brush_opt_target{
+	position:absolute; top:45px; left:51px; width:30px; height:35px; 
+	border:2px outset lightgrey; border-radius:0px 25px 25px 0px;
+	background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%); 	
+}
+.polygon{
+	position:absolute; top:90px; left:0px; width:50px;
+	background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);	
+}
+.polygon:hover{
+	border-style:inset;
+}
+.polygon_opt_target{
+	position:absolute; top:90px; left:51px; width:30px; height:35px; 
+	border:2px outset lightgrey; border-radius:0px 25px 25px 0px;
+	background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%); 	
+}
+#poly_opts .input_inc{ 
+	position:absolute; top:27px; left:100px; width:20px; height:13px; 
+	color:rgba(0,0,0,0); border-color:transparent; background-color:transparent;
+	background-image:url(../../img/user_interface/up_triangle_arrow.png); background-repeat:no-repeat; 
+	background-position:3px 0px; 
+} 
+#poly_opts .input_dec{ 
+	position:absolute; top:40px; left:100px; width:20px; height:13px; 
+	color:rgba(0,0,0,0); border-color:transparent; background-color:transparent; 
+	background-image:url(../../img/user_interface/down_triangle_arrow.png); background-repeat:no-repeat; 
+	background-position:3px -15px;
+}
+#poly_opts .input_inc:hover{
+	background-position:3px -15px; border-color:transparent; background-color:transparent;
+} 
+#poly_opts .input_dec:hover{
+	background-position:3px 0px; border-color:transparent; background-color:transparent;
+} 
+#poly_opts input{
+	position:absolute; top:28px; left:68px; width:50px;  
+} 
+.path{
+	position:absolute; top:135px; left:0px; width:50px;
+	background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);	
+}
+.path:hover{
+	border-style:inset;
+}
+.path_opt_target{
+	position:absolute; top:135px; left:51px; width:30px; height:35px; 
+	border:2px outset lightgrey; border-radius:0px 25px 25px 0px;
+	background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%); 	
+}
+.dripper{
+	position:absolute; top:180px; left:0px; width:50px;
+	background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);	
+}
+.dripper:hover{
+	border-style:inset;
+}
+.dripper_opt_target{
+	position:absolute; top:180px; left:51px; width:30px; height:35px; 
+	border:2px outset lightgrey; border-radius:0px 25px 25px 0px;
+	background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%); 	
+}
+.text{
+	position:absolute; top:225px; left:0px; width:50px;
+	background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);	
+}
+.text:hover{
+	border-style:inset;
+}
+.text_opts_target{
+	position:absolute; top:225px; left:51px; width:30px; height:35px; 
+	border:2px outset lightgrey; border-radius:0px 25px 25px 0px;
+	background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%); 	
+}
+#text_opts_target:hover{
+	border-style:inset;
+}
+.crosshatch{
+	position:absolute; top:270px; left:0px; width:50px;
+	background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);
+}
+.crosshatch:hover{
+	border-style:inset;
+}
+.crosshatch_opt_target{
+	position:absolute; top:270px; left:51px; width:30px; height:35px; 
+	border:2px outset lightgrey; border-radius:0px 25px 25px 0px;
+	background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%); 	
+}
+.eraser{
+	position:absolute; top:315px; left:0px; width:50px;
+	background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);	
+}
+.eraser:hover{
+	border-style:inset;
+}
+.eraser_opt_target{
+	position:absolute; top:315px; left:51px; width:30px; height:35px; 
+	border:2px outset lightgrey; border-radius:0px 25px 25px 0px;
+	background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(255,255,255,1.00) 0%,rgba(179,179,179,1.00) 100%); 	
+}
+.console_writer{
+	position:absolute; top:670px; left:90px; width:500px; height:180px; 
+	background-color:white; border:rgba(0,0,255,1) 1px solid; 
+}
+.coordinate{
+	position:absolute; top:0px; left:1090px;  
+}
+.stroke_color_opts{
+	position: absolute;	top: -150px; left: 600px; width: 486px; height:113px; 
+	border:3px outset rgba(0,100,255,1); border-radius:0px 50px 0px 50px;
+	background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,1.00) 0%,rgba(0,132,255,1.00) 100%);
+	background-image: linear-gradient(180deg,rgba(255,255,255,1.00) 0%,rgba(0,132,255,1.00) 100%);	 
+}
+.stroke_color_opts text:nth-child(1){
+	position:absolute; left:10px; top:5px; 
+	color:rgba(0,0,0,1); font-size:14px; font-weight:bold; 
+}
+.color_stroke_fill{
+	position:absolute; left:330px; top:0px;
+	font-size:11px;
+}
+#fill_color_change{ 
+	position:absolute; width:40px; height:27px; left:250px; top:25px; 
+	background-image:url(../../img/user_interface/color_roller_symbol.png); 
+	background-position:9px 2px; background-repeat:no-repeat; border-radius:30px; 
+	background-color:rgba(255,255,255,.5); color:rgba(0,0,0,1); font-size:12px;
+	border-right:1px rgba(50,100,50,1) solid; border-left:1px rgba(50,100,50,1) solid; 
+	z-index:1;
+} 
+#fill_color_change textline{
+	position:absolute; top:-20px; width:200px;
+} 
+#fill_color_change:hover{
+	border-color:rgba(255,100,0,1); border-width:2px; 
+}
+#fill_color_change .input_color{
+	position:absolute; left:45px; top:15px; width:164px; height:13px; 
+	background-color:white; border:rgba(0,0,0,1) 1px solid; z-index:1;
+}
+#fill_color_change .color_pallete_button{
+	position:absolute; top:0px; left:70px; height:10px; width:80px; 
+	color:rgba(0,0,0,0); 
+}
+#fill_color_change .selected_color{
+	position:absolute; top:0px; left:155px; width:45px; height:12px; 
+	border:grey 1px solid; 
+} 
+#stroke_color_change{ 
+	position:absolute; width:40px; height:27px; left:250px; top:80px; 
+	background-image:url(../../img/user_interface/font_color_symbol.png); 
+	background-position:4px 2px; background-repeat:no-repeat; border-radius:30px; 
+	background-color:rgba(255,255,255,.5); color:rgba(0,0,0,1); font-size:12px; 
+	border-right:1px rgba(50,100,50,1) solid; border-left:1px rgba(50,100,50,1) solid; 
+	z-index:0;
+} 
+#stroke_color_change textline{
+	position:absolute; top:-20px; width:200px;
+} 
+#stroke_color_change:hover{
+	border-color:rgba(255,100,0,1); border-width:2px; 
+}
+#stroke_color_change .input_color{
+	position:absolute; left:45px; top:15px; width:164px; height:13px; 
+	background-color:white; border:rgba(0,0,0,1) 1px solid; z-index:1;
+}
+#stroke_color_change .color_pallete_button{
+	position:absolute; top:0px; left:70px; height:10px; width:80px; 
+	color:rgba(0,0,0,0); 
+}
+#stroke_color_change .selected_color{
+	position:absolute; top:0px; left:155px; width:45px; height:12px; 
+	border:grey 1px solid; 
+}
+#stroke_size_adjust{ 
+	position:absolute; left:30px; top:75px; width:40px; height:27px;
+	background-color:rgba(255,255,255,.5); 
+	background-image:url(../../img/user_interface/stroke_width_symbol.png); 
+	background-position:11px 0px; background-repeat:no-repeat; border-radius:40px;
+	border-right:1px rgba(50,100,50,1) solid; border-left:1px rgba(50,100,50,1) solid; 
+	color:rgba(0,0,0,1); font-size:12px;
+}
+#stroke_size_adjust textline{
+	position:absolute; top:-20px; width:200px;
+}
+#stroke_size_adjust input{ 
+	position:absolute; left:45px; top:0px; width:46px; height:18px; 
+} 
+#stroke_size_adjust:hover{
+	border-color:rgba(255,100,0,1); border-width:2px;
+}
+#stroke_size_adjust .input_inc{ 
+	position:absolute; top:-3px; left:75px; width:20px; height:13px; 
+	color:rgba(0,0,0,0); border-color:transparent; background-color:transparent;
+	background-image:url(../../img/user_interface/up_triangle_arrow.png); background-repeat:no-repeat; 
+	background-position:3px 0px;
+} 
+#stroke_size_adjust .input_dec{ 
+	position:absolute; top:11px; left:75px; width:20px; height:13px; 
+	color:rgba(0,0,0,0); border-color:transparent; background-color:transparent; 
+	background-image:url(../../img/user_interface/down_triangle_arrow.png); background-repeat:no-repeat; 
+	background-position:3px -15px;
+}
+#stroke_size_adjust .input_inc:hover{
+	background-position:3px -15px; border-color:transparent; background-color:transparent;
+} 
+#stroke_size_adjust .input_dec:hover{
+	background-position:3px 0px; border-color:transparent; background-color:transparent;
+} 
+.svg_output{
+	position:absolute; top:670px; left:600px; width:380px; height:180px;
+	background-color:white; border:rgba(0,0,255,1) 1px solid; 
+}
+.get_svg{
+	position:absolute; top:855px; left:90px; width:100px; 
+}
+.tool_toggle{
+	position:absolute; left:90px; padding:10px;  
+	font-size:12px; 
+	background-color:rgba(0,255,0,.85); 
+}
+.drawing_tools section:hover{
+	border-style:inset;	
+}
+#paint_brush_opts{ top:45px; } 
+#polygon_opts{ top:90px; width:130px; height:40px; } 
+#path_opts{ top:135px; } 
+#dripper_opts{ top:180px; } 
+#text_opts{ top:225px; } 
+#crosshatch_opts{ top:270px; } 
+/* End of content styles */
+
+/* Beginning of path menu styles */
+#path-menu{
+	position:absolute; top:19px; left:-40px; 
+}
+#path-menu ul{
+	position:absolute; width:440px; height:200px; 
+} 
+#path-menu li{
+	background-color:white; margin:1px;  
+} 
+#path-menu .data_text{
+	width:428px;
+} 
+
+#curve_path_menu text{
+	font-size:10px;
+}
+#curve_path_menu textline{
+	background-color:white; padding-left:10px; padding-right:10px; 
+}
+/* End of path menu styles */
+
+/* beginning of footer styles */
+.footer{
+	position:absolute; top:1035px; left:10px; width:980px; height:305px; 
+	background-color:rgba(0,255,0,.5); border-radius:0px 0px 305px 0px;
+}
+#nav_footer a{
+	font-family:"Lucida Sans Typewriter", monospace;font-size:15px;color:rgba(64,64,64,1);
+}
+#nav_footer a:hover{
+	color:rgba(250,100,100,1); 
+}
+#communicate_nav{
+	position:absolute; top:0px; left:0px; width:400px; 
+	background-color:rgba(255,255,255,.25); border-bottom:1px rgba(0,255,0,1) solid; 
+}
+#citation{
+	position:absolute; top:10px; left:480px; width:480px; padding-top:10px; 
+	background-color:rgba(255,255,255,.25); border-bottom:1px rgba(0,255,0,1) solid;
+	border-radius:0px 0px 100px 0px;
+	font-family:"Lucida Sans Typewriter", monospace;font-size:14px;color:rgba(24,24,24,1);
+	text-align:center;
+}
+#kip_footer .offsite_links{
+	position:absolute; left:30px; top:150px; padding:10px; padding-right:300px; 
+	background-color:rgba(0,0,255,.7); border-radius:0px 0px 150px 0px; 
+	font-family:lucida sans typewriter; font-size:16px;
+} 
+/* End of footer styles */
+
+/* input type styles -- color */
+#fill_color .input_color{
+	position:absolute; left:55px; top:15px; width:164px; height:13px; 
+	background-color:white; border:rgba(0,0,0,1) 1px solid; z-index:1;
+}
+#stroke_color .input_color{
+	position:absolute; left:55px; top:72px; width:164px; height:13px; 
+	background-color:white; border:rgba(0,0,0,1) 1px solid; z-index:1;
+}
+#fill_color .color_pallete_button{
+	position:absolute; top:0px; left:70px; height:10px; width:80px; 
+	color:rgba(0,0,0,0); 
+}
+#fill_color .selected_color{
+	position:absolute; top:0px; left:155px; width:45px; height:12px; 
+	border:grey 1px solid; 
+}
+#stroke_color .color_pallete_button{
+	position:absolute; top:58px; left:70px; height:10px; width:80px; 
+	color:rgba(0,0,0,0); 
+}
+#stroke_color .selected_color{
+	position:absolute; top:57px; left:155px; width:45px; height:12px; 
+	border:grey 1px solid; 
+}
+.red:hover{border:rgba(255,255,0,1) 2px groove;}
+.redLite:hover{border:rgba(255,255,0,1) 2px groove;}
+.yellow:hover{border:rgba(255,255,0,1) 2px groove;}
+.yellowLite:hover{border:rgba(255,255,0,1) 2px groove;}
+.orangeLite:hover{border:rgba(255,255,0,1) 2px groove;}
+.green:hover{border:rgba(255,255,0,1) 2px groove;}
+.greenLite:hover{border:rgba(255,255,0,1) 2px groove;}
+.blue:hover{border:rgba(255,255,0,1) 2px groove;}
+.blueLite:hover{border:rgba(255,255,0,1) 2px groove;}
+.purple:hover{border:rgba(255,255,0,1) 2px groove;}
+.purpleLite:hover{border:rgba(255,255,0,1) 2px groove;}
+/* end --  color */ 
+/* start -- number */ 
+
+.input_inc{ 
+	position:absolute; top:-3px; left:80px; width:20px; height:13px; 
+	color:rgba(0,0,0,0); border-color:transparent; background-color:transparent;
+	background-image:url(../../img/user_interface/up_triangle_arrow.png); background-repeat:no-repeat; 
+	background-position:3px 0px;
+} 
+.input_dec{ 
+	position:absolute; top:11px; left:80px; width:20px; height:13px; 
+	color:rgba(0,0,0,0); border-color:transparent; background-color:transparent; 
+	background-image:url(../../img/user_interface/down_triangle_arrow.png); background-repeat:no-repeat; 
+	background-position:3px -15px;
+}
+.input_inc:hover{
+	background-position:3px -15px; border-color:transparent; background-color:transparent;
+} 
+.input_dec:hover{
+	background-position:3px 0px; border-color:transparent; background-color:transparent;
+} 
+
+/* Canvas node styles */
+.path_node:hover{ 
+	border-style:inset; 
+}

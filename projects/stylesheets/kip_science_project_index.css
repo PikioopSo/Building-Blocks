@@ -1,0 +1,102 @@
+/* CSS Document */
+memory{
+	position:absolute;visibility:hidden;
+}
+ul{
+	list-style:none;
+}
+li{
+	padding:3px;
+}
+.section_title{
+	margin:0px;
+	font-family:Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif; font-size:22px;
+}
+/* Beginning of header styles */
+#kip_header{
+	position:absolute; top:0px; left:0px; width:200px;
+	font-family:lucida sans typewriter; font-size:18px;
+}
+#header_nav{
+	position:absolute; top:160px; left:10px; width:200px; height:250px; padding:10px;  
+	background-color:rgba(0,255,0,.7);  border-radius:10px 0px 30px 0px; border-bottom:2px solid rgba(255,255,0,1); 
+}
+#header_nav .message{
+	position:absolute; top:130px; left:10px; width:170px; 
+	font-size:14px;
+}
+#header_nav a{
+	font-size:14px;
+}
+#kip_header a:hover{
+	color:red;
+}
+.account_login{
+	position:absolute; top:25px; left:25px; 
+	width:250px; 
+}
+.username{
+	width:150px; 
+}
+.pword{
+	width:150px; 
+}
+/* End of header styles */
+
+/* Beginning of content styles */
+#kip_content{
+	position:absolute; top:10px; left:230px; padding:30px; 
+	font-family:lucida sans typewriter;
+}
+#kip_content .section_title{
+	position:absolute; top:-10px; width:500px; 
+}
+#kip_content .projects_list{
+	position:relative; width:700px;
+}
+#kip_content .message{
+	width:900px;
+	font-size:15px;
+}
+.work_space{
+	position:absolute; top:75px; left:10px; width:950px; height:780px; 
+	background-color:white; border:1px solid rgba(0,150,0,1); 
+}
+.science_tools{
+	position:absolute; top:860px; left:10px; width:900px; height:150px;
+	background-color:white; border:1px solid rgba(0,150,0,1); 
+}
+.button_menu{
+	position:absolute; top:18px; left:10px; width:900px; height:50px; 
+	background-color:white; border:solid 1px rgba(0,255,0,1); 
+}
+/* End of content styles */
+/* beginning of footer styles */
+
+.footer{
+	position:absolute; top:1035px; left:10px; width:980px; height:305px; 
+	background-color:rgba(0,255,0,.5); border-radius:0px 0px 305px 0px;
+}
+#nav_footer a{
+	font-family:"Lucida Sans Typewriter", monospace;font-size:15px;color:rgba(64,64,64,1);
+}
+#nav_footer a:hover{
+	color:rgba(250,100,100,1); 
+}
+#communicate_nav{
+	position:absolute; top:0px; left:0px; width:400px; 
+	background-color:rgba(255,255,255,.25); border-bottom:1px rgba(0,255,0,1) solid; 
+}
+#citation{
+	position:absolute; top:10px; left:480px; width:480px; padding-top:10px; 
+	background-color:rgba(255,255,255,.25); border-bottom:1px rgba(0,255,0,1) solid;
+	 border-radius:0px 0px 100px 0px;
+	font-family:"Lucida Sans Typewriter", monospace;font-size:14px;color:rgba(24,24,24,1);
+	text-align:center;
+}
+#kip_footer .offsite_links{
+	position:absolute; left:30px; top:150px; padding:10px; padding-right:300px; 
+	background-color:rgba(0,0,255,.7); border-radius:0px 0px 150px 0px; 
+	font-family:lucida sans typewriter; font-size:16px;
+} 
+/* End of footer styles */
