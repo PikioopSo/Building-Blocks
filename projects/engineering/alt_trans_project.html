@@ -10,12 +10,12 @@
 
 <body>
 
-<target id="kip_content"> 
+<target class="content"> 
 			<!--  The class titleBar is unique for every xml document generated. -->
 			<!--  The _project file titleBar class has six nodes each with a unique id.  -->
 			<!--  The id's are: projectName, projectCategory, 
 					projectOverview, projectAuthors, 
-                    projectStartDate, and projectEndData   -->
+                			projectStartDate, and projectEndData   -->
 	<text class="titleBar">
 		<texltine id="projectName">
         	Alternative Transportation Project
@@ -36,6 +36,14 @@
         	N/A
         </textline>
 	</text>
+			<!-- The projectContents class can occur only once in this xml doc.  -->
+			<!-- The projectContents class can have as many chapter classes as it needs.  -->
+			<!-- I have chosen to use the anchor tag to also represent a navigation bookmark.  -->
+	<nav class="projectContents">
+		<a href="javascript::" class="chapter">The history of vehicle transportation.</a>
+		<a href="javscript::" class="chapter">An introduction to Kip's Alternative Transportation Project</a>
+		<a href="javscript::" class="chapter">The fallout of alternative transportation</a>
+	</nav>
 </target>
 
 	<memory id="utility_memory">
