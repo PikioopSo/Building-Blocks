@@ -8,7 +8,7 @@ var ktvg = document.getElementsByClassName("ktvg"), articles = document.getEleme
 
 var matches = { 
 	func:/\w+\(\w+\,\d+\)/g, 
-	incTest : /\+/g,
+	incTest : /\+/g, 
 	decTest : /\-/g,
 	dataTest : /pointsQ/g,
 	lineColor : /lineColor/g, 

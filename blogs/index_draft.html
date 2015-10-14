@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<link type="text/css" rel="stylesheet" href="stylesheets/blogs.css">
 		
+    <script type="text/javascript" async="true" src="javascripts/ktml_draft.js"></script>
 	<script type="text/javascript" async="true" src="javascripts/ktml.js"></script>
 	<script type="text/javascript" async="true" src="../javascripts/ktvg.js"></script>
        
@@ -53,8 +54,8 @@
 
 		<utilbar class="navigate"> 
 			<nav class="logo_nav">
-       				<block>
-				    	<a href="../index.html" class="logo_img"><img src="../img/logos/kiptext_Logo.png" alt="kip logo"></a>
+				<block>
+					<a href="../index.html" class="logo_img"><img src="../img/logos/kiptext_Logo.png" alt="kip logo"></a>
 					<section class="nav_bar_header">
 						<a href="#">Kip's Blog</a>
 						<a href="../projects/index.html">Kip Projects</a>
@@ -63,25 +64,25 @@
 				</block>
     		</nav> 
 				
-			<section class="box_menu">
-				<block> 
+			<div class="box_menu">
+         		<block> 
 					<article id="search_options">
 						<label class="search_box_tool">Search for titles: 
 							<input type="text" name="search_titles" onmouseup="expandTarget(this,'(400px,80px)')" onkeyup="getSearchValue(this,event)" target-object="last_search_drop" target-destination="search_title_target" target-directory="blogs">
 						</label> 
 						<target id="search_title_target" dimension-end="(400px,100px)" dimension-start="(400px,15px)"></target> 
-					</article>
+       				</article>
 
-					<article id="category_button_list">
-						<button id="kip_button" target-destination="sub_cat_target" type="{-blogs-}.kip[sc_index]" data="create|sub_cat_target(button)" onclick="directory(this);">Kip</button>
-       					<button id="science_button" target-destination="sub_cat_target" type="{-blogs-}.science[sc_index]" data="create|sub_cat_target(button)" onclick="directory(this);">Science</button> 
-						<button id="compsci_button" target-destination="sub_cat_target" type="{-blogs-}.computer_sci[sc_index]" data="create|sub_cat_target(button)" onclick="directory(this);">Computer Science</button> 
-						<button id="engineering_button" target-destination="sub_cat_target" type="{-blogs-}.engineering[sc_index]" data="create|sub_cat_target(button)" onclick="directory(this);">Engineering</button> 
-						<button id="featuredstories_button" target-destination="sub_cat_target" type="blogs" data="reader_selection" onclick="getFeaturedStories(this);">Featured Stories</button> 
-						<button id="all_button" target-destination="sub_cat_target" type="blogs" data="sub_cat_target" onclick="allSubCategories(this);">All</button>
+       				<article id="category_button_list">
+						<button class="directory" id="kip_button" target-destination="sub_cat_target" type="{-blogs-}.kip[sc_index]" data="create|sub_cat_target(button)">Kip</button>
+						<button class="directory"  id="science_button" target-destination="sub_cat_target" type="{-blogs-}.science[sc_index]" data="create|sub_cat_target(button)">Science</button> 
+						<button class="directory" id="compsci_button" target-destination="sub_cat_target" type="{-blogs-}.computer_sci[sc_index]" data="create|sub_cat_target(button)">Computer Science</button> 
+						<button class="directory" id="engineering_button" target-destination="sub_cat_target" type="{-blogs-}.engineering[sc_index]" data="create|sub_cat_target(button)">Engineering</button> 
+						<button class="directory" id="featuredstories_button" target-destination="sub_cat_target" type="blogs" data="reader_selection" onclick="getFeaturedStories(this);">Featured Stories</button> 
+						<button class="directory" id="all_button" target-destination="sub_cat_target" type="blogs" data="sub_cat_target" onclick="allSubCategories(this);">All</button>  
 					</article>
 				</block>
-			</section> 
+			</div> 
 		</utilbar> 
 
 		<utilbar class="row">
@@ -104,14 +105,20 @@
 		<utilbar class="blog_display"> 
 			<instruct class="menu">
 				<block> 
-		<button data="reader_selection" type="reader_uility" target="target_blog_display" onclick="previous(this)" id="previous_article_button">previous</button> 
-		<button data="reader_selection" type="reader_uility" target="target_blog_display" onclick="next(this)" class="bar_button" id="next_article_button">next</button> 
-		<button data="print_utility" type="reader_utility" target="page_content" onclick="toggleClassWindow(this)" class="bar_button" id="print_article_button">print</button> 
-		<button class="menu_button" target-object="directory_window" target-directory="kip.blogs" onclick="getDirectory(this)">File Nav</button> 
-        	<button target-object="target_blog_display" onclick="getArticleWindow(this)" id="article_window_button">Article Window</button> 
-		<text id="font_size_adjust" target-object="target_blog_display" class="number" onclick="fontSize(this)">Font-Size: <input type="number" value="14" onchange="fontSize(this)" target-object="target_blog_display"> </text> 
-		<text id="font_color_change" class="color" onclick="fontColor(this)">Font-Color: <input type="color" value="rgba(65,65,65,1)"> </text> 
-        	<text id="background_color_change" class="color" target-object="display" onclick="canvasColor(this)">Background-Color: <input type="color" value="rgba(255,255,255,1)"> </text> 
+					<button data="reader_selection" type="reader_uility" target="target_blog_display" onclick="previous(this)" id="previous_article_button">previous</button> 
+					<button data="reader_selection" type="reader_uility" target="target_blog_display" onclick="next(this)" class="bar_button" id="next_article_button">next</button> 
+					<button data="print_utility" type="reader_utility" target="page_content" onclick="toggleClassWindow(this)" class="bar_button" id="print_article_button">print</button> 
+					<button class="menu_button" target-object="directory_window" target-directory="kip.blogs" onclick="getDirectory(this)">File Nav</button> 
+					<button target-object="target_blog_display" onclick="getArticleWindow(this)" id="article_window_button">Article Window</button> 
+					<text id="font_size_adjust" target-object="target_blog_display" class="number" onclick="fontSize(this)">Font-Size: 
+						<input type="number" value="14" onchange="fontSize(this)" target-object="target_blog_display"> 
+					</text> 
+					<text id="font_color_change" class="color" onclick="fontColor(this)">Font-Color: 
+						<input type="color" value="rgba(65,65,65,1)"> 
+					</text> 					
+                    <text id="background_color_change" class="color" target-object="display" onclick="canvasColor(this)">Background-Color: 
+                    	<input type="color" value="rgba(255,255,255,1)"> 
+					</text> 
 				</block> 
 			</instruct> 
 			<instruct class="display" id="display"> 
