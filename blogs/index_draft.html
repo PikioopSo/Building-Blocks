@@ -23,11 +23,18 @@
 
 
 			<!-- KTVG -->
+	<!-- The ktvg.js file includes:
+    	1.) Event listeners
+        2.) Data inline format language
+        3.) Adds attributes to the article tag
+        
+        For more information please check our blog or the github wiki
+         -->
 
 
 	<script type="text/javascript" async="true" src="../javascripts/ktvg.js"></script> 
        
-	<title>Kip.org || Blogs</title>
+	<title>KipOmaha.org || Blogs</title>
 </head>
 
 <body> 
@@ -35,7 +42,7 @@
 	<header id="page_header" class="blog_banner"> 
 
 
-	<!-- Article tags marked with the ktvg class have special attributes for svg. -->
+	<!-- Beginning of the class ktvg for article -->
 
 
 		<article style="position:absolute; width:300px; height:1000px; left:0px; z-index:0;" class="ktvg" target-object-i="1" 
@@ -47,6 +54,12 @@
 				strokeWidth[(+0|1|)]-width; }"> 
 			<svg xmlns="http://www.w3.org/2000/svg" width="1250px" height="1000px"></svg>
 		</article>
+
+
+	<!-- End of article's ktvg class -->
+    
+    <!-- Beginning of the class ktvg for article -->
+
 
 		<article style="position:absolute; width:300px; height:1000px; left:20px; z-index:0;" class="ktvg" target-object-i="2" 
 			target-instruction-1=" 
@@ -68,23 +81,34 @@
 			<svg xmlns="http://www.w3.org/2000/svg" width="1250px" height="1000px"></svg> 
 		</article>
 
+
+	<!-- End of article's ktvg class -->
+
+
 		<utilbar class="navigate"> 
 			<nav class="logo_nav">
 				<block>
 					<a href="../index.html" class="logo_img"><img src="../img/logos/kiptext_Logo.png" alt="kip logo"></a>
-					<section class="nav_bar_header">
+
+                    <section class="nav_bar_header">
 						<a href="#">Kip's Blog</a>
 						<a href="../projects/index.html">Kip Projects</a>
 						<a href="../shop/index.html">Kip Shop</a> 
 					</section>
+
 				</block>
     		</nav> 
 				
 			<div class="box_menu">
-         		<block class="directory_navigation" id="blogs_directory_navigation" 
-					data-instruction-i="1" 
-					data-instruction-1=""> 
-					<article id="search_options">
+         		<block class="directory_navigation" id="blogs_directory_navigation"> 
+
+
+			<!-- The search type for the widget tag -->
+	<!-- An application interface for searching the document for information. 
+		In this document we are using it to allow users to search the embedded memory xml. -->
+
+
+                    <widget type="search" id="search_options">
 						<label class="search_box_tool">Search for titles: 
 							<input type="text" name="search_titles" onmouseup="expandTarget(this,'(400px,80px)')" onkeyup="getSearchValue(this,event)" 
 								target-object="last_search_drop" 
@@ -92,15 +116,12 @@
 								target-directory="blogs">
 						</label> 
 						<target id="search_title_target" dimension-end="(400px,100px)" dimension-start="(400px,15px)"></target> 
-       				</article>
+       				</widget>
 
 
-	<!-- The directory class 
-			
-    		The directory class has an event listener added to it.  
-			
-			-->
-
+			<!-- The directory class -->
+	<!-- The directory class adds an event listener to the html or xhtml object. 
+    	The event listener will gather data- attribute information and interpret it. -->
 
        				<article id="category_button_list">
 						<button class="directory" id="kip_button" 
