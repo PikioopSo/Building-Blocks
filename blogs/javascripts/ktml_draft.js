@@ -69,10 +69,123 @@ var nR = {
 
 			// --dML (Data Markup Language)	
 	// A set of two objects that allow you to navigate and retrieve files using the xmlHttpRequest object	
-	// The set of objects contains literal reg exp objects
-	//	Needs the html document to get updated before any serious changes can be made.
-	//	Needs to match other instances of the ktml js file.
+	// The first object contains literal reg exp objects. 
+	// The second object contains instructions for the document.
+
+	//	** Needs to match other instances of the ktml js file.
 
 
-var dML = {	
+var dML = {
+	dot: /\.+/g,
+	lP: /\(+/g,
 };
+
+var instruct = {	
+	cS: function(matchClassString){
+var cSObject = {
+	cSMain: matchClassString.match(cR.lNGI)[0], 
+	cSMatch: matchClassString.match(cR.lNGI), 
+};
+	return cSObject; 
+
+	},
+	dDa: function(evTarget){
+var dDaObject = { 
+	dDir: evTarget.getAttribute("data-directory"), 
+	dCat: evTarget.getAttribute("data-category"), 
+	dTar: evTarget.getAttribute("data-target"),  
+	dAInd: evTarget.getAttribute("data-action-i"), 
+	dId: evTarget.getAttribute("id"),
+};
+
+	return dDaObject;
+
+	},
+};
+
+var dADiCa = function dADiCa(directory,category){
+	this.directory = document.getElementById(directory);
+	this.category = this.directory.getElementsByClassName(category); 
+}; 
+
+var action = function action(classMatch,evtTgt,dirId,num){
+
+	for(var cN=0;cN<classMatch.length;cN++){
+var dirObject = document.getElementById(dirId); 
+var classObject = dirObject.getElementsByClassName(classMatch[cN]).item(0); 
+
+		for(var dN=0;dN<num;dN++){
+var currentIndex = dN+1; 
+var actionString = evtTgt.getAttribute("data-action-"+currentIndex);
+
+		}
+
+	}
+
+};
+
+			// Event listeners for the document 
+
+
+	document.addEventListener("mousedown",function(event){
+var target = event.target, wHEv = event.which, targetClass = target.getAttribute("class"); 
+
+			if(wHEv === 1){ 
+var cSStg = instruct.cS(targetClass);  
+
+				if(cSStg.cSMatch.length <= 1){
+
+					if(cSStg.cSMain.toString() === "directory"){
+var dData = instruct.dDa(target); 
+
+						if(dData.dCat === "all"){
+
+						}
+						else{
+var catCsMatch = instruct.cS(dData.dCat); 
+var dObj = new dADiCa(dData.dDir,dData.dCat); 
+
+var snippet = action(catCsMatch,target,dData.dDir,dData.dAInd); 
+
+						}
+
+					}
+					else if(cSStg.cSMain === "interface"){ 
+
+					}
+
+				}
+
+				else{
+
+				}
+
+			}
+			else if(wHEv === 2){
+			}
+			else if(wHEv === 3){
+
+			}
+
+		});
+
+	document.addEventListener("mouseup",function(event){
+var target = event.target, targetClass = target.getAttribute("class"); 
+
+		});
+
+	document.addEventListener("touchstart",function(event){
+
+		});
+
+	document.addEventListener("touchend",function(event){
+
+		});
+
+	document.addEventListener("touchcancel",function(event){
+
+		});
+
+	document.addEventListener("touchmove",function(event){
+
+		});

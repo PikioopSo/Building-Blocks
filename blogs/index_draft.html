@@ -121,36 +121,39 @@
 
 			<!-- The directory class -->
 	<!-- The directory class adds an event listener to the html or xhtml object. 
-    	The event listener will gather data- attribute information and interpret it. -->
+    	The event listener will gather data- attribute information and interpret it. 
+        -->
+
 
        				<article id="category_button_list">
-						<button class="directory" id="kip_button" 
+						<button class="directory" id="kip_button" data-action-i="1" 
 							data-directory="blogs" data-category="kip" 
-							data-action=".btn.[main(scTitle,all) ev(btn,article,all) tar(reader_selection)].btn." 
+							data-action-1=".btn.[label(scTitle) action(btn) tar(reader_selection)].btn.scI.;" 
 							data-target="sub_cat_target">Kip
 						</button>
 
-						<button class="directory" id="science_button"
+						<button class="directory" id="science_button" data-action-i="1" 
 							data-directory="blogs" data-category="science" 
-							data-action=".btn.[main(scTitle,all) ev(btn,article,all) tar(reader_selection)].btn." 
+							data-action-1=".btn.[label(scTitle) ev(btn) tar(reader_selection)].btn.scI." 
 							data-target="sub_cat_target">Science
 						</button> 
 
-						<button class="directory" id="compsci_button" 
+						<button class="directory" id="compsci_button" data-action-i="1" 
 							data-directory="blogs" data-category="computer_sci" 
-							data-action=".btn.[main(scTitle,all) ev(btn,article,all) tar(reader_selection)].btn." 
+							data-action-1=".btn.[label(scTitle) ev(btn) tar(reader_selection)].btn.scI." 
 							data-target="sub_cat_target">Computer Science
 						</button> 
 
-						<button class="directory" id="engineering_button" 
+						<button class="directory" id="engineering_button" data-action-i="1" 
 							data-directory="blogs" data-category="engineering" 
-							data-action=".btn.[main(scTitle,all) ev(btn,article,all) tar(reader_selection)].btn." 
+							data-action-1=".btn.[label(scTitle) ev(btn) tar(reader_selection)].btn.scI." 
 							data-target="sub_cat_target">Engineering</button> 
 
-						<button class="directory-featured" id="featuredstories_button" 
-							data-directory="blogs" 
-							data-action=".btn.[main(all) ev(btn,article,all) tar(target_blog_display)].btn." 
-							data-target="sub_cat_target">Featured Stories</button> 
+						<button class="directory-featured" id="featuredstories_button" data-action-i="2" 
+							data-directory="blogs" data-category="all" 
+							data-action-1=".btn.[label(all) ev(display) tar(target_blog_display)].btn." 
+							data-action-2="" 
+							data-target="reader_selection,sub_cat_target">Featured Stories</button> 
 
 						<button class="all" id="all_button"
 							>All</button>  
@@ -311,13 +314,15 @@ moon, but your will, your dreams, and your imagination can take you further.</sp
 </svg>
 
 	<root id="kip" type="utility" data="file"> 
-		<directory id="blogs">
-			<category class="kip" title="Kip" sc-i="1" sc-1="web_headquarters" 
-				sc-title-1="Web Headquarters">
-				<article class="web_headquarters" name="kip" pub="feb_18_2015" author="Kip" type="date" featured="true" file-href="kip_omaha_opens.htm" id="featured_blog">Kip Omaha Opens</article> 
+		<directory id="blogs"> 
+			<category class="kip" data-title="Kip" data-sc-i="1" 
+				data-sc-1="web_headquarters" 
+				data-sc-title-1="Web Headquarters">
+				<article id="featured_blog" class="web_headquarters" name="kip" pub="feb_18_2015" featured="true" 
+					author="Kip" type="date" file-href="kip_omaha_opens.htm">Kip Omaha Opens</article> 
 			</category> 
-			<category class="science" title="Science" sc-i="1" sc-1="physics" 
-				sc-title-1="Physics"> 
+			<category class="science" data-title="Science" data-sc-i="1" data-sc-1="physics" 
+				data-sc-title-1="Physics"> 
 				<article class="physics" name="science" pub="jul_3_2015" type="date" author="Kip" file-href="kip_physics_lab.htm">Kip Physics Lab</article> 
 			</category> 
 			<category class="computer_sci" title="Computer Science" sc-i="1" sc-1="programming" sc-title-1="Programming"> 
