@@ -1,9 +1,19 @@
 ﻿<!DOCTYPE html>
 <html>
+
+	<!-- Author: Steven Van Sant. 
+    	 Co-Author: None. 
+         Contributors: None.
+         Publication Date:  Unfinished.
+    	 License: Not available yet. 
+
+		*** Please email the author at kipOmaha@gmail.com if you have any comments or suggestions. ***
+	
+        -->
+
 <head>
 	<meta charset="utf-8">
 	<link type="text/css" rel="stylesheet" href="stylesheets/blogs.css">
-
 
 			<!-- KTML -->
 	<!-- The ktml.js file includes:
@@ -18,7 +28,7 @@
          -->
 
 		
-    <script type="text/javascript" async="true" src="javascripts/ktml_draft.js"></script> 
+    <script type="text/javascript" async="true" src="../javascripts/ktml_draft.js"></script> 
 	<script type="text/javascript" async="true" src="javascripts/ktml.js"></script> 
 
 
@@ -121,52 +131,94 @@
 
 			<!-- The directory class -->
 	<!-- The directory class adds an event listener to the html or xhtml object. 
-    	The event listener will gather data- attribute information and interpret it. 
-        -->
+			The event listener looks for the following attributes:
+        
+        class:  The main argument for your event. In this case it is 'directory' class.
+					Each class has special meaning to the js file 
+                    Using the directory class allows you to access the following attributes.
+
+                    * attributes must be formatted with the correct syntax *
+
+		data-directory:  The target directory. 
+        		* accepts only one target. *
+				* target must be the id attribute of a directory object *
+
+        data-category:  The category targets/target. 
+        		* accepts a list of classes where each class is seperated by a comma* 
+
+		data-sub-category:  The sC target/targets.
+				* accepts a list of sub category names seperated by a comma
+
+		data-target:  The display target of the end result if applicable.
+        		* accepts a list of id values where each value is spearated by a comma. *
+
+			***  Check the wiki on Git Hub for more information *** 
+        -->  
 
 
        				<article id="category_button_list">
-						<button class="directory" id="kip_button" data-action-i="1" 
-							data-directory="blogs" data-category="kip" 
-							data-action-1=".btn.[label(scTitle) action(btn) tar(reader_selection)].btn.scI.;" 
+						<button class="directory;" title="Get sub-categories from the Kip category"
+							data-directory="blogs" data-category="kip,engineering;" data-sub-category="all;" 
 							data-target="sub_cat_target">Kip
 						</button>
 
-						<button class="directory" id="science_button" data-action-i="1" 
-							data-directory="blogs" data-category="science" 
-							data-action-1=".btn.[label(scTitle) ev(btn) tar(reader_selection)].btn.scI." 
+						<button class="directory;" id="science_button" 
+							data-directory="blogs" data-category="science;" data-sub-category="all;"  
 							data-target="sub_cat_target">Science
 						</button> 
 
-						<button class="directory" id="compsci_button" data-action-i="1" 
-							data-directory="blogs" data-category="computer_sci" 
-							data-action-1=".btn.[label(scTitle) ev(btn) tar(reader_selection)].btn.scI." 
+						<button class="directory;" id="compsci_button" 
+							data-directory="blogs" data-category="computer_sci;" data-sub-category="all;" 
 							data-target="sub_cat_target">Computer Science
 						</button> 
 
-						<button class="directory" id="engineering_button" data-action-i="1" 
-							data-directory="blogs" data-category="engineering" 
-							data-action-1=".btn.[label(scTitle) ev(btn) tar(reader_selection)].btn.scI." 
+						<button class="directory;" id="engineering_button" 
+							data-directory="blogs" data-category="engineering;" data-sub-category="all;" 
 							data-target="sub_cat_target">Engineering</button> 
 
-						<button class="directory-featured" id="featuredstories_button" data-action-i="2" 
-							data-directory="blogs" data-category="all" 
-							data-action-1=".btn.[label(all) ev(display) tar(target_blog_display)].btn." 
-							data-action-2="" 
-							data-target="reader_selection,sub_cat_target">Featured Stories</button> 
+						<button class="directory-featured;" id="featuredstories_button" 
+							data-directory="blogs" data-category="all;" data-sub-category="all;" 
+							data-ev-extend="target{
+								iHTML: 'Featured Stories', 
+								oHTML: none, 
+								oHTML-class: none, 
+								iHTML-id: none, 
+								append: none, 
+								append-label: none, 
+								append-id: none, 
+								append-class: none, 
+							};" 
+							data-target="reader_selection">Featured Stories</button> 
 
-						<button class="all" id="all_button"
-							>All</button>  
+						<button class="directory-all" id="all_button"
+							data-directory="blogs" 
+							data-ev-extend="none;"
+							data-target="sub_cat_target">All</button>  
+
 					</article>
+
 				</block>
+
 			</div> 
+
 		</utilbar> 
 
 		<utilbar class="row">
        		<block id="category_selector" class="horizontal_row">
 				<text class="section_title">Sub Categories</text>
-				<target class="" id="sub_cat_target" 
-					dimension-end="(1150px,55px)" dimension-start="(1150px,10px)" data="featured">Featured Stories</target>
+
+
+		<!-- target data-directory-ev -->
+			
+
+				<target id="sub_cat_target" data-current-ev="featured" 
+					data-directory-ev="button{ 
+									class: 'directory-list', 
+									id: default, 
+									title: 'Get articles from sub-category.', 
+									target: 'reader_selection', 
+									label: .|title, 
+								};">Featured Stories</target>
 			</block>
 		</utilbar> 
 
@@ -197,7 +249,7 @@
 			</block> 
 
 			<block class="display" id="display">
-				<display id="target_blog_display">
+				<display id="target_blog_display" data-current-display="Kip Omaha Opens">
 <div class="WordSection1">
 
 <p class="MsoNoSpacing"><span style='font-size:18.0pt;font-family:"Lucida Sans Typewriter";
@@ -261,19 +313,33 @@ moon, but your will, your dreams, and your imagination can take you further.</sp
 		<utilbar type="{-this-}newspaper.display[list]" class="list">  
             <block class="selection"> 
 				<text>Select a blog to read</text><br>
-				<target id="reader_selection" current-index="1" data="featured">
+
+
+		<!-- target data-directory-ev -->
+
+
+				<target id="reader_selection" current-index="1" data-current-ev="featured"
+					data-directory-ev="get(html){ 
+									class: 'directory', 
+									id: 'default', 
+									title: 'Get article', 
+									target: 'target_blog_display', 
+									label: article.|title, 
+								};">
 					<button data="kip/feb_18_2015/kip_omaha_opens.htm" onclick="getArticle(this)">Kip Omaha Opens</button><br>
 					<details>
                     	<summary>Bibliographical Information</summary><br>
                         <text>By Kip</text><br>
                         <text>Published on feb 18 2015.<br></text>
 					</details>
+
 					<button data="engineering/jul_3_2015/kip_power_lab.htm" onclick="getArticle(this)">Kip Power Lab</button><br>
 					<details>
                     	<summary>Bibliographical Information</summary><br>
                         <text>By Kip</text><br>
                         <text>Published on jul 3 2015.<br></text>
 					</details>
+
 				</target> 
 			</block>
         </utilbar>   
@@ -318,22 +384,44 @@ moon, but your will, your dreams, and your imagination can take you further.</sp
 			<category class="kip" data-title="Kip" data-sc-i="1" 
 				data-sc-1="web_headquarters" 
 				data-sc-title-1="Web Headquarters">
-				<article id="featured_blog" class="web_headquarters" name="kip" pub="feb_18_2015" featured="true" 
-					author="Kip" type="date" file-href="kip_omaha_opens.htm">Kip Omaha Opens</article> 
+				<article id="featured_blog" class="web_headquarters" name="kip" featured="true"  
+					data-title="Kip Omaha Opens" data-pub="feb_18_2015" data-author="Kip" 
+					data-file-href="kip_omaha_opens.htm"></article> 
+
 			</category> 
-			<category class="science" data-title="Science" data-sc-i="1" data-sc-1="physics" 
+
+			<category class="science" data-title="Science" data-sc-i="1"  
+				data-sc-1="physics" 
 				data-sc-title-1="Physics"> 
-				<article class="physics" name="science" pub="jul_3_2015" type="date" author="Kip" file-href="kip_physics_lab.htm">Kip Physics Lab</article> 
+				<article class="physics" name="science" 
+					data-title="Kip Phyiscs Lab" data-pub="jul_3_2015" data-author="Kip" 
+					data-file-href="kip_physics_lab.htm"></article> 
+
 			</category> 
-			<category class="computer_sci" title="Computer Science" sc-i="1" sc-1="programming" sc-title-1="Programming"> 
-				<article class="programming" title="Programming" name="computer_sci" pub="feb_23_2015" type="date" author="Kip" file-href="inline_with_science_and_math.htm">Inline with Science and Math</article>
-                <article class="programming" title="Programming" name="computer_sci" pub="sep_2_2015" type="date" author="Kip" file-href="html_5_standards.htm">Kip's HTML 5 color pallet and counter</article> 
+
+			<category class="computer_sci" data-title="Computer Science" data-sc-i="1" 
+				data-sc-1="programming" 
+				data-sc-title-1="Programming"> 
+				<article class="programming" name="computer_sci" 
+					data-title="Inloie with Science and Math" data-pub="feb_23_2015" data-author="Kip" 
+					data-file-href="inline_with_science_and_math.htm"></article>
+
+                <article class="programming" name="computer_sci" 
+					data-title="Kip's HTML 5 color pallet and counter" data-pub="sep_2_2015" data-author="Kip" 
+					data-file-href="html_5_standards.htm"></article> 
+
 			</category> 
-			<category class="engineering" title="Engineering" sc-i="1" sc-1="power_plants"
-				sc-title-1="Power Plants"> 
-				<article class="power_plants" pub="jul_3_2015" author="Kip" featured="true" name="engineering" type="date" file-href="kip_power_lab.htm">Kip Power Lab</article> 
+
+			<category class="engineering" data-sc-i="1" 
+				data-sc-1="power_plants"
+				data-sc-title-1="Power Plants"> 
+				<article class="power_plants" name="engineering" featured="true" 
+					data-title="Kip Power Lab" data-pub="jul_3_2015" data-author="Kip" 
+					data-file-href="kip_power_lab.htm"></article> 
 			</category> 
+
 		</directory>  
+
 	</root>
 
     <block id="print_utility" class="reader_utility" type="print|print_selection(all)" data="default|{memory(default)"> 

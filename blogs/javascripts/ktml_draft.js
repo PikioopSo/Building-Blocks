@@ -1,5 +1,13 @@
 "use strict";
 
+			//Author: Steven Van Sant. 
+    	// Co-Author: None. 
+        // Contributors: None.
+        // Publication Date:  Unfinished.
+    	// License: Not available yet. 
+
+		// *** Please email the author at kipOmaha@gmail.com if you have any comments or suggestions. ***
+
 
 			// The elemX object 
 	// elemX is the object container for xhtml tags that javascript modifies. 
@@ -76,7 +84,7 @@ var nR = {
 
 
 var dML = {
-	dot: /\.+/g,
+	dot: /\w+(?=\.)/g,
 	lP: /\(+/g,
 };
 
@@ -108,21 +116,25 @@ var dADiCa = function dADiCa(directory,category){
 	this.category = this.directory.getElementsByClassName(category); 
 }; 
 
-var action = function action(classMatch,evtTgt,dirId,num){
+var action = function action(classObject,evtTgt,dirId,num){ 
 
-	for(var cN=0;cN<classMatch.length;cN++){
+	for(var cN=0;cN<classMatch.cSMatch.length;cN++){
 var dirObject = document.getElementById(dirId); 
-var classObject = dirObject.getElementsByClassName(classMatch[cN]).item(0); 
+var classObject = dirObject.getElementsByClassName(classObject.cSMatch[cN]).item(0); 
 
 		for(var dN=0;dN<num;dN++){
 var currentIndex = dN+1; 
-var actionString = evtTgt.getAttribute("data-action-"+currentIndex);
-
+var actionString = evtTgt.getAttribute("data-action-"+currentIndex); 
+var cMad = letter(actionString); 
 		}
 
 	}
 
 };
+
+var letter = function letter(stg){
+var dMLDot = stg.match(/\w+(?=\.)/g);
+}; 
 
 			// Event listeners for the document 
 
@@ -133,34 +145,27 @@ var target = event.target, wHEv = event.which, targetClass = target.getAttribute
 			if(wHEv === 1){ 
 var cSStg = instruct.cS(targetClass);  
 
-				if(cSStg.cSMatch.length <= 1){
-
-					if(cSStg.cSMain.toString() === "directory"){
+				if(cSStg.cSMain.toString() === "directory"){
 var dData = instruct.dDa(target); 
 
-						if(dData.dCat === "all"){
+					if(dData.dCat === "all"){
 
-						}
-						else{
+					}
+					else{
 var catCsMatch = instruct.cS(dData.dCat); 
 var dObj = new dADiCa(dData.dDir,dData.dCat); 
 
 var snippet = action(catCsMatch,target,dData.dDir,dData.dAInd); 
 
-						}
-
-					}
-					else if(cSStg.cSMain === "interface"){ 
-
 					}
 
 				}
-
-				else{
+				else if(cSStg.cSMain === "interface"){ 
 
 				}
 
 			}
+
 			else if(wHEv === 2){
 			}
 			else if(wHEv === 3){
@@ -170,7 +175,6 @@ var snippet = action(catCsMatch,target,dData.dDir,dData.dAInd);
 		});
 
 	document.addEventListener("mouseup",function(event){
-var target = event.target, targetClass = target.getAttribute("class"); 
 
 		});
 
