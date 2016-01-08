@@ -4,8 +4,8 @@
 	<meta charset="utf-8"></meta>
 	<meta name="description" content=""></meta>
 		<script type="text/javascript" async src="../../javascripts/ktml.js"></script> 
-		<link rel="stylesheet" href="../stylesheets/kip_science_project_index.css" type="text/css"> 
-<title>Kip.org || Kip Science Project</title> 
+		<link rel="stylesheet" href="../stylesheets/club_membership_benefits_index.css" type="text/css"> 
+<title>Kip.org || University of Nebraska Outreach Program</title> 
 </head>
 
 <body>
@@ -36,17 +36,31 @@ KipOmaha.org is an effort to bring an online tool that is useful for the creativ
 
 <target id="kip_content"> 
 	<textline class="section_title">
-Welcome to Kip's Science Project Page.
-	</textline><br><br>
-    <section class="work_space">
-    </section>
-    <section class="science_tools">
-    </section>
-    <section class="button_menu">
-		<button>graph</button>
-        <button>table</button>
-        <button>text box</button>
-    </section>
+Welcome to our college science and engineering club membership tour page.
+	</textline>
+    <article class="message">
+		<text>
+        	<textline>
+As a club science or engineering club in that is a part of the Nebraska College circuit you are welcome to use our tools specially tailored for you.
+            </textline>
+        </text>
+    </article>
+    <widget id="slideshow_widget" class="slide_show" type="slideShow" target-object="slideshow_image" slide-set="membership_benefits" slide-interval="5">
+        	<section id="slide_show_section">
+            	<text id="slideshow_caption"> 
+                    <textline id="slideshow_description">Helping further science and engineering.</textline>
+                </text><br>
+                <target id="slide_show_target">
+					<img src="slide_shows/college_slideshows/membership_benefits/slide1.png" id="slideshow_image" alt="slide_show" slide-state="play"/>
+                </target>
+            </section>
+            <utilbar id="slideshow_utilbar">
+            	<button onclick="nextSlide(this)" id="next_slide" class="">next</button>
+                <button onclick="playSlide(this)" target-object="slideshow_image" slide-set="membership_benefits" slide-interval="5"  id="play_slideshow" class="">play</button>
+                <button onclick="pauseSlide(this)" target-object="slideshow_image" id="pause_slideshow" class="">pause</button>
+                <button onclick="previousSlide()" id="prev_slide" class="">prev</button>
+            </utilbar>
+        </widget>
 </target>
 
 <target id="kip_footer" class="footer">
@@ -86,6 +100,17 @@ Organizations we support:
 </target>
 
 	<memory id="utility_memory">
+	    <root>
+        	<directory id="slide_shows"> 
+    	    	<slides id="membership_benefits" class="college_slideshows" title="Index Slide Show" current-slide="1">
+					<article class="membership_benefits" file-href="slide1.png"></article>
+					<article class="membership_benefits" file-href="slide2.png"></article>
+					<article class="membership_benefits" file-href="slide3.png"></article>
+					<article class="membership_benefits" file-href="slide4.png"></article>
+					<article class="membership_benefits" file-href="slide5.png"></article>
+				</slides>
+    	    </directory>
+		</root>
     </memory>
 </body>
 </html>

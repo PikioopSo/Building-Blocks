@@ -1,94 +1,93 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-	<script type="text/javascript" async src="javascripts/ktml.js" onLoad="kipLoad('object','4')"></script> 
-	<link rel="stylesheet" href="stylesheets/home_index.css" type="text/css" /> 
 
-<title>About Kip</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Kip Omaha is an applied science company that works with amateur science.">
+	<meta name="keywords" content="science, applied science, amateur science, computer science">
+
+	<link rel="stylesheet" href="css/aboutus.css" type="text/css" /> 
+
+	<title>Visitor's Center</title> 
+
 </head>
-<body>
-	<target id="kip_utilbar"> 
-    <utilbar id="page_utilbar" class="utilbar_top" name="Utility menubar"> 
-		<target id="utilbar_button_console"> 
-		</target>
-    </utilbar> 
-	   	<button id="drop_button" class="utilbar_ui" onClick="kip.kipEvents('toggle','utilbar_button_console')">Utility menubar</button> 
-    </target> 
+	
+    <body>
+		<div data-json="{
+			'id': 'pageHeader'
+			'class': 'visitorsCenter'
+			'name': 'Visitors_Center'
+			'html': 'div'
+			}">
+			<a href="kipOmaha.html" title="Go to kipOmaha.org"><img src="img/logos/kipOmaha.png" alt="Kip Omaha"></a>
+		</div>
 
-	<target id="kip_header"> 
-		<header id="header_nav">
-		<section id="page_header_logo">
-        	<textline class="section_title">About Kip.org</textline>
-        </section>
-    	<section id="header_logo">
-        <a href="index.html" id="logo_link" title="go to home page">
-        	<img src="img/logos/logo.png" id="logo_img" /></a>
-        </section>   
-	    </header>
-    </target>
+		<div data-json="{
+			'id': 'visitorsCenterContent'
+			'class': 'content'
+			'name': 'Visitors_Center'
+			'html': 'div'}">
+			<h3>Welcome to the Visitor Center!</h3>
+			<p>
+	On this page you can find information regarding everything Kip is doing or has done.<br>
+	For our start up year, 2016, we have lots of exciting things in development. Here is what<br>
+    our timeline for the month of January looks like.
+				<h3>January 2016</h3>
+				<ol class="monthlyEvents">
+					<li class="eventLi">
+                   	  <b class="eventTitle">Kip Omaha's Crowd Funding Campaign: </b>
+                   	  <p class="eventDesc">
+	Kip Omaha is an amateur science web site that offers web apps via your own secure portal or through one of 
+    our special programs or drives. A large part of what Kip does is for free (<b>Not for profit*</b>), our product sales and promotional 
+    drives are designed to help our bottom line. Even after that we still need help especially as we get started 
+    up. Go see our <a href="#">goFundMe.com</a> page if you want to make a contribution to our cause or make a
+	contribution via paypal through <a href="#">kipOmaha.org/donate.html</a>.
+						</p>
+						<img src="img/promotions/kipOmaha_gofundme_poster.png" width="448" height="253">
+                        <p class="eventPeriod">
+	Event starts, January 8, 2016, and ends February 29, 2016.
+						</p>
+				  		<p><b>*</b>&nbsp;&nbsp;&nbsp;Currently going through the process of recieving 501 3c status.</p>
+					</li>
+					<li class="eventLi">
+                    	<b class="eventTitle">Kip Omaha's Drive for Drives: </b>
+                    	<p class="eventDesc">
+	The Drive for Drives is a program designed to help students get a much needed thumb drive. Here at Kip we take unwanted
+    thumb drives and turn them into something new and special. Each thumb drive is wiped clean and packaged with our IDE program
+    for students. Kip offers the drives for free but we put out collection boxes so our supporters can easily donate
+    to our cause.<br>
+    If your interested in seeing a list of vendors that participate in the program click <a href="#" target="new">here</a>.
+						</p>
+                        <p class="eventPeriod">
+	Program begins January 11, 2016.
+						</p>
+					</li>
+					<li class="eventLi">
+                    	<b class="eventTitle">Javascript Snippets: </b>
+                    	<p class="eventDesc">
+	Javascript Snippets is our lite weight IDE made especially for javascript. It comes in two forms, the first is as a free 
+    download but has paid for extensions that you can purchase in app, and the second is a paid for online application that 
+    requires a user name and password.
+						</p>
+                        <p class="eventPeriod">
+	Application will be available Feb 15, 2016.
+						</p>
+					</li>
+					<li class="eventLi">
+                    	<b class="eventTitle">Kip Forum Opens with Inline JSON</b>
+                    	<p class="eventDesc">
+	Our forum's first ever topic is Inline JSON. Other forum topics will be posted as we finish them so stay posted and join
+    in with the talk. Visit our forum at <a href="forums.html">www.kipOmaha.org/forums.html</a>
+						</p>
+                        <p class="eventPeriod">
+	Forum discussion begins January 11, 2016.
+						</p>
+					</li>
+                </ol>
+            </p>
+		</div>
 
-	<target id="kip_content"
-    	type="content{[(widget),(1)]}" widget-1="blogs{[#(blog_widget)]}"> 
-    	<content>
-    		<text id="blog_msg">Blog Caste Reader</text>
-    		<widget id="blog_widget" document="{[#(recycle_me_htm)],#[kip_omaha.html]}">
-			</widget> 
-			<utilbar id="content_utilbar">    
-    		</utilbar> 
-    	</content> 
-    </target> 
+	</body>
 
-	<target id="kip_footer">
-    	<footer id="nav_footer"> 
-        <nav id="nav_footer"> 
-        	<ul id="communicate_nav">
-            <h2 id="com_title">Kip Site Navigation</h2>
-        		<li id="parnters_list_item">
-<a href="partner.html" id="partners_with_us" title="go to partner page">Non-Profit partnership development.</a>
-                </li>
-                <li id="contacts_list_item">
-<a href="contactus.html" id="contact_us" title="go to contact's page">Contact Us</a>
-                </li>
-				<li id="about_list_item">
-<a href="aboutus.html" id="about_us" title="go to Kip's Blog">About Us</a>
-                </li>
-				<li id="blog_list_item">
-<a href="charity_blog.html" id="charity_blog" title="go to Kip's Blog">Kip's Blog</a>
-                </li>
-				<li id="project_list_item">
-<a href="projects.html" id="current_projects" title="go to Kip's Projects">Kip's Projects</a>
-                </li>
-            </ul>
-            <text id="citation">
-            <textline id="citation_1">
-Developed by Kip
-            </textline><br/><br/>
-            <textline id="citation_2">
-©February 2015
-            </textline><br/><br/>
-            <textline id="citation_3"> 
-On behalf of Kip™, non-profit Inc. <br/> 
-Thank you for visiting <a href="#">www.kip.org</a><br/><br/> 
-            </textline><br/><br/> 
-            </text>
-        </nav> 
-        </footer>
-    </target>
-
-	<memory id="widget_blogMemory">
-
-	</memory>
-
-	<memory id="widget_advertisingMemory" >
-
-	</memory>
-<style id="memory_style" type="text/css">
-
-memory{
-	visibility:hidden;
-}
-
-</style>
-</body>
+	<script type="text/javascript" async src="js/djBase_aboutus.js"></script> 
 </html>

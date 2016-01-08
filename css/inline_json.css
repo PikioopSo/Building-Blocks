@@ -1,0 +1,27 @@
+/*  -kipOmaha Styles  */
+
+#pageHeader{
+	position:absolute; top:5mm; left:50mm;
+}
+
+.pageFooter{
+	position:absolute; top:1250mm; width:80%;
+	text-align:center;
+}
+
+/* Inline JSON Education Application */
+
+
+#inlineJsonApplication{
+	position:absolute;top:62mm;left:5mm;width:80%;height:155mm;overflow-X:hidden;overflow-Y:hidden;
+}
+
+
+/* reference_application */
+
+#reference_application{
+	position:absolute; top:190mm; width:80%;padding:5mm;margin:3mm;
+	overflow:hidden;
+}
+
+
