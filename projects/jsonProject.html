@@ -1,0 +1,354 @@
+<!doctype html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+	
+    <meta name="description" content="The JSON Project is an effort to implement new syntax concepts for the modern web browsers.">
+    <meta name="keywords" content="science, applied science, amateur science, computer science, json, json markup, web sytnax">
+
+    <link rel="stylesheet" href="css/jsonProject.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles.css" type="text/css" />
+
+    <script src="../js/node_modules/x-tag/dist/x-tag-core.js"></script>
+
+    <title>Kip JSON Project</title>
+
+  </head>
+
+  <body>
+
+<!-- Holds data for program events.  -->
+    <x-json 
+      json="
+      {
+
+      title: 'JSON Web Project',
+
+      mode: 'auto',
+
+      state: 'page loading',
+
+      header:
+        {
+
+        id: 'header-toolbar',
+
+        modules: 
+
+          [
+
+            {
+
+            node: 'img',
+
+            id: 'kip-menu-button',
+
+            attribute: 
+              [
+              { 
+
+              menu: 
+                {  
+
+                type: 'drop',
+
+                style: 
+                  {
+
+                  start:
+                    {
+                    },
+
+                  end:
+                    {
+
+                    },
+
+                  hide:
+                    {
+                    }
+
+                  }
+
+                }
+
+              }
+
+              ]
+
+            },
+
+            {
+
+            node: 'fieldset',
+
+            id: 'currentModeSelected'
+
+            },
+
+            {
+
+            node: 'fieldset',
+
+            id: 'modeSelTools'
+
+            },
+
+            {
+
+            node: 'fieldset',
+
+            id: 'tabs-bar'
+
+            },
+
+            {
+
+            node: 'fieldset',
+
+            id: 'global-discusPallete'
+
+            }
+
+          ]
+
+        },
+
+      worktable:
+        {
+
+        
+
+        },
+
+      editor:
+        {
+
+        
+
+        },
+
+      events:
+        {
+
+        desktop:
+          {
+
+          css: 'url', 
+
+          js: 'url'
+
+          },
+
+        phone: 
+          { 
+
+          css: 'url', 
+
+          js: 'url'
+
+          },
+
+        tablet: 
+          { 
+
+          css: 'url' 
+
+          }
+
+        }
+
+      }
+      "></x-json>
+
+    <header>
+
+<!-- header toolbar: The toolbar contains a set of buttons that activate different modes. -->
+        <form id="header-toolbar" class="toolbar" title="Top Tool Bar">
+
+          <img src="../img/logos/kip.png" id="kip-menu-button" class="inlineBlock" title="Kip Menu" alt="Kip"></img>
+  
+          <fieldset class="label inlineBlock" id="currentModeSelected">
+
+            <legend id="currentModeResponseLabel" class="labelTitle">
+              Mode: 
+            </legend>
+              
+            <input type="button" id="jsonModeBtn" class="modeButton" title="JSON"/>
+
+          </fieldset>
+
+          <fieldset id="modeSelTools" class="tools inlineBlock">
+
+            <legend class="labelTitle">
+              Modes:
+            </legend>
+
+            <p class="label inlineBlock" id="selectableModes">
+
+              <input type="button" id="jsonLayoutModeBtn" class="modeButton" title="JSON Layout"/>
+
+              <input type="button" id="jsonBrushModeBtn" class="modeButton" title="JSON Brush"/>
+
+              <input type="button" id="jsonScienceModeBtn" class="modeButton" title="JSON Science"/>
+
+            </p>
+
+          </fieldset>
+
+          <fieldset id="tabs-bar" title="Tab Bar">
+            
+            <legend id="tabs-label">
+              Tab Bar
+            </legend>
+
+            <input type="button" id="add-workspace" value="+" title="Add workspace">
+
+            <input type="button" id="tabs-drop-menu" value="Drop Menu" title="Workspace drop menu">
+
+            <input type="image" class="tabs-autosave" id="autosave1" alt="Work Space 1">
+          
+          </fieldset>
+
+          <fieldset id="global-discusPallete">
+
+            <fieldset class="discus-pallete-upper" title="Upper tray">
+
+              <input type="button" class="disc-upper-left" title="Preferences"/>
+
+              <input type="button" class="disc-upper-right" title="Search"/>
+
+            </fieldset>
+
+            <fieldset class="discus-pallete-lower" title="Lower tray">
+
+              <input type="button" class="disc-lower-left" title="Work Table"/>
+
+              <input type="button" class="disc-lower-right" title="Generate"/>
+
+            </fieldset>
+
+          </fieldset>
+
+        </form>
+
+    </header>
+
+
+<!-- work table: -->
+    <section class="work-table" id="work-table">
+
+      <form class="activeSheet work-area" id="json_sheet1">
+
+        <input type="checkbox" id="active-space_AS1_" class="active-check" checked/>
+
+        <fieldset class="toolbar active-toolbar">
+
+          <input class="activeToolbarButton previous" type="button" value="<"/>
+          <input class="activeToolbarButton next" type="button" value=">"/>
+          <input id="textEditorTool" class="activeToolbarButton" type="button" value="text"/>
+
+        </fieldset>
+
+        <svg id="svg-canvas" class="work-space"
+          width="400px" height="200px">
+      
+        </svg>
+      
+      </form>
+
+    </section>
+
+
+<!-- Editor: -->
+    <form id="json-editor" class="editor">
+
+      <fieldset id="json-console" class="console">
+
+        <textarea id="json-markup-editor"></textarea>
+
+      </fieldset>
+
+      <fieldset id="json-response" class="console">
+
+        <section id="object-property-list">
+
+          <label class="response-label">id: </label><input type="text"><br>
+          <label class="response-label">class: </label><input type="text"><br>
+          <label class="response-label">name: </label><input type="text">
+
+        </section>
+
+        <section id="object-list-toolbar">
+
+          <input type="button" class="console-btn" title="Add Property" value="+">
+          <input type="button" class="console-btn" title="Delete Property" value="-">
+          <input type="button" class="console-btn" id="json-generate" title="Make Edits" value="Make Edits">
+
+        </section>
+
+      </fieldset>
+      
+      <section id="execution-buttons">
+        
+        <input type="button" class="console-btn" id="json-parse" value="Save" title="Double click to save and preview.">
+        <input type="button" class="console-btn" id="json-parse-push" value="Save and View" title="Double click to open a new page.">
+        <input type="button" class="console-btn" id="json-options" value="Options" title="Click for 5 seconds while holding the alt key to reset save preferences.">
+        <input type="button" class="console-btn" id="json-options" value="Preview" title="Double click to open a new page">
+
+      </section>
+
+    </form>
+
+  </body>
+
+  <script type="text/javascript">
+
+// Notes: x-json x-tag definition
+  xtag.register( "x-json", 
+    {
+
+    lifecycle: 
+      {
+
+      created: 
+        function(){
+
+var _status = "";
+
+  if( this.hasAttribute("json") === true || this.hasAttribute("data-json") === true ){
+
+    _status = this.getAttribute("json") || this.getAttribute("data-json");
+
+    this.json = _status._toJSON( false );
+
+    base.status( this.json ) !== undefined ? this.json.hasEventsProperty() : console.log("Please use a valid JSON.");
+
+  }
+  else{
+
+    
+
+  }
+
+        },
+
+      inserted: 
+        function(){
+          
+        },
+
+      removed: 
+        function(){
+          
+        }
+
+      }
+      
+    } );
+
+  </script>
+
+</html>
+

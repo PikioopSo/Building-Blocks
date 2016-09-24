@@ -1,0 +1,284 @@
+.response-label{
+    display: inline-block;
+    width: 50px; height: 20px;
+}
+
+#header-toolbar{
+    position: relative;
+    top: 0px; left: 0px;
+    background-color: rgb(75,75,75);
+    width: 98%; height: 70px;
+    border-radius: 10px;
+}
+#kip-menu-button{
+    position: absolute;
+    top: 10px; left: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    width: 95px;
+    background: rgb(255,255,255);
+}
+#json-editor{
+    position:relative;
+    width: 99%; height: 150px;
+    background: rgb(75,75,75);
+}
+
+#json-console{
+    position: absolute;
+    top: 0px;
+    padding: 0px;
+    background: rgb(75,75,75);
+    display: inline-block;
+    width: 541px; height: 118px;
+    overflow-y: scroll; overflow-x: hidden;
+}
+#json-markup-editor{
+    height: 97%; width: 98.5%;
+}
+#json-response{
+    position: absolute;
+    top: 0px; left: 560px;
+    background: rgb(235,235,235);
+    display: inline-block;
+    width: 260px; height: 130px;
+}
+#textEditorTool{
+    color: rgba(0,0,0,0);
+    background-image: url(../../img/ui/textEditorTool.png);
+    background-size: 75%; background-position: center; background-repeat: no-repeat;
+}
+#jsonModeBtn{
+    color: rgba(0,0,0,0);
+    background-color: rgb(255,10,10);
+    background-image: url(../../img/ui/json-parse.png);
+    background-size: 100%; background-position: center; background-repeat: no-repeat;
+}
+#jsonLayoutModeBtn{
+    color: rgba(0,0,0,0);
+    background-color: rgb(255,255,10);
+    background-image: url(../../img/ui/json-layout.png);
+    background-size: 100%; background-position: center; background-repeat: no-repeat;
+}
+#jsonBrushModeBtn{
+    color: rgba(0,0,0,0);
+    background-color: rgb(10,255,10);
+    background-image: url(../../img/ui/json-brush.png);
+    background-size: 100%; background-position: center; background-repeat: no-repeat;
+}
+#jsonScienceModeBtn{
+    color: rgba(0,0,0,0);
+    background-color: rgb(10,10,255);
+    background-image: url(../../img/ui/json-science.png);
+    background-size: 100%; background-position: center; background-repeat: no-repeat;
+}
+#modeSelTools{
+    position: absolute;
+    width: 120px;
+    height: 48px;
+    left: 300px; 
+    top: 9px;
+    padding: 3px; 
+    margin: 0px;
+    border: 1px ridge rgba(0,255,0,.25);
+    border-left-width: 5px;
+    border-right-width: 50px;
+    border-bottom-width: 25px;
+    background: rgb(255,255,255);
+}
+#currentModeSelected{
+    position: absolute;
+    width: 76px;
+    height: 48px;
+    left: 207px;
+    top: 9px;
+    border: rgba(0,0,255,.25) groove 1px;
+    border-bottom-width: 25px;
+    border-right-width: 10px;
+    background-color: rgb(255,255,255);
+    padding: 3px;
+    margin: 0px;
+}
+#currentModeResponseLabel{
+    background: rgb(255,255,255);
+}
+#selectableModes{
+    position: absolute;
+    display: inline-block;
+    left: 0px;
+    width: 110px;
+    background-color: rgb(255,255,255);
+}
+#global-discusPallete{
+    position: fixed;
+    padding: 10px;
+    background: rgb(215,215,255);
+    border: inset 2px rgb(115,115,115);
+    top: -77px; left: 84px;
+    width: 130px; height: 130px;
+    border-width: 10px;
+    border-radius: 120px;
+    -ms-transform: scale(.4); /* IE 9 */
+    -webkit-transform: scale(.4); /* Safari */
+    transform: scale(.4);
+    z-index: 1000;
+}
+#execution-buttons{
+    position:relative; 
+    width:540px; height: auto;
+    padding: 3px;
+    top: 122px; left: 4px; background: rgba(0,0,255,.5);
+}
+#object-property-list{
+    position:relative; 
+    padding: 5px;
+    background: rgba(0,0,255,.5);
+    overflow: scroll;
+}
+#object-list-toolbar{
+    position:relative;
+}
+#tabs-bar{
+    position: absolute;
+    left: 480px;
+    width: 350px;
+    height: 59px;
+    background: rgba(255,255,255,.5);
+}
+#tabs-label{
+    margin-left: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 10px;
+    background: rgba(255,255,255,.5);
+}
+#add-workspace{
+    position: absolute;
+    top: 8px;
+    left:  0px;
+    width: 25px;
+    height: 48px;
+}
+#tabs-drop-menu{
+    position: absolute;
+    top: 55px;
+    left:  0px;
+    width: 100%;
+}
+#work-table{
+    width: 863px; height: auto;
+}
+
+
+#global-discusPallete:hover{
+    
+}
+
+
+legend.labelTitle{
+    padding: 0px 15px 0px 15px;
+    background: rgb(255,255,255);
+    border-radius: 7px;
+}
+fieldset.discus-pallete-upper{
+    position: relative;
+    background: rgb(115,115,115); border: solid black 1px;
+    display: block;
+    width: 104px; height: 47px;
+    border-radius: 100px 100px 0px 0px;
+    margin: 0px;
+}
+fieldset.discus-pallete-lower{
+    position: relative;
+    background: rgb(215,215,215); border: solid black 1px;
+    display: block;
+    width: 104px; height: 46px;
+    border-radius: 0px 0px 100px 100px;
+    margin: 0px;
+}
+
+
+.tabs-autosave{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: white;
+}
+.disc-upper-left{
+    position: relative;
+    display: inline-block;
+    width: 50px; height: 50px;
+    margin: 0px;
+    background: rgb(75,75,125);
+    border-radius: 60px 0px 0px 0px;
+    border: groove 1px rgb(0,0,0);
+}
+.disc-upper-right{
+    position: relative;
+    display: inline-block;
+    width: 50px; height: 50px;
+    margin: 0px;
+    background: rgb(100,100,150);
+    border-radius: 0px 60px 0px 0px;
+    border: groove 1px rgb(0,0,0);
+}
+.disc-lower-left{
+    position: relative;
+    display: inline-block;
+    width: 50px; height: 50px;
+    margin: 0px;
+    background: rgb(100,100,200);
+    border-radius: 0px 0px 0px 60px;
+    border: groove 1px rgb(0,0,0);
+}
+.disc-lower-right{
+    position: relative;
+    display: inline-block;
+    width: 50px; height: 50px;
+    margin: 0px;
+    background: rgb(100,100,255);
+    border-radius: 0px 0px 60px 0px;
+    border: groove 1px rgb(0,0,0);
+}
+.modeButton{
+    width: 30px; height: 30px;
+    border-radius: 10px;
+}
+.work-area{
+    position: relative;
+    background: white;
+    margin-left: 5%;
+    padding: 5px; width: 89%; height: 100%;
+}
+.activeSheet{
+    border-radius: 15px;
+    background: rgb(50,50,50);
+    border: yellow 2px inset;
+}
+.active-check{
+    position: absolute;
+    top: 11px; left: 92%;
+    height: 25px; width: 25px;
+}
+
+fieldset.active-toolbar{
+    position: absolute;
+    padding: 0px;
+    border-style: groove;
+    width: 25px; height: 75px;
+    left: 91.75%; top: 40px;
+}
+.activeToolbarButton{
+    border-style: ridge;
+    width: 25px; height: 25px;
+}
+.next{
+    color: rgba(0,0,0,0);
+    background-image: url(../../img/ui/next.png);
+    background-size: 75%; background-position:  center; background-repeat: no-repeat;
+}
+.previous{
+    color: rgba(0,0,0,0);
+    background-image: url(../../img/ui/previous.png);
+    background-size: 75%; background-position: center; background-repeat: no-repeat;
+}

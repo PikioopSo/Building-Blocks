@@ -1,0 +1,47 @@
+p{
+    display: inline-block;
+    padding: 0mm; margin: 0mm;
+}
+
+textarea{
+    border: inset .25mm rgb(100,100,255);
+    font-family:monospace arial sans-serif; font-size: 16px;
+}
+
+.toolbar{
+    padding: 2.5mm;
+    background: white;
+    border: outset rgb(200,200,200) 1mm;
+}
+
+.work-table{
+    background: rgb(245,245,255);
+}
+
+.work-space{
+    background:rgb(255,255,255); 
+    border:outset 1mm rgb(200,200,200); 
+    margin:2.5mm;
+}
+
+.editor{
+    background: white;
+    padding: 1mm;
+    border: outset 1mm rgb(200,200,200);
+}
+
+.console{
+    background: white;
+    margin: 1mm;
+}
+
+.console-btn{
+    border-radius: 20px;
+}
+
+.inlineBlock{
+    display: inline-block;
+}
+.inline{
+    display: inline;
+}
