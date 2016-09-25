@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 	
     <meta name="description" content="The JSON Project is an effort to implement new syntax concepts for the modern web browsers.">
-    <meta name="keywords" content="science, applied science, amateur science, computer science, json, json markup, web sytnax">
+    <meta name="keywords" content="computer science, json, json markup, web sytnax, social network, open networking">
 
     <link rel="stylesheet" href="css/jsonProject.css" type="text/css" />
     <link rel="stylesheet" href="../css/styles.css" type="text/css" />
@@ -19,15 +19,23 @@
   <body>
 
 <!-- Holds data for program events.  -->
-    <x-json 
+    <x-json class="memory"
       json="
       {
+      id: 'xtag-base-mashup',
+
+      class: 'memory',
 
       title: 'JSON Web Project',
 
-      mode: 'auto',
+      keywords:
+        [
 
-      state: 'page loading',
+        'Video',
+        'Music',
+        'Photography'
+
+        ],
 
       header:
         {
@@ -35,47 +43,106 @@
         id: 'header-toolbar',
 
         modules: 
-
-          [
-
-            {
+          [ {
 
             node: 'img',
 
             id: 'kip-menu-button',
 
+            class: 'inlineBlock',
+
+            title: 'Kip Menu',
+
             attribute: 
-              [
-              { 
+              [ { 
 
               menu: 
                 {  
 
                 type: 'drop',
 
-                style: 
+                content: 
+                  {
+
+                  node: 'nav',
+
+                  links: 
+                    [ 
+
+                    'www.kip.org', 
+                    'www.jsonProject.kip.org', 
+                    'www.deliveryProject.kip.org',
+                    'www.energyProject.kip.org'
+
+                    ]
+
+                  },
+
+                events:
+                  [ { 
+
+                  hover: 
+                    [ {
+
+                    borderColor: 'rgba(0,255,0,.5)',
+                    borderStyle: 'inset'
+
+                    } ]
+
+                  },
+
+                  {
+
+                  clicked: 
+                    [ {
+
+                    borderColor: 'activated()'
+
+                    } ]
+
+                  } ],
+
+                keyframe: 
                   {
 
                   start:
                     {
+
+                    position: 'absolute',
+                    left: '10px',
+                    top: '10px',
+                    width: '0px',
+                    height: '0px'
+
                     },
 
                   end:
                     {
 
+                    position: 'absolute',
+                    left: '10px',
+                    top: '80px',
+                    width: '120px',
+                    height: '75px'
+
                     },
 
                   hide:
                     {
+
+                    position: 'absolute',
+                    left: '10px',
+                    top: '10px',
+                    width: '0px',
+                    height: '0px'
+
                     }
 
                   }
 
                 }
 
-              }
-
-              ]
+              } ]
 
             },
 
@@ -109,9 +176,7 @@
 
             id: 'global-discusPallete'
 
-            }
-
-          ]
+            } ]
 
         },
 
@@ -164,12 +229,18 @@
 
     <header>
 
-<!-- header toolbar: The toolbar contains a set of buttons that activate different modes. -->
+<!-- [header toolbar] The toolbar contains a set of buttons that activate different modes. -->
         <form id="header-toolbar" class="toolbar" title="Top Tool Bar">
 
-          <img src="../img/logos/kip.png" id="kip-menu-button" class="inlineBlock" title="Kip Menu" alt="Kip"></img>
+<!-- [Kip Menu] Navigation image button that toggles a hidden drop menu. -->
+         <img id="kip-menu-button" class="inlineBlock" title="Kip Menu" alt="Kip Menu" 
+            src="../img/logos/kip.png"  
+            menu="{}"></img>
+
+          <nav class="memory" for="#kip-menu-button"></nav>
   
-          <fieldset class="label inlineBlock" id="currentModeSelected">
+<!-- [Selected Mode] Container for all enabled application modes. -->
+          <fieldset class="label inlineBlock" id="currentModeSelected" title="Current modes.">
 
             <legend id="currentModeResponseLabel" class="labelTitle">
               Mode: 
@@ -179,7 +250,8 @@
 
           </fieldset>
 
-          <fieldset id="modeSelTools" class="tools inlineBlock">
+<!-- [Mode selection bar] A bar that features all selectable application modes. -->
+          <fieldset id="modeSelTools" class="tools inlineBlock" title="Mode selection bar.">
 
             <legend class="labelTitle">
               Modes:
@@ -197,6 +269,7 @@
 
           </fieldset>
 
+<!-- [Tab bar] Container for access your work. -->
           <fieldset id="tabs-bar" title="Tab Bar">
             
             <legend id="tabs-label">
@@ -211,7 +284,8 @@
           
           </fieldset>
 
-          <fieldset id="global-discusPallete">
+<!-- [Global Interface] A moveable interface that allows you to resize and have access to your document. -->
+          <fieldset id="global-discusPallete" title="Resize">
 
             <fieldset class="discus-pallete-upper" title="Upper tray">
 
@@ -236,10 +310,11 @@
     </header>
 
 
-<!-- work table: -->
-    <section class="work-table" id="work-table">
+<!-- [Work table] A container for your work spaces. -->
+    <section class="work-table" id="work-table" title="Work table.">
 
-      <form class="activeSheet work-area" id="json_sheet1">
+<!-- [Work area] A container for your work spaces. -->
+      <form class="activeSheet work-area" id="json_sheet1" title="Work area.">
 
         <input type="checkbox" id="active-space_AS1_" class="active-check" checked/>
 
@@ -251,6 +326,7 @@
 
         </fieldset>
 
+<!-- [Work space] Container for your current project.  -->
         <svg id="svg-canvas" class="work-space"
           width="400px" height="200px">
       
@@ -317,7 +393,7 @@
 
 var _status = "";
 
-  if( this.hasAttribute("json") === true || this.hasAttribute("data-json") === true ){
+          if( this.hasAttribute("json") === true || this.hasAttribute("data-json") === true ){
 
     _status = this.getAttribute("json") || this.getAttribute("data-json");
 
@@ -325,12 +401,12 @@ var _status = "";
 
     base.status( this.json ) !== undefined ? this.json.hasEventsProperty() : console.log("Please use a valid JSON.");
 
-  }
-  else{
+          }
+          else{
 
-    
+  
 
-  }
+          }
 
         },
 
