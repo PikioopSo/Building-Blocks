@@ -23,209 +23,146 @@
       json="
       {
       id: 'xtag-base-mashup',
-
       class: 'memory',
-
       title: 'JSON Web Project',
-
       keywords:
         [
-
         'Video',
         'Music',
         'Photography'
-
         ],
-
-      header:
+      toolbar:
         {
-
         id: 'header-toolbar',
-
         modules: 
           [ {
-
-            node: 'img',
-
-            id: 'kip-menu-button',
-
-            class: 'inlineBlock',
-
-            title: 'Kip Menu',
-
-            attribute: 
-              [ { 
-
-              menu: 
-                {  
-
-                type: 'drop',
-
-                content: 
+          node: 'img',
+          id: 'kip-menu-button',
+          class: 'inlineBlock',
+          title: 'Kip Menu',
+          status: 'hidden',
+          events:
+            {
+            pressing: 
+              {
+              duration: '2s'
+              },
+            toggle: 
+              {
+              for: 'component[1]'
+              }
+            },
+          component: 
+            [ { 
+            menu: 
+              {  
+              type: 'drop',
+              content: 
+                {
+                node: '#component-for-menu-button',
+                links: 
+                  [ 
+                  'www.kip.org', 
+                  'www.jsonProject.kip.org', 
+                  'www.deliveryProject.kip.org',
+                  'www.energyProject.kip.org'
+                  ]
+                },
+              style:
+                [ {
+                visible: 
                   {
-
-                  node: 'nav',
-
-                  links: 
-                    [ 
-
-                    'www.kip.org', 
-                    'www.jsonProject.kip.org', 
-                    'www.deliveryProject.kip.org',
-                    'www.energyProject.kip.org'
-
-                    ]
-
-                  },
-
-                events:
-                  [ { 
-
-                  hover: 
-                    [ {
-
-                    borderColor: 'rgba(0,255,0,.5)',
-                    borderStyle: 'inset'
-
-                    } ]
-
-                  },
-
-                  {
-
-                  clicked: 
-                    [ {
-
-                    borderColor: 'activated()'
-
-                    } ]
-
-                  } ],
-
-                keyframe: 
-                  {
-
+                  duration: '1.5s',
+                  playback: 'no-repeat',
                   start:
                     {
-
                     position: 'absolute',
                     left: '10px',
                     top: '10px',
                     width: '0px',
                     height: '0px'
-
                     },
-
                   end:
                     {
-
                     position: 'absolute',
                     left: '10px',
                     top: '80px',
                     width: '120px',
                     height: '75px'
+                    }
+                  }
+                },
+                {
+                hidden:
+                  {
 
-                    },
-
-                  hide:
+                  start:
                     {
-
+                    position: 'absolute',
+                    left: '10px',
+                    top: '80px',
+                    width: '120px',
+                    height: '75px'
+                    },
+                  end:
+                    {
                     position: 'absolute',
                     left: '10px',
                     top: '10px',
                     width: '0px',
                     height: '0px'
-
                     }
-
                   }
-
-                }
-
-              } ]
-
-            },
-
-            {
-
-            node: 'fieldset',
-
-            id: 'currentModeSelected'
-
-            },
-
-            {
-
-            node: 'fieldset',
-
-            id: 'modeSelTools'
-
-            },
-
-            {
-
-            node: 'fieldset',
-
-            id: 'tabs-bar'
-
-            },
-
-            {
-
-            node: 'fieldset',
-
-            id: 'global-discusPallete'
-
+                } ]
+              }
             } ]
+          },
+          {
+          node: 'fieldset',
+          id: 'currentModeSelected'
+          },
 
+          {
+          node: 'fieldset',
+          id: 'modeSelTools'
+          },
+          {
+          node: 'fieldset',
+          id: 'tabs-bar'
+          },
+          {
+          node: 'fieldset',
+          id: 'global-discusPallete'
+          } ]
         },
-
       worktable:
         {
-
-        
-
+        id: 'work-table',
+        node: 'section'
         },
-
       editor:
         {
-
-        
-
+        id: 'json-editor',
+        node: 'form'
         },
-
       events:
         {
-
         desktop:
           {
-
           css: 'url', 
-
           js: 'url'
-
           },
-
         phone: 
           { 
-
           css: 'url', 
-
           js: 'url'
-
           },
-
         tablet: 
           { 
-
           css: 'url' 
-
           }
-
         }
-
-      }
-      "></x-json>
+      }"></x-json>
 
     <header>
 
@@ -235,9 +172,15 @@
 <!-- [Kip Menu] Navigation image button that toggles a hidden drop menu. -->
          <img id="kip-menu-button" class="inlineBlock" title="Kip Menu" alt="Kip Menu" 
             src="../img/logos/kip.png"  
-            menu="{}">
+            menu="hidden">
 
-          <nav class="memory" for="#kip-menu-button"></nav>
+          <nav class="memory" id="component-for-menu-button">
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+          </nav>
   
 <!-- [Selected Mode] Container for all enabled application modes. -->
           <fieldset class="label inlineBlock" id="currentModeSelected" title="Current modes.">
@@ -393,13 +336,14 @@
 
 var _status = "";
 
+// Create a function to check for attributes that have been added.
           if( this.hasAttribute("json") === true || this.hasAttribute("data-json") === true ){
 
     _status = this.getAttribute("json") || this.getAttribute("data-json");
 
     this.json = _status._toJSON( false );
 
-    base.status( this.json ) !== undefined ? this.json.hasEventsProperty() : console.log("Please use a valid JSON.");
+    base.status( this.json ) !== undefined ? this.json._base() : console.log("Please use a valid JSON.");
 
           }
           else{
