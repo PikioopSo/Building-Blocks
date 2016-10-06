@@ -1,3 +1,37 @@
+body{
+    padding-left: 15%;
+}
+
+/* xtag styles start*/
+x-editor{
+    background-color: white;
+    border: 1px solid darkgrey;
+}
+x-line{
+    position: relative;
+    width: 520px;
+    height: 20px;
+    border-bottom: solid 1px black;
+    background-color: rgba(255,255,225,.5);
+    display: inline-block;
+}
+x-number{
+    position: relative;
+    width: 30px;
+    height: 20px;
+    border-right: solid 1px black;
+    background-color: rgba(150,150,255,.5);
+    display: inline-block;
+}
+x-line:hover{
+    background-color: rgba(225,225,255,.8);
+    border-color: rgba(200,150,0,.5);
+}
+x-number:hover{
+    border-color: rgba(0,150,0,.5);
+}
+/* xtag styles end */
+
 .response-label{
     display: inline-block;
     width: 50px; height: 20px;
@@ -7,7 +41,7 @@
     position: relative;
     top: 0px; left: 0px;
     background-color: rgb(75,75,75);
-    width: 98%; height: 70px;
+    width: 850px; height: 70px;
     border-radius: 10px;
 }
 #kip-menu-button{
@@ -18,23 +52,30 @@
     width: 95px;
     background: rgb(255,255,255);
 }
+
+/* json writer styles start */
 #json-editor{
     position:relative;
-    width: 99%; height: 150px;
+    width: 850px; 
+    height: 150px;
     background: rgb(75,75,75);
 }
-
 #json-console{
     position: absolute;
     top: 0px;
     padding: 0px;
     background: rgb(75,75,75);
+    border: none;
     display: inline-block;
-    width: 541px; height: 118px;
-    overflow-y: scroll; overflow-x: hidden;
+    width: 520px; 
+    height: 130px;
+    overflow: none;
 }
 #json-markup-editor{
-    height: 97%; width: 98.5%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: green 5px solid;
 }
 #json-response{
     position: absolute;
@@ -43,6 +84,8 @@
     display: inline-block;
     width: 260px; height: 130px;
 }
+/* json writer styles end */
+
 #textEditorTool{
     color: rgba(0,0,0,0);
     background-image: url(../../img/ui/textEditorTool.png);
@@ -123,7 +166,7 @@
     transform: scale(.4);
     z-index: 1000;
 }
-#execution-buttons{
+#execution-menu{
     position:relative; 
     width:540px; height: auto;
     padding: 3px;

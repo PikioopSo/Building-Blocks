@@ -25,12 +25,145 @@
       id: 'xtag-base-mashup',
       class: 'memory',
       title: 'JSON Web Project',
+      writerStatus: null,
       keywords:
         [
         'Video',
         'Music',
         'Photography'
         ],
+      compatibility:
+        {
+        active: 'auto',
+        laptop:
+          {
+          css: 'css/jsonProject_Laptop.css', 
+          js: 'js/jsonProject.css',
+          modules: 
+            [
+            {
+            id: 'header-toolbar',
+            style:
+              {
+              dimensions: [ 'position absolute' ]
+              background: [ 'url img/mechanical-universe.png' ]
+              }
+            },
+            {
+            id: 'work-table',
+            style:
+              {
+              dimensions: [ 'position absolute' ]
+              background: [ 'url img/mechanical-universe.png' ]
+              }
+            },
+            {
+            id: 'json-editor',
+            style:
+              {
+              dimensions: [ 'position absolute' ]
+              background: [ 'url img/mechanical-universe.png' ]
+              }
+            }
+            ]
+          },
+        desktop:
+          {
+          css: 'css/jsonProject.css', 
+          js: 'js/jsonProject.css',
+          modules: 
+            [
+            {
+            id: 'header-toolbar',
+            style:
+              {
+              dimensions: [ 'position absolute' ]
+              background: [ 'url img/mechanical-universe.png' ]
+              }
+            },
+            {
+            id: 'work-table',
+            style:
+              {
+              dimensions: [ 'position absolute' ]
+              background: [ 'url img/mechanical-universe.png' ]
+              }
+            },
+            {
+            id: 'json-editor',
+            style:
+              {
+              dimensions: [ 'position absolute' ]
+              background: [ 'url img/mechanical-universe.png' ]
+              }
+            }
+            ]
+          },
+        phone: 
+          { 
+          css: 'url', 
+          js: 'url',
+          modules: 
+            [
+            {
+            id: 'header-toolbar',
+            style:
+              {
+              dimensions: [ 'position absolute' ]
+              background: [ 'url img/mechanical-universe.png' ]
+              }
+            },
+            {
+            id: 'work-table',
+            style:
+              {
+              dimensions: [ 'position absolute' ]
+              background: [ 'url img/mechanical-universe.png' ]
+              }
+            },
+            {
+            id: 'json-editor',
+            style:
+              {
+              dimensions: [ 'position absolute' ]
+              background: [ 'url img/mechanical-universe.png' ]
+              }
+            }
+            ]
+          },
+        tablet: 
+          { 
+          css: 'url', 
+          js: 'url',
+          modules: 
+            [
+            {
+            id: 'header-toolbar',
+            style:
+              {
+              dimensions: [ 'position absolute' ]
+              background: [ 'url img/mechanical-universe.png' ]
+              }
+            },
+            {
+            id: 'work-table',
+            style:
+              {
+              dimensions: [ 'position absolute' ]
+              background: [ 'url img/mechanical-universe.png' ]
+              }
+            },
+            {
+            id: 'json-editor',
+            style:
+              {
+              dimensions: [ 'position absolute' ]
+              background: [ 'url img/mechanical-universe.png' ]
+              }
+            }
+            ]
+          }
+        },
       toolbar:
         {
         id: 'header-toolbar',
@@ -59,13 +192,13 @@
               type: 'drop',
               content: 
                 {
-                node: '#component-for-menu-button',
+                parent: '#component-for-menu-button',
                 links: 
                   [ 
                   'www.kip.org', 
+                  'www.platforms.kip.org',
                   'www.jsonProject.kip.org', 
-                  'www.deliveryProject.kip.org',
-                  'www.energyProject.kip.org'
+                  'www.deliveryProject.kip.org'
                   ]
                 },
               style:
@@ -135,33 +268,100 @@
           id: 'global-discusPallete'
           } ]
         },
+
       worktable:
         {
         id: 'work-table',
         node: 'section'
         },
+
       editor:
         {
         id: 'json-editor',
+        class: 'editor',
         node: 'form'
-        },
-      compatibility:
-        {
-        active: 'auto',
-        desktop:
+        modules: 
+          [ 
           {
-          css: 'css/jsonProject.css', 
-          js: 'js/jsonProject.css'
+          node: 'fieldset',
+          id: 'json-console',
+          class: 'console',
+          title: 'JSON mark up console',
+          component: 
+            [ 
+            {
+            writer: 
+              {
+              id: 'json-markup-editor'
+              node: 'x-editor',
+              lines: 1,
+              cursorPosition: [ 'line 1', 'characterPosition 1' ],
+              mode: 'auto',
+              style:
+                {
+                lines: 
+                  {
+                  active: [],
+                  inactive: []
+                  },
+                numbering: []
+                }
+              }
+            }
+            ]
           },
-        phone: 
-          { 
-          css: 'url', 
-          js: 'url'
-          },
-        tablet: 
-          { 
-          css: 'url' 
-          }
+          {
+          node: 'section',
+          id: 'execution-menu',
+          class: 'horizontal-bar menu',
+          title: 'Console editor controls'
+          component:
+            [
+            {
+            button:
+              {
+              id: 'json-parse'
+              node: 'input'
+              style:
+                [
+                {
+                dimensions: [ 'position absolute', 'width 75px', 'height 75px', 'top 0px', 'left 0px' ]
+                image: [ 'url(img/)', 'top 0px', 'left 0px', 'repeat none', 'position center' ]
+                }
+                ]
+              }
+            },
+            {
+            button:
+              {
+              id: 'json-parse-push'
+              node: 'input'
+              style:
+                [
+                {
+                dimensions: [ 'position absolute', 'width 75px', 'height 75px', 'top 0px', 'left 0px' ]
+                image: [ 'url(img/)', 'top 0px', 'left 0px', 'repeat none', 'position center' ]
+                }
+                ]
+              }
+            },
+            {
+            button:
+              {
+              id: 'json-options'
+              node: 'input'
+              }
+            },
+            {
+            button:
+              {
+              id: 'json-preview'
+              node: 'input'
+              }
+            }
+            ]
+          } 
+          ]
         }
       }"></x-json>
 
@@ -284,15 +484,15 @@
 <!-- Editor: -->
     <form id="json-editor" class="editor">
 
-      <fieldset id="json-console" class="console">
+      <fieldset id="json-console" class="console" title="">
 
-        <textarea id="json-markup-editor"></textarea>
+        <x-editor id="json-markup-editor"></x-editor>
 
       </fieldset>
 
       <fieldset id="json-response" class="console">
 
-        <section id="object-property-list">
+       <!-- <section id="object-property-list">
 
           <label class="response-label">id: </label><input type="text"><br>
           <label class="response-label">class: </label><input type="text"><br>
@@ -306,20 +506,33 @@
           <input type="button" class="console-btn" title="Delete Property" value="-">
           <input type="button" class="console-btn" id="json-generate" title="Make Edits" value="Make Edits">
 
-        </section>
+        </section>-->
 
       </fieldset>
       
-      <section id="execution-buttons">
+      <section id="execution-menu">
         
         <input type="button" class="console-btn" id="json-parse" value="Save" title="Double click to save and preview.">
         <input type="button" class="console-btn" id="json-parse-push" value="Save and View" title="Double click to open a new page.">
         <input type="button" class="console-btn" id="json-options" value="Options" title="Click for 5 seconds while holding the alt key to reset save preferences.">
-        <input type="button" class="console-btn" id="json-options" value="Preview" title="Double click to open a new page">
+        <input type="button" class="console-btn" id="json-preview" value="Preview" title="Double click to open a new page">
 
       </section>
 
     </form>
+
+<!-- [Work space] Container for your current project.  -->
+    <svg id="svg-node-pallete" class="memory"
+    width="0px" height="0px">
+      <def></def>
+      <g></g>
+      <text></text>
+      <textline></textline>
+      <circle></circle>
+      <path></path>
+      <polygon></polygon>
+
+    </svg>
 
   </body>
 
@@ -368,6 +581,80 @@ var _status = "";
       }
       
     } );
+
+/* xtag registration for x-editor */
+  xtag.register( "x-editor", 
+    {
+    content:
+      function(){/*
+        <x-line></x-line> 
+      */},
+    lifecycle:
+      {
+      created: 
+        function(){
+
+          base.json[0].editor.modules[0].component[0].writer.lines = this.getElementsByTagName("x-line").length
+
+        }
+
+      },
+
+    events:
+      {
+      click:
+        function(event){
+
+          if( event.target.nodeName === "x-line" )
+            {
+             
+            }
+          else if( event.target.nodeName === "x-number" )
+            {
+             
+            }
+
+        },
+
+        keypress:
+          function(event){
+            
+          }
+
+      }
+
+  } );
+
+/* xtag registration for x-line */
+  xtag.register( "x-line", 
+    {
+    content: function(){ /* 
+      <x-number></x-number> 
+      */ },
+
+    lifecycle:
+      {
+      inserted: 
+        function(){ base.json[0].editor.modules[0].component[0].writer.lines + 1; },
+
+      removed: 
+        function(){}
+
+      }
+
+    } );
+
+/* xtag registration for x-number */
+  xtag.register( "x-number", 
+  {
+    lifecycle:
+      {
+      inserted: 
+        function(){ this.innerHTML = base.json[0].editor.modules[0].component[0].writer.lines; }
+
+      }
+
+  } );
 
   </script>
 

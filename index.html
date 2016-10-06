@@ -5,13 +5,13 @@
     <meta charset="utf-8">
 
 <!-- Note: What Kip all about? I want a description that encompasses the global properties of the company I envision. -->
-    <meta name="description" content="Kip is a website made for the do gooders in business.">
+    <meta name="description" content="Kip is a website made for the do gooders in business and non-profit.">
     <meta name="keywords" content="">
 
-    <link rel="stylesheet" href="css/kipOmaha.css" type="text/css" /> 
+    <link rel="stylesheet" href="css/styles.css" type="text/css" /> 
+    <link rel="stylesheet" href="css/index.css" type="text/css" /> 
 
-    <script type="text/javscript" async src="js/base.js"></script>
-    <script type="text/javscript" async src="js/node_modules/x-tag/dist/x-tag-core.js"></script>
+    <script src="javascript/node_modules/x-tag/dist/x-tag-core.js"></script>
 
     <title>www.Kip.org</title> 
 
@@ -21,25 +21,213 @@
 
 <!-- [x-header] -->
     <x-header>
+
       <h1>Kip at Omaha, NE</h1>
+
+      <p>A company by a Mozillian</p>
+
     </x-header>
 
+
+
 <!-- [x-content] -->
-    <x-content>
-      <h1>Welcome!</h1>
-      <p>
-        Kip provides tools and services to help grow your profit or non-profit ideas.
-      </p>
+    <x-content class="content" id="content" 
+    json="
+      {
+      id: 'content',
+      flipbook: 
+        {
+        style: 
+          {
+          for: '#platform-project-reader',
+          reader: [ 'left 10px', 'top 400px', 'width 95%', 'height 30%', 'position absolute' ],
+          background: 'url()',
+          toolbar: [ 'left 10px', 'top 400px', 'width 95%', 'height 30%', 'position absolute' ]
+          },
+        moduleNumber: 0,
+        moduleClass: 'platorm-project',
+        currentTitle: 'Delivery services, online services, and modern engineering.',
+        moduleNames:
+          [
+          'Delivery services, online services, and modern engineering.',
+          'Cartoon Making, photo editing, and social media.'
+          ]
+        }
+      }">
+
+      <section class="content-introduction">
+
+        <h1>Welcome!</h1>
+
+        <p>
+          Kip is a multifaceted tech start up company, that implements the cutting edge ideas of today.
+        </p>
+
+        <section class="inlineBlock">
+          <p>We currently have two platforms that we are building on.</p>
+
+          <ol>
+            <li>
+              <strong>Kip's JSON Parser: </strong>
+              <p>
+                A platform for web applications for animating, movie making, and current events.
+              </p>
+            </li>
+            <li>
+              <strong>Kip's Open Engineering and Science: </strong>
+              <p>
+                A platform for engineering that utilizes real world business to spur advancement and innovation.
+              </p>
+            </li>
+          </ol>
+
+          <p>
+            Below are Kip's first projects for each platform. To learn more read each module, than navigate to there home 
+            pages by clicking the header link.
+          </p>
+
+        </section>
+
+      </section>
+
+<!-- [x-module] -->
+      <x-module class="flip-book memory" module-class="platform-project" module-class-index="0"
+      name="Cartoon Making, photo editing, and social media.">
+
+        <h4 class="module-title">Cartoon Making, photo editing, and social media.</h4>
+
+      </x-module>
+
+      <x-reader id="platform-project-reader">
+
+        <!-- [x-module] -->
+        <x-module class="flip-book"  module-class="platform-project" module-class-index="0"
+        name="Delivery services, online services, and modern engineering.">
+
+          <h4 class="module-title">Delivery services, online services, and modern engineering.</h4>
+  
+          <p>
+            This project is based off of Kip's Open Engineering and Science platform.
+          </p>
+
+          <ul>
+            <li><a href="#" class="project-link">Project notes and docs</a></li>
+            <li><a href="#" class="project-link">Project community meetup forum</a></li>
+          </ul>
+
+        </x-module>
+
+      </x-reader>
+
     </x-content>
+
+
 
 <!-- [x-footer] -->
     <x-footer>
+
       <nav>
         <a href="contactus.html">Contact Us</a>
         <a href="aboutus.html">About Kip</a>
       </nav>
+
     </x-footer>
 
   </body>
+
+  <script type="text/javascript">
+
+
+/* x-content registration */
+var xContent = xtag.register( "x-content", 
+    {
+      content: function(){/*
+        <x-toolbar>
+          <button> < </button>
+          <button> > </button>
+        <x-toolbar>
+      */},
+      lifecycle:
+        {
+        created: 
+          function(){
+
+/* Retrieve any JSON data from the HTML page using the base literal. */
+var jsn = "";
+
+            this.hasAttribute("json") === true ? 
+            jsn = this.getAttribute("json")._toJSON() : 
+            this.hasAttribute("data-json") === true ?
+            jsn = this.getAttribute("data-json")._toJSON() : "";
+
+            
+
+          }
+
+        },
+      events: 
+        {
+          click: function(){},
+          move: function(){}
+        }
+
+    } );
+
+/* x-module registration */
+var xModule = xtag.register( "x-module", 
+    {
+      content: function(){/*
+        
+      */},
+      lifecycle: {    
+        created: function(){
+          
+        },
+        inserted: function(){
+          
+        }
+
+      }
+
+    } );
+
+/* x-reader registration */
+var xModule = xtag.register( "x-reader", 
+    {
+    content: function(){/*
+      
+    */},
+    lifecycle: 
+      {   
+      created: function(){
+
+var jsn = base.json.getJsonById("content");
+
+          if( jsn.flipbook !== undefined){
+            
+            jsn.flipbook.style !== undefined ?
+            base.styles( jsn.flipbook.style ) :
+            "";
+            
+          }
+
+
+
+        },
+        inserted: function(){
+          
+        }
+
+      }
+
+    } );
+
+/* x-content event addition */
+    xtag.addEvent( document.getElementById("content"), "click:delegate(button)",
+      function(event){
+        console.log(this);
+      } );
+
+  </script>
 
 </html>

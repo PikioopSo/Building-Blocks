@@ -1,68 +1,52 @@
-/* -kipOmaha Styles  */
-
-.autoBox h3{
-	font-family:arial, calibri, sans-serif; font-size:16pt; text-align:center;
+body{
+	font-family: cursive;
 }
 
-.autoBox p{
-	background-color:white; padding:2mm;
-	font-family:arial, calibri, sans-serif; font-size:11pt;
+/* xtag styles start */
+x-header{
+	position: absolute;
+	left: 0px;
+	top:0px;
+	width: 100%;
+	height: 150px;
+	background-color: white;
+}
+x-content{
+	position: absolute;
+	left: 0px;
+	top:150px;
+	width: 800px;
+	height: 800px;
+	padding: 5px;
+	margin-left: 100px;
+	background-color: green;
+}
+x-footer{
+	position: absolute;
+	left: 0px;
+	top:950px;
+	width: 100%;
+	height: 150px;
+	background-color: white;
+}
+x-reader{
+	position: relative;
+	width: 300px;
+	height: 400px;
+	border: 1px black solid;
+	background: rgba(255,255,255,.6);
+}
+x-toolbar{
+	
+}
+/* xtag styles end */
+
+/* flip book styles start*/
+.project-link{
+	color: rgb(55,55,55);
+}
+.project-link:hover{
+	color: skyblue;
 }
 
-.autoBox ol{
-	list-style:inside decimal;
-	background-color:white; padding:2mm;
-	font-family:arial, calibri, sans-serif; font-size:11pt;
-}
-.autoBox nav{
-	background-color:white; padding:1mm;
-	font-family:arial, calibri, sans-serif; font-size:13pt; font-weight:bold;
-	text-align:center;
-}
-
-.pageHeader{
-	position:relative; margin-left:8%; width:80%;height:30%;
-	text-align:center; font-size:11pt; font-family:arial, calibri, sans-serif;color:rgba(55,55,65,1);
-	background-color:white;	
-}
-
-.target{
-	position:relative; top:0mm; width:97%; height:6mm; left:2%;
-	background-color:rgba(150,150,255,.5);
-}
-
-.newsArticle{
-	position:relative;margin-left:8%;width:80%;height:30%;padding:2mm;
-	text-align:center;font-size:11pt;font-family:arial, calibri, sans-serif;color:rgba(55,55,65,1);
-	background-color:rgba(0,0,150,1);
-	overflow:auto;
-}
-
-.display{ 
-	position:relative; width:97.5%; height:30%; text-align:left;
-	margin-right:10px; margin-top:2mm; margin-bottom:2mm; margin-left:10px; padding:1mm;
-	background-color:rgba(255,255,255,1.00);
-}
-
-.controls{
-	text-align:left;
-	position:relative; top:1.5mm; width:97%; left:10px; padding:.5mm;
-	background-color:rgba(255,255,255,1);
-}
-.controls button{
-	position:relative; left:5%;
-}
-
-.pageFooter{
-	position:relative;margin-left:8%;width:80%;height:30%;
-	text-align:center;font-size:11pt;font-family:arial, calibri, sans-serif;color:rgba(55,55,65,1);
-	background-color:white;
-}
-
-.siteNavBtn{
-	position:absolute; top:0mm; left:0mm;
-}
-
-
-
-
+/* flip book styles end*/
