@@ -10,361 +10,112 @@
     <link rel="stylesheet" href="css/jsonProject_desktop.css" type="text/css" />
     <link rel="stylesheet" href="../css/styles.css" type="text/css" />
 
-    <script src="../javascript/node_modules/x-tag/dist/x-tag-core.js"></script>
+    <script async src="../javascript/node_modules/x-tag/dist/x-tag-core-base-components.js"></script>
 
     <title>Kip JSON Project</title>
 
+    <style type="text/css" id="json-editor-style-container"></style>
   </head>
 
   <body>
 
-<!-- Holds data for program events.  -->
-    <x-json class="memory"
+<!-- x-base: Holds data for program events. 
+    
+    Required propertyies: 
+    * If property value isn't present it will be auto filled.
+
+    id: *
+    tagName: *
+    class: *
+
+    -->
+    <x-base class="memory" id="xtag-base-mashup"
       json="
       {
       id: 'xtag-base-mashup',
       class: 'memory',
-      title: 'JSON Web Project',
-      writerStatus: null,
+      tagName: 'x-base',
+      xtag: 'x-base',
+      title: 'screen.Script||Writer',
       keywords:
         [
         'Video',
         'Music',
         'Photography'
         ],
-      compatibility:
-        {
-        active: 'auto',
-        laptop:
+      modules:
+        [
           {
-          css: 'css/jsonProject_Laptop.css', 
-          js: 'js/jsonProject.css',
-          modules: 
-            [
-            {
-            id: 'header-toolbar',
-            style:
-              {
-              dimensions: [ 'position absolute' ]
-              background: [ 'url img/mechanical-universe.png' ]
-              }
-            },
-            {
-            id: 'work-table',
-            style:
-              {
-              dimensions: [ 'position absolute' ]
-              background: [ 'url img/mechanical-universe.png' ]
-              }
-            },
-            {
-            id: 'json-editor',
-            style:
-              {
-              dimensions: [ 'position absolute' ]
-              background: [ 'url img/mechanical-universe.png' ]
-              }
-            }
-            ]
-          },
-        desktop:
-          {
-          css: 'css/jsonProject.css', 
-          js: 'js/jsonProject.css',
-          modules: 
-            [
-            {
-            id: 'header-toolbar',
-            style:
-              {
-              dimensions: [ 'position absolute' ]
-              background: [ 'url img/mechanical-universe.png' ]
-              }
-            },
-            {
-            id: 'work-table',
-            style:
-              {
-              dimensions: [ 'position absolute' ]
-              background: [ 'url img/mechanical-universe.png' ]
-              }
-            },
-            {
-            id: 'json-editor',
-            style:
-              {
-              dimensions: [ 'position absolute' ]
-              background: [ 'url img/mechanical-universe.png' ]
-              }
-            }
-            ]
-          },
-        phone: 
-          { 
-          css: 'url', 
-          js: 'url',
-          modules: 
-            [
-            {
-            id: 'header-toolbar',
-            style:
-              {
-              dimensions: [ 'position absolute' ]
-              background: [ 'url img/mechanical-universe.png' ]
-              }
-            },
-            {
-            id: 'work-table',
-            style:
-              {
-              dimensions: [ 'position absolute' ]
-              background: [ 'url img/mechanical-universe.png' ]
-              }
-            },
-            {
-            id: 'json-editor',
-            style:
-              {
-              dimensions: [ 'position absolute' ]
-              background: [ 'url img/mechanical-universe.png' ]
-              }
-            }
-            ]
-          },
-        tablet: 
-          { 
-          css: 'url', 
-          js: 'url',
-          modules: 
-            [
-            {
-            id: 'header-toolbar',
-            style:
-              {
-              dimensions: [ 'position absolute' ]
-              background: [ 'url img/mechanical-universe.png' ]
-              }
-            },
-            {
-            id: 'work-table',
-            style:
-              {
-              dimensions: [ 'position absolute' ]
-              background: [ 'url img/mechanical-universe.png' ]
-              }
-            },
-            {
-            id: 'json-editor',
-            style:
-              {
-              dimensions: [ 'position absolute' ]
-              background: [ 'url img/mechanical-universe.png' ]
-              }
-            }
-            ]
-          }
-        },
-      toolbar:
-        {
-        id: 'header-toolbar',
-        modules: 
-          [ {
-          node: 'img',
-          id: 'kip-menu-button',
-          class: 'inlineBlock',
-          title: 'Kip Menu',
-          status: 'hidden',
-          events:
-            {
-            pressing: 
-              {
-              duration: '2s'
-              },
-            toggle: 
-              {
-              for: 'component[1]'
-              }
-            },
-          component: 
-            [ { 
-            menu: 
-              {  
-              type: 'drop',
-              content: 
-                {
-                parent: '#component-for-menu-button',
-                links: 
-                  [ 
-                  'www.kip.org', 
-                  'www.platforms.kip.org',
-                  'www.jsonProject.kip.org', 
-                  'www.deliveryProject.kip.org'
-                  ]
-                },
-              style:
-                [ {
-                visible: 
-                  {
-                  duration: '1.5s',
-                  playback: 'no-repeat',
-                  start:
-                    {
-                    position: 'absolute',
-                    left: '10px',
-                    top: '10px',
-                    width: '0px',
-                    height: '0px'
-                    },
-                  end:
-                    {
-                    position: 'absolute',
-                    left: '10px',
-                    top: '80px',
-                    width: '120px',
-                    height: '75px'
-                    }
-                  }
-                },
-                {
-                hidden:
-                  {
-
-                  start:
-                    {
-                    position: 'absolute',
-                    left: '10px',
-                    top: '80px',
-                    width: '120px',
-                    height: '75px'
-                    },
-                  end:
-                    {
-                    position: 'absolute',
-                    left: '10px',
-                    top: '10px',
-                    width: '0px',
-                    height: '0px'
-                    }
-                  }
-                } ]
-              }
-            } ]
-          },
-          {
-          node: 'fieldset',
-          id: 'currentModeSelected'
-          },
-
-          {
-          node: 'fieldset',
-          id: 'modeSelTools'
-          },
-          {
-          node: 'fieldset',
-          id: 'tabs-bar'
-          },
-          {
-          node: 'fieldset',
-          id: 'global-discusPallete'
-          } ]
-        },
-
-      worktable:
-        {
-        id: 'work-table',
-        node: 'section'
-        },
-
-      editor:
-        {
-        id: 'json-editor',
-        class: 'editor',
-        node: 'form'
-        modules: 
-          [ 
-          {
-          node: 'fieldset',
-          id: 'json-console',
-          class: 'console',
-          title: 'JSON mark up console',
-          component: 
-            [ 
-            {
-            writer: 
-              {
-              id: 'json-markup-editor'
-              node: 'x-editor',
-              lines: 1,
-              cursorPosition: [ 'line 1', 'characterPosition 1' ],
-              mode: 'auto',
-              style:
-                {
-                lines: 
-                  {
-                  active: [],
-                  inactive: []
-                  },
-                numbering: []
-                }
-              }
-            }
-            ]
-          },
-          {
-          node: 'section',
-          id: 'execution-menu',
-          class: 'horizontal-bar menu',
-          title: 'Console editor controls'
+          id: 'json-markup-editor',
+          class: 'writer',
+          focus: true,
+          xtag: 'x-editor',
           component:
-            [
             {
-            button:
+            viewport: '#json-console',
+            container: '#json-editor',
+            sheet: 
               {
-              id: 'json-parse'
-              node: 'input'
-              style:
-                [
+              '1': '',
+              '2': '',
+              '3': '',
+              '4': '',
+              },
+            events:
+              {
+              load: 
                 {
-                dimensions: [ 'position absolute', 'width 75px', 'height 75px', 'top 0px', 'left 0px' ]
-                image: [ 'url(img/)', 'top 0px', 'left 0px', 'repeat none', 'position center' ]
+                styles: {isMobile:'auto',isTablet:'auto',isTouch:'auto',isDekstop:'auto'},
+                writer: {share:false,sharedWith:null}
                 }
-                ]
-              }
-            },
-            {
-            button:
+              },
+            style:
               {
-              id: 'json-parse-push'
-              node: 'input'
-              style:
-                [
+              type: 'css',
+              container:
                 {
-                dimensions: [ 'position absolute', 'width 75px', 'height 75px', 'top 0px', 'left 0px' ]
-                image: [ 'url(img/)', 'top 0px', 'left 0px', 'repeat none', 'position center' ]
+                position: 'relative',
+                width: '520px',
+                height: '120px',
+                backgroundImage: 'url(../img/nature_scapes/waterfall-1.jpg)'
+                },
+              viewport:
+                {
+                viewedLines: [1,2,3,4],
+                viewableLines: 4,
+                postion: 'absolute',
+                left: null,
+                top: null,
+                right: null,
+                bottom: null,
+                width: '520px',
+                height: '120px'
+                },
+              line:
+                {
+                length: 4,
+                target: 'x-line'
+                },
+              text:
+                {
+                target: 'x-text',
+                fontFamily: 'Lucida Console, Monaco, monospace',
+                fontSize: '12px',
+                color: 'rgb(65,65,65)'
+                },
+              cursor:
+                {
+                image: '../img/ui/text_pointer.png'
                 }
-                ]
-              }
-            },
-            {
-            button:
-              {
-              id: 'json-options'
-              node: 'input'
-              }
-            },
-            {
-            button:
-              {
-              id: 'json-preview'
-              node: 'input'
+              textCursor:
+                {
+                image: '../img/ui/text_cursor.png'
+                }
               }
             }
-            ]
-          } 
-          ]
-        }
-      }"></x-json>
-
+          }
+        ]
+      }"></x-base>
     <header>
 
 <!-- [header toolbar] The toolbar contains a set of buttons that activate different modes. -->
@@ -382,36 +133,6 @@
             <a></a>
             <a></a>
           </nav>
-  
-<!-- [Selected Mode] Container for all enabled application modes. -->
-          <fieldset class="label inlineBlock" id="currentModeSelected" title="Current modes.">
-
-            <legend id="currentModeResponseLabel" class="labelTitle">
-              Mode: 
-            </legend>
-              
-            <input type="button" id="jsonModeBtn" class="modeButton" title="JSON"/>
-
-          </fieldset>
-
-<!-- [Mode selection bar] A bar that features all selectable application modes. -->
-          <fieldset id="modeSelTools" class="tools inlineBlock" title="Mode selection bar.">
-
-            <legend class="labelTitle">
-              Modes:
-            </legend>
-
-            <p class="label inlineBlock" id="selectableModes">
-
-              <input type="button" id="jsonLayoutModeBtn" class="modeButton" title="JSON Layout"/>
-
-              <input type="button" id="jsonBrushModeBtn" class="modeButton" title="JSON Brush"/>
-
-              <input type="button" id="jsonScienceModeBtn" class="modeButton" title="JSON Science"/>
-
-            </p>
-
-          </fieldset>
 
 <!-- [Tab bar] Container for access your work. -->
           <fieldset id="tabs-bar" title="Tab Bar">
@@ -486,27 +207,11 @@
 
       <fieldset id="json-console" class="console" title="">
 
-        <x-editor id="json-markup-editor"></x-editor>
+        <x-editor id="json-markup-editor" class="writer"></x-editor>
 
       </fieldset>
 
       <fieldset id="json-response" class="console">
-
-       <!-- <section id="object-property-list">
-
-          <label class="response-label">id: </label><input type="text"><br>
-          <label class="response-label">class: </label><input type="text"><br>
-          <label class="response-label">name: </label><input type="text">
-
-        </section>
-
-        <section id="object-list-toolbar">
-
-          <input type="button" class="console-btn" title="Add Property" value="+">
-          <input type="button" class="console-btn" title="Delete Property" value="-">
-          <input type="button" class="console-btn" id="json-generate" title="Make Edits" value="Make Edits">
-
-        </section>-->
 
       </fieldset>
       
@@ -521,7 +226,7 @@
 
     </form>
 
-<!-- [Work space] Container for your current project.  -->
+<!-- [SVG preload nodes] Container for your current project.  -->
     <svg id="svg-node-pallete" class="memory"
     width="0px" height="0px">
       <def></def>
@@ -534,129 +239,16 @@
 
     </svg>
 
+<!-- [Form preload nodes] Container for your current project.  -->
+    <form class="memory">
+
+      <input is="x-input" type="file" accept="image/*;capture=camera">
+      <input is="x-input" type="file" accept="video/*;capture=camcorder">
+      <input is="x-input" type="file" accept="audio/*;capture=microphone">
+
+    </form>
+
   </body>
-
-  <script type="text/javascript">
-
-// Notes: x-json x-tag definition
-  xtag.register( "x-json", 
-    {
-
-    lifecycle: 
-      {
-
-      created: 
-        function(){
-
-var _status = "";
-
-// Create a function to check for attributes that have been added.
-          if( this.hasAttribute("json") === true || this.hasAttribute("data-json") === true ){
-
-    _status = this.getAttribute("json") || this.getAttribute("data-json");
-
-    this.json = _status._toJSON( false );
-
-    base.status( this.json ) !== undefined ? this.json._base() : console.log("Please use a valid JSON.");
-
-          }
-          else{
-
-  
-
-          }
-
-        },
-
-      inserted: 
-        function(){
-          
-        },
-
-      removed: 
-        function(){
-          
-        }
-
-      }
-      
-    } );
-
-/* xtag registration for x-editor */
-  xtag.register( "x-editor", 
-    {
-    content:
-      function(){/*
-        <x-line></x-line> 
-      */},
-    lifecycle:
-      {
-      created: 
-        function(){
-
-          base.json[0].editor.modules[0].component[0].writer.lines = this.getElementsByTagName("x-line").length
-
-        }
-
-      },
-
-    events:
-      {
-      click:
-        function(event){
-
-          if( event.target.nodeName === "x-line" )
-            {
-             
-            }
-          else if( event.target.nodeName === "x-number" )
-            {
-             
-            }
-
-        },
-
-        keypress:
-          function(event){
-            
-          }
-
-      }
-
-  } );
-
-/* xtag registration for x-line */
-  xtag.register( "x-line", 
-    {
-    content: function(){ /* 
-      <x-number></x-number> 
-      */ },
-
-    lifecycle:
-      {
-      inserted: 
-        function(){ base.json[0].editor.modules[0].component[0].writer.lines + 1; },
-
-      removed: 
-        function(){}
-
-      }
-
-    } );
-
-/* xtag registration for x-number */
-  xtag.register( "x-number", 
-  {
-    lifecycle:
-      {
-      inserted: 
-        function(){ this.innerHTML = base.json[0].editor.modules[0].component[0].writer.lines; }
-
-      }
-
-  } );
-
-  </script>
 
 </html>
 

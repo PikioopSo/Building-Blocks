@@ -1,3 +1,15 @@
+/* Key frame animations start */
+@keyframes blink{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: .15;
+    }
+}
+/* Key frame animations end */
+
+/* tag styles start */
 p{
     display: inline-block;
     padding: 0mm; margin: 0mm;
@@ -7,24 +19,22 @@ textarea{
     border: inset .25mm rgb(100,100,255);
     font-family:monospace arial sans-serif; font-size: 16px;
 }
+/* tag styles end */
+
 
 .toolbar{
     padding: 2.5mm;
     background: white;
     border: outset rgb(200,200,200) 1mm;
 }
-
 .work-table{
     background: rgb(245,245,255);
 }
-
 .work-space{
     background:rgb(255,255,255); 
     border:outset 1mm rgb(200,200,200); 
     margin:2.5mm;
 }
-
-
 .memory{
     position: fixed;
     left: 0px;
@@ -54,4 +64,12 @@ textarea{
 }
 .inline{
     display: inline;
+}
+.kip-auto-cursor{
+    position: relative;
+    top: 2px;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
 }

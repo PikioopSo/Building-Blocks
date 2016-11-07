@@ -1,42 +1,49 @@
 body{
     padding-left: 15%;
+    background-image: url(../../img/skyscapes/NGC6960-2013_Fred_Hermann.png);
+    background-position: center;
+    background-size: contain;
 }
 
 /* xtag styles start*/
 x-editor{
-    background-color: white;
+    background-color: none;
     border: 1px solid darkgrey;
+    overflow: hidden;
 }
 x-line{
     position: relative;
-    width: 520px;
-    height: 20px;
+    width: 518px;
+    height: 2em;
     border-bottom: solid 1px black;
-    background-color: rgba(255,255,225,.5);
+    background-color: rgba(255,255,225,1);
     display: inline-block;
+    cursor: url(../../img/ui/text_pointer.png), text;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
 }
 x-number{
     position: relative;
+    top: 0px;
+    padding:4px;
     width: 30px;
-    height: 20px;
+    height: 1.75em;
     border-right: solid 1px black;
     background-color: rgba(150,150,255,.5);
     display: inline-block;
 }
 x-line:hover{
-    background-color: rgba(225,225,255,.8);
-    border-color: rgba(200,150,0,.5);
+    background-color: rgba(225,225,255,1);
+    border-color: rgba(200,150,0,1);
 }
 x-number:hover{
-    border-color: rgba(0,150,0,.5);
+    border-color: rgba(0,150,0,1);
 }
 /* xtag styles end */
 
-.response-label{
-    display: inline-block;
-    width: 50px; height: 20px;
-}
-
+/*
+    top menu container styles start
+*/
 #header-toolbar{
     position: relative;
     top: 0px; left: 0px;
@@ -51,135 +58,6 @@ x-number:hover{
     padding: 5px;
     width: 95px;
     background: rgb(255,255,255);
-}
-
-/* json writer styles start */
-#json-editor{
-    position:relative;
-    width: 850px; 
-    height: 150px;
-    background: rgb(75,75,75);
-}
-#json-console{
-    position: absolute;
-    top: 0px;
-    padding: 0px;
-    background: rgb(75,75,75);
-    border: none;
-    display: inline-block;
-    width: 520px; 
-    height: 130px;
-    overflow: none;
-}
-#json-markup-editor{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: green 5px solid;
-}
-#json-response{
-    position: absolute;
-    top: 0px; left: 560px;
-    background: rgb(235,235,235);
-    display: inline-block;
-    width: 260px; height: 130px;
-}
-/* json writer styles end */
-
-#textEditorTool{
-    color: rgba(0,0,0,0);
-    background-image: url(../../img/ui/textEditorTool.png);
-    background-size: 75%; background-position: center; background-repeat: no-repeat;
-}
-#jsonModeBtn{
-    color: rgba(0,0,0,0);
-    background-color: rgb(255,10,10);
-    background-image: url(../../img/ui/json-parse.png);
-    background-size: 100%; background-position: center; background-repeat: no-repeat;
-}
-#jsonLayoutModeBtn{
-    color: rgba(0,0,0,0);
-    background-color: rgb(255,255,10);
-    background-image: url(../../img/ui/json-layout.png);
-    background-size: 100%; background-position: center; background-repeat: no-repeat;
-}
-#jsonBrushModeBtn{
-    color: rgba(0,0,0,0);
-    background-color: rgb(10,255,10);
-    background-image: url(../../img/ui/json-brush.png);
-    background-size: 100%; background-position: center; background-repeat: no-repeat;
-}
-#jsonScienceModeBtn{
-    color: rgba(0,0,0,0);
-    background-color: rgb(10,10,255);
-    background-image: url(../../img/ui/json-science.png);
-    background-size: 100%; background-position: center; background-repeat: no-repeat;
-}
-#modeSelTools{
-    position: absolute;
-    width: 120px;
-    height: 48px;
-    left: 300px; 
-    top: 9px;
-    padding: 3px; 
-    margin: 0px;
-    border: 1px ridge rgba(0,255,0,.25);
-    border-left-width: 5px;
-    border-right-width: 50px;
-    border-bottom-width: 25px;
-    background: rgb(255,255,255);
-}
-#currentModeSelected{
-    position: absolute;
-    width: 76px;
-    height: 48px;
-    left: 207px;
-    top: 9px;
-    border: rgba(0,0,255,.25) groove 1px;
-    border-bottom-width: 25px;
-    border-right-width: 10px;
-    background-color: rgb(255,255,255);
-    padding: 3px;
-    margin: 0px;
-}
-#currentModeResponseLabel{
-    background: rgb(255,255,255);
-}
-#selectableModes{
-    position: absolute;
-    display: inline-block;
-    left: 0px;
-    width: 110px;
-    background-color: rgb(255,255,255);
-}
-#global-discusPallete{
-    position: fixed;
-    padding: 10px;
-    background: rgb(215,215,255);
-    border: inset 2px rgb(115,115,115);
-    top: -77px; left: 84px;
-    width: 130px; height: 130px;
-    border-width: 10px;
-    border-radius: 120px;
-    -ms-transform: scale(.4); /* IE 9 */
-    -webkit-transform: scale(.4); /* Safari */
-    transform: scale(.4);
-    z-index: 1000;
-}
-#execution-menu{
-    position:relative; 
-    width:540px; height: auto;
-    padding: 3px;
-    top: 122px; left: 4px; background: rgba(0,0,255,.5);
-}
-#object-property-list{
-    position:relative; 
-    padding: 5px;
-    background: rgba(0,0,255,.5);
-    overflow: scroll;
-}
-#object-list-toolbar{
-    position:relative;
 }
 #tabs-bar{
     position: absolute;
@@ -208,6 +86,75 @@ x-number:hover{
     left:  0px;
     width: 100%;
 }
+/*
+    top menu container styles end
+*/
+
+/* bottom editor conatainer start */
+#json-editor{
+    position:relative;
+    width: 850px; 
+    height: 205px;
+    background: rgb(75,75,75);
+}
+#json-console{
+    position: absolute;
+    top: 0px;
+    padding: 0px;
+    background: rgb(75,75,75,0);
+    border: none;
+    display: inline-block;
+    width: 520px; 
+    height: 124px;
+    overflow-Y: hidden;
+    overflow-x: hidden;
+}
+#json_markup_editor{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 230px;
+    overflow:visible;
+}
+#json-response{
+    position: absolute;
+    top: 0px; left: 560px;
+    background: rgb(235,235,235);
+    display: inline-block;
+    width: 260px; height: 130px;
+}
+#execution-menu{
+    position:relative; 
+    width:540px; height: auto;
+    padding: 3px;
+    top: 175px; left: 4px; background: rgba(0,0,255,.5);
+}
+/* 
+    bottom editor conatainer 
+*/
+
+#textEditorTool{
+    color: rgba(0,0,0,0);
+    background-image: url(../../img/ui/textEditorTool.png);
+    background-size: 75%; background-position: center; background-repeat: no-repeat;
+}
+
+#global-discusPallete{
+    position: fixed;
+    padding: 10px;
+    background: rgb(215,215,255);
+    border: inset 2px rgb(115,115,115);
+    top: -77px; left: 84px;
+    width: 130px; height: 130px;
+    border-width: 10px;
+    border-radius: 120px;
+    -ms-transform: scale(.4); /* IE 9 */
+    -webkit-transform: scale(.4); /* Safari */
+    transform: scale(.4);
+    z-index: 1000;
+}
+
 #work-table{
     width: 863px; height: auto;
 }
@@ -250,6 +197,10 @@ input.tabs-autosave{
     background: white;
 }
 
+.response-label{
+    display: inline-block;
+    width: 50px; height: 20px;
+}
 .disc-upper-left{
     position: relative;
     display: inline-block;
