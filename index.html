@@ -8,10 +8,9 @@
     <meta name="description" content="Kip is a website made for the do gooders in business and non-profit.">
     <meta name="keywords" content="">
 
-    <link rel="stylesheet" href="css/styles.css" type="text/css" /> 
-    <link rel="stylesheet" href="css/index.css" type="text/css" /> 
+    <script type="text/javascript" src="javascript/node_modules/x-tag/dist/x-tag-core-base-components.js"></script>
 
-    <script src="javascript/node_modules/x-tag/dist/x-tag-core.js"></script>
+    <link rel="stylesheet" href="css/styles.css"/>
 
     <title>www.Kip.org</title> 
 
@@ -19,215 +18,136 @@
 
   <body>
 
-<!-- [x-header] -->
-    <x-header>
-
-      <h1>Kip at Omaha, NE</h1>
-
-      <p>A company by a Mozillian</p>
-
-    </x-header>
-
-
-
-<!-- [x-content] -->
-    <x-content class="content" id="content" 
-    json="
-      {
-      id: 'content',
-      flipbook: 
+    <x-base class="memory"
+      json="
         {
-        style: 
+        id: '_kip_index_',
+        class: 'memory',
+        layout: 'rows',
+        modules: []
+        }">
+    </x-base>
+
+<!-- [x-layout] -->
+    <x-layout id="_top_bar_"
+      json="
+        {
+        id: '_top_bar_',
+        class: 'fixed top span-width'
+        nodeName: 'x-layout',
+        component: 
           {
-          for: '#platform-project-reader',
-          reader: [ 'left 10px', 'top 400px', 'width 95%', 'height 30%', 'position absolute' ],
-          background: 'url()',
-          toolbar: [ 'left 10px', 'top 400px', 'width 95%', 'height 30%', 'position absolute' ]
-          },
-        moduleNumber: 0,
-        moduleClass: 'platorm-project',
-        currentTitle: 'Delivery services, online services, and modern engineering.',
-        moduleNames:
-          [
-          'Delivery services, online services, and modern engineering.',
-          'Cartoon Making, photo editing, and social media.'
-          ]
-        }
-      }">
-
-      <section class="content-introduction">
-
-        <h1>Welcome!</h1>
+          container: 'this',
+          viewport: '#_menu_',
+          system: 
+            {
+            xhr: false,
+            node: '#_page_construction_warning_'
+            },
+          style: 
+            {
+            container:
+              {
+              height: ''
+              }
+            }
+          }
+        }">
+      <section class="introduction">
+        <h1>Kip @ Omaha NE</h1>
+        <h2>Welcome!</h2>
 
         <p>
-          Kip is a multifaceted tech start up company, that implements the cutting edge ideas of today.
+          Hi everyone, welcome to my site made for learning, sharing, and creativity.
         </p>
-
-        <section class="inlineBlock">
-          <p>We currently have two platforms that we are building on.</p>
-
-          <ol>
-            <li>
-              <strong>Kip's JSON Parser: </strong>
-              <p>
-                A platform for web applications for animating, movie making, and current events.
-              </p>
-            </li>
-            <li>
-              <strong>Kip's Open Engineering and Science: </strong>
-              <p>
-                A platform for engineering that utilizes real world business to spur advancement and innovation.
-              </p>
-            </li>
-          </ol>
-
-          <p>
-            Below are Kip's first projects for each platform. To learn more read each module, than navigate to there home 
-            pages by clicking the header link.
-          </p>
-
-        </section>
 
       </section>
 
-<!-- [x-module] -->
-      <x-module class="flip-book memory" module-class="platform-project" module-class-index="0"
-      name="Cartoon Making, photo editing, and social media.">
+      <section id="_menu_">
+      </section>
 
-        <h4 class="module-title">Cartoon Making, photo editing, and social media.</h4>
+    </x-layout>
 
-      </x-module>
 
-      <x-reader id="platform-project-reader">
 
-        <!-- [x-module] -->
-        <x-module class="flip-book"  module-class="platform-project" module-class-index="0"
-        name="Delivery services, online services, and modern engineering.">
+<!-- [x-layout] -->
+    <x-layout class="fixed span-width" id="_middle_bar_" 
+      json="
+        {
+        id: '_middle_bar_',
+        class: 'fixed span-width'
+        nodeName: 'x-layout',
+        component: 
+          {
+          type: 'row',
+          container: 'this',
+          viewport: '#_reader_viewport_',
+          system: '#_reader_construction_warning_',
+          style: 
+            {
+            container:
+              {
+              }
+            viewport:
+              {
+              }
+            }
+          }
+        }">
 
-          <h4 class="module-title">Delivery services, online services, and modern engineering.</h4>
-  
-          <p>
-            This project is based off of Kip's Open Engineering and Science platform.
+      <x-reader id="_reader_viewport_">
+
+        <article id="_reader_construction_warning_">
+
+          <h1 class="title construction-warning">Important Notice</h1>
+
+          <p class="text construction-warning">
+            This is going to be Kip's reader for our blog, sorry for the delay. We will be continually updating over the next year.
           </p>
 
-          <ul>
-            <li><a href="#" class="project-link">Project notes and docs</a></li>
-            <li><a href="#" class="project-link">Project community meetup forum</a></li>
-          </ul>
-
-        </x-module>
+        </article>
 
       </x-reader>
 
-    </x-content>
+    </x-layout>
 
+<!-- [x-layout] -->
+    <x-layout class="fixed bottom span-width" id="_bottom_bar_" 
+      json="
+        {
+        id: '_bottom_bar_',
+        class: 'fixed bottom span-width'
+        nodeName: 'x-layout',
+        component:
+          {
+          type: 'row',
+          container: 'this',
+          viewport: '#_nav_menu_',
+          system: '#_nav_construction_warning_',
+          style: 
+            {
+            }
+          }
+        }">
 
+<!-- [viewport] -->
+      <nav id="_nav_menu_">
 
-<!-- [x-footer] -->
-    <x-footer>
+<!-- [system message] -->
+        <article id="_nav_construction_warning_">
 
-      <nav>
-        <a href="contactus.html">Contact Us</a>
-        <a href="aboutus.html">About Kip</a>
+          <h1 class="title construction-warning">Navigtion Menu Construction</h1>
+
+          <p class="text construction-warning">
+            The pages navigation menu and it's related pages are currently being constructed. Sorry for the inconvience.
+          </p>
+
+        </article>
+
       </nav>
 
-    </x-footer>
+    </x-layout>
 
   </body>
-
-  <script type="text/javascript">
-
-
-/* x-content registration */
-var xContent = xtag.register( "x-content", 
-    {
-      content: function(){/*
-        <x-toolbar>
-          <button> < </button>
-          <button> > </button>
-        <x-toolbar>
-      */},
-      lifecycle:
-        {
-        created: 
-          function(){
-
-/* Retrieve any JSON data from the HTML page using the base literal. */
-var jsn = "";
-
-            this.hasAttribute("json") === true ? 
-            jsn = this.getAttribute("json")._toJSON() : 
-            this.hasAttribute("data-json") === true ?
-            jsn = this.getAttribute("data-json")._toJSON() : "";
-
-            
-
-          }
-
-        },
-      events: 
-        {
-          click: function(){},
-          move: function(){}
-        }
-
-    } );
-
-/* x-module registration */
-var xModule = xtag.register( "x-module", 
-    {
-      content: function(){/*
-        
-      */},
-      lifecycle: {    
-        created: function(){
-          
-        },
-        inserted: function(){
-          
-        }
-
-      }
-
-    } );
-
-/* x-reader registration */
-var xModule = xtag.register( "x-reader", 
-    {
-    content: function(){/*
-      
-    */},
-    lifecycle: 
-      {   
-      created: function(){
-
-var jsn = base.json.getJsonById("content");
-
-          if( jsn.flipbook !== undefined){
-            
-            jsn.flipbook.style !== undefined ?
-            base.styles( jsn.flipbook.style ) :
-            "";
-            
-          }
-
-
-
-        },
-        inserted: function(){
-          
-        }
-
-      }
-
-    } );
-
-/* x-content event addition */
-    xtag.addEvent( document.getElementById("content"), "click:delegate(button)",
-      function(event){
-        console.log(this);
-      } );
-
-  </script>
 
 </html>

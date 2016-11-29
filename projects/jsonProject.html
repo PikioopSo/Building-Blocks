@@ -2,12 +2,17 @@
 <html>
   <head>
 
+<!--
+  Author: Steven Van Sant
+-->
+
     <meta charset="utf-8">
 	
     <meta name="description" content="The JSON Project is an effort to implement new syntax concepts for the modern web browsers.">
     <meta name="keywords" content="computer science, json, json markup, web sytnax, social network, open networking">
 
     <link rel="stylesheet" href="css/jsonProject_desktop.css" type="text/css" />
+    <link rel="stylesheet" href="css/json-project-index.css" type="text/css" />
     <link rel="stylesheet" href="../css/styles.css" type="text/css" />
 
     <script async src="../javascript/node_modules/x-tag/dist/x-tag-core-base-components.js"></script>
@@ -23,11 +28,14 @@
     
     Required propertyies: 
     * If property value isn't present it will be auto filled.
+    ** Trial run
 
     id: *
     tagName: *
     class: *
-
+    json: **
+    
+    extends: is = <body>**
     -->
     <x-base class="memory" id="xtag-base-mashup"
       json="
@@ -54,69 +62,100 @@
             {
             viewport: '#json-console',
             container: '#json-editor',
+            viewedLines: [1,2,3,4],
+            viewableLines: 4,
+            title:
+              {
+              numbered: true,
+              alphabetical: false
+              },
             sheet: 
               {
               '1': '',
               '2': '',
               '3': '',
-              '4': '',
+              '4': ''
               },
             events:
               {
               load: 
                 {
-                styles: {isMobile:'auto',isTablet:'auto',isTouch:'auto',isDekstop:'auto'},
+                styles: {isMobile:'auto',isTablet:'auto',isTouch:'auto',isDekstop:'auto',isLabtop:'default'},
                 writer: {share:false,sharedWith:null}
                 }
               },
             style:
               {
               type: 'css',
+              position: 'absolute',
+              margin: '0px',
+              padding: '0px',
+              top: '0px',
+              left: '0px',
+              height: '100%',
+              width: '100%',
+              backgroundColor: 'rgba(255,255,255)',
+              borderRadius: '0px',
+              cursor: 'text',
               container:
                 {
                 position: 'relative',
                 width: '520px',
-                height: '120px',
+                height: '125px',
+                margin: '5px',
+                padding: '5px',
                 backgroundImage: 'url(../img/nature_scapes/waterfall-1.jpg)'
                 },
               viewport:
                 {
-                viewedLines: [1,2,3,4],
-                viewableLines: 4,
                 postion: 'absolute',
-                left: null,
-                top: null,
-                right: null,
-                bottom: null,
+                left: '0px',
+                top: '0px',
                 width: '520px',
-                height: '120px'
+                height: '125px',
+                padding: '0px',
+                margin: '5px'
                 },
               line:
                 {
-                length: 4,
-                target: 'x-line'
+                position: 'relative',
+                height: '30px',
+                width: '100%',
+                margin: '0px',
+                padding: '0px',
+                backgroundColor: 'rgba(255,255,255,.5)',
+                opacity: '1'
+                },
+              title:
+                {
+                position: 'relative',
+                top: '0px',
+                left: '0px',
+                padding: '0px',
+                margin: '0px',
+                height: '30px',
+                width: '30px'
                 },
               text:
                 {
-                target: 'x-text',
                 fontFamily: 'Lucida Console, Monaco, monospace',
                 fontSize: '12px',
                 color: 'rgb(65,65,65)'
                 },
-              cursor:
-                {
-                image: '../img/ui/text_pointer.png'
-                }
               textCursor:
                 {
-                image: '../img/ui/text_cursor.png'
+                blink: '.5',
+                width: '',
+                height: '',
+                image: 'url(../img/ui/text_cursor.png)'
                 }
               }
             }
           }
         ]
       }"></x-base>
-    <header>
+
+    <header is="x-header" menu="true">
 
 <!-- [header toolbar] The toolbar contains a set of buttons that activate different modes. -->
         <form id="header-toolbar" class="toolbar" title="Top Tool Bar">
@@ -176,7 +215,7 @@
 
 
 <!-- [Work table] A container for your work spaces. -->
-    <section class="work-table" id="work-table" title="Work table.">
+    <section is="x-section" class="work-table" id="work-table" title="Work table." worktable="true">
 
 <!-- [Work area] A container for your work spaces. -->
       <form class="activeSheet work-area" id="json_sheet1" title="Work area.">
@@ -201,9 +240,8 @@
 
     </section>
 
-
 <!-- Editor: -->
-    <form id="json-editor" class="editor">
+    <form id="json-editor" class="editor" editor="true">
 
       <fieldset id="json-console" class="console" title="">
 
@@ -228,7 +266,8 @@
 
 <!-- [SVG preload nodes] Container for your current project.  -->
     <svg id="svg-node-pallete" class="memory"
-    width="0px" height="0px">
+      width="0px" height="0px">
+
       <def></def>
       <g></g>
       <text></text>
@@ -242,9 +281,9 @@
 <!-- [Form preload nodes] Container for your current project.  -->
     <form class="memory">
 
-      <input is="x-input" type="file" accept="image/*;capture=camera">
-      <input is="x-input" type="file" accept="video/*;capture=camcorder">
-      <input is="x-input" type="file" accept="audio/*;capture=microphone">
+      <input is="x-input" type="file" accept="image/*;capture=camera" id="camTest1">
+      <input is="x-input" type="file" accept="video/*;capture=camcorder" id="camTest2">
+      <input is="x-input" type="file" accept="audio/*;capture=microphone" id="camTest3">
 
     </form>
 

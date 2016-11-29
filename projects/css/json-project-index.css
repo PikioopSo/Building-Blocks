@@ -1,0 +1,72 @@
+/*
+    Author: Steven Van Sant
+
+    Stylesheet made for xtag-base.js mashup bin component module library.
+*/
+
+/* Key frame animations start */
+@keyframes blink{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: .15;
+    }
+}
+/* Key frame animations end */
+
+/* xtag styles start*/
+x-base
+{
+    position:absolute;
+    overflow:hidden;
+    opacity:0;
+    width:0px;
+    height:0px;
+    top:0px;
+    left:0px;
+}
+x-editor{
+    position: fixed;
+    top:0%;
+    left:0px;
+    width: 30px;
+    height: 30px;
+    margin: 25px;
+    background-color: grey;
+    border: 1px solid darkgrey;
+    border-radius:20px;
+    overflow: hidden;
+}
+x-editor:hover
+{
+    border-color: yellow;
+    border-style: inset;
+}
+x-line{
+    position: relative;
+    border-bottom: solid 1px black;
+    background-color: rgba(255,255,225,1);
+    display: block;
+    opacity: 0;
+    cursor: text;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+}
+x-line:hover{
+    background-color: rgba(225,225,255,1);
+    border-color: rgba(200,150,0,1);
+}
+x-title{
+    position: relative;
+    top: 0px;
+    width: 30px;
+    height: 1.75em;
+    border-right: solid 1px black;
+    background-color: rgba(150,150,255,.5);
+    display: inline-block;
+}
+x-title:hover{
+    border-color: rgba(0,150,0,1);
+}
+/* xtag styles end */

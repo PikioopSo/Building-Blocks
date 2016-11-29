@@ -3,6 +3,7 @@
     id: "element id",
     class: "element class",
     name: "element name",
+    nodeName:"",
     title: "element title,
     xtag: "x-editor",
     "component": 

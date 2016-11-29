@@ -5,42 +5,6 @@ body{
     background-size: contain;
 }
 
-/* xtag styles start*/
-x-editor{
-    background-color: none;
-    border: 1px solid darkgrey;
-    overflow: hidden;
-}
-x-line{
-    position: relative;
-    width: 518px;
-    height: 2em;
-    border-bottom: solid 1px black;
-    background-color: rgba(255,255,225,1);
-    display: inline-block;
-    cursor: url(../../img/ui/text_pointer.png), text;
-    font-family: "Lucida Console", Monaco, monospace;
-    font-size: 12px;
-}
-x-number{
-    position: relative;
-    top: 0px;
-    padding:4px;
-    width: 30px;
-    height: 1.75em;
-    border-right: solid 1px black;
-    background-color: rgba(150,150,255,.5);
-    display: inline-block;
-}
-x-line:hover{
-    background-color: rgba(225,225,255,1);
-    border-color: rgba(200,150,0,1);
-}
-x-number:hover{
-    border-color: rgba(0,150,0,1);
-}
-/* xtag styles end */
-
 /*
     top menu container styles start
 */
