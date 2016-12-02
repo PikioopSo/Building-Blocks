@@ -43,14 +43,6 @@
       id: 'xtag-base-mashup',
       class: 'memory',
       tagName: 'x-base',
-      xtag: 'x-base',
-      title: 'screen.Script||Writer',
-      keywords:
-        [
-        'Video',
-        'Music',
-        'Photography'
-        ],
       modules:
         [
           {
@@ -58,97 +50,86 @@
           class: 'writer',
           focus: true,
           xtag: 'x-editor',
-          component:
+          viewport: '#json-console',
+          container: '#json-editor',
+          viewedLines: [1,2,3,4],
+          viewableLines: 4,
+          title:
             {
-            viewport: '#json-console',
-            container: '#json-editor',
-            viewedLines: [1,2,3,4],
-            viewableLines: 4,
-            title:
+            numbered: true,
+            alphabetical: false
+            },
+          sheet: 
+            {
+            '1': '',
+            '2': '',
+            '3': '',
+            '4': ''
+            },
+          style:
+            {
+            type: 'css',
+            position: 'absolute',
+            margin: '0px',
+            padding: '0px',
+            top: '0px',
+            left: '0px',
+            height: '100%',
+            width: '100%',
+            backgroundColor: 'rgba(255,255,255)',
+            borderRadius: '0px',
+            cursor: 'text',
+            container:
               {
-              numbered: true,
-              alphabetical: false
+              position: 'relative',
+              width: '520px',
+              height: '125px',
+              margin: '5px',
+              padding: '5px',
+              backgroundImage: 'url(../img/nature_scapes/waterfall-1.jpg)'
               },
-            sheet: 
+            viewport:
               {
-              '1': '',
-              '2': '',
-              '3': '',
-              '4': ''
+              postion: 'absolute',
+              left: '0px',
+              top: '0px',
+              width: '520px',
+              height: '125px',
+              padding: '0px',
+              margin: '5px'
               },
-            events:
+            line:
               {
-              load: 
-                {
-                styles: {isMobile:'auto',isTablet:'auto',isTouch:'auto',isDekstop:'auto',isLabtop:'default'},
-                writer: {share:false,sharedWith:null}
-                }
-              },
-            style:
-              {
-              type: 'css',
-              position: 'absolute',
+              position: 'relative',
+              height: '30px',
+              width: '100%',
               margin: '0px',
               padding: '0px',
+              backgroundColor: 'rgba(255,255,255,.5)',
+              opacity: '1'
+              },
+            title:
+              {
+              position: 'relative',
               top: '0px',
               left: '0px',
-              height: '100%',
-              width: '100%',
-              backgroundColor: 'rgba(255,255,255)',
-              borderRadius: '0px',
-              cursor: 'text',
-              container:
-                {
-                position: 'relative',
-                width: '520px',
-                height: '125px',
-                margin: '5px',
-                padding: '5px',
-                backgroundImage: 'url(../img/nature_scapes/waterfall-1.jpg)'
-                },
-              viewport:
-                {
-                postion: 'absolute',
-                left: '0px',
-                top: '0px',
-                width: '520px',
-                height: '125px',
-                padding: '0px',
-                margin: '5px'
-                },
-              line:
-                {
-                position: 'relative',
-                height: '30px',
-                width: '100%',
-                margin: '0px',
-                padding: '0px',
-                backgroundColor: 'rgba(255,255,255,.5)',
-                opacity: '1'
-                },
-              title:
-                {
-                position: 'relative',
-                top: '0px',
-                left: '0px',
-                padding: '0px',
-                margin: '0px',
-                height: '30px',
-                width: '30px'
-                },
-              text:
-                {
-                fontFamily: 'Lucida Console, Monaco, monospace',
-                fontSize: '12px',
-                color: 'rgb(65,65,65)'
-                },
-              textCursor:
-                {
-                blink: '.5',
-                width: '',
-                height: '',
-                image: 'url(../img/ui/text_cursor.png)'
-                }
+              padding: '0px',
+              margin: '0px',
+              height: '30px',
+              width: '30px'
+              },
+            text:
+              {
+              fontFamily: 'Lucida Console, Monaco, monospace',
+              fontSize: '12px',
+              color: 'rgb(65,65,65)'
+              },
+            textCursor:
+              {
+              blink: '.5',
+              width: '',
+              height: '',
+              image: 'url(../img/ui/text_cursor.png)'
               }
             }
           }
