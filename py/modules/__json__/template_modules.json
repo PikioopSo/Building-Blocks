@@ -1,0 +1,37 @@
+[{
+"name": "default",
+"fname": null,
+"mname": null,
+"lname": null,
+"status": false,
+"doctype": "html",
+"template": "projects/animator_player.html",
+"meta":
+    {
+    
+    },
+"security": 
+    {
+    "type": "username/password",
+    "billing": false
+    },
+"preferences":
+    {
+    "tablet": 
+        {
+        "mode": "min-editor"
+        },
+    "phone": 
+        {
+        "mode": "social"
+        },
+    "laptop": 
+        {
+        "mode": "editor"
+        },
+    "desktop": 
+        {
+        "mode": "editor"
+        }
+    }
+}]

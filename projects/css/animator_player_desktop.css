@@ -8,16 +8,24 @@ body{
 /*
     top menu container styles start
 */
-#header-toolbar{
+#header-bar{
     position: relative;
     top: 0px; left: 0px;
     background-color: rgb(75,75,75);
-    width: 850px; height: 70px;
-    border-radius: 10px;
+    width: 850px; 
+    height: 100px;
+    margin-bottom: 5px;
 }
-#kip-menu-button{
+#animator-header-menu{
     position: absolute;
-    top: 10px; left: 10px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,.5);
+}
+#animator-drop-menu-nav-button{
+    position: absolute;
+    top: 0px; left: 10px;
     border-radius: 10px;
     padding: 5px;
     width: 95px;
