@@ -1,5 +1,5 @@
 body{
-    padding-left: 15%;
+    padding-left: 5%;
     background-image: url(../../img/skyscapes/NGC6960-2013_Fred_Hermann.png);
     background-position: center;
     background-size: contain;
@@ -127,7 +127,7 @@ body{
     z-index: 1000;
 }
 
-#work-table{
+#animator-canvas{
     width: 863px; height: auto;
 }
 

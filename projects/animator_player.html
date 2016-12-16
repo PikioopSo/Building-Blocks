@@ -17,7 +17,7 @@
 
     <script async src="../javascript/node_modules/x-tag/dist/x-tag-core-base-components.js"></script>
 
-    <title>Kip JSON Project</title>
+    <title>Animator|MediaPlayer</title>
 
     <style type="text/css" id="json-editor-style-container"></style>
   </head>
@@ -42,152 +42,147 @@
 
         {
         id:'header-bar' name:'top-toolbar' class:'container' nodeName:'header' is:'json-header',
+        nav:
+          {
+          id:'header-nav-menu'
+          style:
+            {
+            width:'90px',
+            backgroundImage: 'url(../img/logos/kip.png)'
+            }
+          },
+        tool:
+          {
+          id:'header-tool'
+          },
         style:
           {
-          position: 'relative',
-          marginLeft: '20%',
-          height: '200px' width: '80%',
-          backgroundColor:'rgba(70,70,170,1)' border:'rgba(70,70,70,1) outset solid'
-          },
-        modules:
-          [
-            {
-            id:'animator-drop-menu-nav-button' name:'top-toolbar-navigation-menu' class:'drop-button' nodeName:'img' is:'json-menu',
-            menu:'#drop-menu-container',
-            style:
-              {
-              position: 'absolute',
-              width:'95px' height:'auto'
-              }
-            },
-            {
-            id:'drop-menu-container' name:'navigation-link-list' class:'toggle' nodeName:'section' is:'json-section',
-            title: '.nav-title' link: '.menu-link',
-            sheet:
-              {
-              title: 'Feel free to roam as you please!',
-              link: {text:'Back to the Home Page.' url:'www.kipOmaha.org',target:''},
-              link: {link:'Want to see more projects?' url:null},
-              link: {text:'Do you need the site map?' url:null}
-              }
-            },
-            {
-            id:'tabs-bar' name:'work-space-menu' class:'drop-box' nodeName:'fieldset' is:'json-element',
-            style:
-              {
-              position: 'absolute'
-              },
-            modules:
-              [
-                {
-                id:'add-workspace',
-                style:
-                  {
-                  position: 'absolute',
-                  width:'' height:'',
-                  top:'' left:''
-                  }
-                },
-                {
-                id:'tabs-drop-menu' name:'tabs-menu',
-                style:
-                  {
-                  position: 'absolute',
-                  width:'' height:'',
-                  top:'' left:''
-                  }
-                }
-              ]
-            }
-          ]
+          position:'absolute' height:'140px' width:'100%',
+          backgroundColor:'rgba(70,70,120,1)' border:'rgba(70,70,70,1) outset solid'
+          }
         },
 
         {
-        id:'json-editor' class:'editor' nodeName:'form',
-        modules:
-          [
+        id:'animator-canvas' name:'animator-viewer' class:'viewer' is:'json-canvas',
+        style:
+          {
+          position:'absolute' height:'300px' width:'80%' left:'auto' top:'140px',
+          backgroundColor:'white' border:'2px outset rgb(185,185,185)'
+          },
+        tool:
+          {
+          id:'canvas-tools' class:'canvas-toolMenu',
+          style:
             {
-            id: 'editor' name:'scripting _console' class:'writer' nodeName:'x-editor',
-            viewport: '#json-console' container: '#json-editor',
-            viewedLines: [1,2,3,4] viewableLines: 4 focus: true,
-            cursor: 
+            position:'absolute' width:'50px' height:'125px' left:'85%' top:'50px',
+            backgroundColor:'rgba(225,225,255,.5)' border:'1px outset rgba(255,255,225,.5)'
+            }
+          }
+        },
+
+        {
+        id:'editor' class:'editor' nodeName:'form' is:'json-form',
+        preference:
+          {
+          id:'editor-preferences' class:'preferences-menu',
+          style:
+            {
+            position:'absolute' width:'60x' height:'40px' left:'0px' top:'0px',
+            backgroundColor:'rgba(255,255,255,.4)'
+            }
+          },
+        tool:
+          {
+          id:'editor-tools' class:'tools-menu',
+          style:
+            {
+            position:'absolute' width:'60px' height:'40px' left:'70px' top:'0px',
+            backgroundColor:'rgba(255,255,255,.4)'
+            }
+          },
+        viewport:
+          {
+          id:'writer-viewport'
+          },
+        scroll:
+          {
+          id:'editor-scrollbar',
+          style:
+            {
+            position:'absolute' width:'45px' height:'75px' top:'10px' left:'85%',
+            }
+          },
+        editor:
+          {
+          id: 'json-editor' name:'scripting-console' class:'writer' nodeName:'json-editor',
+          viewedLines:[1,2,3,4] viewableLines:4 numbering:true focus:true,
+          viewport:'#writer-viewport',
+          sheet: 
+            {
+            '1': 'hi',
+            '2': 'my name',
+            '3': 'is',
+            '4': 'Steve'
+            },
+          style:
+            {
+            position: 'absolute',
+            margin: '0px',
+            padding: '0px',
+            top: '0px',
+            left: '0px',
+            height: '100%',
+            width: '100%',
+            backgroundColor: 'rgba(255,255,255)',
+            borderRadius: '0px',
+            cursor: 'text',
+            viewport: 
               {
-              line:0 position:0,
+              position:'absolute' width:'95%' height:'124px' left:'0px' top:'40px',
+              backgroundColor:'rgba(255,255,255,1)'
               },
-            sheet: 
+            line:
               {
-              '1': '',
-              '2': '',
-              '3': '',
-              '4': ''
-              },
-            style:
-              {
-              position: 'absolute',
+              position: 'relative',
+              height: '30px',
+              width: '100%',
               margin: '0px',
               padding: '0px',
+              backgroundColor: 'rgba(255,255,255,.5)',
+              opacity: '1'
+              },
+            title:
+              {
+              position: 'relative',
               top: '0px',
               left: '0px',
-              height: '100%',
-              width: '100%',
-              backgroundColor: 'rgba(255,255,255)',
-              borderRadius: '0px',
-              cursor: 'text',
-              container:
-                {
-                position: 'relative',
-                width: '520px',
-                height: '125px',
-                margin: '5px',
-                padding: '5px',
-                backgroundImage: 'url(../img/nature_scapes/waterfall-1.jpg)'
-                },
-              viewport:
-                {
-                postion: 'absolute',
-                left: '0px',
-                top: '0px',
-                width: '520px',
-                height: '125px',
-                padding: '0px',
-                margin: '5px'
-                },
-              line:
-                {
-                position: 'relative',
-                height: '30px',
-                width: '100%',
-                margin: '0px',
-                padding: '0px',
-                backgroundColor: 'rgba(255,255,255,.5)',
-                opacity: '1'
-                },
-              title:
-                {
-                position: 'relative',
-                top: '0px',
-                left: '0px',
-                padding: '0px',
-                margin: '0px',
-                height: '30px',
-                width: '30px'
-                },
-              text:
-                {
-                fontFamily: 'Lucida Console, Monaco, monospace',
-                fontSize: '12px',
-                color: 'rgb(65,65,65)'
-                },
-              textCursor:
-                {
-                blink: '.5',
-                width: '',
-                height: '',
-                image: 'url(../img/ui/text_cursor.png)'
-                }
+              padding: '0px',
+              margin: '0px',
+              height: '30px',
+              width: '30px'
+              },
+            text:
+              {
+              fontFamily: 'Lucida Console, Monaco, monospace',
+              fontSize: '12px',
+              color: 'rgb(65,65,65)'
+              },
+            textCursor:
+              {
+              blink: '.5',
+              width: '',
+              height: '',
+              image: 'url(../img/ui/text_cursor.png)'
               }
             }
-          ]
+          },
+        style:
+          {
+          position:'absolute' width:'100%' height:'200px' left:'0px' top:'440px',
+          marginTop: '5px' padding: '5px',
+          border:'none',
+          backgroundImage: 'url(../img/nature_scapes/waterfall-1.jpg)'
+          }
         }
       ]
     </json-base>
@@ -200,79 +195,17 @@
     ]</json-style>
 
 <!-- [top-toolbar] The toolbar contains a set of buttons that activate different modes. -->
-    <header id="header-bar" class="container" name="top-toolbar" is="json-header">
-
-        <form id="animator-header-menu" class="toolbar" title="Animator Tool Bar">
-
-  <!-- [Anim Menu] Navigation image button that toggles a hidden drop menu. -->
-          <img id="animator-drop-menu-nav-button" name="top-toolbar-navigation-menu" class="drop-button" title="Kip Menu" alt="Kip Menu" src="../img/logos/kip.png" is="json-menu">
-          <section id="drop-menu-container" name="navigation-link-list" class="memory" is="json-text"></section>
-
-  <!-- [Tab bar] Container for access your work. -->
-          <fieldset id="tabs-bar" name="work-space-menu" class="drop-box" title="Tab Bar">
-            <legend id="tabs-label">
-              Tab Bar
-            </legend>
-
-            <input type="button" id="add-workspace" value="+" title="Add workspace">
-            <input type="button" id="tabs-drop-menu" value="Drop Menu" title="Workspace drop menu">
-            <input type="image" class="tabs-autosave" id="autosave1" alt="Work Space 1">
-          </fieldset>
-
-<!-- [Global Interface] A moveable interface that allows you to resize and have access to your document. -->
-          <fieldset id="global-discusPallete" title="Resize">
-            <fieldset class="discus-pallete-upper" title="Upper tray">
-              <input type="button" class="disc-upper-left" title="Preferences"/>
-              <input type="button" class="disc-upper-right" title="Search"/>
-            </fieldset>
-
-            <fieldset class="discus-pallete-lower" title="Lower tray">
-              <input type="button" class="disc-lower-left" title="Work Table"/>
-              <input type="button" class="disc-lower-right" title="Generate"/>
-            </fieldset>
-          </fieldset>
-
-        </form>
-
-    </header>
+    <json-header id="header-bar" class="container" name="top-toolbar" is="json-header"></json-header>
 
 
 <!-- [Work table] A container for your work spaces. -->
-    <section class="work-table" id="work-table" title="Work table." is="json-canvas">
-
-<!-- [Work area] A container for your work spaces. -->
-      <form class="activeSheet work-area" id="json_sheet1" title="Work area.">
-
-        <input type="checkbox" id="active-space_AS1_" class="active-check" checked/>
-
-        <fieldset class="toolbar active-toolbar">
-          <input class="activeToolbarButton previous" type="button" value="<"/>
-          <input class="activeToolbarButton next" type="button" value=">"/>
-          <input id="textEditorTool" class="activeToolbarButton" type="button" value="text"/>
-        </fieldset>
-
+    <json-canvas class="work-table" id="animator-canvas" title="Work table.">
 <!-- [Work space] Container for your current project. -->
-        <svg id="svg-canvas" class="work-space" width="400px" height="200px"></svg>
-      
-      </form>
+      <svg id="svg-canvas" class="work-space" width="400px" height="200px"></svg>
+    </json-canvas>
 
-    </section>
-
-<!-- [Editor] -->
-    <form id="json-editor" class="editor" is="json-form">
-      <fieldset id="json-console" class="console" title="">
-        <x-editor id="editor" class="writer"></x-editor>
-      </fieldset>
-
-      <fieldset id="json-response" class="console"></fieldset>
-      
-      <section id="execution-menu">
-        <input type="button" class="console-btn" id="json-parse" value="Save" title="Double click to save and preview."></input>
-        <input type="button" class="console-btn" id="json-parse-push" value="Save and View" title="Double click to open a new page."></input>
-        <input type="button" class="console-btn" id="json-options" value="Options" title="Click for 5 seconds while holding the alt key to reset save preferences."></input>
-        <input type="button" class="console-btn" id="json-preview" value="Preview" title="Double click to open a new page"></input>
-      </section>
-    </form>
+<!-- [Editor] See our custom form documentation -->
+    <json-form id="editor" class="editor"></json-form>
 
 <!-- [SVG preload nodes] Container for your current project.  -->
     <svg id="svg-node-pallete" class="memory" width="0px" height="0px">
@@ -286,14 +219,7 @@
     </svg>
 
 <!-- [Form preload nodes] Container for your current project.  -->
-    <form class="memory">
-
-      <input is="x-input" type="file" accept="image/*;capture=camera" id="camTest1"></input>
-      <input is="x-input" type="file" accept="video/*;capture=camcorder" id="camTest2"></input>
-      <input is="x-input" type="file" accept="audio/*;capture=microphone" id="camTest3"></input>
-
-    </form>
+    <form class="memory"></form>
 
   </body>
-
 </html>
