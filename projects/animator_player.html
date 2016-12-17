@@ -44,21 +44,25 @@
         id:'header-bar' name:'top-toolbar' class:'container' nodeName:'header' is:'json-header',
         nav:
           {
-          id:'header-nav-menu'
+          id:'header-nav-menu' class:'nav-menu',
           style:
             {
-            width:'90px',
+            position:'absolute' width:'90px' height:'90px',
             backgroundImage: 'url(../img/logos/kip.png)'
             }
           },
         tool:
           {
-          id:'header-tool'
+          id:'header-tool' class:'tool-menu',
+          style:
+            {
+            width:'90px'
+            }
           },
         style:
           {
-          position:'absolute' height:'140px' width:'100%',
-          backgroundColor:'rgba(70,70,120,1)' border:'rgba(70,70,70,1) outset solid'
+          position:'fixed' height:'140px' width:'100%' zIndex:'100',
+          backgroundColor:'rgba(255,255,255,.5)' border:'rgba(70,70,70,1) outset solid'
           }
         },
 
@@ -96,20 +100,72 @@
           id:'editor-tools' class:'tools-menu',
           style:
             {
+            position:'absolute' width:'60px' height:'40px' left:'170px' top:'0px',
+            backgroundColor:'rgba(255,255,255,1)'
+            }
+          },
+        mode:
+          {
+          id:'mode-selector' class:'modes',
+          style:
+            {
             position:'absolute' width:'60px' height:'40px' left:'70px' top:'0px',
-            backgroundColor:'rgba(255,255,255,.4)'
+            padding:'0px' margin:'0px',
+            backgroundColor:'rgba(255,255,255,1)'
             }
           },
         viewport:
           {
-          id:'writer-viewport'
+          id:'writer-viewport' class:'viewport',
+          style:
+            {
+            }
           },
         scroll:
           {
-          id:'editor-scrollbar',
+          id:'editor-scrollbar' class:'scroll',
+          up:
+            {
+            id:'writer-scrollUp', class:'scrollButton',
+            increment:'1',
+            style:
+              {
+              position:'absolute' width:'100%',
+              backgroundImage:''
+              }
+            },
+          down:
+            {
+            id:'writer-scrollDown', class:'scrollButton',
+            increment:'1',
+            style:
+              {
+              position:'absolute' width:'100%',
+              backgroundImage:''
+              }
+            },
+          add:
+            {
+            id:'writer-addLine', class:'editor-button',
+            style:
+              {
+              position:'absolute' width:'100%',
+              backgroundImage:''
+              }
+            },
+          remove:
+            {
+            id:'writer-removeLine', class:'scrollButton',
+            style:
+              {
+              position:'absolute' width:'100%',
+              backgroundImage:''
+              }
+            },
           style:
             {
             position:'absolute' width:'45px' height:'75px' top:'10px' left:'85%',
+            backgroundColor:'rgba(255,255,255,1)',
             }
           },
         editor:
