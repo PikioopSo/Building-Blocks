@@ -77,21 +77,21 @@
             {
             position:'absolute' top:'10px' left:'10px' width:'600px' height:'50%',
             backgroundColor:'rgba(235,235,255,1)'
-            }
-          },
-        sheet:
-          {
-          id:'animator-sheet' class:'sheet' name:'startup-sheet' title:'Untitled Document' for:'#animator-workspace' "clone(true)":'#text-node',
-          value: ["Log in to begin animating", "or", "Use our guest account."] span:"tspan",
-          style:
+            },
+          sheet:
             {
-            position:'absolute' top:'100px' left:'0px' width:'100%' height:'60px' display:'block',
-            backgroundColor:'grey',
-            fontFamily:'cambria, sans serif' fontSize:'12px' color:'blue',
-            "span":
+            id:'animator-sheet' class:'sheet' name:'startup-sheet' title:'Untitled Document' for:'#animator-workspace' "clone(true)":'#text-node',
+            value: ["Log in to begin animating", "or", "Use our guest account."],
+            style:
               {
-              display:'inline-block',
-              position:'relative' top:'20' left:'10' padding:'1px' margin:'0px' width:'100%' height:'100%',
+              position:'absolute' top:'100px' left:'0px' width:'100%' height:'60px' display:'block',
+              backgroundColor:'grey',
+              fontFamily:'cambria, sans serif' fontSize:'12px' color:'blue',
+              "span":
+                {
+                display:'inline-block',
+                position:'relative' top:'20' left:'10' padding:'1px' margin:'0px' width:'100%' height:'100%'
+                }
               }
             }
           },
@@ -121,34 +121,34 @@
             position:'absolute' width:'50%' height:'40px' left:'0px' top:'0px',
             backgroundColor:'rgba(255,255,255,1)',
             overflow:'hidden' display:'block'
-            }
-          },
-        fonts:
-          {
-          id:'font-menu-selections' class:'font-menu' name:'font-menu' title:'Font Menu' for:'#editor-preferences' is:'json-switch',
-          sheet:
-            {
-            id:'font-label' for:'#font-menu-selections',
-            value:[" Fonts "]
             },
-          style:
+          fonts:
             {
-            position:'relative' width:'50px' height:'100%' left:'0px' top:'0px',
-            backgroundColor:'rgba(255,255,0,1)' borderRadius:'50%' display:'block'
-            text:
+            id:'font-selections' class:'font-menu' name:'font-menu' title:'Font Menu' for:'#editor-preferences' is:'json-switch',
+            sheet:
               {
-              position:'relative' left:'2px' top:'5px',
-              margin:'0px' padding:'3px',
-              backgroundColor: 'rgba(200,200,255,.5)' border:'none' borderRadius:'20%',
-              fontFamily: 'Lucida Console, Monaco, monospace',
-              fontSize: '12px' lineHeight:'25px',
-              color: 'rgb(65,65,65)'
+              id:'font-label' for:'#font-selections',
+              value:[" Fonts "]
               },
-            line:
+            style:
               {
-              position:'absolute' top:'0x' left:'0px' height:'100%' width:'100%',
-              margin: '1px' padding: '1px',
-              backgroundColor: 'rgba(255,255,255,.5)' borderRadius:'5px' opacity: '1' display:'block'
+              position:'relative' width:'50px' height:'100%' left:'0px' top:'0px',
+              backgroundColor:'rgba(255,255,0,1)' borderRadius:'50%' display:'block'
+              text:
+                {
+                position:'relative' left:'2px' top:'5px',
+                margin:'0px' padding:'3px',
+                backgroundColor: 'rgba(200,200,255,.5)' border:'none' borderRadius:'20%',
+                fontFamily: 'Lucida Console, Monaco, monospace',
+                fontSize: '12px' lineHeight:'25px',
+                color: 'rgb(65,65,65)'
+                },
+              line:
+                {
+                position:'absolute' top:'0x' left:'0px' height:'100%' width:'100%',
+                margin: '1px' padding: '1px',
+                backgroundColor: 'rgba(255,255,255,.5)' borderRadius:'5px' opacity: '1' display:'block'
+                }
               }
             }
           },
@@ -178,10 +178,10 @@
           },
         scroll:
           {
-          id:'editor-scrollbar' class:'scroll' name:'editor-scrollbar' title:'Scroll Toggle' is:'json-switch',
+          id:'editor-scrollbar' class:'scroll' name:'editor-scrollbar' title:'Scroll Toggle' is:'json-switch' for:'#editor',
           toggle:
             {
-            id:'scroll-toggle' class:'scrollButton' title:'Toggle' is:'json-switch',
+            id:'scroll-toggle' class:'scrollButton' title:'Toggle' is:'json-switch' for:'#editor-scrollbar',
             increment:'1',
             style:
               {
@@ -192,17 +192,17 @@
             },
           add:
             {
-            id:'writer-addLine', class:'editor-button' title:'Add Line' is:'json-switch',
+            id:'writer-addLine', class:'editor-button' title:'Add Line' is:'json-switch' for:'#editor-scrollbar',
             style:
               {
-              position:'absolute' top:'0%' height:'25%' width:'100%' zIndex:'4',
+              position:'absolute' top:'0%' height:'25%' width:'100%' zIndex:'4' for:'#editor-scrollbar',
               backgroundColor:'rgba(95,95,95,.85)' borderRadius:'50%',
               display:'block'
               }
             },
           remove:
             {
-            id:'writer-removeLine', class:'scrollButton' title:'Remove Line' is:'json-switch',
+            id:'writer-removeLine', class:'scrollButton' title:'Remove Line' is:'json-switch' for:'#editor-scrollbar',
             style:
               {
               position:'absolute' top:'75%' height:'25%' width:'100%' zIndex:'4',
