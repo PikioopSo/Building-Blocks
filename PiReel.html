@@ -12,6 +12,8 @@
     <meta name="keywords" content="computer science, cgi, json, json markup, web, social network, open source"></meta>
 
     <link rel="stylesheet" href="css/styles.css" type="text/css"></link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <script async src="node_modules/x-tag/dist/jx.js"></script>
 
@@ -99,6 +101,17 @@
           position:'fixed' width:'100%' height:'30%' left:'0%' top:'70%' zIndex:'100',
           border:'none' backgroundColor:'rgba(125,136,121,.3)'
           },
+        hide:
+          {
+          id:'editor-hide' class:'fa fa-close' name:'hide-editor' title:'Close Editor' is:'json-switch' for:'#editor',
+          style:
+            {
+            position:'relative' float:'right' top:'0%',
+            margin:'.5%',
+            fontSize:'25px' backgroundColor:'rgba(235,235,255,1)' color:'rgba(0,0,0,.8)',
+            overflow:'hidden' display:'block'
+            }
+          },
         preference:
           {
           id:'editor-preferences' class:'preferences-menu' name:'editor-menu' title:'Preferences' is:'json-menu',
@@ -110,47 +123,64 @@
             },
           fonts:
             {
-            id:'font-selections' class:'font-menu' name:'font-menu' title:'Font Menu' for:'#editor-preferences' is:'json-switch',
-            sheet:' Font ',
+            id:'font-selections' class:'fa fa-font' name:'font-menu' title:'Font Menu' for:'#editor-preferences' is:'json-switch',
             style:
               {
-              position:'absolute' width:'6%' height:'70%' left:'0%' top:'0%',
-              padding:'.75%' paddingLeft:'1.25%',
-              backgroundColor:'rgba(255,255,255,1)' borderRadius:'50%' display:'inline-block'
+              position:'absolute' left:'0%' top:'0%',
+              marginRight:'1%' padding:'1%',
+              backgroundColor:'rgba(255,255,255,1)' borderRadius:'10%' display:'inline-block'
               }
             },
           gui:
             {
-            id:'gui-selections' class:'gui-menu' name:'gui-menu' title:'GUI Menu' for:'#editor-preferences' is:'json-menu',
-            sheet:' GUI ',
+            id:'gui-selections' class:'fa fa-bars fa gui-menu' name:'gui-menu' title:'UI Menu' for:'#editor-preferences' is:'json-menu',
             style:
               {
-              position:'relative' width:'6%' height:'70%' left:'8%' top:'0%',
-              padding:'.75%' paddingLeft:'1.25%',
-              backgroundColor:'rgba(255,255,255,1)' borderRadius:'50%' display:'inline-block'
+              position:'relative' left:'8%' top:'0%',
+              marginRight:'1%' padding:'1%',
+              backgroundColor:'rgba(255,255,255,1)' borderRadius:'1%' display:'inline-block'
               }
-            }
-          },
-        mode:
-          {
-          id:'mode-selector' class:'modes' name:'editor-modes' title:'Mode Selector' is:'json-selector',
-          sheet:' Mode ',
-          style:
+            },
+          mode:
             {
-            position:'absolute' width:'3%' height:'12%' left:'85%' top:'0%',
-            padding:'.5%' marginRight:'.25%',
-            backgroundColor:'rgba(255,255,255,1)' borderRadius:'50%'
-            }
-          },
-        tool:
-          {
-          id:'editor-tools' class:'tools-menu' title:'Editor Tools' is:'json-menu',
-          sheet:' Tools ',
-          style:
+            id:'mode-selector' class:'fa fa-cogs' name:'editor-modes' title:'Mode Menu' for:'#editor-preferences' is:'json-selector',
+            style:
+              {
+              position:'relative' left:'12%' top:'0%',
+              padding:'1%',
+              backgroundColor:'rgba(255,255,255,1)' borderRadius:'50%'
+              }
+            },
+          tool:
             {
-            position:'absolute' width:'3%' height:'12%' left:'90%' top:'0%',
-            padding:'.5%'
-            backgroundColor:'rgba(255,255,255,1)' borderRadius:'50%'
+            id:'editor-tools' class:'fa fa-wrench' title:'Tools Menu' is:'json-menu' for:'#editor-preferences',
+            style:
+              {
+              position:'relative' left:'16%' top:'0%',
+              padding:'1%' paddingRight:'1.5%',
+              backgroundColor:'rgba(255,255,255,1)' borderRadius:'50%'
+              }
+            },
+          find:
+            {
+            id:'find-selections' class:'fa fa-search' name:'find-menu' title:'Find Menu' for:'#editor-preferences',
+            style:
+              {
+              position:'relative' left:'20%' top:'0%' minWidth:'75px' width:'10%',
+              marginRight:'1%' padding:'1%',
+              backgroundColor:'rgba(255,255,255,1)' borderRadius:'10%' display:'inline-block'
+              }
+            },
+          index:
+            {
+            id:'line-index' class:'index' name:'line-index' title:'Find Menu' for:'#find-selections',
+            sheet:'0 / 4 '
+            style:
+              {
+              position:'relative' left:'20%' top:'0%' width:'auto',
+              marginRight:'1%' padding:'1%',
+              backgroundColor:'rgba(255,255,255,1)' borderRadius:'10%' display:'inline-block'
+              }
             }
           },
         viewport:
@@ -165,41 +195,52 @@
         scroll:
           {
           id:'editor-scrollbar' class:'scroll' name:'editor-scrollbar' title:'Scroll Toggle' is:'json-switch' for:'#editor',
-          toggle:
+          up:
             {
-            id:'scroll-toggle' class:'scrollButton' title:'Toggle' is:'json-switch' for:'#editor-scrollbar',
+            id:'scroll-up' class:'fa fa-chevron-up' title:'Scroll Up' is:'json-switch' for:'#editor-scrollbar',
             increment:'1',
             style:
               {
-              position:'absolute' left:'10%' top:'27%' height:'46%' width:'80%' zIndex:'4',
-              backgroundColor:'rgba(165,165,165,.85)' borderRadius:'100%',
+              position:'absolute' left:'10%' top:'27%' width:'80%' zIndex:'4',
+              backgroundColor:'rgba(165,165,165,.85)' padding:'1%',
+              display:'block'
+              }
+            },
+          down:
+            {
+            id:'scroll-down' class:'fa fa-chevron-down' title:'Scroll Down' is:'json-switch' for:'#editor-scrollbar',
+            increment:'1',
+            style:
+              {
+              position:'absolute' left:'10%' top:'54%' width:'80%' zIndex:'4',
+              backgroundColor:'rgba(165,165,165,.85)' padding:'1%',
               display:'block'
               }
             },
           add:
             {
-            id:'writer-addLine', class:'editor-button' title:'Add Line' is:'json-switch' for:'#editor-scrollbar',
+            id:'writer-addLine', class:'fa fa-plus-square' title:'Add Line' is:'json-switch' for:'#editor-scrollbar',
             style:
               {
-              position:'absolute' top:'0%' height:'25%' width:'100%' zIndex:'4' for:'#editor-scrollbar',
-              backgroundColor:'rgba(95,95,95,.85)' borderRadius:'50%',
+              position:'absolute' top:'0%' width:'100%' zIndex:'4',
+              backgroundColor:'rgba(95,95,95,0)' padding:'0px',
               display:'block'
               }
             },
           remove:
             {
-            id:'writer-removeLine', class:'scrollButton' title:'Remove Line' is:'json-switch' for:'#editor-scrollbar',
+            id:'writer-removeLine', class:'fa fa-minus-circle' title:'Remove Line' is:'json-switch' for:'#editor-scrollbar',
             style:
               {
-              position:'absolute' top:'75%' height:'25%' width:'100%' zIndex:'4',
-              backgroundColor:'rgba(65,65,65,.85)' borderRadius:'50%',
+              position:'absolute' top:'75%' zIndex:'4',
+              backgroundColor:'rgba(65,65,65,0)' padding:'0px' width:'100%',
               display:'block'
               }
             },
           style:
             {
             position:'absolute' width:'5%' height:'80%' top:'20%' left:'95%',
-            backgroundColor:'rgba(220,255,220,.3)',
+            backgroundColor:'rgba(220,255,220,.3)' fontSize:'25px' textAlign:'center',
             }
           },
         editor:
