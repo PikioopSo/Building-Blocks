@@ -7,14 +7,13 @@ Our belief is that through art we can overcome obstacles and come together like 
 
 [ If you have one, add your logo or an image here ]  
 
-[ Your longer project description goes here. Use this space to welcome newcomers, articulate the problem you're trying to solve, and explain your solution. For help on writing a good readme, see this exercise. ]  
-  Pi Reel is an easy to use animation tool, made for engineers and scientists of all skill and educational levels to create everything from educational cartoons to business presentations and even model structures.  
+### Welcome to Pi Reel
+Pi Reel is an easy to use animation tool, made for engineers, creators, and scientists of all skill levels to create everything from animations to business videos and even model animated structures.  
 
-Resources and the Manual 
-  Our manual can be found on either be downloaded as a Google Doc or be viewed in the GitHub repo Wiki. Other resources include API and schema information from vaious
-  open source projects that have been integrated into the Pi Reel application.
+Resources and the Manual   
+  Our manual can be downloaded on Google Docs or be viewed in the GitHub repo Wiki.  
 
-Contributing  
+Contributing   
 Thanks for your interest in contributing to [PROJECT]! There are many ways to contribute. To get started, take a look at CONTRIBUTING.md.  
 
 Participation Guidelines  
