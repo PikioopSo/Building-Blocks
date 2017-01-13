@@ -1,7 +1,9 @@
 # Pi Reel
 
-[ Project vision or mission statement. Tips on writing your vision.]  
-Bring the world light so that others can journey forward and explore nature and communicate.
+### Our Mission   
+We strive every day to bring the world to life through animation and movie making.
+
+Our belief is that through art we can overcome obstacles and come together like a family to learn and share our knowledge and dreams.
 
 [ If you have one, add your logo or an image here ]  
 

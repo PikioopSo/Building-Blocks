@@ -7,9 +7,9 @@
 -->
 
     <meta charset="utf-8"></meta>
-	
-    <meta name="description" content="."></meta>
+    <meta name="description" content="Pi reel."></meta>
     <meta name="keywords" content="computer science, cgi, json, json markup, web, social network, open source"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
     <link rel="stylesheet" href="css/styles.css" type="text/css"></link>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,7 +17,7 @@
 
     <script async src="node_modules/x-tag/dist/jx.js"></script>
 
-    <title>Pi Reel|Mozilla Clubs Application</title>
+    <title>Pi Reel|Mozilla Clubs Omaha</title>
   </head>
 
   <body>
@@ -83,13 +83,60 @@
               }
             }
           },
-        tool:
+        tools:
           {
           id:'canvas-tools' class:'canvas-toolMenu' title:'Canvas Tools' is:'json-menu',
+          util:' button' uTitle:'u-title',
+          utilTitle:
+            {
+            id:'util-icons' name:'icon-utilities' title:'Utility Tool',
+            sheet:
+              {
+              id:'util-title' class:'title' is:'u-title',
+              value:
+                {
+                '1':'Utilities'
+                }
+              }
+            },
+          utilities:
+            {
+            id:'util-tools' class:'tools' name:'paths' title:'Reel Path',
+            sheet:
+              {
+              class:'tool-icons' name:'tool-path' title:'Path Tool' is:'button' nodes:false fAIcons:true,
+              icons:
+                {
+                "1":"Insert Keyframe",
+                "2":"Insert Image",
+                "3":"Insert Video",
+                "4":"Insert Audio",
+                "5":"Insert 3D"
+                },
+              value:
+                {
+                "1":"fa fa-hashtag",
+                "2":"fa fa-file-image-o",
+                "3":"fa fa-file-movie-o",
+                "4":"fa fa-file-audio-o",
+                "5":"fa fa-cube"
+                }
+              }
+            },
           style:
             {
             position:'absolute' width:'15%' height:'100%' left:'85%' top:'0%',
-            backgroundColor:'rgba(225,225,255,.5)' border:'1px outset rgba(255,255,225,.5)'
+            backgroundColor:'rgba(225,225,255,.5)' border:'1px outset rgba(255,255,225,.5)',
+            fontSize:'1.1vw' textAlign:'center',
+            util:
+              {
+              position:'relative' display:'block' backgroundColor:'white' width:'2.25vw' height:'2.25vw'
+              },
+            uTitle:
+              {
+              width:'100%' display:'block',
+              backgroundColor:'rgba(25,45,25,.65)' color:'rgba(185,195,185,1)'
+              }
             }
           }
         },
@@ -107,8 +154,7 @@
           style:
             {
             position:'relative' float:'right' top:'0%',
-            margin:'.5%',
-            fontSize:'25px' backgroundColor:'rgba(235,235,255,1)' color:'rgba(0,0,0,.8)',
+            margin:'.5%' backgroundColor:'rgba(235,235,255,1)' color:'rgba(0,0,0,.8)',
             overflow:'hidden' display:'block'
             }
           },
@@ -119,6 +165,7 @@
             {
             position:'absolute' width:'50%' height:'20%' left:'0%' top:'0%',
             backgroundColor:'rgba(255,255,255,.125)',
+            fontSize:'1vw',
             overflow:'hidden' display:'block'
             },
           fonts:
@@ -255,7 +302,7 @@
               '1': ' Welcome to Pi Reel.',
               '2': ' This console is an interface to help you create your animations.',
               '3': ' Please, join our community at, www.kip.forums.org/mozillaclubs/omahaNE.',
-              '4': ' Thank you for visiting, Py Reel.'
+              '4': ' Thank you for visiting, Pi Reel.'
               }
             },
           style:
@@ -284,6 +331,15 @@
               color: 'rgb(65,65,65)'
               }
             }
+          }
+        },
+
+        {
+        id:'animator-player' class:'video-player' title:'Animation Player' is:'json-canvas',
+        style:
+          {
+          position:'fixed' left:'95%' top:'20%' width:'5%' height:'45%' display:'block',
+          backgroundColor:'rgba(0,0,255,.25)'
           }
         }
       ]
