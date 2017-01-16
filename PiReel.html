@@ -44,7 +44,7 @@
             backgroundColor:'rgba(200,200,255,.3)'
             }
           },
-        "style":
+        style:
           {
           position:'fixed' left:'0px' top:'0px' height:'15%' width:'100%' zIndex:'100',
           backgroundColor:'rgba(255,255,255,.5)' border:'rgba(70,70,70,1) outset solid'
@@ -55,7 +55,7 @@
         id:'animator-canvas' name:'animator-viewer' class:'viewer' title:'Canvas' is:'json-canvas',
         style:
           {
-          position:'absolute' height:'50%' width:'80%' left:'auto' top:'16.5%',
+          position:'absolute' height:'51%' width:'93%' left:'auto' top:'16.5%',
           backgroundColor:'rgba(255,255,255,.5)' border:'2px outset rgb(185,185,185)'
           },
         workspace:
@@ -63,7 +63,7 @@
           id:'animator-workspace' class:'workspace' name:'animator-work-canvas' title:'Untitled Document' is:'svg',
           style:
             {
-            position:'absolute' top:'3%' left:'1%' width:'80%' height:'80%',
+            position:'absolute' top:'3%' left:'1%' width:'82.5%' height:'90%',
             border:'solid rgba(0,0,0,.5) .125em' backgroundColor:'rgba(188,188,188,1)'
             },
           sheet:
@@ -86,7 +86,7 @@
         tools:
           {
           id:'canvas-tools' class:'canvas-toolMenu' title:'Canvas Tools' is:'json-menu',
-          util:' button' uTitle:'u-title',
+          util:'#canvas-tools button' uTitle:'u-title',
           utilTitle:
             {
             id:'util-icons' name:'icon-utilities' title:'Utility Tool',
@@ -127,10 +127,10 @@
             {
             position:'absolute' width:'15%' height:'100%' left:'85%' top:'0%',
             backgroundColor:'rgba(225,225,255,.5)' border:'1px outset rgba(255,255,225,.5)',
-            fontSize:'1.1vw' textAlign:'center',
+            fontSize:'1.1vw' textAlign:'center'
             util:
               {
-              position:'relative' display:'block' backgroundColor:'white' width:'2.25vw' height:'2.25vw'
+              position:'relative' display:'inline-block' backgroundColor:'white' width:'2.25vw' height:'2.25vw'
               },
             uTitle:
               {
@@ -148,19 +148,9 @@
           position:'fixed' width:'100%' height:'30%' left:'0%' top:'70%' zIndex:'100',
           border:'none' backgroundColor:'rgba(125,136,121,.3)'
           },
-        hide:
+        menu:
           {
-          id:'editor-hide' class:'fa fa-close' name:'hide-editor' title:'Close Editor' is:'json-switch' for:'#editor',
-          style:
-            {
-            position:'relative' float:'right' top:'0%',
-            margin:'.5%' backgroundColor:'rgba(235,235,255,1)' color:'rgba(0,0,0,.8)',
-            overflow:'hidden' display:'block'
-            }
-          },
-        preference:
-          {
-          id:'editor-preferences' class:'preferences-menu' name:'editor-menu' title:'Preferences' is:'json-menu',
+          id:'editor-menu' class:'menu' name:'editor-menu' title:'Menu' is:'json-menu',
           style:
             {
             position:'absolute' width:'50%' height:'20%' left:'0%' top:'0%',
@@ -168,9 +158,19 @@
             fontSize:'1vw',
             overflow:'hidden' display:'block'
             },
+          hide:
+            {
+            id:'editor-hide' class:'fa fa-close' name:'hide-editor' title:'Close Editor' is:'json-switch',
+            style:
+              {
+              position:'relative' float:'right' top:'0%',
+              margin:'.5%' backgroundColor:'rgba(235,235,255,1)' color:'rgba(0,0,0,.8)',
+              overflow:'hidden' display:'block'
+              }
+            },
           fonts:
             {
-            id:'font-selections' class:'fa fa-font' name:'font-menu' title:'Font Menu' for:'#editor-preferences' is:'json-switch',
+            id:'font-selections' class:'fa fa-font' name:'font-menu' title:'Font Menu' for:'#editor-menu' is:'json-switch',
             style:
               {
               position:'absolute' left:'0%' top:'0%',
@@ -180,7 +180,7 @@
             },
           gui:
             {
-            id:'gui-selections' class:'fa fa-bars fa gui-menu' name:'gui-menu' title:'UI Menu' for:'#editor-preferences' is:'json-menu',
+            id:'gui-selections' class:'fa fa-bars fa gui-menu' name:'gui-menu' title:'UI Menu' for:'#editor-menu' is:'json-menu',
             style:
               {
               position:'relative' left:'8%' top:'0%',
@@ -190,7 +190,7 @@
             },
           mode:
             {
-            id:'mode-selector' class:'fa fa-cogs' name:'editor-modes' title:'Mode Menu' for:'#editor-preferences' is:'json-selector',
+            id:'mode-selector' class:'fa fa-cogs' name:'editor-modes' title:'Mode Menu' for:'#editor-menu' is:'json-selector',
             style:
               {
               position:'relative' left:'12%' top:'0%',
@@ -200,7 +200,7 @@
             },
           tool:
             {
-            id:'editor-tools' class:'fa fa-wrench' title:'Tools Menu' is:'json-menu' for:'#editor-preferences',
+            id:'editor-tools' class:'fa fa-wrench' title:'Tools Menu' is:'json-menu' for:'#editor-menu',
             style:
               {
               position:'relative' left:'16%' top:'0%',
@@ -210,7 +210,7 @@
             },
           find:
             {
-            id:'find-selections' class:'fa fa-search' name:'find-menu' title:'Find Menu' for:'#editor-preferences',
+            id:'find-selections' class:'fa fa-search' name:'find-menu' title:'Find Menu' for:'#editor-menu',
             style:
               {
               position:'relative' left:'20%' top:'0%' minWidth:'75px' width:'10%',
@@ -235,21 +235,21 @@
           id:'writer-viewport' class:'viewport' title:'Console Port' is:'json-viewport',
           style: 
             {
-            position:'absolute' width:'95%' height:'80%' left:'0px' top:'20%',
+            position:'absolute' width:'47.5%' height:'80%' left:'0px' top:'20%',
             backgroundColor:'rgba(255,255,255,.125)'
             }
           },
         scroll:
           {
-          id:'editor-scrollbar' class:'scroll' name:'editor-scrollbar' title:'Scroll Toggle' is:'json-switch' for:'#editor',
+          id:'editor-scrollbar' class:'scroll' name:'editor-scrollbar' title:'Scroll Toggle' is:'json-switch' for:'#writer-viewport',
           up:
             {
             id:'scroll-up' class:'fa fa-chevron-up' title:'Scroll Up' is:'json-switch' for:'#editor-scrollbar',
             increment:'1',
             style:
               {
-              position:'absolute' left:'10%' top:'27%' width:'80%' zIndex:'4',
-              backgroundColor:'rgba(165,165,165,.85)' padding:'1%',
+              position:'absolute' left:'10%' top:'27%' width:'100%' zIndex:'4',
+              backgroundColor:'rgba(165,165,165,.85)' padding:'.125%',
               display:'block'
               }
             },
@@ -259,8 +259,8 @@
             increment:'1',
             style:
               {
-              position:'absolute' left:'10%' top:'54%' width:'80%' zIndex:'4',
-              backgroundColor:'rgba(165,165,165,.85)' padding:'1%',
+              position:'absolute' left:'10%' top:'54%' width:'100%' zIndex:'4',
+              backgroundColor:'rgba(165,165,165,.85)' padding:'.125%',
               display:'block'
               }
             },
@@ -286,8 +286,9 @@
             },
           style:
             {
-            position:'absolute' width:'5%' height:'80%' top:'20%' left:'95%',
-            backgroundColor:'rgba(220,255,220,.3)' fontSize:'25px' textAlign:'center',
+            position:'absolute' width:'4.5%' height:'80%' top:'10%' left:'100%',
+            backgroundColor:'rgba(220,255,220,.3)' 
+            fontSize:'2vw' textAlign:'center',
             }
           },
         editor:
@@ -308,7 +309,7 @@
           style:
             {
             position:'absolute' left:'0px' top:'0px' height:'100%' width:'100%',
-            backgroundColor: 'rgba(255,255,255)' cursor:'text',
+            backgroundColor: 'rgba(255,255,255)' cursor:'text' fontSize:'1.1vw',
             line:
               {
               position:'relative' height:'25%' width:'100%',
@@ -327,23 +328,64 @@
               paddingLeft:'1%',
               backgroundColor: 'rgba(200,200,255,.5)' border:'none' display:'block',
               fontFamily: 'Lucida Console, Monaco, monospace',
-              fontSize: '12px',
               color: 'rgb(65,65,65)'
+              }
+            }
+          },
+
+        frames:
+          {
+          id:'keyframe-editor' class:'keyframes' name:'keyframe-editor' title:'Keyframe Editor' is:'json-viewport',
+          style:
+            {
+            position:'absolute' top:'20%' left:'50%' width:'45%' height:'100%',
+            backgroundColor:'rgba(200,200,255,.5)',
+            text:
+              {
+              }
+            },
+          sheet:
+            {
+            id:'frame-sheet' class:'keyframes' name:'keyframe-sheet' title:'Animation Keyframes' is:'json-input' for:'#keyframe-editor',
+            nodes: true,
+            value:
+              {
+              "1":{ type:'slider' id:'welcome-animation' title:'Welcome to Pi Reel.' src:'jscss/welcome.json' },
+              "2":{ type:'slider' id:'anouncement-animation' title:'Reel Announcements.' },
+              "3":{ type:'slider' id:'tutorial-animation' title:'Pi Reel Tutorials.' }
               }
             }
           }
         },
 
         {
-        id:'animator-player' class:'video-player' title:'Animation Player' is:'json-canvas',
+        id:'animator-player' class:'video-player' title:'Animation Player' is:'json-element',
+        hideP:'#mediaplayer-label button',
+        sheet:
+          {
+          id:'mediaplayer-label' class:'fa fa-mediaplayer' title:'Reel Player' is:'button' fAIcons:true for:'#animator-player',
+          icons:
+            {
+            '1':'Friends and Media Feed'
+            },
+          value:
+            {
+            '1':'fa fa-user'
+            }
+          },
         style:
           {
           position:'fixed' left:'95%' top:'20%' width:'5%' height:'45%' display:'block',
+          fontSize:'1.1vw',
           backgroundColor:'rgba(0,0,255,.25)'
+          hideP:
+            {
+            position:'absolute' left:'0%' top:'40%' width:'5%' height:'100%' display:'block',
+            backgroundColor:'rgba(0,0,255,.25)'
+            }
           }
         }
-      ]
-    </json-base>
+      ]</json-base>
 
     <json-style json="content" id="animator-player-styles" class="memory">[
       {
