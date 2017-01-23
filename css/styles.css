@@ -4,8 +4,7 @@
 */
 
 body{
-    background: rgba(0,0,0,1) url(../img/astrophotography/NGC6960-2013_Fred_Hermann.png) repeat right fixed;
-    background-size: 50%;
+    font-size:1vw;
 }
 
 /* [class] */
