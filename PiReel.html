@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <script async='true' src="js/jx.js"></script>
+    <!--<script async='true' src="js/jx.js"></script>-->
+    <script async='true' src="node_modules/x-tag/dist/jx.js"></script>
 
     <title>Pi Reel|Mozilla Clubs Omaha</title>
   </head>
@@ -32,7 +33,8 @@
           style:
             {
             position:'absolute' left:'0px' top:'0px' width:'10%' height:'100%',
-            backgroundImage:'url(img/logos/kip.png)' backgroundSize:'contain' backgroundPosition:'center' backgroundRepeat:'no-repeat'
+            backgroundImage:'url(img/logos/pi-reel.svg)' backgroundSize:'contain' backgroundPosition:'center' backgroundRepeat:'no-repeat'
+            backgroundColor:'rgba(200,200,200,.5)' borderRadius:'50%'
             }
           },
         tool:
@@ -41,7 +43,7 @@
           style:
             {
             position:'absolute' left:'12%' top:'5%' width:'600px' height:'90%',
-            backgroundColor:'rgba(200,200,255,.3)'
+            backgroundColor:'rgba(225,225,245,.85)'
             },
           addProject:
             {
@@ -93,13 +95,14 @@
               }
             }
           },
+        attrs:{hi:'heill'},
         tools:
           {
           id:'canvas-tools' class:'canvas-toolMenu' title:'Canvas Tools' is:'json-menu',
           util:'#canvas-tools button' uTitle:'u-title',
           utilTitle:
             {
-            id:'util-icons' name:'icon-utilities' title:'Utility Tool',
+            id:'util-icons' name:'icon-utilities' title:'Utility Tools',
             sheet:
               {
               id:'util-title' class:'title' is:'u-title',
@@ -114,7 +117,7 @@
             id:'util-tools' class:'tools' name:'insertion-tools' title:'Insert Objects',
             sheet:
               {
-              class:'tool-icons' name:'tool-path' title:'Path Tool' is:'button' nodes:true,
+              class:'tool-icons' name:'tool-insert' title:'Path Tool' is:'button' nodes:true,
               value:
                 {
                 "1":{ class:'fa fa-hashtag' title:'Insert Keyframe' },
@@ -125,19 +128,56 @@
                 }
               }
             },
+          deltaTitle:
+            {
+            id:'delta-icons' name:'icon-deltas' title:'Key Path Tools',
+            sheet:
+              {
+              id:'delta-title' class:'title' is:'u-title',
+              value:
+                {
+                '1':'Key Paths'
+                }
+              }
+            },
           delta:
             {
-            id:'delta-tools' class:'tools' name:'movemnt-path-tools' title:'Movement Tools',
-            style:
+            id:'delta-tools' class:'tools' name:'delta-tools' title:'Key Objects',
+            sheet:
               {
-              position:'' left:'' top:'' width:''
+              class:'tool-icons' name:'tool-delta' title:'Key Tools' is:'button' nodes:true,
+              value:
+                {
+                "1":{ class:'fa fa-arrow-circle-o-right' title:'Key Vector' },
+                "2":{ class:'fa fa-long-arrow-right' title:'Key Path' },
+                "5":{ class:'fa fa-cube' title:'Key 3D' }
+                }
+              }
+            },
+          graphicTitle:
+            {
+            id:'graphic-icons' name:'icon-graphic' title:'Graphic Tool Brushes',
+            sheet:
+              {
+              id:'graphic-title' class:'title' is:'u-title',
+              value:
+                {
+                '1':'Grahpic Tool Brushes'
+                }
               }
             },
           graphic:
             {
-            id:'graphic-tools' class:'tools' name:'graphic-brush-tools' title:'Graphic Tools',
-            style:
+            id:'graphic-tools' class:'tools' name:'graphic-tools' title:'Graphic Brushes',
+            sheet:
               {
+              class:'graphic-icons' name:'tool-graphic' title:'Graphic Tools' is:'button' nodes:true,
+              value:
+                {
+                "1":{ class:'fa fa-arrow-circle-o-right' title:'SVG Brush' },
+                "2":{ class:'fa fa-long-arrow-right' title:'Gradient Brush' },
+                "5":{ class:'fa fa-cube' title:'3D Brush' }
+                }
               }
             },
           style:
