@@ -95,17 +95,16 @@
               }
             }
           },
-        attrs:{hi:'heill'},
         tools:
           {
           id:'canvas-tools' class:'canvas-toolMenu' title:'Canvas Tools' is:'json-menu',
-          util:'#canvas-tools button' uTitle:'u-title',
+          util:'#canvas-tools button' jtitle:'json-title',
           utilTitle:
             {
             id:'util-icons' name:'icon-utilities' title:'Utility Tools',
             sheet:
               {
-              id:'util-title' class:'title' is:'u-title',
+              id:'util-title' class:'title' is:'json-title',
               value:
                 {
                 '1':'Utilities'
@@ -114,17 +113,17 @@
             },
           utilities:
             {
-            id:'util-tools' class:'tools' name:'insertion-tools' title:'Insert Objects',
+            id:'util-tools' class:'tools' name:'insertion-tools' title:'Insert Objects' is:'section',
             sheet:
               {
-              class:'tool-icons' name:'tool-insert' title:'Path Tool' is:'button' nodes:true,
+              class:'tool-icons' name:'tool-insert' title:'Path Tool',
               value:
                 {
-                "1":{ class:'fa fa-hashtag' title:'Insert Keyframe' },
-                "2":{ class:'fa fa-file-image-o' title:'Insert Image' },
-                "3":{ class:'fa fa-file-movie-o' title:'Insert Video' },
-                "4":{ class:'fa fa-file-audio-o' title:'Insert Audio' },
-                "5":{ class:'fa fa-cube' title:'Insert 3D' }
+                "1":{ class:'fa fa-hashtag' title:'Insert Keyframe' is:'button' },
+                "2":{ class:'fa fa-file-image-o' title:'Insert Image' is:'button' },
+                "3":{ class:'fa fa-file-movie-o' title:'Insert Video' is:'button' },
+                "4":{ class:'fa fa-file-audio-o' title:'Insert Audio' is:'button' },
+                "5":{ class:'fa fa-cube' title:'Insert 3D' is:'button' }
                 }
               }
             },
@@ -133,50 +132,43 @@
             id:'delta-icons' name:'icon-deltas' title:'Key Path Tools',
             sheet:
               {
-              id:'delta-title' class:'title' is:'u-title',
+              id:'delta-title' class:'title' is:'json-title',
               value:
                 {
-                '1':'Key Paths'
+                '1':{ class:'sub-title' text:'Key Paths' title:'Key Paths' is:'json-title' }
                 }
               }
             },
           delta:
             {
-            id:'delta-tools' class:'tools' name:'delta-tools' title:'Key Objects',
+            id:'delta-tools' class:'tools' name:'delta-tools' title:'Key Objects' is:'section',
             sheet:
               {
-              class:'tool-icons' name:'tool-delta' title:'Key Tools' is:'button' nodes:true,
+              class:'tool-icons' name:'tool-delta' title:'Key Tools',
               value:
                 {
-                "1":{ class:'fa fa-arrow-circle-o-right' title:'Key Vector' },
-                "2":{ class:'fa fa-long-arrow-right' title:'Key Path' },
-                "5":{ class:'fa fa-cube' title:'Key 3D' }
+                "1":{ class:'fa fa-arrow-circle-o-right' title:'Key Vector' is:'button' },
+                "2":{ class:'fa fa-long-arrow-right' title:'Key Path' is:'button' },
+                "5":{ class:'fa fa-cube' title:'Key 3D' is:'button' }
                 }
               }
             },
           graphicTitle:
             {
             id:'graphic-icons' name:'icon-graphic' title:'Graphic Tool Brushes',
-            sheet:
-              {
-              id:'graphic-title' class:'title' is:'u-title',
-              value:
-                {
-                '1':'Grahpic Tool Brushes'
-                }
-              }
+            sheet: 'Grahpic Tool Brushes'
             },
           graphic:
             {
-            id:'graphic-tools' class:'tools' name:'graphic-tools' title:'Graphic Brushes',
+            id:'graphic-tools' class:'tools' name:'graphic-tools' title:'Graphic Brushes' is:'section',
             sheet:
               {
-              class:'graphic-icons' name:'tool-graphic' title:'Graphic Tools' is:'button' nodes:true,
+              class:'graphic-icons' name:'tool-graphic' title:'Graphic Tools',
               value:
                 {
-                "1":{ class:'fa fa-arrow-circle-o-right' title:'SVG Brush' },
-                "2":{ class:'fa fa-long-arrow-right' title:'Gradient Brush' },
-                "5":{ class:'fa fa-cube' title:'3D Brush' }
+                "1":{ class:'fa fa-arrow-circle-o-right' title:'SVG Brush' is:'button' },
+                "2":{ class:'fa fa-long-arrow-right' title:'Gradient Brush' is:'button' },
+                "5":{ class:'fa fa-cube' title:'3D Brush' is:'button' }
                 }
               }
             },
@@ -189,7 +181,7 @@
               {
               position:'relative' display:'inline-block' backgroundColor:'white' width:'2.25vw' height:'2.25vw'
               },
-            uTitle:
+            jtitle:
               {
               width:'100%' display:'block',
               backgroundColor:'rgba(25,45,25,.65)' color:'rgba(185,195,185,1)'
@@ -510,14 +502,10 @@
         hideP:'#mediaplayer-label button',
         sheet:
           {
-          id:'mediaplayer-label' class:'fa fa-mediaplayer' title:'Reel Player' is:'button' fAIcons:true for:'#animator-player',
-          icons:
-            {
-            '1':'Friends and Media Feed'
-            },
+          id:'mediaplayer-label' class:'fa fa-mediaplayer' title:'Reel Player' is:'button' for:'#animator-player',
           value:
             {
-            '1':'fa fa-user'
+            '1':{class:'fa fa-user' title:'Friends and Media Feed'}
             }
           },
         style:
