@@ -21,8 +21,4 @@ Our belief is that through art we can overcome obstacles and come together to le
   This project adheres to a code of conduct. By participating, you are expected to uphold this code. 
   Please report unacceptable behavior to [EMAIL].  
 
-### MozFest  
-  Join us at the Mozilla Festival October 28-30, 2016 at Ravensbourne College, London! We'll be meeting in person to collaborate on this project and learn from 
-  each other. Read more about our session [link to your session] and get your MozFest tickets now!
-
 
