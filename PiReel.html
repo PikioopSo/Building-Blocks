@@ -72,7 +72,8 @@
           },
         workspace:
           {
-          id:'animator-workspace' class:'workspace' name:'animator-work-canvas' title:'Untitled Document' is:'svg',
+          id:'animator-workspace' class:'workspace' name:'animator-work-canvas' title:'Untitled Document' is:'json-svg',
+          span:" .svg-text",
           style:
             {
             position:'absolute' top:'3%' left:'1%' width:'82.5%' height:'90%',
@@ -80,19 +81,13 @@
             },
           sheet:
             {
-            id:'animator-sheet' class:'sheet' name:'startup-sheet' title:'Untitled Document' for:'#animator-workspace' "clone(true)":'#text-node',
-            value: ["Log in to begin animating", "or", "Use our guest account."],
-            style:
-              {
-              position:'absolute' top:'10px' left:'10px' width:'100%' height:'60px' display:'block',
-              backgroundColor:'grey',
-              fontFamily:'cambria, sans serif' fontSize:'12px' color:'blue',
-              "span":
-                {
-                display:'inline-block',
-                position:'relative' top:'20' left:'10' padding:'1px' margin:'0px' width:'100%' height:'100%'
-                }
-              }
+            id:'animator-sheet' class:'sheet' name:'startup-sheet' title:'Untitled Document' for:'#animator-workspace' is:'svg' "clone":'#text-node',
+            value: 
+              [
+              {class:'svg-text' content:"Log in to begin animating" for:'#animator-sheet' is:'tspan' fill:'black' "strokewidth":"1px" stroke:"blue"}, 
+              {content:"or" for:'#animator-sheet' is:'tspan'}, 
+              {content:"Use our guest account." for:'#animator-sheet' is:'tspan'}
+              ]
             }
           },
         tools:
@@ -104,7 +99,7 @@
             id:'util-icons' name:'icon-utilities' title:'Utility Tools',
             sheet:
               {
-              id:'util-title' class:'title' is:'json-title',
+              id:'util-title' class:'title' is:'json-title' for:'#util-icons',
               value:
                 {
                 '1':'Utilities'
@@ -130,14 +125,7 @@
           deltaTitle:
             {
             id:'delta-icons' name:'icon-deltas' title:'Key Path Tools',
-            sheet:
-              {
-              id:'delta-title' class:'title' is:'json-title',
-              value:
-                {
-                '1':{ class:'sub-title' text:'Key Paths' title:'Key Paths' is:'json-title' }
-                }
-              }
+            sheet: 'Vector Tools'
             },
           delta:
             {
@@ -341,11 +329,11 @@
           },
         editor:
           {
-          id: 'json-editor' name:'scripting-console' class:'writer' title:'Console Editor' for:'#writer-viewport' is:'json-editor',
+          id: 'json-editor' name:'scripting-console' class:'writer' title:'Console Editor' for:'#writer-viewport' is:'section',
           focus:true,
           sheet:
             {
-            id:'animator-form-sheet' class:'sheet' name:'form-sheet' title:'Untitled Document' is:'x-line' for:'#json-editor',
+            id:'animator-form-sheet' class:'sheet' name:'form-sheet' title:'Untitled Document' is:'json-editor' for:'#json-editor',
             value: 
               {
               '1':' Welcome to Pi Reel.',
@@ -498,25 +486,27 @@
         },
 
         {
-        id:'animator-player' class:'video-player' title:'Animation Player' is:'json-element',
+        id:'animator-player' class:'video-player' title:'Animation Player' is:'json-canvas',
         hideP:'#mediaplayer-label button',
         sheet:
           {
-          id:'mediaplayer-label' class:'aside' title:'Reel Player' is:'button' for:'#animator-player',
+          id:'mediaplayer-label' class:'aside' title:'Reel Player' is:'section' for:'#animator-player',
           value:
             [
-            {class:'fa fa-user-circle-o' title:'Friends and Media Feed'}
+            "MediaFeed",
+            {class:'fa fa-user-circle-o' is:'button' title:'Friends and Media Feed'}
             ]
           },
         style:
           {
           position:'fixed' left:'95%' top:'20%' width:'5%' height:'45%' display:'block',
-          fontSize:'1.1vw',
+          fontSize:'.8vw',
           backgroundColor:'rgba(0,0,255,.25)'
           hideP:
             {
-            position:'absolute' left:'0%' top:'40%' width:'5%' height:'100%' display:'block',
-            backgroundColor:'rgba(0,0,255,.25)'
+            position:'absolute' left:'0%' top:'10%' width:'55%' height:'10%' display:'block',
+            backgroundColor:'rgba(240,240,255,.5)',
+            fontSize:'1vw'
             }
           }
         }
