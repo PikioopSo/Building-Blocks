@@ -18,7 +18,8 @@ Our belief is that through art we can overcome obstacles and come together to le
 
 ### Participation Guidelines  
   This projects code of conduct can be found at the following link, 
-  https://www.mozilla.org/en-US/about/governance/policies/participation/
+  [Mozilla Community Participation Guidelines](https://www.mozilla.org/en-US/about/governance/policies/participation/).  
+  
   Please report unacceptable behavior to kipomaha@gmail.com.  
 
 
