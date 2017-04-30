@@ -5,7 +5,7 @@ We strive every day to bring the world to life through animation and movie makin
 
 Our belief is that through art we can overcome obstacles and come together to learn and share our knowledge and dreams.
 
-[ If you have one, add your logo or an image here ]  
+![Pi Reel Logo](img/pireel.png)  
 
 ### Welcome to Pi Reel
   Pi Reel is an easy to use animation tool, made for engineers, makers, and scientists of all skill levels. Pi Reel can create everything from animations, entrepreneurial videos, animated structures and gizmos.  
