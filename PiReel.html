@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+    <style>
+body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+#add-project{position:relative;display:inline-block;padding:1.5%;margin:1.5%;width:8%;height:55%;background-color:rgba(255,255,255,.75);border:rgba(0,0,0,1) solid 1px;}#util-icons{}#default17{}#delta-icons{}#default27{}#graphic-icons{}#default35{}#find-selections{position:relative;left:20%;top:0%;min-width:75px;width:10%;margin-right:1%;padding:1%;margin:.5%;background-color:rgba(255,255,255,1);border-radius:10%;display:inline-block;}#line-index{position:relative;left:20%;top:0%;width:auto;margin-right:1%;padding:1%;background-color:rgba(255,255,255,1);border-radius:10%;display:inline-block;}#welcome-animation{}#anouncement-animation{}#tutorial-animation{}#keyframe-scrollbar{position:absolute;left:100%;top:0%;width:5%;height:100%;z-index:4;background-color:rgba(0,0,0,.85);padding:.125%;display:block;font-size:2vw;color:rgba(235,235,235,1);}#keyframe-add{position:absolute;left:10%;top:4%;z-index:4;background-color:rgba(175,175,175,.85);padding:4%;display:block;}#keyframe-scrollup{position:absolute;left:6%;top:25%;z-index:4;background-color:rgba(175,175,175,.85);padding:1%;display:block;}#keyframe-scrolldown{position:absolute;left:6%;top:50%;z-index:4;background-color:rgba(175,175,175,.85);padding:1%;display:block;}#keyframe-remove{position:absolute;left:10%;top:70%;z-index:4;background-color:rgba(175,175,175,.85);padding:4%;display:block;}#hide-kframe{float:right;width:auto;height:auto;margin:.5%;font-size:2vw;background-color:rgba(255,255,255,.85);}#keyframe-edit-menu{font-size:2vw;margin:.5%;padding:.125%;background-color:rgba(255,255,255,1);color:rgba(20,20,20,1);}#header-nav-menu{position:absolute;left:0px;top:0px;width:10%;height:100%;background-image:url(img/logos/pi-reel.svg);background-size:contain;background-position:center;background-repeat:no-repeat;background-color:rgba(200,200,200,.5);border-radius:50%;}#header-tool{position:absolute;left:12%;top:5%;width:600px;height:90%;background-color:rgba(225,225,245,.85);}#canvas-tools button{position:relative;display:inline-block;background-color:white;width:2.25vw;height:2.25vw;}json-title{width:100%;display:block;background-color:rgba(25,45,25,.65);color:rgba(185,195,185,1);}#canvas-tools{position:absolute;width:15%;height:100%;left:85%;top:0%;background-color:rgba(225,225,255,.5);border:1px outset rgba(255,255,225,.5);font-size:1.1vw;text-align:center;}#editor-menu{position:absolute;width:50%;height:20%;left:0%;top:0%;background-color:rgba(25,25,25,.75);font-size:1vw;overflow:hidden;display:block;}#gui-selections{position:relative;left:8%;top:0%;margin:.5%;margin-right:1%;padding:1%;background-color:rgba(255,255,255,1);border-radius:1%;display:inline-block;}#editor-tools{position:relative;left:16%;top:0%;margin:.5%;padding:1%;padding-right:1.5%;background-color:rgba(255,255,255,1);border-radius:50%;}#keyframe-menu{position:absolute;width:50%;height:20%;left:50%;top:0%;background-color:rgba(25,25,25,.75);font-size:1vw;overflow:hidden;display:block;}#header-bar{position:fixed;left:0px;top:0px;height:15%;width:100%;z-index:100;background-color:rgba(25,25,255,1);border:rgba(70,70,70,1) outset solid;}#animator-canvas{position:absolute;height:51%;width:93%;left:auto;top:16.5%;background-color:rgba(255,255,255,.5);border:2px outset rgb(185,185,185);}#mediaplayer-label button{position:absolute;left:0%;top:10%;width:55%;height:10%;display:block;background-color:rgba(240,240,255,.5);font-size:1vw;}#animator-player{position:fixed;left:95%;top:20%;width:5%;height:45%;display:block;font-size:.8vw;background-color:rgba(0,0,255,.25);}#editor{position:fixed;width:100%;height:30%;left:0%;top:70%;z-index:100;border:none;background-color:rgba(255,255,255,.3);}#mode-selector{position:relative;left:12%;top:0%;margin:.5%;padding:1%;background-color:rgba(255,255,255,1);border-radius:50%;}#editor-hide{position:relative;float:right;top:0%;margin:.5%;background-color:rgba(235,235,255,1);color:rgba(0,0,0,.8);font-size:2vw;overflow:hidden;display:block;}#font-selections{position:absolute;left:0%;top:0%;margin:.5%;margin-right:1%;padding:1%;background-color:rgba(255,255,255,1);border-radius:10%;display:inline-block;}#editor-scrollbar{position:absolute;width:5%;height:100%;top:0%;left:100%;background-color:rgba(0,0,0,.85);font-size:2vw;color:rgba(235,235,235,1);}#scroll-up{position:absolute;left:5%;top:27%;width:90%;z-index:4;background-color:rgba(165,165,165,.85);padding:.125%;display:block;}#scroll-down{position:absolute;left:5%;top:54%;width:90%;z-index:4;background-color:rgba(165,165,165,.85);padding:.125%;display:block;}#writer-addLine{position:absolute;top:0%;left:10%;width:100%;z-index:4;background-color:rgba(95,95,95,0);padding:0px;display:block;}#writer-removeLine{position:absolute;top:78%;left:10%;z-index:4;background-color:rgba(65,65,65,0);padding:0px;width:100%;display:block;}#writer-viewport{position:absolute;width:45%;height:80%;left:0px;top:20%;border-right:rgba(0,0,255,1) 1px solid;background-color:rgba(255,255,255,1);}#keyframe-editor .slider-rail{position:relative;display:block;width:100%;height:2%;margin-top:3.5%;padding:0%;background-color:rgba(30,30,30,1);}#keyframe-editor .slider-hash{position:relative;top:-500%;margin-left:10%;margin-right:0%;width:1px;height:500%;display:inline-block;background-color:black;}#keyframe-editor .slider-button{position:absolute;display:block;left:0%;width:auto;height:550%;top:-550%;background-color:rgba(200,200,255,.5);border:none;white-space:nowrap;}#keyframe-editor x-text{position:relative;font-size:1.1vw;font-family:cambria, serif;}#keyframe-editor{position:absolute;top:20%;left:50%;width:45%;height:80%;background-color:rgba(200,200,255,.5);font-size:1.1vw;}#animator-form-sheet{}
+    </style>
+
     <!--<script async='true' src="js/jx.js"></script>-->
     <script async='true' src="node_modules/x-tag/dist/jx.js"></script>
 
@@ -22,505 +28,156 @@
   </head>
 
   <body>
-<!-- [json-base] -->
-    <json-base class="memory" id="data-array-1" json="content">
-      [
-        {
-        id:'header-bar' name:'top-toolbar' class:'container' title:'Welcome to our animator' is:'json-header',
-        nav:
-          {
-          id:'header-nav-menu' class:'nav-menu' name:'header-navigation' title:'Click for drop menu' is:'json-menu',
-          style:
-            {
-            position:'absolute' left:'0px' top:'0px' width:'10%' height:'100%',
-            backgroundImage:'url(img/logos/pi-reel.svg)' backgroundSize:'contain' backgroundPosition:'center' backgroundRepeat:'no-repeat'
-            backgroundColor:'rgba(200,200,200,.5)' borderRadius:'50%'
-            }
-          },
-        tool:
-          {
-          id:'header-tool' class:'tool-menu' name:'header-tabs-bar' title:'Tabs Menu' is:'json-menu',
-          style:
-            {
-            position:'absolute' left:'12%' top:'5%' width:'600px' height:'90%',
-            backgroundColor:'rgba(225,225,245,.85)'
-            },
-          addProject:
-            {
-            id:'add-project' class:'projects' name:'create-project' title:'Create new project.',
-            style:
-              {
-              position:'relative' display:'inline-block' padding:'1.5%' margin:'1.5%' width:'8%' height:'55%',
-              backgroundColor:'rgba(255,255,255,.75)' border:'rgba(0,0,0,1) solid 1px'
-              },
-            sheet:'+ New Project'
-            }
-          },
-        style:
-          {
-          position:'fixed' left:'0px' top:'0px' height:'15%' width:'100%' zIndex:'100',
-          backgroundColor:'rgba(25,25,25,1)' border:'rgba(70,70,70,1) outset solid'
-          }
-        },
+<!-- [json-header] -->
+  <json-header id="header-bar" class="container" name="top-toolbar">
+    <json-menu id="header-nav-menu" class="nav-menu" name="header-navigation"></json-menu>
+    <json-menu id="header-tool" class="tool-menu" name="header-tabs-bar">
+      <json-element id="add-project" class="projects" name="create-project">
+        <json-text id="default5" class="default5" name="default5"> New Project</json-text>
+      </json-element>
+    </json-menu>
+  </json-header>
 
-        {
-        id:'animator-canvas' name:'animator-viewer' class:'viewer' title:'Canvas' is:'json-canvas',
-        style:
-          {
-          position:'absolute' height:'51%' width:'93%' left:'auto' top:'16.5%',
-          backgroundColor:'rgba(255,255,255,.5)' border:'2px outset rgb(185,185,185)'
-          },
-        workspace:
-          {
-          id:'animator-workspace' class:'workspace' name:'animator-work-canvas' title:'Untitled Document' is:'json-svg',
-          span:" .svg-text",
-          style:
-            {
-            position:'absolute' top:'3%' left:'1%' width:'82.5%' height:'90%',
-            border:'solid rgba(0,0,0,.5) .125em' backgroundColor:'rgba(188,188,188,1)'
-            },
-          sheet:
-            {
-            id:'animator-sheet' class:'sheet' name:'startup-sheet' title:'Untitled Document' for:'#animator-workspace' is:'svg' "clone":'#text-node',
-            value: 
-              [
-              {class:'svg-text' content:"Log in to begin animating" for:'#animator-sheet' is:'tspan' fill:'black' "strokewidth":"1px" stroke:"blue"}, 
-              {content:"or" for:'#animator-sheet' is:'tspan'}, 
-              {content:"Use our guest account." for:'#animator-sheet' is:'tspan'}
-              ]
-            }
-          },
-        tools:
-          {
-          id:'canvas-tools' class:'canvas-toolMenu' title:'Canvas Tools' is:'json-menu',
-          util:'#canvas-tools button' jtitle:'json-title',
-          utilTitle:
-            {
-            id:'util-icons' name:'icon-utilities' title:'Utility Tools',
-            sheet:
-              {
-              id:'util-title' class:'title' is:'json-title' for:'#util-icons',
-              value:
-                {
-                '1':'Utilities'
-                }
-              }
-            },
-          utilities:
-            {
-            id:'util-tools' class:'tools' name:'insertion-tools' title:'Insert Objects' is:'section',
-            sheet:
-              {
-              class:'tool-icons' name:'tool-insert' title:'Path Tool',
-              value:
-                {
-                "1":{ class:'fa fa-hashtag' title:'Insert Keyframe' is:'button' },
-                "2":{ class:'fa fa-file-image-o' title:'Insert Image' is:'button' },
-                "3":{ class:'fa fa-file-movie-o' title:'Insert Video' is:'button' },
-                "4":{ class:'fa fa-file-audio-o' title:'Insert Audio' is:'button' },
-                "5":{ class:'fa fa-cube' title:'Insert 3D' is:'button' }
-                }
-              }
-            },
-          deltaTitle:
-            {
-            id:'delta-icons' name:'icon-deltas' title:'Key Path Tools',
-            sheet: 'Vector Tools'
-            },
-          delta:
-            {
-            id:'delta-tools' class:'tools' name:'delta-tools' title:'Key Objects' is:'section',
-            sheet:
-              {
-              class:'tool-icons' name:'tool-delta' title:'Key Tools',
-              value:
-                {
-                "1":{ class:'fa fa-arrow-circle-o-right' title:'Key Vector' is:'button' },
-                "2":{ class:'fa fa-long-arrow-right' title:'Key Path' is:'button' },
-                "3":{ class:'fa fa-cube' title:'Key 3D' is:'button' }
-                }
-              }
-            },
-          graphicTitle:
-            {
-            id:'graphic-icons' name:'icon-graphic' title:'Graphic Tool Brushes',
-            sheet: 'Grahpic Tool Brushes'
-            },
-          graphic:
-            {
-            id:'graphic-tools' class:'tools' name:'graphic-tools' title:'Graphic Brushes' is:'section',
-            sheet:
-              {
-              class:'graphic-icons' name:'tool-graphic' title:'Graphic Tools',
-              value:
-                {
-                "1":{ class:'fa fa-arrow-circle-o-right' title:'SVG Brush' is:'button' },
-                "2":{ class:'fa fa-long-arrow-right' title:'Gradient Brush' is:'button' },
-                "3":{ class:'fa fa-cube' title:'3D Brush' is:'button' }
-                }
-              }
-            },
-          style:
-            {
-            position:'absolute' width:'15%' height:'100%' left:'85%' top:'0%',
-            backgroundColor:'rgba(225,225,255,.5)' border:'1px outset rgba(255,255,225,.5)',
-            fontSize:'1.1vw' textAlign:'center'
-            util:
-              {
-              position:'relative' display:'inline-block' backgroundColor:'white' width:'2.25vw' height:'2.25vw'
-              },
-            jtitle:
-              {
-              width:'100%' display:'block',
-              backgroundColor:'rgba(25,45,25,.65)' color:'rgba(185,195,185,1)'
-              }
-            }
-          }
-        },
+<!-- [json-canvas] -->
+  <json-canvas id="animator-canvas" class="viewer" name="animator-viewer">
+    <svg id="animatorWorkspace" class="workspace" name="animatorWorkCanvas">
+      <svg id="animatorSheet" class="sheet" name="startupSheet" style="background-color: blue;">
+        <text id="animatorSheet" class="sheet"></text>
+        <svg id="default9" class="svgText" name="default9" style="background-color: blue;">
+          <text id="animatorSheet" class="sheet">
+            <tspan id="default9" class="svgText">Log in to begin animating</tspan>
+          </text>
+        Log in to begin animating
+        </svg>
+        <svg id="default10" class="svgText" name="default10" style="background-color: blue;">
+          <text id="animatorSheet" class="sheet">
+            <tspan id="default9" class="svgText">Log in to begin animating</tspan>
+            <tspan id="default10" class="svgText">or</tspan>
+          </text>or
+        </svg>
+      <svg id="default11" class="svgText" name="default11" style="background-color: blue;">
+        <text id="animatorSheet" class="sheet">
+          <tspan id="default9" class="svgText">Log in to begin animating</tspan>
+          <tspan id="default10" class="svgText">or</tspan>
+          <tspan id="default11" class="svgText">Use our guest account.</tspan>
+        </text>Use our guest account.
+      </svg>
+    </svg>
+  </svg>
 
-        {
-        id:'editor' class:'editor' name:'animator-editor-console' title:'Animator Editor Console' is:'json-form',
-        style:
-          {
-          position:'fixed' width:'100%' height:'30%' left:'0%' top:'70%' zIndex:'100',
-          border:'none' backgroundColor:'rgba(255,255,255,.3)'
-          },
-        menu:
-          {
-          id:'editor-menu' class:'menu' name:'editor-menu' title:'Menu' is:'json-menu',
-          style:
-            {
-            position:'absolute' width:'50%' height:'20%' left:'0%' top:'0%',
-            backgroundColor:'rgba(25,25,25,.75)' fontSize:'1vw',
-            overflow:'hidden' display:'block'
-            },
-          hide:
-            {
-            id:'editor-hide' class:'fa fa-close' name:'hide-editor' title:'Close Editor' is:'json-switch',
-            style:
-              {
-              position:'relative' float:'right' top:'0%' margin:'.5%',
-              margin:'.5%' backgroundColor:'rgba(235,235,255,1)' color:'rgba(0,0,0,.8)' fontSize:'2vw',
-              overflow:'hidden' display:'block'
-              }
-            },
-          fonts:
-            {
-            id:'font-selections' class:'fa fa-font' name:'font-menu' title:'Font Menu' for:'#editor-menu' is:'json-switch',
-            style:
-              {
-              position:'absolute' left:'0%' top:'0%' margin:'.5%',
-              marginRight:'1%' padding:'1%',
-              backgroundColor:'rgba(255,255,255,1)' borderRadius:'10%' display:'inline-block'
-              }
-            },
-          gui:
-            {
-            id:'gui-selections' class:'fa fa-bars fa gui-menu' name:'gui-menu' title:'UI Menu' for:'#editor-menu' is:'json-menu',
-            style:
-              {
-              position:'relative' left:'8%' top:'0%' margin:'.5%',
-              marginRight:'1%' padding:'1%',
-              backgroundColor:'rgba(255,255,255,1)' borderRadius:'1%' display:'inline-block'
-              }
-            },
-          mode:
-            {
-            id:'mode-selector' class:'fa fa-cogs' name:'editor-modes' title:'Mode Menu' for:'#editor-menu' is:'json-selector',
-            style:
-              {
-              position:'relative' left:'12%' top:'0%' margin:'.5%',
-              padding:'1%',
-              backgroundColor:'rgba(255,255,255,1)' borderRadius:'50%'
-              }
-            },
-          tool:
-            {
-            id:'editor-tools' class:'fa fa-wrench' title:'Tools Menu' is:'json-menu' for:'#editor-menu',
-            style:
-              {
-              position:'relative' left:'16%' top:'0%' margin:'.5%',
-              padding:'1%' paddingRight:'1.5%',
-              backgroundColor:'rgba(255,255,255,1)' borderRadius:'50%'
-              }
-            },
-          find:
-            {
-            id:'find-selections' class:'fa fa-search' name:'find-menu' title:'Find Menu' for:'#editor-menu',
-            style:
-              {
-              position:'relative' left:'20%' top:'0%' minWidth:'75px' width:'10%',
-              marginRight:'1%' padding:'1%' margin:'.5%',
-              backgroundColor:'rgba(255,255,255,1)' borderRadius:'10%' display:'inline-block'
-              }
-            },
-          index:
-            {
-            id:'line-index' class:'index' name:'line-index' title:'Find Menu' for:'#find-selections',
-            sheet:'0 / 4 '
-            style:
-              {
-              position:'relative' left:'20%' top:'0%' width:'auto',
-              marginRight:'1%' padding:'1%',
-              backgroundColor:'rgba(255,255,255,1)' borderRadius:'10%' display:'inline-block'
-              }
-            }
-          },
-        viewport:
-          {
-          id:'writer-viewport' class:'viewport' title:'Console Port' is:'json-viewport',
-          style:
-            {
-            position:'absolute' width:'45%' height:'80%' left:'0px' top:'20%',
-            borderRight:'rgba(0,0,255,1) 1px solid' backgroundColor:'rgba(255,255,255,1)'
-            }
-          },
-        scroll:
-          {
-          id:'editor-scrollbar' class:'scroll' name:'editor-scrollbar' title:'Scroll Toggle' is:'json-switch' for:'#writer-viewport',
-          up:
-            {
-            id:'scroll-up' class:'fa fa-chevron-up' title:'Scroll Up' is:'json-switch' for:'#editor-scrollbar',
-            increment:'1',
-            style:
-              {
-              position:'absolute' left:'5%' top:'27%' width:'90%' zIndex:'4',
-              backgroundColor:'rgba(165,165,165,.85)' padding:'.125%',
-              display:'block'
-              }
-            },
-          down:
-            {
-            id:'scroll-down' class:'fa fa-chevron-down' title:'Scroll Down' is:'json-switch' for:'#editor-scrollbar',
-            increment:'1',
-            style:
-              {
-              position:'absolute' left:'5%' top:'54%' width:'90%' zIndex:'4',
-              backgroundColor:'rgba(165,165,165,.85)' padding:'.125%',
-              display:'block'
-              }
-            },
-          add:
-            {
-            id:'writer-addLine', class:'fa fa-plus-square' title:'Add Line' is:'json-switch' for:'#editor-scrollbar',
-            style:
-              {
-              position:'absolute' top:'0%' left:'10%' width:'100%' zIndex:'4',
-              backgroundColor:'rgba(95,95,95,0)' padding:'0px',
-              display:'block'
-              }
-            },
-          remove:
-            {
-            id:'writer-removeLine', class:'fa fa-minus-circle' title:'Remove Line' is:'json-switch' for:'#editor-scrollbar',
-            style:
-              {
-              position:'absolute' top:'78%' left:'10%' zIndex:'4',
-              backgroundColor:'rgba(65,65,65,0)' padding:'0px' width:'100%',
-              display:'block'
-              }
-            },
-          style:
-            {
-            position:'absolute' width:'5%' height:'100%' top:'0%' left:'100%',
-            backgroundColor:'rgba(0,0,0,.85)',
-            fontSize:'2vw' color:'rgba(235,235,235,1)'
-            }
-          },
-        editor:
-          {
-          id: 'json-editor' name:'scripting-console' class:'writer' title:'Console Editor' for:'#writer-viewport' is:'section',
-          focus:true,
-          sheet:
-            {
-            id:'animator-form-sheet' class:'sheet' name:'form-sheet' title:'Untitled Document' is:'json-editor' for:'#json-editor',
-            value: 
-              {
-              '1':' Welcome to Pi Reel.',
-              '2':' This console is an interface to help you create your animations.',
-              '3':' Please, join our community at, www.kip.forums.org/mozillaclubs/omahaNE.',
-              '4':' Thank you for visiting, Pi Reel.'
-              }
-            },
-          style:
-            {
-            position:'absolute' left:'0px' top:'0px' height:'100%' width:'100%',
-            backgroundColor: 'rgba(255,255,255)' cursor:'text' fontSize:'1.1vw',
-            line:
-              {
-              position:'relative' height:'25%' width:'100%' margin: '0px' padding: '0px',
-              backgroundColor: 'rgba(255,255,255,.5)' border:'none' opacity: '1' display:'block'
-              },
-            title:
-              {
-              position: 'relative' top: '0%' left: '0%' height: '100%' width: '5%',
-              border:'none',
-              textAlign:'center' display:'block'
-              },
-            text:
-              {
-              position:'relative' left:'5%' top:'-100%' height:'100%' width:'94%' paddingLeft:'1%',
-              backgroundColor: 'rgba(200,200,255,.5)' border:'none' display:'block',
-              fontFamily: 'Lucida Console, Monaco, monospace' color: 'rgb(65,65,65)'
-              }
-            }
-          },
+  <json-menu id="canvas-tools" class="canvas-toolMenu" name="default12">
+    <json-element id="util-icons" class="default13" name="icon-utilities">
+      <json-title id="util-title" class="title" name="default14"></json-title>
+      <json-line id="default15" class="default15" name="default15">Utilities</json-line>
+    </json-element>
 
-        frames:
-          {
-          id:'keyframe-editor' class:'keyframes' name:'keyframe-editor' title:'Keyframe Editor' is:'json-viewport',
-          rails:'#keyframe-editor .slider-rail' sliders:'#keyframe-editor .slider-button' hashes:'#keyframe-editor .slider-hash',
-          style:
-            {
-            position:'absolute' top:'20%' left:'50%' width:'45%' height:'80%',
-            backgroundColor:'rgba(200,200,255,.5)',
-            fontSize:'1.1vw',
-            rails:
-              {
-              position:'relative' display:'block' width:'100%' height:'2%',
-              marginTop:'3.5%' padding:'0%',
-              backgroundColor:'rgba(30,30,30,1)'
-              },
-            hashes:
-              {
-              position:'relative' top:'-500%' marginLeft:'10%' marginRight:'0%' width:'1px' height:'500%' display:'inline-block',
-              backgroundColor:'black' 
-              },
-            sliders:
-              {
-              position:'absolute' display:'block' left:'0%' width:'auto' height:'550%' top:'-550%',
-              backgroundColor:'rgba(200,200,255,.5)' border:'none' whiteSpace:'nowrap' 
-              }
-            text:
-              {
-              position:'relative',
-              fontSize:'1.1vw' fontFamily:'cambria, serif'
-              }
-            },
-          sheet:
-            {
-            id:'frame-sheet' class:'keyframes' name:'keyframe-sheet' title:'Animation Keyframes' is:'json-input' for:'#keyframe-editor',
-            nodes: true,
-            value:
-              {
-              "1":{ type:'slider' id:'welcome-animation' content:'Welcome to Pi Reel.' title:'Welcome to Pi Reel.' src:'jscss/welcome.json' },
-              "2":{ type:'slider' id:'anouncement-animation' content:'Reel Announcements.' title:'Reel Announcements.' src:'jscss/announcements.json' },
-              "3":{ type:'slider' id:'tutorial-animation' content:'Pi Reel Tutorials.' title:'Pi Reel Tutorials.' src:'jscss/tutorials.json' }
-              }
-            },
-          scroll:
-            {
-            id:'keyframe-scrollbar' class:'scroll' name:'scrollbar' title:'Scroll Bar',
-            style:
-              {
-              position:'absolute' left:'100%' top:'0%' width:'5%' height:'100%' zIndex:'4',
-              backgroundColor:'rgba(0,0,0,.85)' padding:'.125%' display:'block',
-              fontSize:'2vw' color:'rgba(235,235,235,1)'
-              },
-            add:
-              {
-              id:'keyframe-add' class:'fa fa-plus-square' name:'scrollbar' title:'Scroll Bar',
-              style:
-                {
-                position:'absolute' left:'10%' top:'4%' zIndex:'4',
-                backgroundColor:'rgba(175,175,175,.85)' padding:'4%' display:'block'
-                }
-              },
-            up:
-              {
-              id:'keyframe-scrollup' class:'fa fa-chevron-up' name:'scrollup' title:'Scroll Up',
-              style:
-                {
-                position:'absolute' left:'6%' top:'25%' zIndex:'4',
-                backgroundColor:'rgba(175,175,175,.85)' padding:'1%' display:'block'
-                }
-              },
-            down:
-              {
-              id:'keyframe-scrolldown' class:'fa fa-chevron-down' name:'scrollbar' title:'Scroll Bar',
-              style:
-                {
-                position:'absolute' left:'6%' top:'50%' zIndex:'4',
-                backgroundColor:'rgba(175,175,175,.85)' padding:'1%' display:'block'
-                }
-              },
-            remove:
-              {
-              id:'keyframe-remove' class:'fa fa-minus-circle' name:'scrollbar' title:'Scroll Bar',
-              style:
-                {
-                position:'absolute' left:'10%' top:'70%' zIndex:'4',
-                backgroundColor:'rgba(175,175,175,.85)' padding:'4%' display:'block'
-                }
-              }
-            }
-          },
-        fmenu:
-          {
-          id:'keyframe-menu' class:'menu' name:'keyframe-menu' title:'Keyframes Menu' is:'json-menu',
-          style:
-            {
-            position:'absolute' width:'50%' height:'20%' left:'50%' top:'0%',
-            backgroundColor:'rgba(25,25,25,.75)' fontSize:'1vw',
-            overflow:'hidden' display:'block'
-            },
-          hide:
-            {
-            id:'hide-kframe' class:'fa fa-close' name:'hide-keyframe' title:'Close Keyframes',
-            style:
-              {
-              float:'right' width:'auto' height:'auto' margin:'.5%',
-              fontSize:'2vw' backgroundColor:'rgba(255,255,255,.85)'
-              }
-            },
-          editing:
-            {
-            id:'keyframe-edit-menu' class:'fa fa-magic' title:'Splice Menu'
-            style:
-              {
-              fontSize:'2vw' margin:'.5%' padding:'.125%',
-              backgroundColor:'rgba(255,255,255,1)' color:'rgba(20,20,20,1)'
-              }
-            }
-          }
-        },
+    <section id="util-tools" class="tools" name="insertion-tools">
+      <json-element id="default17" class="tool-icons" name="tool-insert">
+        <button id="default18" class="fa fa-hashtag" name="default18"></button>
+        <button id="default19" class="fa fa-file-image-o" name="default19"></button>
+        <button id="default20" class="fa fa-file-movie-o" name="default20"></button>
+        <button id="default21" class="fa fa-file-audio-o" name="default21"></button>
+        <button id="default22" class="fa fa-cube" name="default22"></button>
+      </json-element>
+    </section>
 
-        {
-        id:'animator-player' class:'video-player' title:'Animation Player' is:'json-canvas',
-        hideP:'#mediaplayer-label button',
-        sheet:
-          {
-          id:'mediaplayer-label' class:'aside' title:'Reel Player' is:'section' for:'#animator-player',
-          value:
-            [
-            "MediaFeed",
-            {class:'fa fa-user-circle-o' is:'button' title:'Friends and Media Feed'}
-            ]
-          },
-        style:
-          {
-          position:'fixed' left:'95%' top:'20%' width:'5%' height:'45%' display:'block',
-          fontSize:'.8vw',
-          backgroundColor:'rgba(0,0,255,.25)'
-          hideP:
-            {
-            position:'absolute' left:'0%' top:'10%' width:'55%' height:'10%' display:'block',
-            backgroundColor:'rgba(240,240,255,.5)',
-            fontSize:'1vw'
-            }
-          }
-        }
-      ]</json-base>
+      <json-element id="delta-icons" class="default23" name="icon-deltas">
+        <json-text id="default25" class="default25" name="default25">Vector Tools</json-text>
+      </json-element>
 
+      <section id="delta-tools" class="tools" name="delta-tools">
+        <json-element id="default27" class="tool-icons" name="tool-delta">
+          <button id="default28" class="fa fa-arrow-circle-o-right" name="default28"></button>
+          <button id="default29" class="fa fa-long-arrow-right" name="default29"></button>
+          <button id="default30" class="fa fa-cube" name="default30"></button>
+        </json-element>
+      </section>
+
+      <json-element id="graphic-icons" class="default31" name="icon-graphic">
+        <json-text id="default33" class="default33" name="default33">Grahpic Tool Brushes</json-text>
+      </json-element>
+
+      <section id="graphic-tools" class="tools" name="graphic-tools">
+        <json-element id="default35" class="graphic-icons" name="tool-graphic">
+          <button id="default36" class="fa fa-arrow-circle-o-right" name="default36"></button>
+          <button id="default37" class="fa fa-long-arrow-right" name="default37"></button>
+          <button id="default38" class="fa fa-cube" name="default38"></button>
+        </json-element>
+      </section>
+    </json-menu>
+  </json-canvas>
+
+  <json-form id="editor" class="editor" name="animator-editor-console">
+    <json-menu id="editor-menu" class="menu" name="editor-menu">
+      <json-switch id="editor-hide" class="fa fa-close" name="hide-editor"></json-switch>
+      <json-switch id="font-selections" class="fa fa-font" name="font-menu"></json-switch>
+      <json-menu id="gui-selections" class="fa fa-bars fa gui-menu" name="gui-menu"></json-menu>
+      <json-selector id="mode-selector" class="fa fa-cogs" name="editor-modes"></json-selector>
+      <json-menu id="editor-tools" class="fa fa-wrench" name="default45"></json-menu>
+      <json-element id="find-selections" class="fa fa-search" name="find-menu">
+        <json-element id="line-index" class="index" name="line-index">
+          <json-text id="default49" class="default49" name="default49">0 / 4 </json-text>
+        </json-element>
+      </json-element>
+    </json-menu>
+
+    <json-viewport id="writer-viewport" class="viewport" name="default50">
+      <json-switch id="editor-scrollbar" class="scroll" name="editor-scrollbar">
+        <json-switch id="scroll-up" class="fa fa-chevron-up" name="default52"></json-switch>
+        <json-switch id="scroll-down" class="fa fa-chevron-down" name="default53"></json-switch>
+        <json-switch id="writer-addLine" class="fa fa-plus-square" name="default54"></json-switch>
+        <json-switch id="writer-removeLine" class="fa fa-minus-circle" name="default55"></json-switch>
+      </json-switch>
+
+      <section id="json-editor" class="writer" name="scripting-console">
+        <json-editor id="animator-form-sheet" class="sheet" name="form-sheet"></json-editor>
+        <json-line id="default58" class="default58" name="default58"> Welcome to Pi Reel.</json-line>
+        <json-line id="default59" class="default59" name="default59"> This console is an interface to help you create your animations.</json-line>
+        <json-line id="default60" class="default60" name="default60"> Please, join our community at, www.kip.forums.org/mozillaclubs/omahaNE.</json-line>
+        <json-line id="default61" class="default61" name="default61"> Thank you for visiting, Pi Reel.</json-line>
+      </section>
+    </json-viewport>
+        
+        <json-viewport id="keyframe-editor" class="keyframes" name="keyframe-editor">
+          <json-input id="frame-sheet" class="keyframes" name="keyframe-sheet">
+            <json-element id="welcome-animation" class="default64" name="default64">Welcome to Pi Reel.</json-element>
+            <json-element id="anouncement-animation" class="default65" name="default65">Reel Announcements.</json-element>
+            <json-element id="tutorial-animation" class="default66" name="default66">Pi Reel Tutorials.</json-element>
+          </json-input>
+          <json-element id="keyframe-scrollbar" class="scroll" name="scrollbar">
+            <json-element id="keyframe-add" class="fa fa-plus-square" name="scrollbar"></json-element>
+            <json-element id="keyframe-scrollup" class="fa fa-chevron-up" name="scrollup"></json-element>
+            <json-element id="keyframe-scrolldown" class="fa fa-chevron-down" name="scrollbar"></json-element>
+            <json-element id="keyframe-remove" class="fa fa-minus-circle" name="scrollbar"></json-element>
+          </json-element>
+        </json-viewport>
+        
+        <json-menu id="keyframe-menu" class="menu" name="keyframe-menu">
+          <json-element id="hide-kframe" class="fa fa-close" name="hide-keyframe"></json-element>
+          <json-element id="keyframe-edit-menu" class="fa fa-magic" name="default74"></json-element>
+        </json-menu>
+  </json-form>
+
+<!-- [json-canvas] -->
+  <json-canvas id="animator-player" class="video-player" name="default75">
+    <section id="mediaplayer-label" class="aside" name="default76">
+      <button id="default78" class="fa fa-user-circle-o" name="default78"></button>
+    </section>
+    <json-line id="default77" class="default77" name="default77">MediaFeed</json-line>
+  </json-canvas>
+
+<!-- [json-style] -->
     <json-style id="animator-player-styles" class="memory">
       <json-css id="player-reel-jcss" class="memory"></json-css>
     </json-style>
 
-    <!-- [SVG preload nodes] Container for your current project.  -->
-    <svg id="svg-preload-node" class="memory" width="0px" height="0px">
+    <!-- [SVG preload nodes]  -->
+    <svg id="svgPreloadNode" class="memory" style="">
       <def></def>
       <g></g>
-      <text id="text-node"><tspan></tspan></text>
+      <text id="textNode">
+        <tspan x="0" y="36">hello</tspan>
+      </text>
       <circle></circle>
       <path></path>
       <polygon></polygon>
