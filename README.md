@@ -1,18 +1,20 @@
 # Pi Reel
 
-### Welcome to Pi Reel
-  Pi Reel is an easy to use animation tool, made for engineers, makers, and scientists of all skill levels. Pi Reel can create everything from animations, entrepreneurial videos, animated structures and gizmos.  
+### Welcome to Pi Reel  
+![Pi Reel Logo](img/pireel.png)   
+Pi Reel is an easy to use animation tool, made for engineers, makers, and scientists of all skill levels. Pi Reel can create everything from animations, entrepreneurial videos, and animated structures and gizmos.  
 
 
-  The Pi Reel Web application is more than a web application. Pi Reel is a school of thought. Our goal is to bring together an inclusive, welcoming group of science enthusiasts and professionals to accomplish
-Our belief is that through art and science we can overcome obstacles and bring together our knowledge to attain new heights of achievement.
+The Pi Reel Web application is more than a web application. Pi Reel is a school of thought. Our goal is to bring together an inclusive, welcoming group of science enthusiasts and professionals to accomplish through art and science a sustainable, safe, comfortable future for all. 
+
+### Activism  
+Monopolization in industries such as the energy industry have led to conflicts like the South Dakota Pipeline Protests, rare earth metal conflicts, and more.
 
 ### Our Mission   
-  We strive every day to bring the world to life through animation and creating.
+We strive every day to bring a tolerant, compassionate, and just world to life through working in the open to collaborate on projects for science, engineering, and creating.  
 
-  ur belief is that through art we can overcome obstacles and come together to learn and share our knowledge and dreams.  
-
-![Pi Reel Logo](img/pireel.png)    
+### Our Beliefs and Values
+Our belief is that through art we can overcome obstacles and come together to learn and share our knowledge and dreams.    
 
 ### Resources and the Manual  
   Our manual can be downloaded on Google Docs or be viewed in the GitHub repo Wiki. We also have our video tutorials on our own station that you can view on Pi Reels media player.  
