@@ -27,7 +27,8 @@ Our belief is that through art we can overcome obstacles and come together to le
   [Mozilla Community Participation Guidelines](https://www.mozilla.org/en-US/about/governance/policies/participation/). 
   
   Some resources to help you become the best participator you can be:  
-  1. [Open Canvas](https://mozilla.github.io/open-leadership-training-series/articles/opening-your-project/develop-an-open-project-strategy-with-open-canvas/#introducing-open-canvas)
+  1. [Open Canvas](https://mozilla.github.io/open-leadership-training-series/articles/opening-your-project/develop-an-open-project-strategy-with-open-canvas/#introducing-open-canvas)  
+  2. [Mark Down](https://guides.github.com/features/mastering-markdown/): Learn the "md" file extension syntax. 
   
   Please report unacceptable behavior to kipomaha@gmail.com.  
 
