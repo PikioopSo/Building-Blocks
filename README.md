@@ -4,12 +4,12 @@
   Pi Reel is an easy to use animation tool, made for engineers, makers, and scientists of all skill levels. Pi Reel can create everything from animations, entrepreneurial videos, animated structures and gizmos.  
 
 
+  The Pi Reel Web application is more than a web application. Pi Reel is a school of thought. Our goal is to bring together an inclusive, welcoming group of science enthusiasts and professionals to accomplish
+
 ### Our Mission   
-We strive every day to bring the world to life through animation and creating.
+  We strive every day to bring the world to life through animation and creating.
 
-Our belief is that through art we can overcome obstacles and come together to learn and share our knowledge and dreams.
-
-The Pi Reel Web application is more than a web application. Pi Reel is a school of thought. Our goal is to bring together an inclusive, welcoming group of science enthusiasts and professionals to accomplish
+  ur belief is that through art we can overcome obstacles and come together to learn and share our knowledge and dreams.  
 
 ![Pi Reel Logo](img/pireel.png)    
 
@@ -21,7 +21,10 @@ The Pi Reel Web application is more than a web application. Pi Reel is a school 
 
 ### Participation Guidelines  
   This projects code of conduct can be found at the following link, 
-  [Mozilla Community Participation Guidelines](https://www.mozilla.org/en-US/about/governance/policies/participation/).  
+  [Mozilla Community Participation Guidelines](https://www.mozilla.org/en-US/about/governance/policies/participation/). 
+  
+  Some resources to help you become the best participator you can be:  
+  1. [Open Canvas](https://mozilla.github.io/open-leadership-training-series/articles/opening-your-project/develop-an-open-project-strategy-with-open-canvas/#introducing-open-canvas)
   
   Please report unacceptable behavior to kipomaha@gmail.com.  
 
