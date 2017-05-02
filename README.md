@@ -11,7 +11,7 @@ The Pi Reel Web application is more than a web application. Pi Reel is a school 
 Monopolization in industries such as the energy industry have led to conflicts like the South Dakota Pipeline Protests, rare earth metal conflicts, and more.
 
 ### Our Mission   
-We strive every day to bring a tolerant, compassionate, and just world to life through working in the open to collaborate on projects for science, engineering, and creating.  
+We strive every day to bring a tolerant, compassionate, and just world to life by working in the open to collaborate on projects for science, engineering, and creating.  
 
 ### Our Beliefs and Values
 Our belief is that through art we can overcome obstacles and come together to learn and share our knowledge and dreams.    

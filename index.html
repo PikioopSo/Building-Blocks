@@ -17,16 +17,37 @@
     
         <script type="text/javascript" src="node_modules/x-tag/dist/jx.js"></script>
     
-        <style type="text/css">
-            
-        </style>
+<style type="text/css">
+    
+</style>
 
     </head>
 
     <body>
+        <j-tray id="top-tray" class="tray">
+            <j-el class="btn">Settings</j-el>
+            <j-el class="btn">Preferences</j-el>
+        </j-tray>
         <header id="index-banner" class="header">
             <img src="img/pireel.png" id="header-logo" class="logo"></img>
         </header>
+
+        <j-tray>
+            <j-el class="btn">Users</j-el>
+            <j-el class="btn">Messages</j-el>
+        </j-tray>
+
+        <json-canvas id="main-canvas" class="display">
+            <svg id="_index[1]" width="800" height="680">
+                <text style="font-size: 65">
+                    <tspan x="5" y="70" stroke="rgba(77,77,77,1)" stroke-width="0" fill="rgba(177,177,177,1)">Welcome to mozSprint 2017!</tspan>
+                </text>
+            </svg>
+        </json-canvas>
+
+        <j-foot>
+            
+        </j-foot>
     </body>
 
 </html>
