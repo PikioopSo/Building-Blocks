@@ -2,5 +2,5 @@ runtime: php55
 api_version: 1
 
 handlers:
-- url: animator
-  script: index.php
+- url: /.*
+  script: index-core.php
