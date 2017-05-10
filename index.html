@@ -23,6 +23,9 @@
   position: fixed; top: 0%; left: 0%; width: 100%; height: 11%; padding: 0px;
   background-color: rgba(78,78,78,1);
 }
+#pireel-menu{
+    margin-left: 2vw;
+}
 #animator-canvas{
   position: fixed; top: 11%; left: 0%; width: 100%; height: 65%;
   background-color: rgba(255,255,255,1);
@@ -72,13 +75,10 @@
 /* [media] */
 @media screen and (min-width: 800px){
   .fit-large{
-    height: 100%; padding-left: .5vw; padding-right: .25vw;
+    height: 90%; padding-left: .5vw; padding-right: .25vw;
   }
   .square-large{
     height: 78%;
-  }
-  .fit-large{
-    height: 90%;
   }
   
 }
@@ -87,7 +87,7 @@
     <!--<script async='true' src="js/jx.js"></script>-->
     <script async='true' src="node_modules/x-tag/dist/jx.js"></script>
 
-    <title>Pi Reel by Mozilla Clubs</title>
+    <title>Pi Reel by Mozilla Club Omaha</title>
   </head>
 
   <body>
@@ -126,6 +126,12 @@
     <section id="mediaplayer-label" class="aside" name="default76">
       <button id="default78" class="fa fa-user-circle-o" name="default78"></button>
     </section>
+
+<!-- [user data] -->
+    <?php 
+    print "<p>Welcome guest user: </p>";
+    ?>
+
     <j-line id="media_feed" class="paragraph" name="media_feed">Media Feed</j-line>
   </j-menu>
 

@@ -18,7 +18,7 @@ j-tray{
   display: block; overflow: hidden;
 }
 j-menu{
-  display: inline-block; overflow: hidden; margin: 0px;
+  display: inline-block; overflow: hidden;
   background: rgba(255,255,255,.95);
 }
 j-select{
@@ -133,7 +133,8 @@ e-txt:hover{
   width: auto; height: 100%;
 }
 .index-tray{
-  position: absolute; width: 50%; height: 100%;
+  position: relative; width: 50%; height: 100%;
+  display: inline-block;
 }
 .rel{
   position: relative;
