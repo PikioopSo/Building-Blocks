@@ -115,7 +115,7 @@
         </text>
       </svg>
   </json-canvas>
-
+<h1>hi</h1>
 <!-- [canvas tools] -->
   <j-menu id="canvas-tools" class="display" name="canvas-tools">
     <j-text class="menu-title">Tray</j-text>
