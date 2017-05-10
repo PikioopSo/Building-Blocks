@@ -129,7 +129,7 @@
 
 <!-- [user data] -->
     <?php 
-    print "<p>Welcome guest user: </p>";
+    print "<strong>Welcome guest user: </strong>";
     ?>
 
     <j-line id="media_feed" class="paragraph" name="media_feed">Media Feed</j-line>
@@ -194,8 +194,8 @@
     <svg id="svgPreloadNode" class="memory" style="">
       <def></def>
       <g></g>
-      <text id="textNode">
-        <tspan x="0" y="36">hello</tspan>
+      <text id="text_node">
+        <tspan x="0" y=""></tspan>
       </text>
       <circle></circle>
       <path></path>
