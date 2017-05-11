@@ -4,5 +4,7 @@
   "show_files": [
     "index-core.php",
     "app.yaml"
-  ]
+  ],
+  "read_only_demo_url": "https://try-php-demo-dot-cloud-playground.appspot.com/",
+  "download_filename": "appengine-try-php.zip"
 }
