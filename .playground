@@ -5,6 +5,6 @@
     "index-core.php",
     "app.yaml"
   ],
-  "read_only_demo_url": "https://try-php-demo-dot-cloud-playground.appspot.com/",
-  "download_filename": "appengine-try-php.zip"
+  "read_only_demo_url": "https://8080-dot-2375214-dot-devshell.appspot.com/",
+  "download_filename": "PiReel-Core.zip"
 }
