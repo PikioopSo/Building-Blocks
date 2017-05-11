@@ -1,0 +1,8 @@
+{
+  "project_name": "core - PHP",
+  "project_description": "An animator for science and engineering.",
+  "show_files": [
+    "index-core.php",
+    "app.yaml"
+  ]
+}
