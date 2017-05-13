@@ -18,6 +18,14 @@ Our belief is that through art we can overcome obstacles and come together to le
 
 ### Resources and the Manual  
   Our manual can be downloaded on Google Docs or be viewed in the GitHub repo Wiki. We also have our video tutorials on our own station that you can view on Pi Reels media player.  
+<hr>  
+
+### Build Specs
+  This project is being developed on the Cloud 9 dev environment at www.c9.io, we're currently working on putting together docs so that you can
+  see the builds locally. 
+  
+  Sorry for the wait.
+<hr>  
 
 ### Contributing   
   Thanks for your interest in contributing to Pi Reel! There are many ways to contribute. To get started, take a look at CONTRIBUTING.md.

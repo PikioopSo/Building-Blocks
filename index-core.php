@@ -7,22 +7,31 @@
 -->
 
     <meta charset="utf-8"></meta>
+
+<!-- [sessioin data] -->
+<?php
+session_start();
+
+?>
+
     <meta name="description" content="Pi reel."></meta>
     <meta name="keywords" content="computer science, cgi, json, json markup, web, social network, open source"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
 <!-- [style data] -->
-    <?php 
-    print '<link rel="stylesheet" href="/stylesheets/main.css" type="text/css"></link>';
-    ?>
+<?php
+
+print '<link rel="stylesheet" href="stylesheets/styles.css" type="text/css"></link>';
+
+?>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <link rel="icon" type="image/png" href="img/pireel-icon.png"></link>
 
+<!-- [inline css] -->
 <style id="styles-1" type="text/css">
-/* [pi reel] */
 #header-bar{
   position: fixed; top: 0%; left: 0%; width: 100%; height: 11%; padding: 0px;
   background-color: rgba(78,78,78,1);
@@ -33,6 +42,9 @@
 #animator-canvas{
   position: fixed; top: 11%; left: 0%; width: 100%; height: 65%;
   background-color: rgba(255,255,255,1);
+}
+#hello-canvas{
+  position:absolute; left: 0%; top: 0%; width: 35%; height: 50%;
 }
 #animator-editor{
   position: fixed; top: 77%; left: 0%; width: 100%; height: 22%;
@@ -88,21 +100,28 @@
 }
 </style>
 
-    <!--<script async='true' src="js/jx.js"></script>-->
-    <script async='true' src="node_modules/x-tag/dist/jx.js"></script>
-
     <title>Pi Reel by Mozilla Club Omaha</title>
   </head>
 
   <body>
-<!-- [json-header] -->
+<!-- [j-header] -->
   <j-header id="header-bar" class="container" name="top-toolbar">
     <img id="pireel-btn" class="fit-large circle-icon" name="pireel-btn"
       src="img/pireel-icon.svg" alt="Pi Reel Menu" title="Pi Reel Menu"></img>
+
+<!-- [projects] -->
     <j-menu id="pireel-menu" class="index-tray" name="pireel-menu">
       <j-el id="add-project" class="btn" name="create-project">
         <j-text id="new_project" class="btn-label" name="new_project" title="New Project"> New Project</j-text>
       </j-el>
+
+<!-- [retrieve work] -->
+<?php
+
+
+
+?>
+
     </j-menu>
   </j-header>
 
@@ -111,14 +130,22 @@
       <svg id="hello-canvas" class="canvas" name="welcome-screen">
         <text class="sheet">
           <tspan class="paragraph dark-text"
-            x="2vw" y="1.5vw">Log in to begin animating</tspan>
+            x="2vw" y="1.5vw">Welcome to Pi Reel's</tspan>
           <tspan class="paragraph dark-text"
-            x="8vw" y="3vw">or</tspan>
+            x="2.35vw" y="3.15vw">core application.</tspan>
           <tspan class="paragraph dark-text"
-            x="3vw" y="4.5vw">use our guest account.</tspan>
+            x="2.25vw" y="7.5vw">A service inspired by open innovation.</tspan>
         </text>
       </svg>
+<!-- [] -->
+<?php
+$core = require("lib/reel-core.php");
+// $crawl = require("jcss/crawl.json")
+
+?>
+
   </json-canvas>
+
 <!-- [canvas tools] -->
   <j-menu id="canvas-tools" class="display" name="canvas-tools">
     <j-text class="menu-title">Tray</j-text>
@@ -141,16 +168,9 @@
 <!-- [console form] -->
   <json-form id="animator-editor" class="container" name="animator-editor">
     <j-menu id="editor-menu" class="menu" name="editor-menu">
-      <j-switch id="editor-hide" class="fa fa-close" name="hide-editor"></j-switch>
-      <j-switch id="font-selections" class="fa fa-font" name="font-menu"></j-switch>
-      <j-menu id="gui-selections" class="fa fa-bars fa gui-menu" name="gui-menu"></j-menu>
       <j-selector id="mode-selector" class="fa fa-cogs" name="editor-modes"></j-selector>
-      <j-menu id="editor-tools" class="fa fa-wrench" name="default45"></j-menu>
-      <j-el id="find-selections" class="fa fa-search" name="find-menu">
-        <j-el id="line-index" class="index" name="line-index">
-          <j-text id="default49" class="default49" name="default49">0 / 4 </j-text>
-        </j-el>
-      </j-el>
+      <j-menu id="editor-tools" class="fa fa-wrench" name="editor-tools"></j-menu>
+      <j-switch id="editor-hide" class="fa fa-close" name="hide-editor"></j-switch>
     </j-menu>
 
     <j-viewport id="writer-viewport" class="container" name="writer-viewport">
@@ -160,12 +180,13 @@
         <j-switch id="writer-removeLine" class="btn-small fa fa-minus-circle"></j-switch>
         <j-switch id="scroll-down" class="btn-small fa fa-chevron-down"></j-switch>
       </j-scroll>
+
       <j-viewport id="editor-viewport" class="container" name="editor-viewport">
         <json-editor id="text-editor" class="sheet" name="text-editor">
-          <e-ln class="dark-text"> <e-key>...</e-key><e-txt>Welcome to Pi Reel.</e-txt></e-ln>
-          <e-ln class="dark-text"> <e-key>...</e-key><e-txt>This console is an interface to help you create your animations.</e-txt></e-ln>
-          <e-ln class="dark-text"> <e-key>...</e-key><e-txt>Please, join our community at, www.kip.forums.org/mozillaclubs/omahaNE.</e-txt></e-ln>
-          <e-ln class="dark-text"> <e-key>...</e-key><e-txt>Thank you for visiting, Pi Reel.</e-txt></e-ln>
+          <e-ln class="dark-text"> <e-key>...</e-key><e-txt><strong class="warning-minor">:$</strong> </e-txt></e-ln>
+          <e-ln class="dark-text"> <e-key>...</e-key><e-txt><strong class="warning-minor">:$</strong> </e-txt></e-ln>
+          <e-ln class="dark-text"> <e-key>...</e-key><e-txt><strong class="warning-minor">:$</strong> </e-txt></e-ln>
+          <e-ln class="dark-text"> <e-key>...</e-key><e-txt><strong class="warning-minor">:$</strong> </e-txt></e-ln>
         </json-editor>
       </j-viewport>
     </j-viewport>
@@ -207,4 +228,8 @@
     </svg>
 
   </body>
+
+<!--<script async='true' src="js/jx.js"></script>-->
+<script type="text/javascript" src="node_modules/x-tag/dist/x-tag-core.js"></script>
+
 </html>

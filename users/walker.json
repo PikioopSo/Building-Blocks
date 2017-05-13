@@ -1,0 +1,30 @@
+{
+"walker": "admin",
+"email": false,
+"session":
+    {
+    "username": "Sapien",
+    "registered": false,
+    "preferences": false
+    },
+"package": 
+    {
+    "root": "/jcss",
+    "project_keys": ["brick","sphere","cylinder","console"],
+    "user_media_type": "php",
+    "user_media_dir": "/bin",
+    "user_media_file": "core"
+    },
+"editor": 
+    {
+    "active": false,
+    "lines": 4,
+    "sheet": ["","","",""],
+    "cursor": { "line": 0, "charPos": 0}
+    },
+"frame":
+    {
+    "player": "",
+    "timer": "00:15:00:00"
+    }
+}
