@@ -1,43 +1,47 @@
 # Pi Reel
 
-### Welcome to Pi Reel  
-![Pi Reel Logo](img/pireel.png)   
-Pi Reel is an easy to use animation tool, made for engineers, makers, and scientists of all skill levels. Pi Reel can create everything from animations, entrepreneurial videos, and animated structures and gizmos.  
+### Welcome to the Pi Reel Science and Engineering Animator (PISEA) 
+#### Pi Reel's Core applicaton serivce 
+![Pi Reel Logo](img/pireel.png)  
 
+### Why PISEA?  
+We chose PISEA because it gives people (smart people) the power to express themselves in unique ways. In the digital age, applications developed for the cloud enable people to express themselves in a safe way and a safe place. Alas, their doesn't seem to be any completely free to use cloud developed animator for the engineers and scientists to use and collaborate on.  
 
-The Pi Reel Web application is more than a web application. Pi Reel is a school of thought. Our goal is to bring together an inclusive, welcoming group of science enthusiasts and professionals to accomplish through art and science a sustainable, safe, comfortable future for all. 
+During Mozsprint 2017 we will be actively discussing the topic of, "methods of communicating VIA the web", in the hopes of starting to put together a list of different methods of communication. This information will later be used to categorize the different type of web communicators to find correlations between communicator preferences and application development. In other words what can we do to stimulate high quality open source work done on the cloud? 
 
-### Activism  
-Monopolization in industries such as the energy industry have led to conflicts like the South Dakota Pipeline Protests, rare earth metal conflicts, and more.
+### PISEA Alpha Build Features
+Please bear with us as we role out alpha features. Feature marked with an, * denote a Mozsprint issues feature.
 
-### Our Mission   
-We strive every day to bring a tolerant, compassionate, and just world to life by working in the open to collaborate on projects for science, engineering, and creating.  
-
-### Our Beliefs and Values
-Our belief is that through art we can overcome obstacles and come together to learn and share our knowledge and dreams.    
+1. Key Definition Console*  
+2. Frame Definition Console*  
+3. Environment Tray  
+4. Canvas Tray  
+5. Users Media Feed Tray*  
+6. Project Wizard Tray
 
 ### Resources and the Manual  
-  Our manual can be downloaded on Google Docs or be viewed in the GitHub repo Wiki. We also have our video tutorials on our own station that you can view on Pi Reels media player.  
-<hr>  
+Let me introduce Pi Reels engineer and core application director, Pi Toolie. Just in case you were going to ask...yes Pi Reel gets its name from,Pi Toolie. :)  
+
+<img src="img/pireel-icon.png" width="10%" height="auto"></img>  
+
+If you ever need help with the animator you can always go and see the latest open docs on Google thanks to Toolie. Or if your on one of our sites you can always just click on the Toolie image and a menu will appear to help guide you.
+
+Pi Toolies manual can be downloaded via Google Docs [here](https://docs.google.com/document/d/1JhZSIDOWfNYXMOPRvt6WDSX6lsT_1ktprTT3yyg4iDo/edit?usp=sharing).
 
 ### Build Specs
-  This project is being developed on the Cloud 9 dev environment at www.c9.io, we're currently working on putting together docs so that you can
-  see the builds locally. 
-  
-  Sorry for the wait.
-<hr>  
+  Our build specs can be found on [here](https://github.com/PiReel/PiReel-Website/wiki/Guide:-Pi-Reel-Open-Blog).  
 
 ### Contributing   
-  Thanks for your interest in contributing to Pi Reel! There are many ways to contribute. To get started, take a look at CONTRIBUTING.md.
+  Thanks for your interest in contributing to Pi Reel! There are many ways to contribute. To get started, take a look at [here](CONTRIBUTING.md).
 
 ### Participation Guidelines  
   This projects code of conduct can be found at the following link, 
   [Mozilla Community Participation Guidelines](https://www.mozilla.org/en-US/about/governance/policies/participation/). 
   
-  Some resources to help you become the best participator you can be:  
+  Some resources to help:  
   1. [Open Canvas](https://mozilla.github.io/open-leadership-training-series/articles/opening-your-project/develop-an-open-project-strategy-with-open-canvas/#introducing-open-canvas)  
   2. [Mark Down](https://guides.github.com/features/mastering-markdown/): Learn the "md" file extension syntax. 
   
-  Please report unacceptable behavior to kipomaha@gmail.com.  
+  Please report unacceptable behavior to mozillaomaha@gmail.com or pireelanimation@gmail.com  
 
 
