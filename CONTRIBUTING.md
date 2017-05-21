@@ -1,56 +1,59 @@
 # Contributing to Pi Reel
 
-Add a bit of welcome and cheer at the top
->Thank you for your interest in contributing to [Project] :tada:! 
+Thank you for your interest in contributing to Pi Reel! 
 
-Restart your project vision here. Redundancy is your friend
->[Project] is ...
+We strive every day to bring a tolerant, compassionate, and just world to life by working in the open to 
+collaborate on projects for science, engineering, and creating.
 
-Add some info on *why* people should read your contributor guidelines and *what* they are.
+This documents is a set of guidelines for contributing to Pi Reel. These are guidelines, not rules. 
+This guide is meant to make it easy for you to get involved.  
 
->This documents is a set of guidelines for contributing to [Project] on GitHub. These are guidelines, not rules. This guide is meant to make it easy for you to get involved.
+## Contribute Website  
 
-If your guide is long, consider adding a table of contents.
+[Pi Reel: Contribute](https://pireel.github.io/PiReel-Contributing/), is the contributors website. Home to important information
+regarding our roadmap, issues, and more. 
 
-* [Participation guidelines](#participation-guidelines)
-* [What we're working on](#what-were-working-on)
-* [How to submit changes](#how-to-submit-changes)
-* [How to report bugs](#how-to-report-bugs)
-* [Communication channels](#communication-channels)
+Currently we are looking for people to contribute guides for setting up local builds for beginners who are interested in learning to code and contributing. Please see our contributing website at, [road map](https://github.com/PiReel/PiReel-Website/milestone/6) to learn more about contributing guides and other things.
 
 ## Participation guidelines
 
-This project adheres to a [code of conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [EMAIL].
+This projects code of conduct can be found at the following link, 
+[Mozilla Community Participation Guidelines](https://www.mozilla.org/en-US/about/governance/policies/participation/). 
+By participating, you are expected to uphold this code. Please report unacceptable behavior 
+to pireelanimation@gmail.com, kipomaha@gmail.com, or mozillaomaha@gmail.com. 
 
-## What we're working on
+## What you'll NEED!
 
-This is a good place to link your Roadmap, GitHub Milestones, or Projects so newcomers can see what you're working on.
+We try to make it simple to contribute, but there are a few things that you'll need.
+  1. [Github](https://github.com) account: Required  
+  2. [Cloud 9](https://c9.io/pireel) account: Optional   
+  3. [Gitter](https://gitter.im/PiReel/Lobby) account: Optional  
 
-> Take a look at the issues in our [current milestone](https://github.com/acabunoc/mozfest-repo-template/milestone/1) or browse some [good first bugs](https://github.com/acabunoc/mozfest-repo-template/labels/good%20first%20bug) to get started!
+The only two accounts that are required are the Pi Reel and Github accounts. Technically, if you want to contribute you can just send us an e-mail with any thoughts or ideas, too. Even so we encourage you to join and make friends, network, and learn with us.
 
-Take a look at this [Roadmapping exercise](http://mozillascience.github.io/working-open-workshop/roadmapping/) to start making your own milestones and issues. This will help newcomers (& MozFest attendees!) know where they can help.
+## Yearly
+
+Take a look at the milestones in our [current milestones tracker](https://github.com/PiReel/PiReel-Website/milestones)
 
 ## How to submit changes
 
-Explain how you want contributors to propose changes. For an example GitHub workflow, see Node.js's [instructions for code contributions](https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-contributions).
+  1. **[Fork](https://help.github.com/articles/fork-a-repo/)** : Article regarding GitHub forking.
+  2. **[Making your changes](https://guides.github.com/activities/forking/#making-changes)** : Article regarding making changes to a fork.
+  3. **[Submit pull request](https://help.github.com/articles/proposing-changes-to-a-project-with-pull-requests/)** : Article regarding pulls and merges.
 
-> Once you've identified one of the issues above that you feel you can contribute to, you're ready to make a change to the project repository!
- 
-> 1. **[Fork](https://help.github.com/articles/fork-a-repo/) this repository**. This makes your own version of this project you can edit and use.
-> 2. **[Make your changes](https://guides.github.com/activities/forking/#making-changes)**! You can do this in the GitHub interface on your own local machine. Once you're happy with your changes...
-> 3. **Submit a [pull request](https://help.github.com/articles/proposing-changes-to-a-project-with-pull-requests/)**. This opens a discussion around your project and lets the project lead know you are proposing changes.
+First time contributing to open source? 
+Check out this *free* series, [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github).
 
-> First time contributing to open source? Check out this *free* series, [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github).
+## Bug Reporting
 
-## How to report bugs
-
-Ask your contributors to stay on the lookout for can any potential issue that might cause problems for the project. These could be problems in code (if you’re creating software), content omissions or copy errors (if you’re creating a learning resource), or any issues with the functionality or design of your project. 
-
-Most projects invite all contributors to report bugs, so "debugging" or fixing problems happens quickly and with the input of the community. Take a look at [Atom's example](https://github.com/atom/atom/blob/master/CONTRIBUTING.md#reporting-bugs) for how to teach people to report bugs to your project.
-
-> Notice a mistake? Please file any bugs, requests, or questions in our issue tracker [LINK TO ISSUE TRACKER]!
+Notice a mistake? Please file any bugs, requests, or questions in our issue tracker 
+[here](https://github.com/PiReel/PiReel-Contributing/issues)!
 
 ## Communication channels
 
-Do you have a chat room or email list you use to discuss this project? List them all here! Provide clear contact info, and outline the process for getting in touch, for anyone with questions.
+[Gitter](https://gitter.im/PiReel/Lobby): Introduce yourself to the community and talk shop.  
 
+E-mail:  
+  pireelanimation@gmail.com  
+  mozillaomaha@gmail.com  
+  kipomaha@gmail.com  
