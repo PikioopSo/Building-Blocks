@@ -39,7 +39,7 @@ Take a look at the milestones in our [current milestones tracker](https://github
 
   1. **[Fork](https://help.github.com/articles/fork-a-repo/)** : Article regarding GitHub forking.
   2. **[Making your changes](https://guides.github.com/activities/forking/#making-changes)** : Article regarding making changes to a fork.
-  3. **[Submit pull request](https://help.github.com/articles/proposing-changes-to-a-project-with-pull-requests/)** : Article regarding pulls and merges.
+  3. **[Submit pull request](https://help.github.com/articles/proposing-changes-to-your-work-with-pull-requests/)** : Article regarding pulls and merges.
 
 First time contributing to open source? 
 Check out this *free* series, [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github).
