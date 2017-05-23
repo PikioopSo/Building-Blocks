@@ -1,3 +1,42 @@
+<!-- [Session] -->
+<?php 
+ini_set('session.gc_maxlifetime',60);
+ini_set('session.gc_probability',100);
+session_start();
+
+$_date = new DateTime();
+// Check to see if user is posted to this page.
+    if($_POST["user_name"]){
+        if($_POST["user_name"] != "Pi Alpha"){
+            print "User name must Pi Alpha";
+        }
+        else{
+            $_SESSION["username"] = $_POST["user_name"];
+            $_SESSION["isLogged"] = "true";
+        }
+    }
+// Check to see if user is logg on.
+    if($_SESSION["isLogged"] == "true"){
+        $_SESSION["date"] = $_date->format('m/d/Y');
+    }
+    else{
+        $_SESSION["username"] = "New Visitor";
+        $_SESSION["date"] = $_date->format('m/d/Y');
+        $_SESSION["isLogged"] = "false";
+        $_SESSION["count"] = 0;
+    }
+// Check session count.
+    if($_SESSION["count"] < 1){
+        $_SESSION["load"] = "true";
+        $_SESSION["count"] = $_SESSION["count"]+1;
+        $_SESSION["reload"] = "false";
+        }
+    else if($_SESSION["count"] > 1){
+        $_SESSION["reload"] = "true";
+        $_SESSION["count"] = $_SESSION["count"]+1;
+    }
+?>
+
 <!doctype html>
 <html>
   <head>
@@ -7,15 +46,8 @@
 -->
 
     <meta charset="utf-8"></meta>
-
-<!-- [sessioin data] -->
-<?php
-session_start();
-
-?>
-
     <meta name="description" content="Pi reel."></meta>
-    <meta name="keywords" content="computer science, cgi, json, json markup, web, social network, open source"></meta>
+    <meta name="keywords" content="animation, cgi, engineering, science, vr"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
 <!-- [style data] -->
@@ -27,11 +59,10 @@ print '<link rel="stylesheet" href="stylesheets/styles.css" type="text/css"></li
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
     <link rel="icon" type="image/png" href="img/pireel-icon.png"></link>
 
-<!-- [inline css] -->
-<style id="styles-1" type="text/css">
+<!-- [css] -->
+<style type="text/css">
 #header-bar{
   position: fixed; top: 0%; left: 0%; width: 100%; height: 11%; padding: 0px;
   background-color: rgba(78,78,78,1);
@@ -100,6 +131,7 @@ print '<link rel="stylesheet" href="stylesheets/styles.css" type="text/css"></li
 }
 </style>
 
+    <script type="text/javascript" src="node_modules/x-tag/dist/x-tag-core.js"></script>
     <title>Pi Reel by Mozilla Club Omaha</title>
   </head>
 
@@ -137,13 +169,6 @@ print '<link rel="stylesheet" href="stylesheets/styles.css" type="text/css"></li
             x="2.25vw" y="7.5vw">A service inspired by open innovation.</tspan>
         </text>
       </svg>
-<!-- [] -->
-<?php
-$core = require("lib/reel-core.php");
-// $crawl = require("jcss/crawl.json")
-
-?>
-
   </json-canvas>
 
 <!-- [canvas tools] -->
@@ -156,12 +181,6 @@ $core = require("lib/reel-core.php");
     <section id="mediaplayer-label" class="aside" name="default76">
       <button id="default78" class="fa fa-user-circle-o" name="default78"></button>
     </section>
-
-<!-- [user data] -->
-    <?php 
-    print "<strong>Welcome guest user: </strong>";
-    ?>
-
     <j-line id="media_feed" class="paragraph" name="media_feed">Media Feed</j-line>
   </j-menu>
 
@@ -209,11 +228,6 @@ $core = require("lib/reel-core.php");
     </j-viewport>
   </json-form>
 
-<!-- [json-style] -->
-    <json-style id="animator-player-styles" class="memory">
-      <json-css id="player-reel-jcss" class="memory"></json-css>
-    </json-style>
-
 <!-- [SVG preload nodes]  -->
     <svg id="svgPreloadNode" class="memory" style="">
       <def></def>
@@ -228,8 +242,4 @@ $core = require("lib/reel-core.php");
     </svg>
 
   </body>
-
-<!--<script async='true' src="js/jx.js"></script>-->
-<script type="text/javascript" src="node_modules/x-tag/dist/x-tag-core.js"></script>
-
 </html>
