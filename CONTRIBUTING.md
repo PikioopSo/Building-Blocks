@@ -25,11 +25,11 @@ to pireelanimation@gmail.com, kipomaha@gmail.com, or mozillaomaha@gmail.com.
 ## What you'll NEED!
 
 We try to make it simple to contribute, but there are a few things that you'll need.
-  1. [Github](https://github.com) account: Required  
-  2. [Cloud 9](https://c9.io/pireel) account: Optional   
-  3. [Gitter](https://gitter.im/PiReel/Lobby) account: Optional  
+  1. [Github](https://github.com) account  
+  2. [Cloud 9](https://c9.io/pireel) account   
+  3. [Gitter](https://gitter.im/PiReel/Lobby) account  
 
-The only two accounts that are required are the Pi Reel and Github accounts. Technically, if you want to contribute you can just send us an e-mail with any thoughts or ideas, too. Even so we encourage you to join and make friends, network, and learn with us.
+Your not required to have any of these accounts. If you want to contribute you can just send us an e-mail with any thoughts or ideas, too. Even so we encourage you to join and make friends, network, and learn with us.
 
 ## Yearly
 
@@ -39,7 +39,7 @@ Take a look at the milestones in our [current milestones tracker](https://github
 
   1. **[Fork](https://help.github.com/articles/fork-a-repo/)** : Article regarding GitHub forking.
   2. **[Making your changes](https://guides.github.com/activities/forking/#making-changes)** : Article regarding making changes to a fork.
-  3. **[Submit pull request](https://help.github.com/articles/proposing-changes-to-your-work-with-pull-requests/)** : Article regarding pulls and merges.
+  3. **[Submit pull request](https://help.github.com/articles/proposing-changes-to-a-project-with-pull-requests/)** : Article regarding pulls and merges.
 
 First time contributing to open source? 
 Check out this *free* series, [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github).
