@@ -32,7 +32,13 @@ Pi Toolies manual can be downloaded via Google Docs [here](https://docs.google.c
   Our build specs can be found in our Wiki [here](https://github.com/PiReel/PiReel-Core/wiki/Guide:-Local-Builds-of-P.I.S.E.A.).  
 
 ### Contributing   
-  Thanks for your interest in contributing to PISEA! There are many ways to contribute. To get started, take a look at the [contributing.md](CONTRIBUTING.md) doc.
+  Thanks for your interest in contributing to PISEA! There are many ways to contribute. To get started, take a look at the [contributing.md](CONTRIBUTING.md) doc.   
+
+If you would like to be able to hack on it whenever you want fork the repo and clone it to your desktop and run it on a local build of apache/php. If that isn't your preference you can put an issue [here](https://github.com/PiReel/PiReel-Website/milestone) with your name and email and we will send you an invite to give permission to work on the c9.io dev server.
+
+#### Note: Click the link below for a preview of PISEA    
+If you are getting a message like, "Application not running here", come back later and try again.  
+Pi Reel Science and Engineering Animator [(PiReel-Core)](https://pireel-animator-pireel.c9users.io/index-core.php)
 
   Some resources to help:   
   1. [Mark Down](https://guides.github.com/features/mastering-markdown/): Learn the "md" file extension syntax. 
