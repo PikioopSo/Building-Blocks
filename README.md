@@ -32,7 +32,7 @@ Pi Toolies manual can be downloaded via Google Docs [here](https://docs.google.c
   Our build specs can be found on [here](https://github.com/PiReel/PiReel-Website/wiki/Guide:-Pi-Reel-Open-Blog).  
 
 ### Contributing   
-  Thanks for your interest in contributing to Pi Reel! There are many ways to contribute. To get started, take a look at [here](CONTRIBUTING.md).
+  Thanks for your interest in contributing to Pi Reel! There are many ways to contribute. To get started, take a look at the [contributing.md](CONTRIBUTING.md) doc.
 
 ### Participation Guidelines  
   This projects code of conduct can be found at the following link, 
