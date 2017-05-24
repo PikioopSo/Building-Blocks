@@ -29,18 +29,19 @@ If you ever need help with the animator you can always go and see the latest ope
 Pi Toolies manual can be downloaded via Google Docs [here](https://docs.google.com/document/d/1JhZSIDOWfNYXMOPRvt6WDSX6lsT_1ktprTT3yyg4iDo/edit?usp=sharing).
 
 ### Build Specs
-  Our build specs can be found on [here](https://github.com/PiReel/PiReel-Website/wiki/Guide:-Pi-Reel-Open-Blog).  
+  Our build specs can be found in our Wiki [here](https://github.com/PiReel/PiReel-Core/wiki/Guide:-Local-Builds-of-P.I.S.E.A.).  
 
 ### Contributing   
-  Thanks for your interest in contributing to Pi Reel! There are many ways to contribute. To get started, take a look at the [contributing.md](CONTRIBUTING.md) doc.
+  Thanks for your interest in contributing to PISEA! There are many ways to contribute. To get started, take a look at the [contributing.md](CONTRIBUTING.md) doc.
+
+  Some resources to help:   
+  1. [Mark Down](https://guides.github.com/features/mastering-markdown/): Learn the "md" file extension syntax. 
+  2. More coming soon.  
 
 ### Participation Guidelines  
   This projects code of conduct can be found at the following link, 
   [Mozilla Community Participation Guidelines](https://www.mozilla.org/en-US/about/governance/policies/participation/). 
   
-  Some resources to help:  
-  1. [Open Canvas](https://mozilla.github.io/open-leadership-training-series/articles/opening-your-project/develop-an-open-project-strategy-with-open-canvas/#introducing-open-canvas)  
-  2. [Mark Down](https://guides.github.com/features/mastering-markdown/): Learn the "md" file extension syntax. 
   
   Please report unacceptable behavior to mozillaomaha@gmail.com or pireelanimation@gmail.com  
 
