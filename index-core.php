@@ -15,6 +15,13 @@ $_date = new DateTime();
             $_SESSION["isLogged"] = "true";
         }
     }
+
+// Check to see if user is logged in.
+    if($_POST["isLogged"]){
+      $_SESSION["username"] = "New Visitor";
+      $_SESSION["isLogged"] = "false";
+    }
+
 // Check to see if user is logg on.
     if($_SESSION["isLogged"] == "true"){
         $_SESSION["date"] = $_date->format('m/d/Y');
@@ -25,6 +32,7 @@ $_date = new DateTime();
         $_SESSION["isLogged"] = "false";
         $_SESSION["count"] = 0;
     }
+
 // Check session count.
     if($_SESSION["count"] < 1){
         $_SESSION["load"] = "true";
@@ -50,40 +58,62 @@ $_date = new DateTime();
     <meta name="keywords" content="animation, cgi, engineering, science, vr"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
-<!-- [style data] -->
-<?php
-
-print '<link rel="stylesheet" href="stylesheets/styles.css" type="text/css"></link>';
-
-?>
-
+    <link rel="stylesheet" href="css/styles.css" type="text/css"></link>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
+
     <link rel="icon" type="image/png" href="img/pireel-icon.png"></link>
 
 <!-- [css] -->
 <style type="text/css">
-#header-bar{
-  position: fixed; top: 0%; left: 0%; width: 100%; height: 11%; padding: 0px;
-  background-color: rgba(78,78,78,1);
+body > j-header:first-child{
+  height: 125px;
+  background: rgba(68,68,68,1);
 }
-#pireel-menu{
-    margin-left: 2vw;
+j-header > img:first-child{
+  height: 100%;
+  float: left;
 }
-#animator-canvas{
-  position: fixed; top: 11%; left: 0%; width: 100%; height: 65%;
-  background-color: rgba(255,255,255,1);
+j-header > img + j-menu:first-of-type{
+  float: left;
 }
-#hello-canvas{
-  position:absolute; left: 0%; top: 0%; width: 35%; height: 50%;
+body > j-header + json-canvas:first-of-type{
+  position: fixed;
+  top: 125px;
+  left: 0%; 
+  width: 90%; 
+  height: 65%;
+  background-color: lightgrey;
 }
+j-header.tray{
+  overflow: hidden;
+}
+
+j-menu.right-wall{
+  top: 125px;
+  height: calc(100% - 335px);
+}
+
+.display{
+  background-color: rgba(150,150,150,1);
+}
+
+
+#canvas-tools{
+  position: fixed; 
+  top: 125px; 
+  left: 79.5%; 
+  width: 10%; 
+  height: 9vw;
+  border-radius: 0% 0% 0% 100%;
+}
+
+
+
 #animator-editor{
   position: fixed; top: 77%; left: 0%; width: 100%; height: 22%;
   background-color: rgba(78,78,78,1);
-}
-#canvas-tools{
-  position: fixed; top: 11%; left: 79.5%; width: 10%; height: 9vw;
-  background: rgb(165,165,178); border-radius: 0% 0% 0% 100%; border: rgb(78,78,78) 2px outset;
 }
 #writer-viewport{
   position: absolute; top: 20%; left: 0%; width: 45.5%; height: 80%;
@@ -120,55 +150,42 @@ print '<link rel="stylesheet" href="stylesheets/styles.css" type="text/css"></li
 }
 
 /* [media] */
-@media screen and (min-width: 800px){
-  .fit-large{
-    height: 90%; padding-left: .5vw; padding-right: .25vw;
-  }
-  .square-large{
-    height: 78%;
-  }
-  
+@media screen and (max-width: 1760px){
+
+}
+@media screen and (max-width: 1960px){
+
+}
+@media screen and (max-width: 2160px){
+
+}
+
+@media screen and (min-width: 2160px){
+
 }
 </style>
 
     <script type="text/javascript" src="node_modules/x-tag/dist/x-tag-core.js"></script>
-    <title>Pi Reel by Mozilla Club Omaha</title>
+    <title>Pi Reel by Mozilla Omaha Club</title>
   </head>
 
   <body>
 <!-- [j-header] -->
-  <j-header id="header-bar" class="container" name="top-toolbar">
-    <img id="pireel-btn" class="fit-large circle-icon" name="pireel-btn"
-      src="img/pireel-icon.svg" alt="Pi Reel Menu" title="Pi Reel Menu"></img>
+  <j-header id="header-bar" class="tray" name="top-toolbar">
+    <img id="pireel-btn" class="logo inline-block" name="pireel-btn"
+      src="img/pireel-icon.png" alt="Pi Reel Menu" title="Pi Reel Menu"></img>
 
 <!-- [projects] -->
     <j-menu id="pireel-menu" class="index-tray" name="pireel-menu">
       <j-el id="add-project" class="btn" name="create-project">
         <j-text id="new_project" class="btn-label" name="new_project" title="New Project"> New Project</j-text>
       </j-el>
-
-<!-- [retrieve work] -->
-<?php
-
-
-
-?>
-
     </j-menu>
   </j-header>
 
 <!-- [json-canvas] -->
   <json-canvas id="animator-canvas" class="container" name="animator-viewer">
-      <svg id="hello-canvas" class="canvas" name="welcome-screen">
-        <text class="sheet">
-          <tspan class="paragraph dark-text"
-            x="2vw" y="1.5vw">Welcome to Pi Reel's</tspan>
-          <tspan class="paragraph dark-text"
-            x="2.35vw" y="3.15vw">core application.</tspan>
-          <tspan class="paragraph dark-text"
-            x="2.25vw" y="7.5vw">A service inspired by open innovation.</tspan>
-        </text>
-      </svg>
+
   </json-canvas>
 
 <!-- [canvas tools] -->
@@ -193,7 +210,7 @@ print '<link rel="stylesheet" href="stylesheets/styles.css" type="text/css"></li
     </j-menu>
 
     <j-viewport id="writer-viewport" class="container" name="writer-viewport">
-      <j-scroll id="text-scrollbar" class="block lite-text" name="text-scrollbar">
+      <j-scroll id="text-scrollbar" class="block dark-text" name="text-scrollbar">
         <j-switch id="scroll-up" class="btn-small fa fa-chevron-up"></j-switch>
         <j-switch id="writer-addLine" class="btn-small fa fa-plus-square"></j-switch>
         <j-switch id="writer-removeLine" class="btn-small fa fa-minus-circle"></j-switch>
@@ -202,10 +219,10 @@ print '<link rel="stylesheet" href="stylesheets/styles.css" type="text/css"></li
 
       <j-viewport id="editor-viewport" class="container" name="editor-viewport">
         <json-editor id="text-editor" class="sheet" name="text-editor">
-          <e-ln class="dark-text"> <e-key>...</e-key><e-txt><strong class="warning-minor">:$</strong> </e-txt></e-ln>
-          <e-ln class="dark-text"> <e-key>...</e-key><e-txt><strong class="warning-minor">:$</strong> </e-txt></e-ln>
-          <e-ln class="dark-text"> <e-key>...</e-key><e-txt><strong class="warning-minor">:$</strong> </e-txt></e-ln>
-          <e-ln class="dark-text"> <e-key>...</e-key><e-txt><strong class="warning-minor">:$</strong> </e-txt></e-ln>
+          <e-ln class="dark-text"> <e-key>...</e-key><e-txt contenteditable="true"></e-txt></e-ln>
+          <e-ln class="dark-text"> <e-key>...</e-key><e-txt contenteditable="true"></e-txt></e-ln>
+          <e-ln class="dark-text"> <e-key>...</e-key><e-txt contenteditable="true"></e-txt></e-ln>
+          <e-ln class="dark-text"> <e-key>...</e-key><e-txt contenteditable="true"></e-txt></e-ln>
         </json-editor>
       </j-viewport>
     </j-viewport>
@@ -228,6 +245,16 @@ print '<link rel="stylesheet" href="stylesheets/styles.css" type="text/css"></li
     </j-viewport>
   </json-form>
 
+<!-- [php -->
+<?php
+  if($_SESSION["isLogged"] == "false"){
+    include "includes/html/user-form-vx1.html";  
+  }
+  else{
+    include "includes/html/user-logout-vx1.html";
+  }
+?>
+
 <!-- [SVG preload nodes]  -->
     <svg id="svgPreloadNode" class="memory" style="">
       <def></def>
@@ -240,6 +267,5 @@ print '<link rel="stylesheet" href="stylesheets/styles.css" type="text/css"></li
       <polygon></polygon>
       <image></image>
     </svg>
-
   </body>
 </html>
