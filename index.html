@@ -13,17 +13,19 @@
 
     <link rel="stylesheet" href="css/styles.css" type="text/css"></link>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
 
     <link rel="icon" type="image/png" href="img/pireel-icon.png"></link>
 
 <!-- [css] -->
 <style id="styles-1" type="text/css">
 j-header{
-  height: 175px;
+  height: 200px;
 }
 j-header.tray, j-menu.tray{
   overflow: hidden;
   float: left;
+  background: rgba(77,77,77,.75);
 }
 j-menu.tray{
   background-color: white;
@@ -32,6 +34,7 @@ j-menu.tray{
   border-width: 0px;
   padding-left: 7.5px;
   border-right: black solid 2px;
+  background-color: rgba(255,255,255,.75);
 }
 j-header > j-menu.tray > j-ico{
   position: relative;
@@ -45,7 +48,7 @@ j-tray.tray-drawer{
   left: 28%;
   height: 100%;
   width: 69%;
-  background: orange;
+  background: rgba(255,177,17,.75);
 }
 j-header > img.logo{
   height: 100%;
@@ -57,46 +60,117 @@ j-header > img.logo{
 
 json-canvas.display{
   position: absolute;
-  top: 175px;
+  width: 100%;
+  height: 500px;
+  top: 200px;
+  z-index: -10;
+}
+
+div.ico-btn > p,div.ico-btn > h1,div.ico-btn > h3,div.ico-btn > a{
+  background-color: rgba(255,255,255,.75);
+  font-weight: bold;
+}
+h1.with-subtitle{
+  margin-left: 25px;
+  margin-bottom: 2px;
+  padding-bottom: 0px;
+  text-align: left;
+}
+h1.with-subtitle + strong.for-title{
+  margin-left: 30px;
+  display: block;
+  margin-bottom: 25px;
+  text-align: left;
 }
 
 </style>
-
     <title>Pi Reel by Mozilla Club Omaha</title>
   </head>
 
   <body>
 <!-- [j-header] -->
-  <j-header id="header-bar" class="tray" name="top-toolbar">
-    <img id="pireel-btn" class="logo inline-block" name="pireel-btn"
-      src="img/logos/pireel-05.png" alt="Pi Reel Menu" title="Pi Reel Menu"></img>
+    <j-header id="header-bar" class="tray" name="top-toolbar">
+      <img id="pireel-btn" class="logo inline-block" name="pireel-btn"
+        src="img/logos/pireel-05.png" alt="Pi Reel Menu" title="Pi Reel Menu"></img>
 
 <!-- [j-menu] -->
-    <j-menu id="pireel-menu" class="tray inline-block" name="pireel-menu">
-      <j-ico class="ico-btn pireel-5"></j-ico>
-      <j-el>:// Pi Reel Site</j-el>
-      <j-ico class="ico-btn google-drive"></j-ico>
-      <j-el>:// Pi Reel Docs</j-el>
-      <j-ico class="ico-btn fire_rollie-5"></j-ico>
-      <j-el>:// Pi Reel Goodies</j-el>
-      <j-tray class="tray-drawer">
-        
-      </j-tray>
-    </j-menu>
-  </j-header>
+      <j-menu id="pireel-menu" class="tray inline-block" name="pireel-menu" style="font-family: arial">
+        <j-ico class="ico-btn pireel-5" data-selected="true"></j-ico>
+        <j-el >://Pi Reel Site</j-el>
+        <j-ico class="ico-btn google-drive" data-selected="false"></j-ico>
+        <j-el>://Pi Reel Docs</j-el>
+        <j-ico class="ico-btn fire_rollie-5" data-selected="false"></j-ico>
+        <j-el>://Pi Reel Goods</j-el>
+        <j-tray class="tray-drawer">
+          
+        </j-tray>
+      </j-menu>
+  
+      <aside class="bg-white" style="position: absolute; display: inline-block; left: 38%; top: 0%; width: 55%; height: 100%; overflow-Y: scroll;">
+        <strong class="paragraph">Git Page site construction, NOTICE BELOW:</strong>
+        <p class="box-note bg-white" style="text-decoration: none;">
+          Live previews are available through out the week. If you would like to see previews, "on demand" place a comment in our
+          GitHub issues <a href="">here</a>.
+        </p>
+        <strong>
+          Note: A "No application running here" response indicates nobody is running the server.<br><br>
+          To see the preview click the icon <strong>@--></strong> <a href="https://pireel-animator-pireel.c9users.io/index-core.php" class="ico-cir pireel-core" style="padding: 15px;"></a>
+        </strong>
+      </aside>
+    </j-header>
 
 <!-- [json-canvas] -->
-  <json-canvas class="display" name="animator-viewer">
-    <h1>Welcome to Pi Reel's Core application Page!</h1>
-    <h2>Pi Reel Science and Engineering Animator</h2>
-    <h3>PISEA</h3>
-  </json-canvas>
+    <json-canvas class="display" name="animator-viewer">
+      <h1 class="with-subtitle">Welcome to Pi Reel's Core application Page!</h1>
+      <strong class="for-title">Pi Reel Science and Engineering Animator (PISEA)</strong>
 
-<!-- [j-footer] -->
-  <j-footer>
-    
-  </j-footer>
+      <h3>Currently Happening:</h3>
 
+      <div class="ico-btn gbl-sprint" style="margin-right: 10%; margin-left: 10%; width: 80%; height: auto;">
+        <h1>Mozilla Global Sprint 2017</h1>
+        <p>
+          This two day event consisting of dozens of projects for you to explore and 
+          learn about. If you would like to participate or contribute to the community of 
+          open collaborators you can find a project you like by browsing them on the Global 
+          Sprint site. Below are a couple of navigation links to useful information.
+        </p>
+        <a href="https://mozilla.github.io/global-sprint/">Mozilla Global Sprint 2017: Landing page</a><br>
+        <a href="https://mozilla.github.io/global-sprint/projects">Mozilla Global Sprint 2017: Projects page</a>
+      </div>
+
+      <j-foot style="font-size: 1.0125vw;">
+          <h3 style="font-size: 1.25vw;">Communication Channels</h3>
+          <j-el class="block">
+              <a class="h5" href="https://pireel.github.io/PiReel-Website/">Site</a>
+              <strong class="ico-fa pireel-5"></strong>
+              <j-el class="inline-block"> : Home of the Pi Reel Project.</j-el>
+          </j-el>
+          <j-el class="block">
+              <a class="h5" href="construction.html">Facebook</a> 
+              <strong class="fa fa-facebook-official ico-fa"></strong> 
+              <j-el class="inline-block"> : Chat and connect online with Facebook</j-el>
+          </j-el>
+          <j-el class="block">
+              <a class="h5" href="https://gitter.im/PiReel/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link">Gitter:</a> 
+              <strong class="gitter ico-fa" style="width: 1.0125vw; height: 1.0125vw;"></strong>
+              <j-el class="inline-block">Chat and connect online with Gitter</j-el>
+          </j-el>
+          <j-el class="block">
+              <a class="h5" href="">Github </a> 
+              <strong class="fa ico-fa fa-github"></strong> 
+              <j-el class="inline-block"> : Keep in touch with our project files</j-el>
+          </j-el>
+          <j-el class="block">
+              <a href="https://www.c9.io" class="h5">Cloud Nine</a> 
+              <strong class="c9 ico-fa"></strong> 
+              <j-el class="inline-block"> : "Code online with Pi Reel Coders"</j-el>
+          </j-el>
+          <j-el>
+              <a href="https://github.com/PiReel/PiReel-Core/blob/master/LICENSE.md">Copyright, MIT License</a>
+          </j-el>
+      </j-foot>
+
+    </json-canvas>
   </body>
 
 <!--<script async='true' src="js/jx.js"></script>-->
