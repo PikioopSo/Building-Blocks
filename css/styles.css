@@ -211,7 +211,7 @@ j-ico{
   box-sizing: border-box;
   background-repeat: no-repeat;
 }
-j-menu > j-ico[data-selected = "true"]{
+j-menu > j-ico[data-active = "true"]{
   background-color: rgba(175,200,255,1);
   border: solid orange 1px;
 }
@@ -220,7 +220,7 @@ j-ico:hover{
   border: solid orange 1px;
 }
 
-/* j-class */
+/* j-curtain */
 j-curtain{
   position: absolute;
   left: 0px;

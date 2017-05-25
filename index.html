@@ -95,21 +95,36 @@ j-menu > j-tray > j-el.box-fill{
   </head>
 
   <body>
-<!-- [j-header] -->
+    <!-- [j-header] -->
     <j-header id="header-bar" class="tray" name="top-toolbar">
       <img id="pireel-btn" class="logo inline-block" name="pireel-btn"
         src="img/logos/pireel-05.png" alt="Pi Reel Menu" title="Pi Reel Menu"></img>
 
-<!-- [j-menu] -->
-      <j-menu id="pireel-menu" class="tray inline-block" name="pireel-menu" style="font-family: arial">
-        <j-ico class="ico-btn pireel-5" data-selected="true"></j-ico>
-        <j-el >://Pi Reel Site</j-el>
-        <j-ico class="ico-btn google-drive" data-selected="false"></j-ico>
+      <!-- [j-menu] 
+        data-selected ( is a class string ) 
+        data-hidden ( is a class string )
+        data-tray ( is a DOM traversal string )
+      -->
+      <j-menu id="pireel-menu" class="tray inline-block" name="pireel-menu" style="font-family: arial"
+        data-selected="box-fill" data-hidden="memory" data-tray=".tray-drawer[0]">
+
+        <!-- [j-ico]
+          data-active ( t/f )
+          data-item ( is a DOM traversal string )
+        -->
+        <j-ico id="site_menu-ico" class="ico-btn pireel-5" data-active="true" data-item="#pireel_core-nav"></j-ico>
+        <j-el>://Pi Reel Site</j-el>
+        <j-ico id="docs_menu-ico" class="ico-btn google-drive" data-active="false" data-item="#pireel_docs-nav"></j-ico>
         <j-el>://Pi Reel Docs</j-el>
-        <j-ico class="ico-btn fire_rollie-5" data-selected="false"></j-ico>
+        <j-ico id="goods_menu-ico" class="ico-btn fire_rollie-5" data-active="false" data-item="#pireel_shop-nav"></j-ico>
         <j-el>://Pi Reel Goods</j-el>
-        <j-tray class="tray-drawer">
-          <j-el class="box-fill">
+
+        <!-- [j-tray] 
+        data-href ( url format string ) *Building
+        -->
+        <j-tray id="head_nav-tray" class="tray-drawer"
+          data-href="includes/json/nav.json">
+          <j-el id="pireel_core-nav" class="box-fill">
             <strong class="block margin_lft-slight">Pi Reel Site Tray</strong>
             <a href="https://github.com/PiReel/PiReel-Core/wiki" class="block margin_lft-small">P.I.S.E.A. Wiki</a>
             <a href="https://github.com/PiReel/PiReel-Core/issues" class="block margin_lft-small">P.I.S.E.A. Issues</a>
@@ -117,13 +132,13 @@ j-menu > j-tray > j-el.box-fill{
             <a href="https://pireel-website-pireel.c9users.io" class="block margin_lft-small">Git Page Home</a>
             <a href="https://pireel-contributing-pireel.c9users.io/" class="block margin_lft-small">Git Page Contributing</a>
           </j-el>
-          <j-el>
-            <strong class="block margin_lft-slight">Pi Reel Doc Tray</strong>
-            <a class="block margin_lft-small">Pi Reel Manual</a>
+          <j-el id="pireel_docs-nav" class="memory">
+            <strong class="block margin_lft-slight">Pi Reel Open Doc Sheet</strong>
+            <a href="https://docs.google.com/document/d/1IXYz0166pxBCjBtmVfwFxCR0ILVOcHd7nXb9a11Fsw0/edit?usp=sharing" class="block margin_lft-small">Pi Reel Manual</a>
           </j-el>
-          <j-el>
+          <j-el id="pireel_shop-nav" class="memory">
             <strong class="block margin_lft-slight">Pi Reel Goods Tray</strong>
-            <a class="block margin_lft-small">Pi Toolie Box</a>
+            <a class="block margin_lft-small">Not available currently</a>
           </j-el>
         </j-tray>
       </j-menu>
@@ -142,13 +157,13 @@ j-menu > j-tray > j-el.box-fill{
     </j-header>
 
 <!-- [json-canvas] -->
-    <json-canvas class="display" name="animator-viewer">
+    <json-canvas id="gitpage-canvas" class="display" name="animator-viewer">
       <h1 class="with-subtitle">Welcome to Pi Reel's Core application Page!</h1>
-      <strong class="for-title">Pi Reel Science and Engineering Animator (PISEA)</strong>
+      <strong class="for-title">Pi Reel Science and Engineering Animator (PISEA)</strong><hr>
 
       <h3>Currently Happening:</h3>
 
-      <div class="ico-btn gbl-sprint" style="margin-right: 10%; margin-left: 10%; width: 80%; height: auto;">
+      <div class="ico-btn gbl-sprint" style="margin-right: 10%; margin-left: 2%; width: 80%; height: auto;">
         <h1>Mozilla Global Sprint 2017</h1>
         <p>
           This two day event consisting of dozens of projects for you to explore and 
@@ -158,6 +173,12 @@ j-menu > j-tray > j-el.box-fill{
         </p>
         <a href="https://mozilla.github.io/global-sprint/">Mozilla Global Sprint 2017: Landing page</a><br>
         <a href="https://mozilla.github.io/global-sprint/projects">Mozilla Global Sprint 2017: Projects page</a>
+      </div>
+
+      <hr><h3>Future Events:</h3>
+      
+      <div class="ico-btn" style="margin-right: 10%; margin-left: 2%; width: 80%; height: auto;">
+        <h1 class="ico-cir pireel-core">In the Works!</h1>
       </div>
 
       <j-foot style="font-size: 1.0125vw;">

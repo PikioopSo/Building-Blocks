@@ -1,0 +1,26 @@
+{
+"session":
+    {
+    "walker": true,
+    "username": "Pi Alpha",
+    "preferences": "default"
+    },
+"package": 
+    {
+    "root": "/jcss",
+    "project_keys": ["brick","sphere","cylinder"],
+    "user_media_dir": "lib",
+    },
+"editor": 
+    {
+    "active": false,
+    "lines": 4,
+    "sheet": ["","","",""],
+    "cursor": { "line": 0, "charPos": 0}
+    },
+"player":
+    {
+    "title": "",
+    "timer": "00:15:00:00"
+    }
+}
