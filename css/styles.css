@@ -1,12 +1,40 @@
 /*
   Author: Steven Van Sant
   doctype: css
-  License: Not available
+  License: MIT License
 */
+
+/* [keyframes] */
+@keyframes gYmin-1{
+  0%{
+    top: 0%;
+  }
+  100%{
+    top: -180px;
+  }
+}
+@keyframes gYadd-1{
+  0%{
+    top: 0%;
+  }
+  100%{
+    top: 200px;
+  }
+}
+@keyframes gBar-1{
+  0%{
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+  100%{
+    padding-left: 48%;
+    padding-right: 48%;
+  }
+}
 
 /* [html] */
 body{
-  font-family: Fira Mono;
+  font-family: arial;
   font-size: .85vw;
 }
 a:link{
@@ -418,6 +446,37 @@ j-switch:hover{
   display: inline-block;
   background-size: contain;
   background-repeat: none;
+}
+
+/* [keyframe classes] */
+.curtainsUp-1{
+  -webkit-animation: gYmin-1;
+  animation: gYmin-1;
+  animation-duration: .25s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.curtainsDown-1{
+  -webkit-animation: gYadd-1;
+  animation: gYadd-1;
+  animation-duration: .25s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.puddleGrow-1{
+  -webkit-animation: gBar-1;
+  animation: gBar-1;
+  animation-duration: .25s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.puddleShrink-1{
+  -webkit-animation: gBar-1;
+  animation: gBar-1;
+  animation-duration: .25s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+  animation-direction: reverse;
 }
 
 /* [SPECss] */

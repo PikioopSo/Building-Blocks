@@ -5530,15 +5530,7 @@ var jIco = xtag.register("j-ico",
 /* [j-header] */
 var jHeader = xtag.register( "j-header",
   {
-  methods:
-    {
-    },
-  lifecycle:
-    {
-    inserted: function()
-      {
-      }
-    }
+  mixins: ["utilities"]
   } );
 
 /* [json-canvas] */
@@ -5704,3 +5696,50 @@ var jStyle = xtag.register( "json-style",
       }
     } );
 
+/* [Extends HTML] */
+var xButton = xtag.register("toggle-btn", 
+  {
+  extends: "button",
+  mixins: ["utilities"]
+  } );
+
+
+/* [event listeners] */
+/* [scroll listener] */
+window.document.addEventListener("scroll", function()
+  {
+  /* [header up @100] */
+  if(document.body.scrollTop > 100)
+    { 
+    var _q = xtag.query(this,"j-header")[0];
+      /curtainsUp\-1/.test(_q.className) === true ? "" : _q.className = "tray curtainsUp-1";
+
+    var _z = xtag.query(this,"json-canvas")[0];
+      /curtainsDown\-1/.test(_z.className) !== true ? "" : (_z.className = "_"); 
+
+    var _p = xtag.query(this,"#header-toggle-btn")[0];
+      /puddleShrink\-1/.test(_p.className) !== true ? "" : (_p.className = "puddleGrow-1");
+    }
+  /* [header snaps back @0] */
+  else if(document.body.scrollTop === 0)
+    {
+    var _q = xtag.query(this,"j-header")[0];
+      /curtainsUp\-1/.test(_q.className) !== true ? "" : _q.className = "tray";
+
+    var _p = xtag.query(this,"#header-toggle-btn")[0];
+      /puddleGrow\-1/.test(_p.className) !== true ? "" : (_p.className = "puddleShrink-1");
+
+    var _z = xtag.query(this,"json-canvas")[0];
+      /curtainsDown\-1/.test(_z.className) !== true ? _z.className = "curtainsDown-1" : ("");
+      }
+  } );
+
+/* [load listener] */
+window.addEventListener("load", function()
+  {
+  if(document.body.scrollTop > 50)
+    { 
+    var _q = xtag.query(this.document,"j-header")[0];
+      /curtainsUp\-1/.test(_q.className) === true ? "" : _q.className.replace("curtainsUp-1","curtainsDown-1");
+    }
+  } );
