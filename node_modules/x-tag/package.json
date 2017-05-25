@@ -1,0 +1,57 @@
+{
+  "name": "x-tag",
+  "description": "The X-Tag core library",
+  "version": "1.5.11",
+  "homepage": "http://www.x-tags.org",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/x-tag/core.git"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "main": "src/core.js",
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-cli": "0.1.13",
+    "grunt-contrib-jshint": "0.3.0",
+    "grunt-contrib-concat": "~0.1.2",
+    "grunt-contrib-uglify": "~0.1.1",
+    "grunt-contrib-connect": "~0.6.0",
+    "grunt-tagrelease": "~0.2.0",
+    "grunt-saucelabs": "~5.0.1",
+    "grunt-bumpup": "~0.2.0",
+    "async": "~0.2.9",
+    "watch": "~0.9.0"
+  },
+  "gitHead": "9bd58679ffc86a79d6d0cab586d8f1dc777972c1",
+  "bugs": {
+    "url": "https://github.com/x-tag/core/issues"
+  },
+  "_id": "x-tag@1.5.11",
+  "_shasum": "b75167837cdccdc3fa1eb9af56b730a1f0225539",
+  "_from": "x-tag@latest",
+  "_npmVersion": "2.7.4",
+  "_nodeVersion": "0.12.2",
+  "_npmUser": {
+    "name": "csuwildcat",
+    "email": "danieljb2@gmail.com"
+  },
+  "dist": {
+    "shasum": "b75167837cdccdc3fa1eb9af56b730a1f0225539",
+    "tarball": "https://registry.npmjs.org/x-tag/-/x-tag-1.5.11.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "csuwildcat",
+      "email": "danieljb2@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/x-tag-1.5.11.tgz_1465877417783_0.27643094258382916"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/x-tag/-/x-tag-1.5.11.tgz"
+}
