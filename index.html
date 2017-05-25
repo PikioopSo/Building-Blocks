@@ -60,8 +60,8 @@ j-header > img.logo{
 
 json-canvas.display{
   position: absolute;
-  width: 100%;
-  height: 500px;
+  width: 96%;
+  height: auto;
   top: 200px;
   z-index: -10;
 }
@@ -101,23 +101,21 @@ j-menu > j-tray > j-el.box-fill{
         src="img/logos/pireel-05.png" alt="Pi Reel Menu" title="Pi Reel Menu"></img>
 
       <!-- [j-menu] 
+        data-selector ( is a tagname string ) 
         data-selected ( is a class string ) 
         data-hidden ( is a class string )
         data-tray ( is a DOM traversal string )
       -->
       <j-menu id="pireel-menu" class="tray inline-block" name="pireel-menu" style="font-family: arial"
-        data-selected="box-fill" data-hidden="memory" data-tray=".tray-drawer[0]">
+        data-selectors="j-ico" data-selected="box-fill" data-hidden="memory" data-tray=".tray-drawer[0]">
 
         <!-- [j-ico]
           data-active ( t/f )
           data-item ( is a DOM traversal string )
         -->
-        <j-ico id="site_menu-ico" class="ico-btn pireel-5" data-active="true" data-item="#pireel_core-nav"></j-ico>
-        <j-el>://Pi Reel Site</j-el>
-        <j-ico id="docs_menu-ico" class="ico-btn google-drive" data-active="false" data-item="#pireel_docs-nav"></j-ico>
-        <j-el>://Pi Reel Docs</j-el>
-        <j-ico id="goods_menu-ico" class="ico-btn fire_rollie-5" data-active="false" data-item="#pireel_shop-nav"></j-ico>
-        <j-el>://Pi Reel Goods</j-el>
+        <j-ico id="site_menu-ico" class="ico-btn pireel-5" data-active="true" data-item="#pireel_core-nav"><j-el class="underline noln-break"><br><br>://Pi Reel Site</j-el></j-ico><br>
+        <j-ico id="docs_menu-ico" class="ico-btn google-drive" data-active="false" data-item="#pireel_docs-nav"><br><br><j-el class="underline noln-break">://Pi Reel Docs</j-el></j-ico><br>
+        <j-ico id="goods_menu-ico" class="ico-btn fire_rollie-5" data-active="false" data-item="#pireel_shop-nav"><br><br><j-el class="underline noln-break">://Pi Reel Goods</j-el></j-ico>
 
         <!-- [j-tray] 
         data-href ( url format string ) *Building
@@ -157,7 +155,7 @@ j-menu > j-tray > j-el.box-fill{
     </j-header>
 
 <!-- [json-canvas] -->
-    <json-canvas id="gitpage-canvas" class="display" name="animator-viewer">
+    <json-canvas id="gitpage-canvas" class="display bg-pireGray" name="animator-viewer">
       <h1 class="with-subtitle">Welcome to Pi Reel's Core application Page!</h1>
       <strong class="for-title">Pi Reel Science and Engineering Animator (PISEA)</strong><hr>
 
@@ -181,42 +179,41 @@ j-menu > j-tray > j-el.box-fill{
         <h1 class="ico-cir pireel-core">In the Works!</h1>
       </div>
 
-      <j-foot style="font-size: 1.0125vw;">
-          <h3 style="font-size: 1.25vw;">Communication Channels</h3>
-          <j-el class="block">
-              <a class="h5" href="https://pireel.github.io/PiReel-Website/">Site</a>
-              <strong class="ico-fa pireel-5"></strong>
-              <j-el class="inline-block"> : Home of the Pi Reel Project.</j-el>
-          </j-el>
-          <j-el class="block">
-              <a class="h5" href="https://www.facebook.com/mozillaOmaha/">Mozilla Omaha Club</a> 
-              <strong class="fa fa-facebook-official ico-fa"></strong> 
-              <j-el class="inline-block"> : Chat and connect online with Facebook</j-el>
-          </j-el>
-          <j-el class="block">
-              <a class="h5" href="https://gitter.im/PiReel/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link">Gitter:</a> 
-              <strong class="gitter ico-fa" style="width: 1.0125vw; height: 1.0125vw;"></strong>
-              <j-el class="inline-block">Chat and connect online with Gitter</j-el>
-          </j-el>
-          <j-el class="block">
-              <a class="h5" href="">Github </a> 
-              <strong class="fa ico-fa fa-github"></strong> 
-              <j-el class="inline-block"> : Keep in touch with our project files</j-el>
-          </j-el>
-          <j-el class="block">
-              <a href="https://www.c9.io" class="h5">Cloud Nine</a> 
-              <strong class="c9 ico-fa"></strong> 
-              <j-el class="inline-block"> : "Code online with Pi Reel Coders"</j-el>
-          </j-el>
-          <j-el>
-              <a href="https://github.com/PiReel/PiReel-Core/blob/master/LICENSE.md">Copyright, MIT License</a>
-          </j-el>
-      </j-foot>
+      <j-footer style="height: 300px; font-size: 1.0125vw; background-color: rgba(255,255,255,.4125);">
+        <h3 style="font-size: 1.25vw;">Communication Channels</h3>
+        <j-el class="block">
+          <a class="h5" href="https://pireel.github.io/PiReel-Website/">Site</a>
+          <strong class="ico-fa pireel-5"></strong>
+          <j-el class="inline-block"> : Home of the Pi Reel Project.</j-el>
+        </j-el>
+        <j-el class="block">
+            <a class="h5" href="https://www.facebook.com/mozillaOmaha/">Mozilla Omaha Club</a> 
+            <strong class="fa fa-facebook-official ico-fa"></strong> 
+            <j-el class="inline-block"> : Chat and connect online with Facebook</j-el>
+        </j-el>
+        <j-el class="block">
+            <a class="h5" href="https://gitter.im/PiReel/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link">Gitter:</a> 
+            <strong class="gitter ico-fa" style="width: 1.0125vw; height: 1.0125vw;"></strong>
+            <j-el class="inline-block">Chat and connect online with Gitter</j-el>
+        </j-el>
+        <j-el class="block">
+            <a class="h5" href="">Github </a> 
+            <strong class="fa ico-fa fa-github"></strong> 
+            <j-el class="inline-block"> : Keep in touch with our project files</j-el>
+        </j-el>
+        <j-el class="block">
+            <a href="https://www.c9.io" class="h5">Cloud Nine</a> 
+            <strong class="c9 ico-fa"></strong> 
+            <j-el class="inline-block"> : "Code online with Pi Reel Coders"</j-el>
+        </j-el>
+        <j-el>
+            <a href="https://github.com/PiReel/PiReel-Core/blob/master/LICENSE.md">Copyright, MIT License</a>
+        </j-el>
+      </j-footer>
 
     </json-canvas>
   </body>
 
+<!-- [script]-->
 <script async='true' src="js/jx.js"></script>
-<script type="text/javascript" src="https://pireel.github.io/PiReel-Core/node_modules/x-tag/dist/x-tag-core.js"></script>
-
 </html>

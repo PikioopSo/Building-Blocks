@@ -5332,6 +5332,7 @@ var stg = this.nodeName + jx.fire.length;
         return;
         }
     },
+    /* [dataTray] */
     dataTray:
       {
       get: function()
@@ -5357,6 +5358,19 @@ var stg = this.nodeName + jx.fire.length;
         {
         return this.getAttribute("data-selected");
         }
+      },
+    dataActive: 
+      {
+      get: function(val)
+        {
+        return this.getAttribute("data-active");
+        }
+      },
+    /* [dataSelectors] */
+    dataSelectors:
+      {
+      get: function()
+        { return this.getElementsByTagName( this.getAttribute("data-selectors") ); }
       }
     }
   };
@@ -5464,10 +5478,28 @@ var jEl = xtag.register("j-el",
     }
   } );
 
-  /* [j-menu] */
+/* [j-menu] */
 var jMenu = xtag.register("j-menu",
   {
-  mixins: ["utilities"]
+  mixins: ["utilities"],
+  events: 
+    {
+    tap: function()
+      {
+      var _func = function(el)
+        {
+        for(var i=0; i<el.parentNode.dataSelectors.length; i++)
+          {
+          if(el.parentNode.dataSelectors[i].getAttribute("data-active") === "true"){ el.parentNode.dataSelectors[i].setAttribute("data-active","false") }
+          }
+        };
+
+      if(event.target.dataActive === "false")
+        { _func(event.target); event.target.setAttribute("data-active","true"); }
+      else if(event.target.parentNode.hasAttribute("data-active") === true)
+        { _func(event.target.parentNode); event.target.parentNode.setAttribute("data-active","true"); }
+      }
+    }
   } );
 
 /* [j-tray] */
@@ -5482,11 +5514,12 @@ var jIco = xtag.register("j-ico",
   mixins: ["utilities"],
   events:
     {
-    click: function(event)
+    tap: function(event)
       {
       var _tray = this.parentNode, _class = _tray.dataSelected; 
         _class = "." + _class;
-      var _current = xtag.queryChildren(this.parentNode.dataTray, _class)[0], _new = this.dataItem;
+      var _current = xtag.queryChildren(this.parentNode.dataTray, _class)[0], 
+          _new = this.dataItem;
 
           _current.setAttribute("class",_tray.dataHidden);
           _new.setAttribute("class",_tray.dataSelected);

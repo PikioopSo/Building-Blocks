@@ -80,7 +80,8 @@ j-menu{
 }
 
 /* [j-header] */
-j-header{
+j-header, j-footer{
+  position: relative;
   width: 100%;
   height: auto;
   display: block;
@@ -473,6 +474,9 @@ p.box-note{
 .flt-right{
   float: right;
 }
+.noln-break{
+  white-space: nowrap;
+}
 .top{
   top: 0px;
 }
@@ -485,7 +489,7 @@ p.box-note{
 .height-fill{
   height:100%;
 }
-.bg-pireGrey{
+.bg-pireGray{
   background-color: rgba(147,147,147,1); 
 }
 .bd-pireGray{
@@ -575,6 +579,9 @@ p.box-note{
 }
 .bold-underline{
   font-weight: bold;
+  text-decoration: underline;
+}
+.underline{
   text-decoration: underline;
 }
 
