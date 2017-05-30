@@ -160,6 +160,33 @@ json-canvas{
   box-sizing: border-box;
 }
 
+
+/* [j-resize] */
+j-resize{
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 2.75%;
+  height: 100%;
+  background-color: rbga(200,200,200,1);
+}
+
+/* [ico-slider] */
+ico-slider{
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 5px;
+  background-color: rgba(255,255,255,.25);
+}
+
+/* [j-aside] */
+j-aside{
+  position: relative;
+  display: block;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
 /* [j-select] */
 j-select{
     position: relative; 
@@ -244,7 +271,7 @@ j-menu > j-ico[data-active = "true"]{
   background-color: rgba(175,200,255,1);
   border: solid orange 1px;
 }
-j-ico:hover{
+j-ico:hover,j-min:hover,j-switch:hover{
   background-color: rgba(255,255,255,.75);
   border: solid orange 1px;
 }
@@ -269,8 +296,14 @@ j-el{
 }
 
 /* [jEditor] */
-json-editor{
-  
+form[is="json-editor"], json-editor{
+  position: relative;
+  box-sizing: border-box;
+  width: 77%;
+  height: 25%;
+  display: block;
+  border: none;
+  background-color: none;
 }
 e-ln{
   position:relative; 
@@ -280,22 +313,23 @@ e-ln{
   background: rgb(255,255,255);
   display: block;
 }
-e-key{
+input[is="e-key"]{
   position: relative; 
   top: 0px; 
   left: 0px; 
   width: 15%; 
   height: 100%;
   display: inline-block;
-  background: rgb(215,215,215);
+  background: rgb(235,235,235);
   text-align: center;
 }
-e-txt{
+input[is="e-txt"]{
   position: relative; 
   top: 0px; 
   left: 0px; 
   width: 85%; 
   height: 100%;
+  padding: 0px;
   display: inline-block;
   background: rgb(215,245,215);
 }
@@ -378,7 +412,7 @@ j-switch:hover{
 }
 .logo{
   display: block;
-  background-color: rgba(255,255,255,.95); 
+  background-color: rgba(255,255,255,.125); 
   background-repeat: no-repeat;
   background-size: contain;
   border: outset 2px rgb(96,96,96);
@@ -554,6 +588,12 @@ p.box-note{
 .bd-pireGray{
   border: solid 2px rgba(177,177,177,1);
 }
+.bg-pireOrange{
+  background-color: rgba(255,125,25,1); 
+}
+.bd-pireOrange{
+  border: solid 2px rgba(255,125,25,1);
+}
 .bg-liteGreen{
   background-color: rgba(175,255,175,1);
 }
@@ -644,7 +684,7 @@ p.box-note{
   text-decoration: underline;
 }
 
-/* [platform classes] */
+/* [icon classes] */
 /* [google] */
 .google-drive{ 
   background-image: url(//ssl.gstatic.com/docs/doclist/images/infinite_arrow_favicon_4.ico);
@@ -655,6 +695,17 @@ p.box-note{
 .google-docs{
   background-image: url(https://ssl.gstatic.com/docs/documents/images/kix-favicon6.ico);
 }
+
+/* [icon classes] */
+.icon-slider-1{
+  background-image: url(img/icons/icons-1.png);
+}
+.iconfind-1{
+  background: url(../img/icons/icon-02.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 
 /* [pi reel] */
 .pireel-1{
@@ -678,10 +729,12 @@ p.box-note{
   background-image: url(../img/mozsprint.jpg);
 }
 
+/* [c9] */
 .c9{
   background-image: url(https://ide.c9.io/favicon.ico);
 }
 
+/* [gitter] */
 .gitter{
     width: 2.75vw; height: 3.25vw;
     background: url("//cdn03.gitter.im/_s/88aafe0/images/favicon-read.ico") no-repeat;
@@ -691,18 +744,13 @@ p.box-note{
 /* [media qeuries template] */
 @media screen and (max-width: 1960px){
 }
-
 @media screen and (max-width: 800px){
 }
-
 @media screen and (max-width: 640px){
 }
-
 @media screen and (max-width: 360px){
 }
-
 @media screen and (max-width: 160px){
 }
-
 @media screen and (min-width: 800px){
 }

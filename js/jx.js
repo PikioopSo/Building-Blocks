@@ -5484,7 +5484,7 @@ var jMenu = xtag.register("j-menu",
   mixins: ["utilities"],
   events: 
     {
-    tap: function()
+    tap: function(ev)
       {
       var _func = function(el)
         {
@@ -5494,10 +5494,10 @@ var jMenu = xtag.register("j-menu",
           }
         };
 
-      if(event.target.dataActive === "false")
-        { _func(event.target); event.target.setAttribute("data-active","true"); }
-      else if(event.target.parentNode.hasAttribute("data-active") === true)
-        { _func(event.target.parentNode); event.target.parentNode.setAttribute("data-active","true"); }
+      if(ev.target.dataActive === "false")
+        { _func(ev.target); ev.target.setAttribute("data-active","true"); }
+      else if(ev.target.parentNode.hasAttribute("data-active") === true)
+        { _func(ev.target.parentNode); ev.target.parentNode.setAttribute("data-active","true"); }
       }
     }
   } );
@@ -5703,14 +5703,13 @@ var xButton = xtag.register("toggle-btn",
   mixins: ["utilities"]
   } );
 
-
 /* [event listeners] */
 /* [scroll listener] */
 window.document.addEventListener("scroll", function()
   {
   /* [header up @100] */
   if(document.body.scrollTop > 100)
-    { 
+    { console.log("hi")
     var _q = xtag.query(this,"j-header")[0];
       /curtainsUp\-1/.test(_q.className) === true ? "" : _q.className = "tray curtainsUp-1";
 
