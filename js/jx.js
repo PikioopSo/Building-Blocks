@@ -4809,8 +4809,10 @@ window.CustomElements.addModule(function(scope) {
 
 })();
 
-
-/*  Start of jx.js  */
+/*  ******************** [Start of jx.js] ******************** */
+(function(jxhtml){
+/* *****[Globals] ***** */
+var event = window.event;
 /* [functions] */
 
   /* [_searchFunc] */
@@ -4947,6 +4949,7 @@ var typeOf = function(_data)
     };
 
 /* [Object prototypes] */
+
 /* [Array prototypes] */
   /* [getJsonById] ( search_param, obj, _token ) */
 	Array.prototype.getJsonById = function( search_param )
@@ -5002,7 +5005,7 @@ var vault =
   defs: { }
   };
 
-/* [jx] */
+/* *************** [jx] *************** */
 var jx = 
   {
   json: [],
@@ -5016,12 +5019,12 @@ var jx =
     length: 0
     },
 
-/* [jStyle] *
+/* [jStyle] */
   jStyle:
     {
     },
 
-/* [draw] */
+/* [jDraw] */
   jDraw:
     {
     },
@@ -5033,12 +5036,33 @@ var jx =
     },
 
 /* [jContainer] */
-  jContainer: function(string,options)
+  jContainer: function(elemStg, options)
     {
+    var el = null;
+    try
+      {
+      el = xtag.createFragment(elemStg);
+      }
+    catch(e)
+      {
+      el = elemStg + " is not an acceptable parameter."
+      console.log(el);
+      return el;
+      }
+
+    if( options.attributes )
+      {
+      for( var attr in options.attributes )
+        {
+        el.setAttribute(k,options.atributes[k]);
+        }
+      }
     },
+
+/* [jBuild] */
   jBuild: function(options)
     {
-    
+    this._lock = options;
     },
 
 /* [jxLock] */
@@ -5047,7 +5071,8 @@ var jx =
     var _proto = null;
     
     vault.defs[options.keyname] ? _proto = "Key def lock already exists." : 
-      ( "Creating " + options.token, vault.defs[options.keyname] = jx.jBuild(options) );
+      ( console.log("Creating token property: " + options.token), vault.defs[options.keyname] = new jx.jBuild(options),
+      console.log(vault.defs[options.keyname]) );
     return _proto;
     },
 
@@ -5096,25 +5121,28 @@ var cJson = jx.jxLock(
 
 /* End of jx.js code */
 
-/* Start of xtag mixins */
+/* *************** [Start of xtag mixins] *************** */
 var jUtil = xtag.mixins.utilities = 
   {
   lifecycle:
     {
     created: function()
       {
-      jx.fire.length += 1; 
-      if(this.id !== ""){ jx.fire[this.id] = {}; }
+      console.log("%c Creating x-tag element ...", "color: rgb(255,155,100); text-decoration: underline;");
+      console.log("%c Checking for 'ID' and other attributes...", "color: rgb(255,155,100); font-style: italic; text-decoration: underline;");
+      if(this.id !== "")
+        { 
+        console.log("Found ID")
+        }
       else
         { 
 var stg = this.nodeName + jx.fire.length;
   console.log("The element, '" + this.nodeName + "." + this.className + "', needs to have an id assigned to it.") 
   console.log("Auto assigning an ID string ... ID value assigned. Result was: " + stg +" ... Done ... " );
 
-  this.setAttribute("id", stg)
-
-  console.log("...");
+  this.setAttribute("id", stg);
         }
+      console.log(this);
       }
     },
   methods:
@@ -5269,8 +5297,9 @@ var stg = this.nodeName + jx.fire.length;
       set: function(val)
         {
         var el = this;
-        jx.fire[el.id].dataHREF = val;
-           jx.fire[el.id].xhr = this.jLink( {
+          jx.fire[el.id] = {};
+          jx.fire[el.id].dataHREF = val;
+          jx.fire[el.id].xhr = this.jLink( {
             href: jx.fire[el.id].dataHREF,
             onReady: function(val){
               jx.fire[el.id].json = JSON.parse(val);
@@ -5337,13 +5366,23 @@ var stg = this.nodeName + jx.fire.length;
       {
       get: function()
         {
-        return this.getAttribute("data-tray")._getDOM();
+        if(this.hasAttribute("data-tray") === true){ return this.getAttribute("data-tray")._getDOM(); }
+        else{ console.log("Tried returning data-tray but got a null response"); return null; }
+        },
+      set: function(val)
+        {
+        if(this.hasAttribute("data-tray") === true){ return val; }
+        else{ return false; }
         }
       },
     /* [dataItem] */
     dataItem:
       {
-      get: function(){ return this.getAttribute("data-item")._getDOM() }
+      get: function()
+        { 
+        if(this.hasAttribute("data-item") === true){ console.log(this); return this.getAttribute("data-item")._getDOM() }
+        else{ return false; }
+        }
       },
     dataHidden: 
       {
@@ -5354,23 +5393,33 @@ var stg = this.nodeName + jx.fire.length;
       },
     dataSelected: 
       {
-      get: function(val)
+      attribute:
         {
-        return this.getAttribute("data-selected");
+        validate: function(val)
+          { 
+          return val;
+          }
+        },
+      get: function()
+        {
+        if(this.hasAttribute("data-selected")===true){
+          return this.getAttribute("data-selected");
+          }else{ return null }
         }
       },
     dataActive: 
       {
-      get: function(val)
+      get: function()
         {
-        return this.getAttribute("data-active");
+        if(this.hasAttribute("data-active") === true) { return this.getAttribute("data-active") }
+        else { this.setAttribute("data-active","false"); return "false"; };
         }
       },
     /* [dataSelectors] */
-    dataSelectors:
+    dataIcos:
       {
       get: function()
-        { return this.getElementsByTagName( this.getAttribute("data-selectors") ); }
+        { return this.getElementsByTagName( this.getAttribute("data-icos") ); }
       }
     }
   };
@@ -5380,92 +5429,71 @@ var stg = this.nodeName + jx.fire.length;
 var fBase = xtag.register( "fire-base", 
   {
   mixins: ["utilities"],
-    methods:
-      {
-      basing: function(jsn)
+  methods:
+    {
+    basing: function(jsn)
         {
         return jx.basing = jsn;
         }
-      },
+    },
 
-    lifecycle:
+  lifecycle:
+    {
+    created: function()
       {
-      created: function()
-        {
-        var jsn = this.innerHTML._toJSON(true,{type:"json"});
-          this.basing(jsn);
-        return jsn;
-        },
-      inserted: function()
-        {
-          
-        },
-      removed: function()
-        {
-        
-        },
-      attributeChanged: function()
-        {
-        
-        }
+      var jsn = null;
+        console.log("%c Attempting to retrieve JSON from 'fire-base' content.", "color: skyblue; text-decoration: underline;");
+        try{
+        var stg = this.innerHTML.replace(/\s+/g, "");
+          jsn = JSON.parse(stg);
+          this.innerHTML = stg;
+          console.log('%c JSON parsed and added to the jx.fire object.', "color: skyblue;");
+          jx.fire[this.id] = jsn;
+          jx.length += 1;
+          console.log(jx.fire);
+      }
+      catch(e){
+        console.log('%c ' + e,"color: skyblue;");
+      };
+        this.basing(jsn);
+      return jsn;
       },
-
-      accessors:
+    inserted: function()
+      {
+      
+      },
+    removed: function()
+      {
+      
+      },
+    attributeChanged: function()
+      {
+      
+      }
+    },
+  accessors:
+    {
+    // [data-get] value: json dot references. *Must start with a cash sign.
+    dataList:
+      {
+      attribute: 
         {
-        // [data-get] value: json dot references. *Must start with a cash sign.
-        dataGet: 
-          {
-          attribute: 
-            {
-            
-            },
-          set: function(val)
-            {
-            var key = null;
-            val[0] === "$" ? 
-              ( key = this.getKeyRef(val), jx.fire[this.id] = this.getKeyRef(val)  )
-              :
-              "$ identifier token not present";
-              return key;
-            },
-          get: function()
-            {
-            return jx.fire[this.id];
-            }
-          },
-
-        dataList:
-          {
-          attribute: 
-            {
-            
-            },
-          set: function(val)
-            {
-            var key = null,
-                tar_stg = val.match(/[\w+\-+]+(?=\()/g)[0],
-                el = document.getElementById(tar_stg);
-
-            // [data-list] value: Dom Notation. *Must target an id.
-            if(val[0] === "#")
-              {
-              jx.fire[this.id].forEach( function(c,i,a,stg)
-                {
-                var param = val.match(/\(.+\)/g); console.log(param);
-                el = jx.jContainer( tar_stg, { value:c } ) 
-                } );
-              }else{ "# identifier token not present" }
-              
-              return key;
-            },
-          get: function()
-            {
-            
-            }
-          
+        validate: function(val){
+          return val;
           }
+        },
+      set: function(val)
+        {
+        return val;
+        },
+      get: function()
+        {
+        return this.getAttribute("data-list");    
         }
-    } );
+          
+      }
+    }
+  } );
 
 /* [j-el] */
 var jEl = xtag.register("j-el",
@@ -5484,20 +5512,29 @@ var jMenu = xtag.register("j-menu",
   mixins: ["utilities"],
   events: 
     {
-    tap: function(ev)
+    tap: function(event)
       {
+      // _func fires to change the el parameters data-active attribute to its opposing boolean value and all other ones to .
       var _func = function(el)
         {
-        for(var i=0; i<el.parentNode.dataSelectors.length; i++)
+        for(var i=0; i<el.parentNode.dataIcos.length; i++)
           {
-          if(el.parentNode.dataSelectors[i].getAttribute("data-active") === "true"){ el.parentNode.dataSelectors[i].setAttribute("data-active","false") }
+          if(el.parentNode.dataIcos[i].getAttribute("data-active") === "true"){ el.parentNode.dataIcos[i].setAttribute("data-active","false") }
           }
-        };
+        }, stg = "";
 
-      if(ev.target.dataActive === "false")
-        { _func(ev.target); ev.target.setAttribute("data-active","true"); }
-      else if(ev.target.parentNode.hasAttribute("data-active") === true)
-        { _func(ev.target.parentNode); ev.target.parentNode.setAttribute("data-active","true"); }
+      if(event.target.hasAttribute("data-active") === true)
+        { console.log("Checked data-active...checking value");
+        if(event.target.dataActive === "false")
+          { _func(event.target); event.target.setAttribute("data-active",stg = "true"); }
+        else
+          { _func(event.target); event.target.setAttribute("data-active",stg = "false"); }
+          console.log("Value was " + stg);
+        }
+      else
+        {
+        
+        }
       }
     }
   } );
@@ -5505,7 +5542,25 @@ var jMenu = xtag.register("j-menu",
 /* [j-tray] */
 var jTray = xtag.register("j-tray", 
   {
-  mixins: ["utilities"]
+  mixins: ["utilities"],
+  lifecycle:
+    {
+    created: function()
+      {
+      console.log("%c Creating 'j-tray'. Checking for tray owner.","color: skyblue;")
+      if(this.hasAttribute("for") === true){ console.log("Tray belongs to " + this.getAttribute("for")); }
+      else
+        {
+        console.log("This tray was not assigned.");
+        this.setAttribute("for", "#" + this.parentNode.id);
+        console.log("Tray was assigned to parent.");
+        }
+      }
+    },
+    accessors:
+      {
+      get: function(){ return this.getAttribute("for")._getDOM(); }
+      }
   } );
 
 /* [j-ico] */
@@ -5516,13 +5571,54 @@ var jIco = xtag.register("j-ico",
     {
     tap: function(event)
       {
-      var _tray = this.parentNode, _class = _tray.dataSelected; 
-        _class = "." + _class;
-      var _current = xtag.queryChildren(this.parentNode.dataTray, _class)[0], 
-          _new = this.dataItem;
+      if(event.target.nodeName === "J-ICO")
+        {
+        var _tray = null, _selector = null;
 
-          _current.setAttribute("class",_tray.dataHidden);
-          _new.setAttribute("class",_tray.dataSelected);
+        event.target.parentNode.dataTray !== null ? 
+          ( _tray = event.target.parentNode.dataTray,
+            console.log("Found data-tray"),
+            console.log(_tray) ): 
+          ( console.log("data-tray check failed."),
+            console.log(_tray + " was found") );
+
+        event.target.parentNode.dataSelected !== null ? 
+          ( _selector = event.target.parentNode.dataSelected,
+            console.log("Selector class for event from:"), console.log(this), console.log("Was assigned: " + _selector) ) : 
+          ( console.log("data-selected for..."), 
+            console.log(this),
+            console.log("%c Returned...  " + _selector + "... Attr. rquired in order to continue", 'color:skyblue') );
+
+          console.log("An event was fired: ");
+          console.log(event);
+
+        var _current = xtag.queryChildren(_tray, _selector), 
+            _new = this.dataItem;
+
+              _selector = _selector.replace(".","");
+            // Check to aee if these two prams are satisfied
+            if( _current.length === 0  && _tray.getElementsByClassName(event.target.parentNode.dataHidden).length === 1 ){
+              _current.length < 1 ? 
+              ( console.log("No element with the class "+ _selector + " was found in tray."), 
+                _tray.getElementsByTagName("*")[0].setAttribute("class",_selector), 
+                console.log("Found the first node in the j-tray.") ) : 
+              ( console.log("current node is: "), 
+                console.log(_current[0]),
+                _new.className = event.target.parentNode.dataHidden,
+                console.log("Hidden class is: " + event.target.parentNode.dataHidden) );
+            }
+            else{
+              // Check length of query array from _current (_new equals _current cause user single clicked twice or more times)
+              _current.length !== 0 ? _current = _current[0] : _current = _new;
+              // Check the className for a matching _selector variable (When user double clicks)
+              _new.className !== _selector ? (
+              _current.setAttribute("class", event.target.parentNode.dataHidden),
+              _new.setAttribute("class", _selector) ) :
+              (
+              _new.setAttribute("class", event.target.parentNode.dataHidden)
+              )
+            }
+        }
       }
     }
   } );
@@ -5703,6 +5799,7 @@ var xButton = xtag.register("toggle-btn",
   mixins: ["utilities"]
   } );
 
+
 /* [event listeners] */
 /* [scroll listener] */
 window.document.addEventListener("scroll", function()
@@ -5742,3 +5839,7 @@ window.addEventListener("load", function()
       /curtainsUp\-1/.test(_q.className) === true ? "" : _q.className.replace("curtainsUp-1","curtainsDown-1");
     }
   } );
+
+window.jx = jx;
+
+} )();
