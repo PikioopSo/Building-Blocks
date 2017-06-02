@@ -1,3 +1,17 @@
 {
-"content": ["Pi Reel Site","Pi Reel Docs","Pi Reel Goods"]
+"webapps": [
+  {
+  "title": "Pi.Reel.Shop",
+  "desc": "Visit our merchandise shop where you can chat, buy, sell, and trade.",
+  "href": "index-application.html",
+  "icon": "img/icons/pireel-shop-1.png"
+  },
+  {
+  "title": "Pi.Reel.Partners",
+  "desc": "We are always looking for partners and callaborators.",
+  "href": "index-application.html",
+  "icon": "img/icons/pireel-shop-1.png"
+  }
+],
+"docs": []
 }

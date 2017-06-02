@@ -1,0 +1,28 @@
+/* 
+    CSS created on : Jun 1, 2017, 5:50:06 AM
+    Author     : Steven Van Sant
+*/
+
+body{
+    background-image: url(../img/fire_rollie.png);
+    background-repeat: no-repeat;
+    background-position: -80px -80px;
+}
+
+
+/* *************************[form menu and tray]************************* */
+j-menu[data-tray="#form-nav-tray"]{
+
+}
+j-menu[data-tray="#form-nav-tray"] > j-tray:last-of-type{
+    height: 75%;
+    background-color: rgba(215,215,215,1);
+}
+j-menu[data-tray="#form-nav-tray"] j-ico{
+    width: 2vw;
+    height: 2vw;
+}
+nav.pireel-link > a{
+    display: block;
+    color: rgba(185,155,105,1)
+}

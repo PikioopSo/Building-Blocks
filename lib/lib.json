@@ -1,0 +1,36 @@
+[
+    {
+        "id": "pi_alpha",
+        "type": "component/canvas/tray",
+        "name": "pi alpha",
+        "desc": "An introductory set of tools to get you hacking the Pi Reel animation console."
+    },
+    {
+        "id": "x-tag",
+        "type": "component/canvas/tray",
+        "name": "x-tag",
+        "desc": "A set of tools to get you hacking the Pi Reel animation console with x-tag."
+    },
+    {
+        "id": "cyto",
+        "type": "component/canvas/tray",
+        "name": "cytoscape",
+        "desc": "A set of tools to get you hacking the Pi Reel animation console with cytoscape."
+    },
+    {
+        "id": "js-animate",
+        "type": "component/console/language",
+        "name": "js animate",
+        "desc": "A set of tools to get you hacking the Pi Reel animation console with our js animate."
+    },
+    {
+        "type": "component/canvas/tray",
+        "name": "pi beta",
+        "desc": "An intermediate set of tools to get you hacking the Pi Reel animation console."
+    },
+    {
+        "type": "component/canvas/tray",
+        "name": "pi reel",
+        "desc": "An advanced set of tools to get you hacking the Pi Reel animation console."
+    }
+]

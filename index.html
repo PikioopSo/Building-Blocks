@@ -127,13 +127,13 @@ j-menu > j-tray > j-el.box-fill{
         data-tray ( is a DOM traversal string )
       -->
       <j-menu id="pireel-menu" class="tray inline-block" name="pireel-menu" style="font-family: arial"
-        data-selectors="j-ico" data-selected="box-fill" data-hidden="memory" data-tray=".tray-drawer[0]">
+        data-icos="j-ico" data-selected=".box-fill" data-hidden="memory" data-tray="#head_nav-tray">
 
         <!-- [j-ico]
           data-active ( t/f )
           data-item ( is a DOM traversal string )
         -->
-        <j-ico id="site_menu-ico" class="ico-btn pireel-5" data-active="true" data-item="#pireel_core-nav"><j-el class="underline noln-break"><br><br>://Pi Reel Site</j-el></j-ico><br>
+        <j-ico id="site_menu-ico" class="ico-btn pireel-5" data-active="true" data-item="#pireel_core-nav"><br><br><j-el class="underline noln-break">://Pi Reel Site</j-el></j-ico><br>
         <j-ico id="docs_menu-ico" class="ico-btn google-drive" data-active="false" data-item="#pireel_docs-nav"><br><br><j-el class="underline noln-break">://Pi Reel Docs</j-el></j-ico><br>
         <j-ico id="goods_menu-ico" class="ico-btn fire_rollie-5" data-active="false" data-item="#pireel_shop-nav"><br><br><j-el class="underline noln-break">://Pi Reel Goods</j-el></j-ico>
 
@@ -244,6 +244,6 @@ j-menu > j-tray > j-el.box-fill{
   </body>
 
 <!-- [script]-->
-<script async='true' src="js/jx.js"></script> 
-<!-- <script async='true' src="node_modules/x-tag/dist/x-tag-core.js"></script> -->
+<!-- <script async='true' src="js/jx.js"></script> -->
+<script async src="node_modules/x-tag/dist/x-tag-core.js"></script>
 </html>

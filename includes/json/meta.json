@@ -1,0 +1,8 @@
+{
+    "title": "Pi Reel Science and Engineering Animator",
+    "acronymn": "PISEA",
+    "desc": "The Pi Reel Science and Engineering Animator helps people create the future of science and engineering with the press of the button.",
+    "keywords": ["PiReel", "Pi Reel", "pireel", "piReel", "Animator", "Science", "Engineering", "Graph Theory", "Animation Macros", "Macros"],
+    "dir": ["lib/*", "css/*", "img/", "js/", "_node_modules/"],
+    "files": ["index-core", "index", "styles"]
+}

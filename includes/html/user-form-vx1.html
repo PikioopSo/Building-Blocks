@@ -1,7 +1,6 @@
-<form action="index-core.php" method="POST"
-    style="position: fixed; margin: 5%; width: 90%; height: 80%; z-index: 100;">
+<form action="index-core.php" method="POST" style="position: fixed; margin: 5%; width: 90%; height: 80%; z-index: 100;">
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" name="welcome-message" viewBox="0 0 1000 250" 
-        style="width: 1000px; height: 250px; background-color: rgba(255,255,255,1); background-repeat: no-repeat; background-size: 50%; background-position: 100% 0%; border: 1px rgba(115,65,25,1) ridge;" class="pireel-1">
+        style="width: 1000px; height: 250px; background-color: rgba(255,255,255,1); background-repeat: no-repeat; background-size: 50%; background-position: 100% 0%; border: 1px rgba(115,65,25,1) ridge; background-color: rgba(255,255,255,.85);" class="pireel-1">
         <text class="sheet" stroke="red" fill="yellow" stroke-width="2px">
             <tspan x="20px" y="40px" font-size="2vw">Welcome to Pi Reel's</tspan>
             <tspan x="45px" y="80px" font-size="2vw">core application.</tspan>
@@ -9,26 +8,33 @@
         </text>
     </svg>
 
-    <j-tray style="height: 250px;">
-        <j-ico class="pireel-core ico-btn"></j-ico> <strong class="inline-block"> ://Pi.Reel.WebApps || </strong>  
-        <j-ico class="google-docs ico-btn"></j-ico></j-el> <strong class="inline-block"> ://Pi.Reel.gDocs || </strong> 
-        <j-ico class="google-sheets ico-btn"></j-ico> <strong class="inline-block"> ://Pi.Reel.gSheets </strong> 
-    </j-tray>
+    <!-- [j-menu] -->
+    <j-menu id="form-nav-menu" data-tray="#form-nav-tray" data-icos="j-ico" data-selected=".pireel-link" data-hidden="memory" style="height: 250px;">
+        <j-ico id="pireel-nav-ico" class="pireel-core ico-btn" data-active="true" data-item="#pireel-links"></j-ico> <strong class="inline-block"> ://Pi.Reel.Site || </strong>  
+        <j-ico id="pireel-docs-ico" class="google-docs ico-btn" data-active="false" data-item="#pireel-doclinks"></j-ico> <strong class="inline-block"> ://Pi.Reel.Docs || </strong> 
+        <j-ico id="pireel-sheets-ico" class="google-sheets ico-btn" data-active="false" data-item="#pireel-sheetlinks"></j-ico> <strong class="inline-block"> ://Pi.Reel.Sheets </strong> 
+      <j-tray id="form-nav-tray" class="block" for="#form-nav-menu">
+        <nav id="pireel-links" class="pireel-link">
+          <a href="index-application.html"><strong>Pi Reel Shop</strong></a>
+          <a href="index-sponsor.html"><strong>Pi Reel Sponsors</strong></a>
+          <a href="index-midea.html"><strong>Pi Reel Media</strong></a>
+        </nav>
+        <nav id="pireel-doclinks" class="memory">
+            <a href="index-manual.html"><strong>About Pi Reel Docs</strong></a>
+            <a href="#"><strong>PISEA Users Manual</strong></a>
+            <a href="#"><strong>PISEA Hacking Instructions</strong></a>
+        </nav>
+        <nav id="pireel-sheetlinks" class="memory">
+            <h3>Under Construction</h3>
+        </nav>
+      </j-tray>
+    </j-menu>
 
     <fieldset>
         <label>Username or E-mail: <input type="text" value="Pi Alpha" name="user_name"></label>
-        <label>Password: <input type="password" value="#########"></label>
-        <div>
-            <p class="box-note">
-                Just click submit to take you to the animators landing page during Mozsprint.
-            </p>
-            <p>
-                Currently we have a drive going to raise money for server costs and other expenses that are
-                incurred through projects like PISEA. If you donate to open source remember that while we are 
-                holding this fundraiser we will give away, "Pi Toolie Boxes" for every $25 dollars you donate. 
-                Pi Toolie Boxes, are USB drives filled with useful applications (including PISEA) and learning materials.
-            </p>
-            <img src="img/products/usb-storage-1.jpg" width="50px" height="auto" alt="Pi Toolie Boxs"></img>
+        <label>Password: <input type="password" value="##########"></label>
+        <div is="include-promos">
+            
         </div>
         <input type="submit" value="Submit">
     </fieldset>
