@@ -20,17 +20,16 @@
         $_SESSION["username"] = $_POST["user_name"];
         print "<head>";
         include "includes/html/animator-head.html";
-        print "<title>".$_SESSION["username"]."</title></head>";
+        print "<title>".$_SESSION["username"]."</title></head><body>";
+
+        // json generation
+        print meta\_meta_Require();
+        print meta\_meta_Library();
         include "includes/html/animator-body.html";
-        print "</html>";
+        print "</body></html>";
     }
     else{
         include "includes/html/user-form-vx1.html";
-    }
-
-    // json generation
-    print meta\_meta_Require();
-    print meta\_meta_Library();
-    
+    }    
 
 ?>

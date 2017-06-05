@@ -8,7 +8,9 @@ body{
     background-repeat: no-repeat;
     background-position: -80px -80px;
 }
-body > j-header:first-child{
+body > j-header:first-of-type{
+  left: 0px;
+  top: 0px;
   height: 125px;
   background: rgba(68,68,68,.75);
 }

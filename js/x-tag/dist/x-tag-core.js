@@ -4993,7 +4993,6 @@ var jx =
   {
   json: [],
   basing: null,
-  drag: {top:null, left:null, target: null},
 
 /* [jEditor] */
   jEditor: [],
@@ -5105,6 +5104,7 @@ var cJson = jx.jxLock(
   } );
 
 /* End of jx.js code */
+
 /* *************** [Start of xtag mixins] *************** */
 var mixins_Util = xtag.mixins.utilities = 
   {
@@ -5550,79 +5550,6 @@ var fBase = xtag.register( "fire-base",
     }
   } );
 
-
-var global_disc = xtag.register( "global-disc", 
-  {
-  extends: "form",
-  mixins: ["utilities"],
-  content: function(){/*
-    <fieldset style='position:relative; border-radius:100%; width:100px; height:100px; background-color:rgba(255,255,255,.5);' is="global-pallete">
-      <input type="color" style="border-radius:100%; width:30px; height:30px; padding:5px;" is="global-fcolor">
-      <input type="color" style="border-radius:100%; width:30px; height:30px; padding:5px;" is="global-bgcolor">
-    </fieldset>
-   */},
-  lifecycle:
-    {
-    created: function()
-      {
-      this.setAttribute("dragging","false");
-      this.setAttribute("style", "position:fixed; width:125px; height:125px; padding:10px; background-color:rgba(255,125,25,.75);")
-      }
-    },
-  events:
-    {
-    mousedown: function(event){
-      // ** accepted values of the dragging attr are true or false.
-      // ** the default behavior for the draggable elements direct children
-      // ** when they are clicked and dragged is to drag the parent window.
-      // ** To prevent this behavior set dragging="prevent"
-      var dragStart = function(el){
-          switch(el.getAttribute("dragging"))
-            {
-              case "true":
-              return "false";
-              case "false":
-              return "true";
-              case "prevent":
-              return "prevent";
-              default:
-              return "true"
-            }
-      };
-       // ** check for dragging attr in the event target and its parent.
-      event.target.hasAttribute("dragging") === true ? (
-        event.target.setAttribute("dragging", dragStart(event.target)),
-        jx.drag.target = event.target
-        ) : null;
-      event.target.parentNode.hasAttribute("dragging") === true ? ( 
-        event.target.parentNode.setAttribute("dragging", dragStart(event.target.parentNode)),
-        jx.drag.target = event.target.parentNode ) : null;
-      },
-    mousemove: function(event){
-      if(jx.drag.target !== null){
-        jx.drag.top = (event.clientY-15);
-        jx.drag.left = (event.clientX-15);
-        if(jx.drag.target.getAttribute("dragging") === "true"){
-          jx.drag.target.style.left = jx.drag.left+"px";
-          jx.drag.target.style.top = jx.drag.top+"px";
-          }
-        else if(jx.drag.target.getAttribute("dragging")==="prevent" && event.target.outerHTML === jx.draggint.target.outerHTML){
-          jx.drag.target.style.left = jx.drag.left+"px";
-          jx.drag.target.style.top = jx.drag.top+"px";
-          }
-        }
-      },
-    mouseup: function(event){console.log(event);
-      jx.drag.top = (event.clientY-15); console.log(jx.drag.top);
-      jx.drag.left = (event.clientX-15);
-      jx.drag.target.setAttribute("dragging","false");
-      jx.drag.target.style.top = jx.drag.top+"px";
-      jx.drag.target.style.left = jx.drag.left+"px";
-      jx.drag.target = null;
-      }
-    }
-  } );
-
 /* [j-el] */
 var jEl = xtag.register("j-el",
   {
@@ -6038,15 +5965,6 @@ window.addEventListener("load", function()
       /curtainsUp\-1/.test(_q.className) === true ? "" : _q.className.replace("curtainsUp-1","curtainsDown-1");
     }
   } );
-
-/* [mnouse up listener] */
-window.document.addEventListener("mouseup", function(event){
-    // Global drag listener
-    jx.drag.target !== null ? ( 
-      jx.drag.target.style.top = (event.clientY-30)+"px",
-      jx.drag.target.style.left = (event.clientX-30)+"px",
-      jx.drag.target = null ) : ("");
-} );
 
 window.jx = jx;
 

@@ -1,4 +1,4 @@
-  <body>
+
     <!-- *****[j-header]**** -->
     <j-header id="header-bar" class="tray" name="top-toolbar">
       <img id="pireel-btn" class="logo inline-block" name="pireel-btn"
@@ -12,7 +12,7 @@
       </j-menu>
 
       <!-- [play menu] -->
-      <j-menu id="header-play-menu" name="header-play-menu" data-tray="#util-play-tray" data-active="true" title="Pi Reel Play Menu">
+      <j-menu id="header-play-menu" name="header-play-menu" data-tray="#util-play-tray" data-active="true" title="Pi Reel Play Menu" draggable="true">
         <media-ico id="header-playbackward" class="fa fa-backward"></<media-ico>
         <media-ico id="header-pause" class="fa fa-pause-circle-o" title=""></<media-ico>
         <media-ico id="header-play" class="fa fa-play-circle-o"></<media-ico>
@@ -91,23 +91,36 @@
   
         <!-- ****[textarea scrollbar]**** --> 
         <j-scroll id="text-scrollbar" class="block dark-text" name="text-scrollbar">
-          <j-ico id="scroll-up" class=" fa fa-chevron-up" title="Add line"></j-ico>
-          <j-ico id="writer-addLine" class="fa fa-plus-square" title="Add line"></j-ico>
-          <j-ico id="writer-removeLine" class="fa fa-minus-circle" title="Add line"></j-ico>
-          <j-ico id="scroll-down" class="fa fa-chevron-down" title="Scroll down"></j-ico>
+          <up-ico id="scroll-up" class=" fa fa-chevron-up" title="Scroll Up"></up-ico>
+          <add-ico id="writer-addLine" class="fa fa-plus-square" title="Add line"></add-ico>
+          <subtract-ico id="writer-removeLine" class="fa fa-minus-circle" title="Remove line"></subtract-ico>
+          <down-ico id="scroll-down" class="fa fa-chevron-down" title="Scroll down"></down-ico>
         </j-scroll>
 
         <!-- ****[textarea viewport]**** -->
-        <j-viewport id="editor-viewport" name="editor-viewport" data-scroll="#json-editor">
+        <j-viewport id="editor-viewport" class="active-viewport" name="editor-viewport" data-scroll="#json-editor">
           <j-resize id="editor-resizer-1" class="pireel-editor-resizer-1 bg-pireOrange ico-slider-1" data-drag="divider" title="Resize column divider"></j-resize>
           <ico-slider class="iconfind-1" data-bind="e-key" title="Macro key help"></ico-slider>
           <ico-slider class="iconfind-1" data-bind="e-text" title="Macro definition help"></ico-slider>
           <j-resize id="editor-resizer-2" class="pireel-editor-resizer-2 bg-pireOrange" data-drag="endpoint" title="Resize end column"></j-resize>
-          <form is="json-editor" id="text-editor" name="text-editor">
-            <e-ln class="dark-text"><input class="e-key" list="keyDefs" is="e-key"><input type="text" class="e-txt" contenteditable="true" is="e-txt"></e-ln>
-            <e-ln class="dark-text"><input class="e-key"  list="keyDefs" is="e-key"><input type="text" class="e-txt" contenteditable="true" is="e-txt"></e-ln>
-            <e-ln class="dark-text"><input class="e-key" list="keyDefs" is="e-key"><input type="text" class="e-txt" contenteditable="true" is="e-txt"></e-ln>
-            <e-ln class="dark-text"><input class="e-key" list="keyDefs" is="e-key"><input type="text" class="e-txt" contenteditable="true" is="e-txt"></e-ln>
+          <form id="text-editor" class="active-console" name="text-editor" 
+            data-list="library_packages" data-table="" data-lib="default" is="json-editor">
+            <e-ln class="dark-text">
+                <input class="e-key" list="library_packages" is="e-key">
+                <input type="text" class="e-txt" is="e-txt">
+            </e-ln>
+            <e-ln class="dark-text">
+                <input class="e-key"  list="library_packages" is="e-key">
+                <input type="text" class="e-txt" is="e-txt">
+            </e-ln>
+            <e-ln class="dark-text">
+                <input class="e-key" list="library_packages" is="e-key">
+                <input type="text" class="e-txt" is="e-txt">
+            </e-ln>
+            <e-ln class="dark-text">
+                <input class="e-key" list="library_packages" is="e-key">
+                <input type="text" class="e-txt" is="e-txt">
+            </e-ln>
           </form>
         </j-viewport>
       </j-viewport>
@@ -146,8 +159,5 @@
       </svg>
 
     <!-- [Lists] -->
-    <datalist id="keyDefs" is="j-data">
-      <option value="pireel"></option>
+    <datalist id="library_packages" is="e-data">
     </datalist>
-
-  </body>

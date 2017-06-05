@@ -3,13 +3,19 @@
         "id": "pi_alpha",
         "type": "component/canvas/tray",
         "name": "pi alpha",
-        "desc": "An introductory set of tools to get you hacking the Pi Reel animation console."
+        "desc": "An introductory set of tools to get you hacking the Pi Reel animation console.",
+        "components": [ "plates", "disks", "gears", "levers", "constants" ]
     },
     {
         "id": "x-tag",
         "type": "component/canvas/tray",
         "name": "x-tag",
-        "desc": "A set of tools to get you hacking the Pi Reel animation console with x-tag."
+        "desc": "A set of tools to get you hacking the Pi Reel animation console with x-tag.",
+        "category": "workspaces",
+        "tags": ["orgainization","images","engineering","science","canvas","svg"],
+        "node_modules": ["x-tag-core"],
+        "files": ["xtag-piAlpha.js","piAlpha_plates.svg"],
+        "components": [ "plates", "disks", "gears", "levers", "constants" ]
     },
     {
         "id": "cyto",
