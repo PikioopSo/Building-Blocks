@@ -4967,35 +4967,18 @@ var typeOf = function(_data)
 	Array.prototype.getJsonByTagName = function( search_param )
 	  { return _searchArray( search_param, this, "" ); };
 
-/* [editor def object] */
-var jEditor = 
-  {
-/* [archive] */
-  archive: {},
-
-/* [value] */
-  value: 
-    {
-    "0": "",
-    "1": "",
-    "2": "",
-    "3": "",
-    },
-
-/* [cursor] */
-  cursor: 
-    {
-    lnPosition: 0,
-    csrPosition: 0
-    },
-
-/* [sheet] */
-  sheet:
-    {
-    lnLength: 0,
-    chrLength: 0
+/* [editor] */
+var editor = class editor{
+    constructor(xtagElem){
+        this.id = xtagElem.id;
+        this.className = xtagElem.className;
+        this.nodeName = xtagElem.nodeName;
+        this.lib = xtagElem.dataLib;
+        this.is = xtagElem.getAttribute("is");
     }
-  };
+};
+
+
 
 /* [vault] */
 var vault = 
@@ -5010,8 +4993,10 @@ var jx =
   {
   json: [],
   basing: null,
-  mime_keys: ["mml","aframe","cytoscape","xtag","png","svg","html","fits","jpeg","pdf","ico"],
-  type_keys: ["blog","draw","illustration","engineering","science"],
+  drag: {top:null, left:null, target: null},
+
+/* [jEditor] */
+  jEditor: [],
 
 /* [fire] */
   fire: 
@@ -5120,9 +5105,8 @@ var cJson = jx.jxLock(
   } );
 
 /* End of jx.js code */
-
 /* *************** [Start of xtag mixins] *************** */
-var jUtil = xtag.mixins.utilities = 
+var mixins_Util = xtag.mixins.utilities = 
   {
   lifecycle:
     {
@@ -5283,6 +5267,7 @@ var stg = this.nodeName + jx.fire.length;
         jx.fire[this.id].viewer = val._getDOM();
         }
       },
+
     dataHref: 
       {
       attribute:
@@ -5312,6 +5297,7 @@ var stg = this.nodeName + jx.fire.length;
         return jx.fire[this.id].dataHREF;
         }
     },
+
     dataType: 
       {
         attribute:
@@ -5333,6 +5319,8 @@ var stg = this.nodeName + jx.fire.length;
         return jx.fire[this.id];
         }
     },
+
+    // ** data-get
     dataGet:
       {
       attribute:
@@ -5361,6 +5349,7 @@ var stg = this.nodeName + jx.fire.length;
         return;
         }
     },
+ 
     /* [dataTray] */
     dataTray:
       {
@@ -5375,6 +5364,7 @@ var stg = this.nodeName + jx.fire.length;
         else{ return false; }
         }
       },
+
     /* [dataItem] */
     dataItem:
       {
@@ -5384,6 +5374,8 @@ var stg = this.nodeName + jx.fire.length;
         else{ return false; }
         }
       },
+
+    // ** [dataHidden] 
     dataHidden: 
       {
       get: function()
@@ -5391,6 +5383,8 @@ var stg = this.nodeName + jx.fire.length;
         return this.getAttribute("data-hidden");
         }
       },
+
+    // ** [dataSelected]
     dataSelected: 
       {
       attribute:
@@ -5407,6 +5401,7 @@ var stg = this.nodeName + jx.fire.length;
           }else{ return null }
         }
       },
+ 
     dataActive: 
       {
       get: function()
@@ -5415,6 +5410,7 @@ var stg = this.nodeName + jx.fire.length;
         else { this.setAttribute("data-active","false"); return "false"; };
         }
       },
+
     /* [dataSelectors] */
     dataIcos:
       {
@@ -5424,8 +5420,67 @@ var stg = this.nodeName + jx.fire.length;
     }
   };
 
+var mixins_Text = xtag.mixins.textUtils = 
+  {
+  accessors:
+    {
+    dataLib: 
+      {
+      get: function()
+        {
+        if(this.hasAttribute("data-lib") && /url\(/.test(this.getAttribute("data-lib")) !== true ){ 
+          xtag.queryChildren(document.body,"#lib-JSON");
+          return jx.fire["lib-JSON"] || {};
+          }
+        else{ 
+          return jx.fire[this.id];
+          }
+        }
+      },
+    dataList:
+      {
+      set: function(val){
+          
+        },
+      get: function(){
+          
+        }
+      }
+    }
+  };
+
+/* *****[Psuedos]***** */
+  /* **[keys]** */
+var _keysPsuedo = xtag.pseudos.keys = 
+  {
+  onAdd: function()
+    {
+    
+    },
+  onRemove: function()
+      {
+      
+      },
+  action: function(event)
+      {
+      if(event.value === "true")
+        {
+        console.log(event)
+        }
+      else if(event.value === "false")
+        {
+        
+        }
+      else
+        {
+        
+        }
+      }
+  };
+
+
 /* Start of xtag components */
-/* [fire-base] */
+/* *****[fire-base]***** */
 var fBase = xtag.register( "fire-base", 
   {
   mixins: ["utilities"],
@@ -5444,7 +5499,7 @@ var fBase = xtag.register( "fire-base",
       var jsn = null;
         console.log("%c Attempting to retrieve JSON from 'fire-base' content.", "color: skyblue; text-decoration: underline;");
         try{
-        var stg = this.innerHTML.replace(/\s+/g, "");
+        var stg = this.innerHTML.replace(/\s+/g, " ");
           jsn = JSON.parse(stg);
           this.innerHTML = stg;
           console.log('%c JSON parsed and added to the jx.fire object.', "color: skyblue;");
@@ -5495,6 +5550,79 @@ var fBase = xtag.register( "fire-base",
     }
   } );
 
+
+var global_disc = xtag.register( "global-disc", 
+  {
+  extends: "form",
+  mixins: ["utilities"],
+  content: function(){/*
+    <fieldset style='position:relative; border-radius:100%; width:100px; height:100px; background-color:rgba(255,255,255,.5);' is="global-pallete">
+      <input type="color" style="border-radius:100%; width:30px; height:30px; padding:5px;" is="global-fcolor">
+      <input type="color" style="border-radius:100%; width:30px; height:30px; padding:5px;" is="global-bgcolor">
+    </fieldset>
+   */},
+  lifecycle:
+    {
+    created: function()
+      {
+      this.setAttribute("dragging","false");
+      this.setAttribute("style", "position:fixed; width:125px; height:125px; padding:10px; background-color:rgba(255,125,25,.75);")
+      }
+    },
+  events:
+    {
+    mousedown: function(event){
+      // ** accepted values of the dragging attr are true or false.
+      // ** the default behavior for the draggable elements direct children
+      // ** when they are clicked and dragged is to drag the parent window.
+      // ** To prevent this behavior set dragging="prevent"
+      var dragStart = function(el){
+          switch(el.getAttribute("dragging"))
+            {
+              case "true":
+              return "false";
+              case "false":
+              return "true";
+              case "prevent":
+              return "prevent";
+              default:
+              return "true"
+            }
+      };
+       // ** check for dragging attr in the event target and its parent.
+      event.target.hasAttribute("dragging") === true ? (
+        event.target.setAttribute("dragging", dragStart(event.target)),
+        jx.drag.target = event.target
+        ) : null;
+      event.target.parentNode.hasAttribute("dragging") === true ? ( 
+        event.target.parentNode.setAttribute("dragging", dragStart(event.target.parentNode)),
+        jx.drag.target = event.target.parentNode ) : null;
+      },
+    mousemove: function(event){
+      if(jx.drag.target !== null){
+        jx.drag.top = (event.clientY-15);
+        jx.drag.left = (event.clientX-15);
+        if(jx.drag.target.getAttribute("dragging") === "true"){
+          jx.drag.target.style.left = jx.drag.left+"px";
+          jx.drag.target.style.top = jx.drag.top+"px";
+          }
+        else if(jx.drag.target.getAttribute("dragging")==="prevent" && event.target.outerHTML === jx.draggint.target.outerHTML){
+          jx.drag.target.style.left = jx.drag.left+"px";
+          jx.drag.target.style.top = jx.drag.top+"px";
+          }
+        }
+      },
+    mouseup: function(event){console.log(event);
+      jx.drag.top = (event.clientY-15); console.log(jx.drag.top);
+      jx.drag.left = (event.clientX-15);
+      jx.drag.target.setAttribute("dragging","false");
+      jx.drag.target.style.top = jx.drag.top+"px";
+      jx.drag.target.style.left = jx.drag.left+"px";
+      jx.drag.target = null;
+      }
+    }
+  } );
+
 /* [j-el] */
 var jEl = xtag.register("j-el",
   {
@@ -5506,7 +5634,7 @@ var jEl = xtag.register("j-el",
     }
   } );
 
-/* [j-menu] */
+/* *****[j-menu]***** */
 var jMenu = xtag.register("j-menu",
   {
   mixins: ["utilities"],
@@ -5539,7 +5667,7 @@ var jMenu = xtag.register("j-menu",
     }
   } );
 
-/* [j-tray] */
+    /* **[j-tray]** */
 var jTray = xtag.register("j-tray", 
   {
   mixins: ["utilities"],
@@ -5563,7 +5691,7 @@ var jTray = xtag.register("j-tray",
       }
   } );
 
-/* [j-ico] */
+    /* **[j-ico]** */
 var jIco = xtag.register("j-ico", 
   {
   mixins: ["utilities"],
@@ -5690,7 +5818,7 @@ var jSelect = xtag.register("j-select",
     }
   } );
 
-/* [j-option] */
+  /* [j-option] */
 var jOption = xtag.register("j-option", 
   {
   mixins: ["utilities"],
@@ -5741,7 +5869,7 @@ var jOption = xtag.register("j-option",
       }
   } );
 
-/* [j-switch] */
+  /* [j-switch] */
 var jSwitch = xtag.register("j-switch", 
   {
   lifecycle:
@@ -5763,19 +5891,90 @@ var jViewport = xtag.register("j-viewport",
     }
   
   } );
-
-/* [json-editor] */
+    /* [json-editor] */
 var jEditor =  xtag.register( "json-editor", 
     {
+    extends: "form",
+    mixins: ["utilities","textUtils"],
     lifecycle:
       {
-      inserted: 
-        function()
-          {
-          }
+      created: function()
+        {
+        console.log("Creating JSON-EDITOR api...");
+        jx.jEditor.push( new editor(this) );
+        console.log("%c library data: ", "color: skyblue");
+        var _jeditor = jx.jEditor[jx.jEditor.length-1];
+        }
       }
-
   } );
+
+    /*e-ln*/
+var eLine = xtag.register("e-ln", {} );
+
+    /*e-key*/
+var eKey = xtag.register("e-key", 
+    {
+    extends: "input",
+    mixins: ["utilities","textUtils"],
+    lifecycle:
+      {
+      created: function(){
+      var _lib = this.parentNode.parentNode.dataLib;
+        for(var i=0; i<_lib.length; i++){
+        var _opt = document.createElement("option");
+          _opt.value = _lib[i].name;
+          this.appendChild(_opt);
+        }
+      },
+      inserted: function(){}
+      },
+    events: 
+      {
+      // true: means this instance of tap:keys has info stored in the lib.json file
+      "tap:keys(true)": function(event)
+        {
+        // Taping the data list will automatically bring a drop down list up.
+        },
+      "keydown:keys(true)": function()
+        {
+        
+        }
+      }
+    } );
+
+    /*e-data*/
+var eData = xtag.register("e-data", 
+    {
+    extends: "datalist",
+    mixins: ["textUtils","textUtils"],
+    lifecycle:
+      {
+      // ** inserts option nodes into the datalist element
+      created: function(){
+      
+      },
+      // ** inserts option nodes into the datalist element
+      inserted: function(){
+      var _lib = jx.fire["lib-JSON"];
+        for(var i=0; i<_lib.length; i++){
+        var _opt = document.createElement("option");
+
+          // option value is equal to the name of the package.
+          _opt.value = _lib[i].name;
+          this.appendChild(_opt);
+          }
+        }
+      }
+    } );
+
+    /* [e-txt] */
+var eText = xtag.register("e-txt", 
+    {
+    lifecycle:
+       {
+       
+       }
+    } );
 
 /* [json-style] */
 var jStyle = xtag.register( "json-style", 
@@ -5792,7 +5991,7 @@ var jStyle = xtag.register( "json-style",
       }
     } );
 
-/* [Extends HTML] */
+/* [toggle-btn] */
 var xButton = xtag.register("toggle-btn", 
   {
   extends: "button",
@@ -5839,6 +6038,15 @@ window.addEventListener("load", function()
       /curtainsUp\-1/.test(_q.className) === true ? "" : _q.className.replace("curtainsUp-1","curtainsDown-1");
     }
   } );
+
+/* [mnouse up listener] */
+window.document.addEventListener("mouseup", function(event){
+    // Global drag listener
+    jx.drag.target !== null ? ( 
+      jx.drag.target.style.top = (event.clientY-30)+"px",
+      jx.drag.target.style.left = (event.clientX-30)+"px",
+      jx.drag.target = null ) : ("");
+} );
 
 window.jx = jx;
 
