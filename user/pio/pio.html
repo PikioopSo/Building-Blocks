@@ -1,0 +1,39 @@
+<header><h1>Welcome, pio</h1></header><form>
+	<!-- ========== [ startup prefs ] ========== -->
+	<fieldset>
+		<legend>Start up preferences</legend>
+		<label>Startup tutorial</label><input type="checkbox" checked>
+		<label class="block">Default project</label><input type="text">
+	</fieldset>
+
+	<!-- ========== [ themes prefs ] ========== -->
+	<fieldset>
+		<legend>Themes</legend>
+		<label>Built in themes: </label><input type="list" list="themes_datalist"><hr>
+		<fieldset>
+			<legend>Custom options</legend>
+			<fieldset>
+				<legend class="block">Background Image: </legend>
+				<input type="file">
+				<button is="toggle-btn"></button>
+			</fieldset>
+			<fieldset>
+				<legend class="block">Canvas theme: </legend>
+				<input type="color">
+				<button is="toggle-btn"></button>
+			</fieldset>
+			<fieldset>
+				<legend class="block">Editor theme: </legend>
+				<input type="color">
+				<button is="toggle-btn"></button>
+			</fieldset>
+		</fieldset>
+	</fieldset>
+
+	<!-- ========== [ datalist for themes ] ========== -->
+	<datalist id="themes_datalist">
+		<option value="Lite"></option>
+		<option value="Dark"></option>
+		<option value="Charcoal"></option>
+	</datalist>
+</form>
