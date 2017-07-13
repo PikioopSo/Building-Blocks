@@ -5,10 +5,10 @@
 ![Pi Reel Logo](img/pireel.png)  
 
 ### What is PISEA?   
-Pi Reel Science and Engineering Animator is a completely free CAD style animator for science and engineering. With PISEA you'll be able to get connected with data, other projects, and collaborators with ease because of its modern open source technology that it uses.  It's interface is simple yet powerful and built for those who enjoy hacking programs and extending them.  
+Pi Reel Science and Engineering Animator is a completely free CAD style animator for science and engineering. With PISEA you'll be able to get connected with data, other projects, and collaborators with ease.  It's interface is simple yet powerful and built for those who enjoy hacking programs and extending them.  
 
 ### Why PISEA?  
-PISEA was an idea to provide a means for people to communicate about their ideas so that they could not only share but start businesses too. The web application not only provide a way to communicate but to communicate in video, pictures, CAD, and variety of other ways.  Your imagination is the limit with Pi Reels Science and Engineering animator. 
+PISEA was an idea to provide a means for people to communicate about their ideas so that they could not only share but start businesses too. The web application not only provides a way to communicate but ways to communicate in video, pictures, CAD, and a variety of other ways.  Your imagination is the limit with Pi Reels Science and Engineering animator. 
 
 ### PISEA Alpha Build Features  
 Please bear with us as we role out alpha features.  
