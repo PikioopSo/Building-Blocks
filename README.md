@@ -8,24 +8,24 @@
 Pi Reel Science and Engineering Animator is a completely free CAD style animator for science and engineering. With PISEA you'll be able to get connected with data, other projects, and collaborators with ease because of its modern open source technology that it uses.  It's interface is simple yet powerful and built for those who enjoy hacking programs and extending them.  
 
 ### Why PISEA?  
-We chose to develop PISEA because 
+PISEA was an idea to provide a means for people to communicate about their ideas so that they could not only share but start businesses too. The web application not only provide a way to communicate but to communicate in video, pictures, CAD, and variety of other ways.  Your imagination is the limit with Pi Reels Science and Engineering animator. 
 
-### PISEA Alpha Build Features
-Please bear with us as we role out alpha features.
+### PISEA Alpha Build Features  
+Please bear with us as we role out alpha features.  
 
 1. Key Definition Console  
 2. Frame Definition Console  
 3. Environment Tray  
 4. Canvas Tray  
 5. Users Media Feed Tray  
-6. Project Wizard Tray
+6. Project Wizard Tray  
 
 ### Resources and the Manual  
 Let me introduce Pi Reels engineer and core application director, Pi Toolie. Just in case you were going to ask...yes Pi Reel gets its name from,Pi Toolie. :)  
 
 <img src="img/pireel-icon.png" width="10%" height="auto"></img>  
 
-If you ever need help with the animator you can always go and see the latest open docs on Google thanks to Toolie. Or if your on one of our sites you can always just click on the Toolie image and a menu will appear to help guide you.
+If you ever need help with the animator you can always go and see the latest open docs on Google thanks to Toolie. Or if your on one of our sites you can always just click on the Toolie image and a menu will appear to help guide you.  
 
 Pi Toolies manual can be downloaded via Google Docs [here](https://docs.google.com/document/d/1JhZSIDOWfNYXMOPRvt6WDSX6lsT_1ktprTT3yyg4iDo/edit?usp=sharing).
 
