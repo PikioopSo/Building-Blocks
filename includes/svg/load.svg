@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" name="welcome-message" viewBox="0 0 800 1000"
+    style="width: 800px; height: 250px; fill: white;">
+    <text class="sheet">
+        <tspan fill="white" x="2vw" y="1.5vw" class="paragraph dark-text">Welcome to Pi Reel's</tspan>
+        <tspan class="paragraph dark-text" x="2.35vw" y="3.15vw">core application.</tspan>
+        <tspan class="paragraph dark-text" x="2.25vw" y="7.5vw">A service inspired by open innovation.</tspan>
+    </text>
+</svg>
