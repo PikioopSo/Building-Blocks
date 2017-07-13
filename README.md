@@ -4,19 +4,20 @@
 #### Pi Reel's Core applicaton serivce 
 ![Pi Reel Logo](img/pireel.png)  
 
-### Why PISEA?  
-We chose PISEA because it gives people (smart people) the power to express themselves in unique ways. In the digital age, applications developed for the cloud enable people to express themselves in a safe way and a safe place. Alas, their doesn't seem to be any completely free to use cloud developed animator for the engineers and scientists to use and collaborate on.  
+### What is PISEA?   
+Pi Reel Science and Engineering Animator is a completely free CAD style animator for science and engineering. With PISEA you'll be able to get connected with data, other projects, and collaborators with ease because of its modern open source technology that it uses.  It's interface is simple yet powerful and built for those who enjoy hacking programs and extending them.  
 
-During Mozsprint 2017 we will be actively discussing the topic of, "methods of communicating VIA the web", in the hopes of starting to put together a list of different methods of communication. This information will later be used to categorize the different type of web communicators to find correlations between communicator preferences and application development. In other words what can we do to stimulate high quality open source work done on the cloud? 
+### Why PISEA?  
+We chose to develop PISEA because 
 
 ### PISEA Alpha Build Features
-Please bear with us as we role out alpha features. Feature marked with an, * denote a Mozsprint issues feature.
+Please bear with us as we role out alpha features.
 
-1. Key Definition Console*  
-2. Frame Definition Console*  
+1. Key Definition Console  
+2. Frame Definition Console  
 3. Environment Tray  
 4. Canvas Tray  
-5. Users Media Feed Tray*  
+5. Users Media Feed Tray  
 6. Project Wizard Tray
 
 ### Resources and the Manual  
