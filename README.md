@@ -4,20 +4,21 @@
 #### Pi Reel's Core applicaton serivce 
 ![Pi Reel Logo](img/pireel.png)  
 
-### Why PISEA?  
-We chose PISEA because it gives people (smart people) the power to express themselves in unique ways. In the digital age, applications developed for the cloud enable people to express themselves in a safe way and a safe place. Alas, their doesn't seem to be any completely free to use cloud developed animator for the engineers and scientists to use and collaborate on.  
+### What is PISEA?  
+Pi Reel Science and Engineering Animator is a full featured CAD type program that animates your illustrations.  It's cloud based application interface can connect you with people, databases, and other projects. Since PISEA is completely free for business, personal, or educational use it makes it unique amongst a sea of other solutions.
 
-During Mozsprint 2017 we will be actively discussing the topic of, "methods of communicating VIA the web", in the hopes of starting to put together a list of different methods of communication. This information will later be used to categorize the different type of web communicators to find correlations between communicator preferences and application development. In other words what can we do to stimulate high quality open source work done on the cloud? 
+### Why PISEA?  
+We chose PISEA as a development project because its the type of project that brings together people that all want to achieve a goal.  
 
 ### PISEA Alpha Build Features
-Please bear with us as we role out alpha features. Feature marked with an, * denote a Mozsprint issues feature.
+Please bear with us as we role out alpha features.
 
-1. Key Definition Console*  
-2. Frame Definition Console*  
+1. Key Definition Console  
+2. Frame Definition Console  
 3. Environment Tray  
 4. Canvas Tray  
-5. Users Media Feed Tray*  
-6. Project Wizard Tray
+5. Users Media Feed Tray  
+6. Project Wizard Tray 
 
 ### Resources and the Manual  
 Let me introduce Pi Reels engineer and core application director, Pi Toolie. Just in case you were going to ask...yes Pi Reel gets its name from,Pi Toolie. :)  
