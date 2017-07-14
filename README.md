@@ -1,7 +1,7 @@
 # Pi Reel
 
 ### Welcome to the Pi Reel Science and Engineering Animator (PISEA) 
-#### Pi Reel's Core applicaton serivce 
+#### A Pi Reel Core applicaton serivce and product 
 ![Pi Reel Logo](img/pireel.png)  
 
 ### What is PISEA?   
