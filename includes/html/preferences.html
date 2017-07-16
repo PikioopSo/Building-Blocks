@@ -5,8 +5,9 @@
 		<label>Startup tutorial</label><input type="checkbox" checked>
 		<label class="block">Default project</label><input type="text">
 		<label class="block">Resources: </label>
-		<fieldset is="check-list"></fieldset>
+		<fieldset data-href="url(includes/json/resources.json)" is="check-list" data-array="$name"></fieldset>
 	</fieldset>
+
 	<!-- ========== [ themes prefs ] ========== -->
 	<fieldset>
 		<legend>Themes</legend>
@@ -18,6 +19,7 @@
 			<option value="Dark">Dark</option>
 			<option value="Charcoal">Charcoal</option>
 		</select><hr>
+
 		<!-- ========== [ custom options ] ========== -->
 		<fieldset>
 			<legend>Custom Options</legend>
@@ -30,6 +32,7 @@
 				</div>
 				<input type="button" class="toggle-class" is="toggle-btn">
 			</fieldset>
+
 			<!-- ========== [ editor theme ] ========== -->
 			<fieldset>
 				<legend class="block">Editor Theme: </legend>
@@ -44,6 +47,7 @@
 				</div>
 				<input type="button" class="toggle-class" is="toggle-btn">
 			</fieldset>
+
 			<!-- ========== [ keyframe theme ] ========== -->
 			<fieldset>
 				<legend class="block">Keyframe Theme: </legend>
@@ -55,6 +59,7 @@
 				</div>
 				<input type="button" class="toggle-class" is="toggle-btn">
 			</fieldset>
+
 			<!-- ========== [ data feed theme ] ========== -->
 			<fieldset>
 				<legend class="block">Data Feed Theme: </legend>
