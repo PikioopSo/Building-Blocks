@@ -1,0 +1,15 @@
+// JSON Document
+[
+	{
+	"name": "Elements Table",
+	"url": "lib/chemistry/elements_table.svg"
+	},
+	{
+	"name": "Math Constants",
+	"url": "lib/mathematics/math_constants.json"
+	},
+	{
+	"name": "Physics Constants",
+	"url": "lib/physics/physics_constants.json"
+	}
+]

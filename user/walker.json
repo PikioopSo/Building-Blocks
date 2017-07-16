@@ -9,7 +9,7 @@
     {
     "root": "/jcss",
     "project_keys": ["brick","sphere","cylinder"],
-    "user_media_dir": "lib",
+    "user_media_dir": "lib"
     },
 "editor": 
     {

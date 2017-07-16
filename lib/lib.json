@@ -1,0 +1,42 @@
+[
+    {
+        "id": "pi_alpha",
+        "type": "component/canvas/tray",
+        "name": "pi alpha",
+        "desc": "An introductory set of tools to get you hacking the Pi Reel animation console.",
+        "components": [ "plates", "disks", "gears", "levers", "constants" ]
+    },
+    {
+        "id": "x-tag",
+        "type": "component/canvas/tray",
+        "name": "x-tag",
+        "desc": "A set of tools to get you hacking the Pi Reel animation console with x-tag.",
+        "category": "workspaces",
+        "tags": ["orgainization","images","engineering","science","canvas","svg"],
+        "node_modules": ["x-tag-core"],
+        "files": ["xtag-piAlpha.js","piAlpha_plates.svg"],
+        "components": [ "plates", "disks", "gears", "levers", "constants" ]
+    },
+    {
+        "id": "cyto",
+        "type": "component/canvas/tray",
+        "name": "cytoscape",
+        "desc": "A set of tools to get you hacking the Pi Reel animation console with cytoscape."
+    },
+    {
+        "id": "js-animate",
+        "type": "component/console/language",
+        "name": "js animate",
+        "desc": "A set of tools to get you hacking the Pi Reel animation console with our js animate."
+    },
+    {
+        "type": "component/canvas/tray",
+        "name": "pi beta",
+        "desc": "An intermediate set of tools to get you hacking the Pi Reel animation console."
+    },
+    {
+        "type": "component/canvas/tray",
+        "name": "pi reel",
+        "desc": "An advanced set of tools to get you hacking the Pi Reel animation console."
+    }
+]
