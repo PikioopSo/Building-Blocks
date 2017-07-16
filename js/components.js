@@ -176,41 +176,6 @@ var mixins_Util = xtag.mixins.utilities =
         }
       },
 
-	// ** Needs to be improved or renamed to something that suggests it retrieves json via xhr
-    dataHref: 
-      {
-      attribute:
-        {
-        validate: function(val)
-          {
-          var param = val.replace(/url\(/,"");
-            param = param.replace(/\)/,"");
-            return param;
-          }
-        },
-      set: function(val)
-        {
-        var el = this;
-          if(!jx.fireRequests[el.id]){ jx.fireRequests[el.id] = {}; jx.fireRequests.length += 1; }
-
-          jx.fireRequests[el.id].dataHREF = val;
-
-          jx.fireRequests[el.id].xhr = this.jLink( {
-            href: jx.fireRequests[el.id].dataHREF,
-            onReady: function(val){
-              jx.fireRequests[el.id].json = JSON.parse(val);
-              }
-
-		  } );
-
-        return jx.fireRequests[el.id].xhr;
-        },
-      get: function()
-        {
-        return this.getAttribute("data-href");
-        }
-    },
-
 	// What was I trying to accomplish?
     dataType: 
       {

@@ -27,13 +27,15 @@ var listProto = xtag.register( "proto-list", {
 			{
 			attributes:
 				{
-				
+				validate: function(){
+					return;
+					}
 				},
 			get:function(){
 				
 				},
-			set: function(){
-				
+			set: function(val){
+				return;
 				}
 			}
 		}

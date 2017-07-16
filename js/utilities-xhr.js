@@ -27,14 +27,31 @@ var xhrUtil = xtag.mixins.requests = {
 			console.log("%c Setting xhr event properties.", "color:pink;");
 
 			xhr.responseType = "json";
+			
 
 			xhr.open("GET",options.href,true);
 
-			xhr.upload.addEventListener( "onloadstart", function(){console.log("xhr load started");} );
-			xhr.upload.addEventListener( "onprogress", function(){console.log("xhr load in progress");} );
-			xhr.upload.addEventListener( "onerror", function(){console.log("xhr load error");} );
-			xhr.upload.addEventListener( "onload", function(){console.log("xhr loaded");} );
-			xhr.upload.addEventListener( "onloadend", function(){console.log("xhr load end");} );
+			xhr.upload.addEventListener( "onloadstart", function(){
+				console.log("xhr load started"); 
+				} );
+
+			xhr.upload.addEventListener( "onprogress", function(){
+				console.log("xhr load in progress");
+				} );
+
+			xhr.upload.addEventListener( "onerror", function(){
+				console.log("xhr load error");
+				} );
+
+			xhr.upload.addEventListener( "onload", function(){
+				console.log("xhr loaded");
+				} );
+
+			xhr.upload.addEventListener( "onloadend", function(){
+				console.log("xhr load end");
+				} );
+
+			
 
 			xhr.send();
 

@@ -27,7 +27,7 @@ $db = new PDO('mysql:host=localhost;dbname=users','root','');
 		print "</head><body>";
 
 //		$newUSER = fwrite($newUSER, "<header><h1>Welcome, ".$Uname."</h1></header>".$preferences);
-print "<header><h1>Welcome, Tester</h1></header>".$preferences;
+		print "<header><h1>Welcome, Tester</h1></header>".$preferences;
 //			if( $db->query($insert_new_user) ){
 				
 //			}
