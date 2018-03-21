@@ -1,6 +1,0 @@
-{
-  "name": "Pi Alpha Canvas Tray pack",
-  "id": "pia_pack",
-  "token": "<pi>",
-  "type": "component/canvas/tray"
-}
